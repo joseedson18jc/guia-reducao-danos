@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=20862c24-26b2-4cba-94a4-fd098b4341f3
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=20862c24-26b2-4cba-94a4-fd098b4341f3">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GHB e 1,4-butanodiol: absorção, meia-vida e emergências</title>
+  <meta name="description" content="Guia interativo sobre GHB, GBL e 1,4-butanodiol: absorção, meia-vida, conversão por ADH/ALDH, variação entre pessoas, riscos e resposta a emergências.">
+  <meta name="author" content="Guia Técnico Educacional">
+  <meta name="theme-color" content="#060a08">
+  <link rel="canonical" href="https://guia-oilbong-fisica.netlify.app/ghb/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Guia Técnico Educacional">
+  <meta property="og:title" content="GHB e 1,4-BD: o que acontece no corpo">
+  <meta property="og:description" content="Explore absorção, meia-vida, conversão por ADH/ALDH, riscos e resposta a emergências.">
+  <meta property="og:url" content="https://guia-oilbong-fisica.netlify.app/ghb/">
+  <meta property="og:image" content="https://guia-oilbong-fisica.netlify.app/ghb/og-ghb-v2.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GHB e 1,4-BD: o que acontece no corpo">
+  <meta name="twitter:description" content="Absorção, meia-vida, variação ADH/ALDH, riscos e resposta a emergências.">
+  <meta name="twitter:image" content="https://guia-oilbong-fisica.netlify.app/ghb/og-ghb-v2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#060a08; --bg2:#0b100d; --surface:#0f1612; --surface-raised:#141c17;
+      --border:rgba(82,224,156,.12); --border-strong:rgba(82,224,156,.26);
+      --accent:#52e09c; --accent-bright:#7ffcbe; --accent-dim:#2d8a5e;
+      --text:#dce8e0; --text-secondary:#95a99e; --text-dim:#61766a;
+      --danger:#ff6b6b; --danger-soft:rgba(255,107,107,.11); --warn:#ffbe5c;
+      --blue:#66c8ff; --radius:16px; --radius-sm:10px;
+      --display:'Space Grotesk',system-ui,sans-serif; --body:'Manrope',system-ui,sans-serif;
+      --mono:'DM Mono',ui-monospace,monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:72px}
+    body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 8% 18%,rgba(82,224,156,.075),transparent 26%),radial-gradient(circle at 92% 42%,rgba(102,200,255,.055),transparent 28%),radial-gradient(circle at 54% 92%,rgba(255,107,107,.035),transparent 32%)}
+    body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    a{color:var(--accent-bright);text-underline-offset:3px}
+    a:hover{color:#fff}
+    button{font:inherit}
+    :focus-visible{outline:2px solid var(--accent-bright);outline-offset:4px}
+    ::selection{background:rgba(82,224,156,.28);color:#fff}
+    .progress{position:fixed;inset:0 auto auto 0;height:3px;width:0;background:linear-gradient(90deg,var(--accent-dim),var(--accent-bright));z-index:1000;box-shadow:0 0 15px rgba(82,224,156,.35)}
+    .topbar{position:sticky;top:0;z-index:50;padding:.7rem 1rem;background:linear-gradient(180deg,rgba(6,10,8,.97),rgba(6,10,8,.72));backdrop-filter:blur(18px)}
+    .topbar-inner{max-width:1120px;margin:auto;padding:.45rem .55rem .45rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border:1px solid var(--border);border-radius:999px;background:rgba(15,22,18,.72);box-shadow:0 16px 45px rgba(0,0,0,.2)}
+    .brand{display:flex;align-items:center;gap:.65rem;color:var(--text);text-decoration:none;font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase}
+    .brand-mark{width:24px;height:24px;border:1px solid var(--accent-dim);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-size:.62rem;box-shadow:inset 0 0 12px rgba(82,224,156,.08)}
+    .top-links{display:flex;gap:.35rem;align-items:center}
+    .top-links a{padding:.45rem .7rem;color:var(--text-secondary);text-decoration:none;border-radius:999px;font-size:.75rem}
+    .top-links a:hover{background:var(--surface);color:var(--accent-bright)}
+    .hero{min-height:92vh;position:relative;display:grid;place-items:center;padding:5.5rem 1.5rem 7rem;overflow:hidden;background:radial-gradient(circle at 78% 48%,rgba(82,224,156,.1),transparent 25%),radial-gradient(circle at 18% 12%,rgba(102,200,255,.05),transparent 26%),var(--bg)}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(82,224,156,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(82,224,156,.025) 1px,transparent 1px);background-size:90px 90px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+    .hero-inner{position:relative;width:min(1120px,100%);margin:auto}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);gap:4rem;align-items:center}
+    .hero-copy{text-align:left}
+    .eyebrow{font-family:var(--mono);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:1.8rem}
+    .eyebrow::before{content:"";display:inline-block;width:32px;height:1px;vertical-align:middle;margin:0 12px 0 0;background:var(--accent-dim)}
+    h1,h2,h3{font-family:var(--display)}
+    h1{font-size:clamp(4.8rem,10vw,8.7rem);line-height:.78;letter-spacing:-.055em;font-weight:600;margin-bottom:1.8rem}
+    h1 span{display:block;font-family:var(--mono);font-size:clamp(.72rem,1.5vw,1rem);line-height:1.4;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-top:1.4rem}
+    .hero-lead{max-width:650px;margin:0;color:var(--text-secondary);font-size:clamp(1rem,2vw,1.14rem)}
+    .hero-lead strong{color:var(--text);font-weight:600}
+    .hero-actions{display:flex;justify-content:flex-start;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:46px;padding:.72rem 1rem;border-radius:9px;text-decoration:none;font-size:.82rem;font-weight:600;border:1px solid var(--border-strong);transition:.2s ease}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#07110c}
+    .btn-primary:hover{background:var(--accent-bright);color:#07110c;transform:translateY(-2px)}
+    .btn-secondary{background:var(--surface);color:var(--text)}
+    .btn-secondary:hover{border-color:var(--accent);color:var(--accent-bright)}
+    .formula{margin:2.6rem 0 0;display:flex;align-items:center;justify-content:flex-start;gap:.7rem;font-family:var(--mono);font-size:.7rem;color:var(--text-dim)}
+    .formula strong{color:var(--text);font-size:.8rem}
+    .formula-line{width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--accent-dim),transparent)}
+    .hero-mechanism{position:relative;padding:1.2rem;border:1px solid var(--border-strong);border-radius:28px;background:linear-gradient(145deg,rgba(20,28,23,.95),rgba(8,14,11,.84));box-shadow:0 38px 90px rgba(0,0,0,.38),inset 0 1px rgba(255,255,255,.025);overflow:hidden}
+    .hero-mechanism::before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-90px;top:-90px;background:rgba(82,224,156,.08);filter:blur(2px);box-shadow:0 0 80px rgba(82,224,156,.11)}
+    .hm-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.35rem .45rem 1rem;border-bottom:1px solid var(--border)}
+    .hm-top span{font-family:var(--mono);font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+    .hm-top b{font-family:var(--mono);font-size:.55rem;color:var(--danger);border:1px solid rgba(255,107,107,.28);padding:.25rem .4rem;border-radius:999px}
+    .hm-core{position:relative;display:grid;place-items:center;min-height:210px;margin:1rem 0;border-radius:20px;background:radial-gradient(circle,rgba(82,224,156,.1),transparent 55%),linear-gradient(rgba(82,224,156,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(82,224,156,.02) 1px,transparent 1px);background-size:auto,32px 32px,32px 32px}
+    .hm-orbit{position:absolute;width:172px;height:172px;border:1px solid rgba(82,224,156,.22);border-radius:50%;box-shadow:0 0 50px rgba(82,224,156,.07) inset}
+    .hm-orbit::before,.hm-orbit::after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+    .hm-orbit::before{left:15px;top:20px}.hm-orbit::after{right:7px;bottom:36px;background:var(--blue);box-shadow:0 0 18px var(--blue)}
+    .hm-receptor{position:relative;z-index:1;text-align:center;width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--border-strong);box-shadow:0 0 0 12px rgba(82,224,156,.035),0 16px 40px rgba(0,0,0,.28)}
+    .hm-receptor strong{font-family:var(--mono);font-size:1.05rem;color:var(--accent-bright)}
+    .hm-receptor small{display:block;font-size:.5rem;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase}
+    .hm-readouts{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+    .hm-readout{padding:.75rem;border:1px solid var(--border);border-radius:12px;background:rgba(6,10,8,.42)}
+    .hm-readout span{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
+    .hm-readout b{display:block;margin-top:.25rem;font-size:.72rem;color:var(--text-secondary)}
+    .container{width:min(1060px,calc(100% - 3rem));margin:auto}
+    .emergency{position:relative;margin-top:-2.4rem;z-index:5;border:1px solid rgba(255,107,107,.33);background:linear-gradient(120deg,rgba(255,107,107,.12),rgba(15,22,18,.97) 62%);border-radius:var(--radius);padding:1.4rem 1.5rem;display:grid;grid-template-columns:auto 1fr auto;gap:1.1rem;align-items:center;box-shadow:0 20px 60px rgba(0,0,0,.24)}
+    .emergency-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--danger-soft);border:1px solid rgba(255,107,107,.3);color:var(--danger);font-family:var(--mono);font-weight:700}
+    .emergency h2{font-family:var(--body);font-size:.92rem;margin-bottom:.22rem}
+    .emergency p{color:var(--text-secondary);font-size:.85rem;line-height:1.55}
+    .emergency-call{white-space:nowrap;background:var(--danger);color:#180606!important;text-decoration:none;padding:.65rem .9rem;border-radius:8px;font-weight:700;font-size:.82rem}
+    .section{padding:6.5rem 0;border-bottom:1px solid var(--border)}
+    .section-head{display:grid;grid-template-columns:170px 1fr;gap:2rem;margin-bottom:3rem}
+    .kicker{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-dim);padding-top:.65rem}
+    .section h2{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:600;line-height:1.04;letter-spacing:-.025em;max-width:760px}
+    .section h2 em{color:var(--accent);font-weight:600}
+    .section-intro{color:var(--text-secondary);font-size:1.02rem;max-width:710px;margin-top:1rem}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{background:linear-gradient(145deg,var(--surface),rgba(11,16,13,.8));border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;position:relative;overflow:hidden}
+    .card::before{content:"";position:absolute;left:0;top:0;width:3px;height:0;background:var(--accent);transition:height .3s}
+    .card:hover::before{height:100%}
+    .card-number{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;color:var(--accent-dim);text-transform:uppercase;margin-bottom:.8rem}
+    .card h3{font-family:var(--body);font-size:1rem;margin-bottom:.65rem}
+    .card p{font-size:.88rem;color:var(--text-secondary)}
+    .science-board{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+    .molecule{min-height:290px;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,rgba(82,224,156,.07),transparent 60%),var(--surface)}
+    .molecule-main{font-family:var(--mono);font-size:clamp(1.4rem,4vw,2.4rem);letter-spacing:.08em;color:var(--accent-bright)}
+    .molecule-main small{display:block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim);margin-top:.8rem}
+    .pathway{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:1.2rem;font-family:var(--mono);font-size:.66rem;color:var(--text-secondary)}
+    .pathway i{font-style:normal;color:var(--accent)}
+    .fact-list{list-style:none;display:grid;gap:.75rem}
+    .fact-list li{padding:.85rem 1rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:rgba(6,10,8,.35);font-size:.85rem;color:var(--text-secondary)}
+    .fact-list strong{color:var(--text);display:block;margin-bottom:.2rem}
+    .science-cards{margin-top:1rem}
+    .risk-strip{margin-top:1rem;background:rgba(255,190,92,.07);border:1px solid rgba(255,190,92,.2);border-radius:var(--radius);padding:1.2rem 1.4rem;color:var(--text-secondary);font-size:.9rem}
+    .risk-strip strong{color:var(--warn)}
+    .bd-spotlight{margin-top:3.5rem;padding:1rem;border:1px solid rgba(102,200,255,.24);border-radius:26px;background:linear-gradient(135deg,rgba(102,200,255,.065),rgba(15,22,18,.92) 54%,rgba(82,224,156,.04));box-shadow:0 28px 80px rgba(0,0,0,.2)}
+    .bd-grid{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);gap:1rem}
+    .bd-identity{display:flex;flex-direction:column;justify-content:space-between;min-height:340px;padding:1.5rem;border:1px solid rgba(102,200,255,.16);border-radius:18px;background:radial-gradient(circle at 50% 35%,rgba(102,200,255,.09),transparent 34%),rgba(6,10,8,.46)}
+    .bd-tag{font-family:var(--mono);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+    .bd-formula{text-align:center;padding:2.3rem 0;font-family:var(--mono);font-size:clamp(1rem,2.4vw,1.45rem);color:#b9e6ff;letter-spacing:.05em}
+    .bd-formula small{display:block;margin-top:.75rem;font-size:.54rem;letter-spacing:.13em;text-transform:uppercase;color:var(--text-dim)}
+    .bd-identity p{font-size:.76rem;color:var(--text-secondary)}
+    .bd-content{padding:1.25rem}
+    .bd-content h3{font-size:2.25rem;line-height:1.02;margin:.45rem 0 1rem}
+    .bd-content>p{font-size:.87rem;color:var(--text-secondary);max-width:650px}
+    .conversion{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.45rem;align-items:center;margin:1.3rem 0}
+    .conversion-node{min-height:82px;display:grid;place-items:center;text-align:center;padding:.7rem;border:1px solid rgba(102,200,255,.16);border-radius:13px;background:rgba(6,10,8,.36)}
+    .conversion-node b{font-family:var(--mono);font-size:.7rem;color:#b9e6ff}.conversion-node span{display:block;margin-top:.25rem;font-size:.58rem;color:var(--text-dim)}
+    .conversion-arrow{font-family:var(--mono);font-size:.62rem;color:var(--blue);text-align:center}
+    .bd-facts{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+    .bd-fact{padding:.85rem;border:1px solid var(--border);border-radius:12px;background:rgba(6,10,8,.35)}
+    .bd-fact b{display:block;font-size:.76rem;margin-bottom:.25rem;color:var(--text)}
+    .bd-fact p{font-size:.7rem;line-height:1.5;color:var(--text-secondary)}
+    .bd-warning{margin-top:.75rem;padding:.85rem 1rem;border-left:2px solid var(--danger);background:rgba(255,107,107,.055);font-size:.74rem;color:var(--text-secondary)}
+    .bd-warning strong{color:var(--danger)}
+    .section-mechanism{position:relative;background:linear-gradient(180deg,rgba(15,22,18,.42),rgba(6,10,8,.2));overflow:hidden}
+    .section-mechanism::before{content:"MECANISMO";position:absolute;right:-.03em;top:.05em;font-family:var(--display);font-size:clamp(6rem,18vw,17rem);font-weight:700;line-height:1;color:rgba(82,224,156,.025);pointer-events:none;white-space:nowrap}
+    .mechanism-lab{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);gap:1rem}
+    .mechanism-chain{display:grid;gap:.7rem;padding:1rem;border:1px solid var(--border-strong);border-radius:24px;background:rgba(8,14,11,.72);box-shadow:0 30px 80px rgba(0,0,0,.22)}
+    .mechanism-step{display:grid;grid-template-columns:62px 1fr auto;gap:1rem;align-items:center;padding:1rem;border:1px solid var(--border);border-radius:16px;background:linear-gradient(90deg,rgba(82,224,156,.035),rgba(15,22,18,.62));transition:transform .2s,border-color .2s}
+    .mechanism-step:hover{transform:translateX(4px);border-color:var(--border-strong)}
+    .mechanism-step::after{content:"↓";font-family:var(--mono);color:var(--accent-dim);font-size:1rem}
+    .mechanism-step:last-child::after{content:"!";color:var(--danger)}
+    .ms-index{display:grid;place-items:center;width:52px;height:52px;border-radius:15px;border:1px solid var(--border-strong);font-family:var(--mono);font-size:.68rem;color:var(--accent);background:rgba(82,224,156,.05)}
+    .mechanism-step h3{font-family:var(--body);font-size:.9rem;margin-bottom:.2rem}
+    .mechanism-step p{font-size:.78rem;color:var(--text-secondary);line-height:1.5}
+    .mechanism-step strong{color:var(--accent-bright)}
+    .mechanism-step.danger{border-color:rgba(255,107,107,.25);background:linear-gradient(90deg,rgba(255,107,107,.07),rgba(15,22,18,.62))}
+    .mechanism-step.danger .ms-index{border-color:rgba(255,107,107,.3);background:rgba(255,107,107,.06);color:var(--danger)}
+    .effect-console{display:flex;flex-direction:column;gap:.7rem;padding:1rem;border:1px solid var(--border);border-radius:24px;background:var(--surface)}
+    .console-head{padding:.55rem .55rem 1rem;border-bottom:1px solid var(--border)}
+    .console-head span{font-family:var(--mono);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+    .console-head h3{font-size:1.65rem;line-height:1.05;margin-top:.45rem}
+    .effect-row{padding:1rem;border:1px solid var(--border);border-radius:14px;background:rgba(6,10,8,.34)}
+    .effect-row-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.55rem}
+    .effect-row b{font-size:.78rem}.effect-row span{font-family:var(--mono);font-size:.55rem;color:var(--text-dim)}
+    .effect-bar{height:5px;border-radius:99px;background:rgba(255,255,255,.04);overflow:hidden}
+    .effect-bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--accent-dim),var(--accent));box-shadow:0 0 12px rgba(82,224,156,.3)}
+    .bar-72{width:72%}.bar-84{width:84%}.bar-92{width:92%}.bar-100{width:100%}
+    .effect-row.danger .effect-bar i{background:linear-gradient(90deg,#a63e46,var(--danger));box-shadow:0 0 12px rgba(255,107,107,.3)}
+    .mechanism-note{margin-top:auto;padding:1rem;border-left:2px solid var(--warn);background:rgba(255,190,92,.05);font-size:.76rem;color:var(--text-secondary)}
+    .mechanism-note strong{color:var(--warn)}
+    .danger-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .danger-card{border-color:rgba(255,107,107,.2)}
+    .danger-card::before{background:var(--danger)}
+    .danger-card h3{display:flex;justify-content:space-between;gap:.7rem;align-items:flex-start}
+    .risk-level{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--danger);border:1px solid rgba(255,107,107,.3);padding:.2rem .42rem;border-radius:5px;white-space:nowrap}
+    .signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .signal{padding:1.5rem;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface)}
+    .signal h3{font-family:var(--body);font-size:.92rem;margin-bottom:1rem}
+    .signal ul{list-style:none;display:grid;gap:.65rem}
+    .signal li{position:relative;padding-left:1.25rem;color:var(--text-secondary);font-size:.88rem}
+    .signal li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--warn)}
+    .signal.emergency-signs{border-color:rgba(255,107,107,.3);background:var(--danger-soft)}
+    .signal.emergency-signs li::before{background:var(--danger);box-shadow:0 0 8px rgba(255,107,107,.5)}
+    .steps{counter-reset:step;display:grid;gap:.8rem}
+    .step{counter-increment:step;display:grid;grid-template-columns:54px 1fr;gap:1rem;align-items:start;padding:1.2rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)}
+    .step::before{content:counter(step,decimal-leading-zero);width:44px;height:44px;border:1px solid var(--border-strong);border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:.68rem;color:var(--accent)}
+    .step h3{font-family:var(--body);font-size:.92rem;margin-bottom:.35rem}
+    .step p{font-size:.86rem;color:var(--text-secondary)}
+    .step.alert{border-color:rgba(255,107,107,.3)}
+    .step.alert::before{border-color:rgba(255,107,107,.35);color:var(--danger)}
+    .dont-panel{margin-top:1.2rem;padding:1.1rem;border:1px solid rgba(255,107,107,.28);border-radius:24px;background:linear-gradient(145deg,rgba(255,107,107,.065),rgba(15,22,18,.82));box-shadow:0 28px 70px rgba(0,0,0,.2)}
+    .dont-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.65rem .7rem 1.2rem}
+    .dont-head span{font-family:var(--mono);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--danger)}
+    .dont-head h3{font-size:1.8rem;line-height:1.05;margin-top:.35rem}
+    .dont-head p{max-width:470px;color:var(--text-secondary);font-size:.8rem;text-align:right}
+    .dont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+    .dont-card{min-height:180px;padding:1.1rem;border:1px solid rgba(255,107,107,.16);border-radius:16px;background:rgba(6,10,8,.45);position:relative;overflow:hidden}
+    .dont-card::after{content:"×";position:absolute;right:.6rem;top:.2rem;font-family:var(--display);font-size:3rem;color:rgba(255,107,107,.12)}
+    .dont-badge{display:inline-flex;margin-bottom:.75rem;padding:.22rem .4rem;border:1px solid rgba(255,190,92,.23);border-radius:999px;font-family:var(--mono);font-size:.48rem;letter-spacing:.07em;text-transform:uppercase;color:var(--warn)}
+    .dont-card h4{font-size:.86rem;margin-bottom:.45rem;color:var(--text)}
+    .dont-card p{font-size:.75rem;line-height:1.5;color:var(--text-secondary)}
+    .dont-card.featured{grid-column:span 2;background:linear-gradient(120deg,rgba(255,190,92,.075),rgba(6,10,8,.48));border-color:rgba(255,190,92,.22)}
+    .dont-proof{margin-top:.8rem;padding:.8rem 1rem;border-radius:12px;background:rgba(82,224,156,.045);border:1px solid var(--border);font-size:.74rem;color:var(--text-secondary)}
+    .dont-proof strong{color:var(--accent-bright)}
+    .withdrawal{background:linear-gradient(135deg,rgba(102,200,255,.055),rgba(15,22,18,.88));border:1px solid rgba(102,200,255,.16);border-radius:var(--radius);padding:2rem}
+    .withdrawal h3{font-size:1.6rem;color:var(--blue);margin-bottom:.8rem}
+    .withdrawal p{color:var(--text-secondary);max-width:780px}
+    .withdrawal-tags{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}
+    .withdrawal-tags span{font-family:var(--mono);font-size:.62rem;padding:.42rem .62rem;border:1px solid rgba(102,200,255,.18);border-radius:7px;color:#a7dcfa;background:rgba(102,200,255,.05)}
+    .consent-panel{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    .consent-panel>div{padding:2rem}
+    .consent-panel>div+div{border-left:1px solid var(--border);background:var(--surface)}
+    .consent-panel h3{font-size:1.55rem;margin-bottom:.7rem}
+    .consent-panel p{color:var(--text-secondary);font-size:.9rem}
+    .consent-panel .large{font-family:var(--display);font-size:2.3rem;line-height:1.05;color:var(--accent-bright);margin-bottom:1rem}
+    .myths{display:grid;gap:.8rem}
+    details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    summary{cursor:pointer;list-style:none;padding:1.2rem 3.2rem 1.2rem 1.3rem;font-weight:600;font-size:.9rem;position:relative}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";position:absolute;right:1.3rem;top:50%;transform:translateY(-50%);font-family:var(--mono);color:var(--accent);font-size:1.2rem}
+    details[open] summary::after{content:"−"}
+    details[open] summary{border-bottom:1px solid var(--border)}
+    .details-body{padding:1.1rem 1.3rem;color:var(--text-secondary);font-size:.88rem}
+    .source-list{list-style:none;display:grid;gap:.7rem}
+    .source-list a{display:block;padding:1rem 1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;color:var(--text-secondary);font-size:.84rem}
+    .source-list a:hover{border-color:var(--accent-dim);color:var(--accent-bright)}
+    .source-list strong{display:block;color:var(--text);font-size:.88rem;margin-bottom:.18rem}
+    .help{padding:4rem 0;background:linear-gradient(180deg,var(--bg),var(--bg2))}
+    .help-box{border:1px solid var(--border-strong);border-radius:var(--radius);padding:2rem;background:radial-gradient(circle at 80% 20%,rgba(82,224,156,.08),transparent 32%),var(--surface)}
+    .help-box h2{font-size:2rem;margin-bottom:.5rem}
+    .help-box>p{color:var(--text-secondary);max-width:700px}
+    .contacts{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1.4rem}
+    .contact{padding:1rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:rgba(6,10,8,.45)}
+    .contact strong{display:block;font-family:var(--mono);color:var(--accent);font-size:1rem;margin-bottom:.2rem}
+    .contact span{color:var(--text-secondary);font-size:.72rem}
+    footer{border-top:1px solid var(--border);padding:2.4rem 1.5rem;text-align:center;color:var(--text-dim);font-size:.76rem}
+    footer strong{color:var(--text-secondary)}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .back-top{position:fixed;right:1.1rem;bottom:1.1rem;width:42px;height:42px;border:1px solid var(--border-strong);border-radius:50%;background:rgba(15,22,18,.9);color:var(--accent);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s;z-index:40}
+    .back-top.show{opacity:1;pointer-events:auto;transform:none}
+    /* 2026 clinical interface refresh */
+    body{font-size:16px;line-height:1.68}
+    .topbar-inner{box-shadow:0 18px 50px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.035)}
+    .top-links a{transition:background .2s,color .2s}
+    .top-links a[aria-current="true"]{background:rgba(82,224,156,.1);color:var(--accent-bright)}
+    .hero{isolation:isolate}
+    .hero::after{content:"";position:absolute;width:440px;height:440px;right:-180px;bottom:-230px;border-radius:50%;border:1px solid rgba(82,224,156,.1);box-shadow:0 0 0 70px rgba(82,224,156,.018),0 0 0 140px rgba(82,224,156,.012);z-index:-1}
+    h1{font-size:clamp(4.2rem,9.2vw,7.9rem);line-height:.84;letter-spacing:-.075em}
+    h1 span{letter-spacing:.16em}
+    .hero-mechanism{transform:perspective(900px) rotateY(-2deg);transition:transform .45s ease,border-color .3s ease}
+    .hero-mechanism:hover{transform:perspective(900px) rotateY(0) translateY(-4px);border-color:rgba(82,224,156,.42)}
+    .hm-orbit{animation:orbitFloat 7s ease-in-out infinite}
+    @keyframes orbitFloat{50%{transform:rotate(7deg) scale(1.025)}}
+    .hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-top:1.5rem;max-width:690px}
+    .hero-fact{padding:.82rem .9rem;border:1px solid var(--border);border-radius:13px;background:rgba(15,22,18,.55);backdrop-filter:blur(10px)}
+    .hero-fact b{display:block;font-family:var(--mono);font-size:.78rem;color:var(--accent-bright);font-weight:500}
+    .hero-fact span{display:block;margin-top:.25rem;color:var(--text-dim);font-size:.64rem;line-height:1.4}
+    .section-kinetics{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(8,15,12,.86),rgba(6,10,8,.96))}
+    .section-kinetics::before{content:"PK";position:absolute;right:-.04em;top:-.14em;font-family:var(--display);font-size:clamp(10rem,29vw,26rem);font-weight:700;line-height:1;color:rgba(102,200,255,.025);pointer-events:none}
+    .metric-ribbon{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin:-.25rem 0 1rem;border:1px solid var(--border);border-radius:18px;background:rgba(15,22,18,.7);overflow:hidden}
+    .metric-ribbon>div{padding:1.15rem 1.2rem;min-height:112px}
+    .metric-ribbon>div+div{border-left:1px solid var(--border)}
+    .metric-ribbon span{display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim)}
+    .metric-ribbon b{display:block;margin:.45rem 0 .3rem;font-family:var(--display);font-size:1.35rem;line-height:1.1;color:var(--text)}
+    .metric-ribbon small{display:block;font-size:.66rem;line-height:1.45;color:var(--text-secondary)}
+    .lab-shell{position:relative;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.55fr);gap:1rem;margin-top:1rem}
+    .chart-panel,.control-panel,.enzyme-panel,.evidence-panel{border:1px solid var(--border);border-radius:22px;background:linear-gradient(150deg,rgba(20,28,23,.88),rgba(8,14,11,.78));box-shadow:0 28px 75px rgba(0,0,0,.22)}
+    .chart-panel{padding:1.25rem;min-width:0}
+    .chart-toolbar{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+    .chart-title span,.control-title span,.evidence-label{display:block;font-family:var(--mono);font-size:.54rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-dim)}
+    .chart-title h3,.control-title h3{margin-top:.35rem;font-family:var(--body);font-size:1rem}
+    .lab-tabs{display:flex;gap:.35rem;padding:.25rem;border:1px solid var(--border);border-radius:999px;background:rgba(6,10,8,.45)}
+    .lab-tab{border:0;border-radius:999px;padding:.48rem .7rem;background:transparent;color:var(--text-secondary);font-family:var(--mono);font-size:.6rem;cursor:pointer;transition:.2s}
+    .lab-tab[aria-pressed="true"]{background:var(--accent);color:#06110b}
+    .chart-wrap{position:relative;width:100%;height:330px;border:1px solid rgba(82,224,156,.08);border-radius:16px;background:linear-gradient(rgba(82,224,156,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(82,224,156,.025) 1px,transparent 1px),rgba(6,10,8,.4);background-size:52px 52px;overflow:hidden}
+    .chart-wrap.compact{height:238px}
+    .chart-wrap canvas{display:block;width:100%;height:100%}
+    .chart-legend{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.8rem;color:var(--text-secondary);font-size:.66rem}
+    .chart-legend span{display:inline-flex;align-items:center;gap:.4rem}
+    .legend-line{width:20px;height:2px;border-radius:99px;background:var(--accent)}
+    .legend-line.blue{background:var(--blue)}
+    .legend-line.band{height:8px;background:rgba(102,200,255,.16);border:1px solid rgba(102,200,255,.35)}
+    .chart-note{margin-top:.75rem;color:var(--text-dim);font-size:.65rem;line-height:1.5}
+    .control-panel{padding:1.25rem;display:flex;flex-direction:column;gap:1rem}
+    .control-title{padding-bottom:.85rem;border-bottom:1px solid var(--border)}
+    .control-group{padding:.9rem;border:1px solid var(--border);border-radius:14px;background:rgba(6,10,8,.32)}
+    .control-group label,.range-label{display:flex;justify-content:space-between;gap:1rem;color:var(--text-secondary);font-size:.72rem}
+    .control-group output{font-family:var(--mono);color:var(--accent-bright)}
+    input[type="range"]{width:100%;margin-top:.75rem;accent-color:var(--accent);cursor:pointer}
+    .scenario-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem;margin-top:.7rem}
+    .scenario-button{border:1px solid var(--border);border-radius:9px;padding:.55rem .35rem;background:rgba(15,22,18,.65);color:var(--text-secondary);font-size:.59rem;cursor:pointer;transition:.2s}
+    .scenario-button[aria-pressed="true"]{border-color:var(--blue);background:rgba(102,200,255,.1);color:#c7efff}
+    .scenario-button:disabled{opacity:.42;cursor:not-allowed}
+    .live-readout{padding:1rem;border-left:2px solid var(--accent);background:rgba(82,224,156,.05)}
+    .live-readout b{display:block;font-family:var(--display);font-size:1.65rem;line-height:1;color:var(--accent-bright)}
+    .live-readout span{display:block;margin-top:.4rem;color:var(--text-secondary);font-size:.68rem;line-height:1.45}
+    .decay-lab{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:1rem;margin-top:1rem}
+    .decay-copy{padding:1.4rem;border:1px solid var(--border);border-radius:22px;background:rgba(15,22,18,.68)}
+    .decay-copy h3{font-family:var(--body);font-size:1.05rem;margin-bottom:.7rem}
+    .decay-copy p{color:var(--text-secondary);font-size:.79rem}
+    .decay-copy .formula-box{margin:1rem 0;padding:1rem;border:1px solid rgba(102,200,255,.18);border-radius:13px;background:rgba(102,200,255,.04);font-family:var(--mono);font-size:.67rem;color:#bce8ff}
+    .decay-copy .warning-line{padding:.85rem 0 0;border-top:1px solid var(--border);color:var(--warn);font-size:.68rem}
+    .variance-block{margin-top:4rem}
+    .variance-heading{display:grid;grid-template-columns:170px 1fr;gap:2rem;margin-bottom:2rem}
+    .variance-heading h3{font-family:var(--display);font-size:clamp(1.8rem,4vw,3rem);line-height:1.05;letter-spacing:-.03em}
+    .variance-heading p{margin-top:.75rem;max-width:720px;color:var(--text-secondary);font-size:.9rem}
+    .variance-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:1rem}
+    .enzyme-panel{padding:1.35rem;display:flex;flex-direction:column;justify-content:space-between}
+    .enzyme-chain{display:grid;grid-template-columns:1fr;gap:.55rem;margin:1.2rem 0}
+    .enzyme-node{position:relative;padding:1rem;border:1px solid rgba(102,200,255,.18);border-radius:14px;background:rgba(6,10,8,.45)}
+    .enzyme-node b{display:block;font-family:var(--mono);font-size:.7rem;color:#c3ecff}
+    .enzyme-node span{display:block;margin-top:.25rem;color:var(--text-dim);font-size:.62rem}
+    .enzyme-link{display:grid;grid-template-columns:auto 1fr;gap:.7rem;align-items:center;color:var(--blue);font-family:var(--mono);font-size:.59rem}
+    .enzyme-link::after{content:"";height:1px;background:linear-gradient(90deg,var(--blue),transparent)}
+    .enzyme-foot{padding-top:1rem;border-top:1px solid var(--border);color:var(--text-secondary);font-size:.7rem}
+    .evidence-panel{padding:1.35rem}
+    .evidence-panel h3{font-family:var(--body);font-size:1rem;margin:.4rem 0 1rem}
+    .evidence-list{display:grid;gap:.7rem}
+    .evidence-item{display:grid;grid-template-columns:110px 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--border)}
+    .evidence-grade{align-self:start;border:1px solid var(--border);border-radius:999px;padding:.33rem .45rem;text-align:center;font-family:var(--mono);font-size:.5rem;text-transform:uppercase;color:var(--accent)}
+    .evidence-grade.limited{color:var(--warn);border-color:rgba(255,190,92,.22)}
+    .evidence-grade.unknown{color:var(--text-secondary)}
+    .evidence-item b{display:block;margin-bottom:.3rem;font-size:.78rem}
+    .evidence-item p{color:var(--text-secondary);font-size:.69rem;line-height:1.5}
+    .pilot-box{margin-top:1rem;padding:1rem;border:1px solid rgba(255,190,92,.18);border-radius:14px;background:rgba(255,190,92,.035)}
+    .pilot-box strong{display:block;color:var(--warn);font-size:.75rem;margin-bottom:.35rem}
+    .pilot-box p{color:var(--text-secondary);font-size:.68rem}
+    .medical-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
+    .medical-detail-grid details{height:max-content;background:rgba(15,22,18,.7)}
+    .medical-detail-grid .details-body b{color:var(--text);font-weight:600}
+    .medical-detail-grid .details-body p+p{margin-top:.7rem}
+    .medical-caveat{margin-top:1rem;padding:1rem 1.15rem;border:1px solid rgba(255,190,92,.18);border-radius:14px;background:rgba(255,190,92,.045);color:var(--text-secondary);font-size:.75rem}
+    .medical-caveat strong{color:var(--warn)}
+    .bd-evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.75rem}
+    .bd-evidence div{padding:.8rem;border:1px solid rgba(102,200,255,.14);border-radius:11px;background:rgba(102,200,255,.035)}
+    .bd-evidence b{display:block;font-family:var(--mono);font-size:.62rem;color:#b9e6ff}
+    .bd-evidence span{display:block;margin-top:.3rem;color:var(--text-dim);font-size:.59rem;line-height:1.4}
+    .source-list a{transition:transform .2s,border-color .2s,background .2s}
+    .source-list a:hover{transform:translateX(4px);background:var(--surface-raised)}
+    .card,.dont-card,.signal,.step{transition:transform .25s ease,border-color .25s ease,background .25s ease}
+    .card:hover,.dont-card:hover,.signal:hover,.step:hover{transform:translateY(-3px);border-color:var(--border-strong)}
+    @media(max-width:780px){
+      .top-links a:not(.home-link){display:none}.hero{min-height:auto;padding:4.5rem 1.5rem 7rem}.hero-grid{grid-template-columns:1fr;gap:2.6rem}.hero-copy{text-align:center}.hero-lead{margin:auto}.hero-actions,.formula{justify-content:center}
+      .eyebrow::before{width:18px;margin:0 7px 0 0}.emergency{grid-template-columns:auto 1fr}.emergency-call{grid-column:1/-1;text-align:center}
+      .section{padding:4.6rem 0}.section-head{grid-template-columns:1fr;gap:.4rem}.kicker{padding:0}
+      .grid-2,.grid-3,.science-board,.danger-grid,.signal-grid,.consent-panel,.mechanism-lab,.bd-grid,.lab-shell,.decay-lab,.variance-layout{grid-template-columns:1fr}.dont-grid{grid-template-columns:1fr 1fr}.dont-card.featured{grid-column:span 2}
+      .consent-panel>div+div{border-left:0;border-top:1px solid var(--border)}.contacts{grid-template-columns:1fr 1fr}
+      .hero-mechanism{transform:none}.hero-facts{margin-left:auto;margin-right:auto}.metric-ribbon{grid-template-columns:1fr 1fr}.metric-ribbon>div+div{border-left:0}.metric-ribbon>div:nth-child(even){border-left:1px solid var(--border)}.metric-ribbon>div:nth-child(n+3){border-top:1px solid var(--border)}
+      .variance-heading{grid-template-columns:1fr;gap:.5rem}.medical-detail-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:460px){.container{width:min(100% - 2rem,1060px)}.topbar{padding:.45rem}.topbar-inner{padding:.55rem .7rem}.brand{font-size:.58rem}.contacts{grid-template-columns:1fr}.card,.withdrawal,.help-box{padding:1.3rem}.formula{gap:.35rem}.formula-line{width:20px}.hero{padding-left:1rem;padding-right:1rem}.hero-mechanism{padding:.8rem}.hm-readouts{grid-template-columns:1fr}.mechanism-step{grid-template-columns:48px 1fr}.mechanism-step::after{display:none}.ms-index{width:42px;height:42px}.dont-grid,.bd-facts{grid-template-columns:1fr}.dont-card.featured{grid-column:auto}.dont-head{display:block}.dont-head p{text-align:left;margin-top:.65rem}.section-mechanism::before{display:none}.conversion{grid-template-columns:1fr}.conversion-arrow{transform:rotate(90deg)}.bd-content{padding:.7rem}.bd-content h3{font-size:1.8rem}.hero-facts,.metric-ribbon,.bd-evidence{grid-template-columns:1fr}.metric-ribbon>div:nth-child(even){border-left:0}.metric-ribbon>div+div{border-top:1px solid var(--border)}.chart-toolbar{display:block}.lab-tabs{margin-top:.8rem;width:max-content}.chart-wrap{height:280px}.chart-wrap.compact{height:220px}.evidence-item{grid-template-columns:1fr;gap:.55rem}.evidence-grade{justify-self:start}.scenario-buttons{grid-template-columns:1fr}.section-kinetics::before{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn,.card,.dont-card,.signal,.step,.hero-mechanism{transition:none}.hm-orbit{animation:none}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/"><span class="brand-mark">G</span> Guia Técnico</a>
+      <nav class="top-links" aria-label="Navegação da página">
+        <a href="#mecanismo">Mecanismo</a><a href="#cinetica">Absorção e meia-vida</a><a href="#butanodiol">1,4-BD</a><a href="#emergencia">Emergência</a><a class="home-link" href="/">← Página principal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner reveal">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Redução de danos · Guia independente</div>
+            <h1>GHB<span>gama-hidroxibutirato</span></h1>
+            <p class="hero-lead">Um depressor do sistema nervoso central com <strong>margem estreita entre efeitos e intoxicação grave</strong>. Entenda o mecanismo que reduz consciência, reflexos protetores e respiração.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#emergencia">Como agir em uma emergência</a>
+              <a class="btn btn-secondary" href="#cinetica">Explorar no corpo</a>
+            </div>
+            <div class="formula" role="img" aria-label="Fórmula molecular do GHB: C4 H8 O3, depressor do sistema nervoso central"><span class="formula-line"></span><strong>C₄H₈O₃</strong><span>•</span><span>depressor do SNC</span><span class="formula-line"></span></div>
+            <div class="hero-facts" role="group" aria-label="Resumo farmacocinético">
+              <div class="hero-fact"><b>absorção rápida</b><span>pico frequentemente dentro da primeira hora em estudos controlados</span></div>
+              <div class="hero-fact"><b>½ vida: 30–60 min</b><span>intervalo típico descrito; não significa que o risco acabou</span></div>
+              <div class="hero-fact"><b>cinética não linear</b><span>a exposição pode crescer mais do que a diferença ingerida</span></div>
+            </div>
+          </div>
+          <aside class="hero-mechanism" aria-label="Resumo visual do mecanismo do GHB">
+            <div class="hm-top"><span>Mecanismo neural</span><b>margem estreita</b></div>
+            <div class="hm-core">
+              <div class="hm-orbit" aria-hidden="true"></div>
+              <div class="hm-receptor"><strong>GABA<sub>B</sub><small>receptor inibitório</small></strong></div>
+            </div>
+            <div class="hm-readouts">
+              <div class="hm-readout"><span>atividade neural</span><b>↓ reduzida</b></div>
+              <div class="hm-readout"><span>consciência</span><b>↓ rebaixada</b></div>
+              <div class="hm-readout"><span>respiração</span><b>↓ em risco</b></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <aside class="emergency reveal" aria-label="Alerta de emergência">
+        <div class="emergency-icon">!</div>
+        <div><h2>Não acorda, respira devagar ou de forma irregular?</h2><p>Isso é uma emergência. Não presuma que a pessoa vai simplesmente “dormir e passar”.</p></div>
+        <a class="emergency-call" href="tel:192">Ligar&nbsp;SAMU&nbsp;192</a>
+      </aside>
+    </div>
+
+    <section class="section" id="ciencia">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§1 — Fundamentos</div><div><h2>O que é — e o que <em>não é</em></h2><p class="section-intro">GHB é a sigla de gama-hidroxibutirato. Apesar do apelido “ecstasy líquido”, sua farmacologia não é a do MDMA: o efeito predominante é depressor, reduzindo atividade do sistema nervoso central.</p></div></div>
+        <div class="science-board reveal">
+          <div class="card molecule">
+            <div><div class="molecule-main">HO–CH₂–CH₂–CH₂–COOH<small>estrutura simplificada do ácido</small></div><div class="pathway"><span>GBL</span><i>→</i><strong>conversão no organismo</strong><i>→</i><span>GHB</span></div></div>
+          </div>
+          <div class="card">
+            <div class="card-number">Visão rápida</div>
+            <ul class="fact-list">
+              <li><strong>Existe naturalmente</strong>Em pequenas quantidades no organismo, mas isso não torna o uso não médico seguro.</li>
+              <li><strong>Também tem uso médico</strong>O oxibato de sódio é um medicamento controlado para indicações específicas; não equivale a produtos de origem incerta.</li>
+              <li><strong>GBL não é “mais leve”</strong>É convertido em GHB no corpo e também pode causar intoxicação grave.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3 reveal science-cards">
+          <article class="card"><div class="card-number">01 · Cérebro</div><h3>Desaceleração</h3><p>Sonolência, desinibição, confusão, perda de coordenação e amnésia podem evoluir para inconsciência e coma.</p></article>
+          <article class="card"><div class="card-number">02 · Respiração</div><h3>Depressão respiratória</h3><p>Em intoxicações graves, a respiração pode ficar lenta, superficial, irregular ou parar.</p></article>
+          <article class="card"><div class="card-number">03 · Resposta</div><h3>Curva acentuada</h3><p>Uma mudança relativamente pequena na exposição pode produzir uma mudança desproporcional no efeito.</p></article>
+        </div>
+        <div class="risk-strip reveal"><strong>O ponto crítico:</strong> concentração, composição e identidade podem ser desconhecidas. GHB e GBL não são intercambiáveis, e a aparência do líquido não revela sua potência nem pureza.</div>
+
+        <article class="bd-spotlight reveal" id="butanodiol">
+          <div class="bd-grid">
+            <div class="bd-identity">
+              <span class="bd-tag">Substância relacionada · 1,4-BD / BDO</span>
+              <div class="bd-formula">HO–CH₂–CH₂–CH₂–CH₂–OH<small>1,4-butanodiol · C₄H₁₀O₂</small></div>
+              <p>É um diol de uso industrial. Não é GHB dentro do frasco, mas funciona como pró-droga: o organismo o transforma em GHB.</p>
+            </div>
+            <div class="bd-content">
+              <span class="bd-tag">O “G” da festa pode não ser GHB</span>
+              <h3>1,4-butanodiol vendido ou apresentado como “G”</h3>
+              <p>Órgãos internacionais descrevem o 1,4-BD como substituto do GHB no mercado informal. Em festas, nomes como “G”, “GHB” ou “líquido” não confirmam o conteúdo: pode ser GHB, GBL, 1,4-BD ou uma mistura de concentração desconhecida.</p>
+              <div class="conversion" role="img" aria-label="Conversão metabólica do 1,4-butanodiol em GHB">
+                <div class="conversion-node"><div><b>1,4-BD</b><span>substância ingerida</span></div></div>
+                <span class="conversion-arrow">ADH →</span>
+                <div class="conversion-node"><div><b>4-hidroxibutiraldeído</b><span>intermediário</span></div></div>
+                <span class="conversion-arrow">ALDH →</span>
+                <div class="conversion-node"><div><b>GHB</b><span>depressor do SNC</span></div></div>
+              </div>
+              <div class="bd-facts">
+                <div class="bd-fact"><b>Conversão varia entre pessoas</b><p>Diferenças nas enzimas ADH/ALDH tornam a velocidade e a intensidade menos previsíveis.</p></div>
+                <div class="bd-fact"><b>Os danos convergem para GHB</b><p>Perda de consciência, vômito, aspiração, depressão respiratória, coma, dependência e abstinência grave também podem ocorrer.</p></div>
+                <div class="bd-fact"><b>Álcool torna tudo mais complexo</b><p>Etanol e 1,4-BD compartilham vias metabólicas e também deprimem o sistema nervoso. A interação pode alterar a conversão e potencializar toxicidade.</p></div>
+                <div class="bd-fact"><b>A aparência não identifica</b><p>Cor, cheiro, viscosidade, gosto ou nome informal não são testes confiáveis. Não prove para “descobrir”.</p></div>
+              </div>
+              <div class="bd-warning"><strong>Emergência é tratada do mesmo modo:</strong> não responde, respira anormalmente, convulsiona ou vomita inconsciente → SAMU 192. Informe à equipe que pode ser 1,4-butanodiol, GBL ou GHB.</div>
+              <div class="bd-evidence" role="group" aria-label="Dados de um estudo clínico pequeno sobre 1,4-butanodiol">
+                <div><b>24 ± 12 min</b><span>tempo médio até o pico de 1,4-BD em oito voluntários</span></div>
+                <div><b>39 ± 11 min</b><span>tempo médio até o pico do GHB formado depois do 1,4-BD</span></div>
+                <div><b>n = 8</b><span>estudo-piloto: útil para entender variabilidade, insuficiente para prever uma pessoa</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-mechanism" id="mecanismo">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§2 — Mecanismo em destaque</div><div><h2>Como o GHB aciona o <em>freio neural</em></h2><p class="section-intro">O mecanismo é uma cascata: a substância alcança o cérebro, ativa sistemas inibitórios e reduz a atividade de circuitos que sustentam alerta, coordenação e reflexos protetores. Em intoxicações graves, consciência e respiração podem falhar.</p></div></div>
+        <div class="mechanism-lab reveal">
+          <div class="mechanism-chain">
+            <article class="mechanism-step"><span class="ms-index">01</span><div><h3>GHB chega ao sistema nervoso central</h3><p>GBL e 1,4-butanodiol são <strong>precursores convertidos em GHB</strong> pelo organismo. Essa conversão contribui para a imprevisibilidade.</p></div></article>
+            <article class="mechanism-step"><span class="ms-index">02</span><div><h3>Receptores específicos e GABA<sub>B</sub></h3><p>O GHB interage com receptores próprios e, em concentrações farmacológicas, com receptores <strong>GABA<sub>B</sub></strong> — parte do sistema inibitório do cérebro.</p></div></article>
+            <article class="mechanism-step"><span class="ms-index">03</span><div><h3>A transmissão neural desacelera</h3><p>O sinal inibitório reduz a excitabilidade de redes neurais. Surgem <strong>sonolência, descoordenação, confusão e amnésia</strong>.</p></div></article>
+            <article class="mechanism-step danger"><span class="ms-index">04</span><div><h3>Reflexos protetores e respiração entram em risco</h3><p>Com depressão mais profunda, a pessoa pode perder a consciência, aspirar vômito, convulsionar, entrar em coma ou <strong>parar de respirar</strong>.</p></div></article>
+          </div>
+          <aside class="effect-console" aria-label="Efeitos do aumento da depressão do sistema nervoso central">
+            <div class="console-head"><span>Leitura do sistema</span><h3>O que diminui à medida que a depressão aprofunda</h3></div>
+            <div class="effect-row"><div class="effect-row-top"><b>Estado de alerta</b><span>reduzido</span></div><div class="effect-bar"><i class="bar-72"></i></div></div>
+            <div class="effect-row"><div class="effect-row-top"><b>Coordenação e memória</b><span>comprometidas</span></div><div class="effect-bar"><i class="bar-84"></i></div></div>
+            <div class="effect-row danger"><div class="effect-row-top"><b>Proteção da via aérea</b><span>risco crítico</span></div><div class="effect-bar"><i class="bar-92"></i></div></div>
+            <div class="effect-row danger"><div class="effect-row-top"><b>Respiração</b><span>pode falhar</span></div><div class="effect-bar"><i class="bar-100"></i></div></div>
+            <p class="mechanism-note"><strong>Importante:</strong> as barras são uma explicação visual, não uma escala de dose. Concentração desconhecida, misturas e diferenças individuais impedem prever uma “zona segura”.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-kinetics" id="cinetica">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">§3 — Farmacocinética</div>
+          <div><h2>Absorção e meia-vida, <em>sem falsa precisão</em></h2><p class="section-intro">Os gráficos usam concentração relativa, não dose. Eles ajudam a visualizar por que um pico rápido e uma meia-vida curta não tornam a intoxicação previsível — especialmente quando o líquido, a concentração e as misturas são desconhecidos.</p></div>
+        </div>
+
+        <div class="metric-ribbon reveal" role="group" aria-label="Dados farmacocinéticos de referência">
+          <div><span>absorção oral</span><b>rápida</b><small>Em formulação farmacêutica de liberação imediata, o pico médio ocorre em aproximadamente 0,5–1,25 hora.</small></div>
+          <div><span>meia-vida plasmática</span><b>0,5–1 h</b><small>Estudos controlados também encontraram médias próximas de 36–39 minutos.</small></div>
+          <div><span>eliminação</span><b>&lt;5% inalterado</b><small>A maior parte é biotransformada; pouco GHB aparece inalterado na urina.</small></div>
+          <div><span>relação dose–exposição</span><b>não linear</b><small>Mais substância pode gerar aumento desproporcional da exposição no sangue.</small></div>
+        </div>
+
+        <div class="lab-shell reveal" id="absorptionLab">
+          <div class="chart-panel">
+            <div class="chart-toolbar">
+              <div class="chart-title"><span>Gráfico 01 · concentração relativa</span><h3>Do consumo ao pico e à queda</h3></div>
+              <div class="lab-tabs" role="group" aria-label="Escolha o perfil exibido">
+                <button class="lab-tab" type="button" data-profile="ghb" aria-pressed="true">GHB oral</button>
+                <button class="lab-tab" type="button" data-profile="bd" aria-pressed="false">1,4-BD → GHB</button>
+              </div>
+            </div>
+            <div class="chart-wrap"><canvas id="kineticCanvas" role="img" aria-label="Curva ilustrativa de absorção e eliminação relativa ao longo de cinco horas"></canvas></div>
+            <div class="chart-legend" aria-hidden="true"><span><i class="legend-line"></i><span id="primaryLegend">GHB no plasma</span></span><span id="precursorLegend"><i class="legend-line blue"></i>1,4-BD ainda em conversão</span><span><i class="legend-line band"></i>janela de pico observada</span></div>
+            <p class="chart-note">Modelo educacional normalizado. A altura não representa uma dose, um teor no frasco nem uma “zona segura”. Dados ilícitos não podem ser convertidos diretamente em uma curva individual.</p>
+          </div>
+          <aside class="control-panel" aria-label="Controles do gráfico de absorção">
+            <div class="control-title"><span>Explorar cenário</span><h3>Velocidade da conversão</h3></div>
+            <div class="control-group">
+              <label>Perfil do 1,4-BD <output id="scenarioOutput">intermediário</output></label>
+              <div class="scenario-buttons" role="group" aria-label="Velocidade ilustrativa da conversão do 1,4-butanodiol">
+                <button class="scenario-button" type="button" data-scenario="slow" aria-pressed="false" disabled>mais lenta</button>
+                <button class="scenario-button" type="button" data-scenario="mid" aria-pressed="true" disabled>intermediária</button>
+                <button class="scenario-button" type="button" data-scenario="fast" aria-pressed="false" disabled>mais rápida</button>
+              </div>
+            </div>
+            <div class="live-readout" aria-live="polite"><b id="curvePeak">pico ~45 min</b><span id="curveExplanation">No GHB oral, absorção e eliminação acontecem ao mesmo tempo. Formulação, alimentação e metabolismo mudam o formato real.</span></div>
+            <div class="control-group"><label>Leitura correta</label><p class="chart-note">Ao selecionar 1,4-BD, o gráfico acrescenta uma etapa de conversão. Trocar o cenário mostra como o pico pode se deslocar sem permitir prever o que acontecerá com uma pessoa.</p></div>
+          </aside>
+        </div>
+
+        <div class="decay-lab reveal">
+          <div class="chart-panel">
+            <div class="chart-title"><span>Gráfico 02 · eliminação relativa</span><h3>O que “meia-vida” realmente quer dizer</h3></div>
+            <div class="chart-wrap compact"><canvas id="decayCanvas" role="img" aria-label="Curva ilustrativa da fração relativa restante após o pico"></canvas></div>
+            <div class="chart-legend" aria-hidden="true"><span><i class="legend-line"></i>meia-vida selecionada</span><span><i class="legend-line band"></i>faixa de 30–60 min</span></div>
+          </div>
+          <div class="decay-copy">
+            <h3>Explore o conceito, não uma dose</h3>
+            <p>Cada meia-vida reduz pela metade a concentração relativa do ponto de partida. Isso é uma simplificação da fase de eliminação e não prevê consciência, respiração ou tempo para “ficar bem”.</p>
+            <div class="control-group">
+              <div class="range-label"><label for="halfLifeInput">Meia-vida ilustrada</label><output id="halfLifeOutput">45 min</output></div>
+              <input id="halfLifeInput" type="range" min="30" max="60" step="5" value="45">
+            </div>
+            <div class="control-group">
+              <div class="range-label"><label for="elapsedInput">Tempo desde o pico</label><output id="elapsedOutput">90 min</output></div>
+              <input id="elapsedInput" type="range" min="0" max="240" step="15" value="90">
+            </div>
+            <div class="formula-box"><span id="remainingFormula">Após 90 min: ~25% do nível relativo do pico</span></div>
+            <p class="warning-line">Nível plasmático e perigo clínico não são sinônimos. Misturas, aspiração, trauma e hipóxia podem continuar exigindo atendimento.</p>
+          </div>
+        </div>
+
+        <div class="variance-block" id="variacao">
+          <div class="variance-heading reveal"><div class="kicker">1,4-BD · pessoa a pessoa</div><div><h3>Por que a conversão <em>não tem relógio fixo</em></h3><p>O 1,4-butanodiol precisa atravessar duas reações antes de virar GHB. A velocidade depende da atividade enzimática e do contexto biológico. O dado humano mais direto é pequeno, mas encontrou ampla variação entre participantes.</p></div></div>
+          <div class="variance-layout reveal">
+            <div class="enzyme-panel">
+              <div>
+                <span class="evidence-label">Duas etapas no fígado</span>
+                <div class="enzyme-chain" role="img" aria-label="1,4-butanodiol é convertido por ADH em 4-hidroxibutiraldeído e depois por ALDH em GHB">
+                  <div class="enzyme-node"><b>1,4-butanodiol</b><span>precursor ingerido</span></div>
+                  <div class="enzyme-link">ADH · álcool desidrogenase</div>
+                  <div class="enzyme-node"><b>4-hidroxibutiraldeído</b><span>intermediário de curta duração</span></div>
+                  <div class="enzyme-link">ALDH · aldeído desidrogenase</div>
+                  <div class="enzyme-node"><b>GHB</b><span>depressor ativo do sistema nervoso central</span></div>
+                </div>
+              </div>
+              <p class="enzyme-foot">A ADH é a via primária demonstrada para a primeira etapa em humanos. A ALDH participa da segunda reação, mas ainda não há dados clínicos suficientes para estimar a conversão individual a partir de um genótipo.</p>
+            </div>
+            <div class="evidence-panel">
+              <span class="evidence-label">O que sabemos — e o que não sabemos</span>
+              <h3>Força da evidência sobre a variação</h3>
+              <div class="evidence-list">
+                <div class="evidence-item"><span class="evidence-grade">bem sustentado</span><div><b>O 1,4-BD é extensamente convertido em GHB</b><p>Estudos humanos mediram o precursor e o GHB formado no sangue. Bloquear ADH reduziu fortemente essa conversão, confirmando o papel central da enzima.</p></div></div>
+                <div class="evidence-item"><span class="evidence-grade limited">evidência limitada</span><div><b>Variantes de ADH podem alterar a velocidade</b><p>Um ensaio com oito voluntários observou grande variação da depuração e uma possível associação com um haplótipo de ADH1B. A amostra foi pequena e o resultado genético não foi conclusivo.</p></div></div>
+                <div class="evidence-item"><span class="evidence-grade unknown">não quantificado</span><div><b>ALDH, fígado e contexto também podem influenciar</b><p>A segunda reação depende de ALDH, mas estudos ainda não permitem dizer quanto uma variante de ALDH muda o efeito do 1,4-BD em uma pessoa específica.</p></div></div>
+              </div>
+              <div class="pilot-box"><strong>O tamanho da incerteza importa</strong><p>No estudo-piloto, quatro participantes com o haplótipo variante tiveram depuração aparente média menor que quatro participantes sem a variante, mas com enorme dispersão e P=0,061. Isso gera uma hipótese — não um teste genético de risco.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="variance-block reveal" id="detalhes-medicos">
+          <div class="variance-heading"><div class="kicker">Ficha clínica</div><div><h3>Detalhes médicos por etapa</h3><p>Abra cada item para ver o que muda no caminho da substância pelo organismo e por que os números de estudos controlados não devem ser tratados como cronômetro em uma intoxicação real.</p></div></div>
+          <div class="medical-detail-grid">
+            <details><summary>Absorção e pico</summary><div class="details-body"><p><b>GHB oral:</b> é absorvido rapidamente. A rotulagem farmacêutica relata pico médio em 0,5–1,25 hora; outros estudos controlados observaram picos em 20–45 minutos.</p><p><b>1,4-BD:</b> primeiro aparece como precursor e depois como GHB. Em um estudo de oito pessoas, o 1,4-BD atingiu pico médio em 24 minutos e o GHB formado, em 39 minutos.</p></div></details>
+            <details><summary>Distribuição pelo corpo</summary><div class="details-body"><p>O GHB é hidrofílico, distribui-se principalmente na água corporal e tem ligação muito baixa a proteínas plasmáticas. Isso favorece distribuição rápida, inclusive ao sistema nervoso central.</p></div></details>
+            <details><summary>Metabolismo e eliminação</summary><div class="details-body"><p>A maior parte é biotransformada em vias que convergem para o ciclo de Krebs, terminando em dióxido de carbono e água. Menos de 5% aparece inalterado na urina na rotulagem farmacêutica.</p><p>A eliminação pode saturar: por isso a exposição não cresce de forma proporcional.</p></div></details>
+            <details><summary>Fígado, alimentação e outras variáveis</summary><div class="details-body"><p>Em estudos farmacêuticos, alimento gorduroso atrasou o pico e reduziu a concentração máxima; cirrose aumentou a exposição e prolongou a meia-vida. Isso demonstra variabilidade, não fornece uma regra para consumo ilícito.</p></div></details>
+            <details><summary>Álcool e 1,4-BD</summary><div class="details-body"><p>Etanol também usa ADH e pode modificar a velocidade de conversão do 1,4-BD. Ao mesmo tempo, álcool e GHB deprimem o sistema nervoso. O resultado pode ser atraso, oscilação e toxicidade somada — nunca proteção.</p></div></details>
+            <details><summary>O que a equipe médica prioriza</summary><div class="details-body"><p>Não existe antídoto doméstico. O manejo é de suporte: via aérea, respiração, oxigenação, circulação, temperatura, glicemia, trauma, aspiração e possíveis coingestões. Uma pessoa pode precisar de proteção avançada da via aérea.</p></div></details>
+          </div>
+          <p class="medical-caveat"><strong>Limite importante:</strong> estes gráficos não devem ser usados para calcular quando dirigir, trabalhar, repetir consumo ou “esperar passar”. Se houver dificuldade para acordar, respiração anormal, convulsão ou vômito com inconsciência, ligue 192.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="riscos">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§4 — Interações</div><div><h2>Misturas que <em>multiplicam</em> o perigo</h2><p class="section-intro">O maior alerta é a combinação com outras substâncias que deprimem o sistema nervoso. Os efeitos podem se somar e comprometer consciência, reflexos protetores e respiração.</p></div></div>
+        <div class="danger-grid reveal">
+          <article class="card danger-card"><div class="card-number">Depressor + depressor</div><h3>Álcool <span class="risk-level">Risco extremo</span></h3><p>A combinação aumenta muito o risco de vômito com aspiração, inconsciência, depressão respiratória, coma e morte.</p></article>
+          <article class="card danger-card"><div class="card-number">Depressor + depressor</div><h3>Benzodiazepínicos <span class="risk-level">Risco extremo</span></h3><p>Medicamentos como clonazepam, alprazolam e diazepam podem intensificar sedação e supressão respiratória.</p></article>
+          <article class="card danger-card"><div class="card-number">Depressor + depressor</div><h3>Opioides <span class="risk-level">Risco extremo</span></h3><p>Ambos podem reduzir a respiração. Naloxona só reverte opioides; ela não reverte os efeitos do GHB.</p></article>
+          <article class="card danger-card"><div class="card-number">Falsa sensação de controle</div><h3>Estimulantes <span class="risk-level">Não protegem</span></h3><p>Podem mascarar a sonolência por um tempo, mas não anulam a toxicidade nem impedem colapso quando o estimulante perde efeito.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sinais">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§5 — Reconhecimento</div><div><h2>Quando observar e quando <em>agir agora</em></h2><p class="section-intro">Os sinais podem mudar rapidamente. Na dúvida, trate redução importante de consciência ou alteração da respiração como emergência.</p></div></div>
+        <div class="signal-grid reveal">
+          <div class="signal"><h3>Sinais de intoxicação</h3><ul><li>Fala arrastada e perda de coordenação</li><li>Confusão, agitação ou comportamento incomum</li><li>Sonolência intensa</li><li>Náusea e vômito</li><li>Movimentos involuntários</li></ul></div>
+          <div class="signal emergency-signs"><h3>Chame o SAMU 192 imediatamente</h3><ul><li>Não responde ou não pode ser acordada</li><li>Respiração lenta, superficial, ruidosa ou irregular</li><li>Lábios ou pele azulados/cinzentos</li><li>Convulsão</li><li>Vômito enquanto está inconsciente</li><li>Parada respiratória ou ausência de pulso</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="emergencia">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§6 — Primeiros cuidados</div><div><h2>Como responder a uma <em>emergência</em></h2><p class="section-intro">O objetivo é ganhar tempo e proteger a respiração até a chegada do atendimento. Não tente “reverter” a intoxicação com outras substâncias.</p></div></div>
+        <div class="steps reveal">
+          <article class="step alert"><div><h3>Ligue 192</h3><p>Diga que a pessoa está inconsciente ou com respiração alterada e informe o que pode ter sido consumido. Siga as instruções do atendente.</p></div></article>
+          <article class="step"><div><h3>Verifique se respira</h3><p>Se não respirar normalmente, inicie RCP se souber fazer e continue conforme a orientação do SAMU.</p></div></article>
+          <article class="step"><div><h3>Se respira, coloque de lado</h3><p>Use a posição lateral de segurança para reduzir o risco de aspiração de vômito. Mantenha a via aérea livre.</p></div></article>
+          <article class="step"><div><h3>Fique junto e monitore</h3><p>Observe continuamente a respiração e a resposta. Não deixe a pessoa sozinha, mesmo que pareça melhorar.</p></div></article>
+          <article class="step"><div><h3>Entregue informações úteis</h3><p>Guarde a embalagem ou o frasco, se houver, e conte à equipe o que sabe. Informação honesta ajuda o atendimento.</p></div></article>
+        </div>
+        <div class="dont-panel reveal">
+          <div class="dont-head"><div><span>Condutas sem comprovação</span><h3>O que não fazer</h3></div><p>Remédios caseiros não neutralizam o GHB e podem atrasar o SAMU ou criar um novo risco, como engasgo e aspiração.</p></div>
+          <div class="dont-grid">
+            <article class="dont-card featured"><span class="dont-badge">Não comprovado · risco de aspiração</span><h4>Água com limão ou chupar limão</h4><p>Limão não é antídoto, não “corta” o efeito e não acelera a eliminação do GHB. Ácido cítrico não reverte a depressão do sistema nervoso. Se houver sonolência ou consciência alterada, líquido, suco ou pedaço de limão pode causar engasgo e ir para os pulmões.</p></article>
+            <article class="dont-card"><span class="dont-badge">Não reverte</span><h4>Café ou energético</h4><p>Cafeína não desfaz a ação do GHB nos receptores. Pode dar falsa sensação de melhora e atrasar a emergência.</p></article>
+            <article class="dont-card"><span class="dont-badge">Pode piorar</span><h4>Provocar vômito</h4><p>Uma pessoa sonolenta pode aspirar o vômito e sufocar. Não coloque dedos ou objetos na boca.</p></article>
+            <article class="dont-card"><span class="dont-badge">Não é antídoto</span><h4>Dar água, leite ou comida</h4><p>Nada pela boca durante suspeita de intoxicação, salvo orientação direta do CIATox ou da equipe médica.</p></article>
+            <article class="dont-card"><span class="dont-badge">Risco de trauma</span><h4>Banho frio, tapas ou caminhar</h4><p>Não recuperam a respiração e podem causar queda, afogamento, trauma ou perda de tempo.</p></article>
+            <article class="dont-card"><span class="dont-badge">Mistura perigosa</span><h4>Usar estimulante ou outra droga</h4><p>Não “equilibra” o GHB. Pode mascarar sinais por algum tempo e criar toxicidade adicional.</p></article>
+          </div>
+          <div class="dont-proof"><strong>O que realmente ajuda:</strong> ligar 192, verificar a respiração, iniciar RCP se necessário, colocar de lado se estiver respirando e permanecer junto monitorando até o socorro chegar.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="abstinencia">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§7 — Dependência</div><div><h2>Abstinência pode ser uma <em>emergência médica</em></h2><p class="section-intro">Uso frequente pode levar a tolerância e dependência física. Interromper de repente após uso regular pode desencadear sintomas graves e potencialmente fatais.</p></div></div>
+        <div class="withdrawal reveal">
+          <h3>Não tente interromper sozinho se houver dependência</h3>
+          <p>Ansiedade intensa, tremor, insônia, suor, vômitos e aumento da pressão podem progredir para confusão, alucinações, psicose, delirium e convulsões. Procure avaliação médica urgente; o manejo deve ser supervisionado por profissionais.</p>
+          <div class="withdrawal-tags"><span>ansiedade</span><span>tremores</span><span>insônia</span><span>confusão</span><span>alucinações</span><span>convulsões</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="consentimento">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§8 — Segurança</div><div><h2>Consciência alterada não é <em>consentimento</em></h2><p class="section-intro">Sedação, desorientação e amnésia aumentam a vulnerabilidade a violência sexual e outros crimes. A responsabilidade é sempre de quem comete a violência.</p></div></div>
+        <div class="consent-panel reveal">
+          <div><p class="large">Sem capacidade de decidir, não existe consentimento válido.</p><p>Uma pessoa inconsciente, muito intoxicada, confusa ou incapaz de comunicar uma escolha livre não pode consentir.</p></div>
+          <div><h3>Se você suspeita de violência</h3><p>Vá para um local seguro, procure atendimento de saúde o quanto antes e peça apoio de alguém de confiança. Em risco imediato, ligue 190; para orientação e acolhimento à mulher, ligue 180. O atendimento médico é importante mesmo que você ainda não queira registrar ocorrência.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mitos">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§9 — Perguntas diretas</div><div><h2>Mitos que podem <em>custar tempo</em></h2></div></div>
+        <div class="myths reveal">
+          <details><summary>“É só deixar dormir que passa?”</summary><div class="details-body">Não. Uma pessoa inconsciente pode parar de respirar ou aspirar o próprio vômito. Se não acorda normalmente, chame o SAMU 192 e monitore a respiração.</div></details>
+          <details><summary>“Café ou banho frio ajudam a acordar?”</summary><div class="details-body">Não revertem a depressão do sistema nervoso e podem atrasar o atendimento. Não dê nada pela boca a alguém sonolento ou inconsciente.</div></details>
+          <details><summary>“Água com limão ou chupar limão corta o efeito?”</summary><div class="details-body">Não. Não há evidência de que limão neutralize ou reverta GHB/GBL. Se a pessoa estiver sonolenta, dar líquido ou colocar limão na boca ainda cria risco de engasgo e aspiração. Ligue 192 diante de rebaixamento de consciência ou respiração anormal.</div></details>
+          <details><summary>“Se a pessoa voltou a falar, o perigo acabou?”</summary><div class="details-body">Não necessariamente. O nível de consciência pode oscilar e outras substâncias podem prolongar ou agravar o quadro. Continue observando e siga a orientação médica.</div></details>
+          <details><summary>“GHB tem antídoto?”</summary><div class="details-body">Não existe um antídoto doméstico ou específico de uso leigo. O tratamento de intoxicação é suporte médico, com proteção da via aérea, respiração e monitorização.</div></details>
+          <details><summary>“GBL e GHB são a mesma coisa?”</summary><div class="details-body">Não. GBL é um precursor convertido em GHB no organismo. As concentrações e a velocidade dos efeitos podem diferir, o que aumenta a imprevisibilidade.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fontes">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">§10 — Referências</div><div><h2>Fontes para <em>continuar lendo</em></h2><p class="section-intro">Conteúdo resumido a partir de materiais de saúde pública e toxicologia. Este guia não substitui avaliação médica.</p></div></div>
+        <ul class="source-list reveal">
+          <li><a href="https://iris.who.int/bitstream/handle/10665/77747/who?sequence=1" target="_blank" rel="noopener"><strong>Organização Mundial da Saúde</strong>Receptores GHB/GABA<sub>B</sub>, depressão do sistema nervoso e conversão do 1,4-BD em GHB.</a></li>
+          <li><a href="https://www.dea.gov/sites/default/files/2020-06/GHB-2020.pdf" target="_blank" rel="noopener"><strong>DEA — GHB Drug Fact Sheet</strong>GBL e 1,4-butanodiol como análogos frequentemente substituídos por GHB no mercado informal.</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/17192771/" target="_blank" rel="noopener"><strong>Clinical Pharmacology &amp; Therapeutics</strong>Conversão do 1,4-butanodiol em GHB e variabilidade individual do metabolismo.</a></li>
+          <li><a href="https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=bcef2c95-35e9-464d-9025-652acff769e7" target="_blank" rel="noopener"><strong>DailyMed / FDA — Sodium Oxybate</strong>Absorção, pico, meia-vida, metabolismo, eliminação não linear e alterações na insuficiência hepática.</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/26659543/" target="_blank" rel="noopener"><strong>British Journal of Clinical Pharmacology</strong>Estudo controlado de farmacocinética e farmacodinâmica do GHB em 32 voluntários.</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/21533996/" target="_blank" rel="noopener"><strong>Drug Metabolism and Disposition</strong>Participação da ADH no metabolismo hepático do 1,4-BD e inibição da conversão pelo etanol em laboratório.</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/37343712/" target="_blank" rel="noopener"><strong>Regulatory Toxicology and Pharmacology</strong>Revisão sobre absorção, meia-vida e toxicologia de GHB, GBL e 1,4-BD.</a></li>
+          <li><a href="https://www.saude.sp.gov.br/resources/crt/gerencia-de-prevencao/versao-eletronica/manualchemsex2023.pdf" target="_blank" rel="noopener"><strong>Secretaria de Estado da Saúde de São Paulo</strong>Manual para profissionais de saúde sobre chemsex — seção GHB/GBL.</a></li>
+          <li><a href="https://cvs.saude.sp.gov.br/up/MANUAL%20DE%20TOXICOLOGIA%20CL%C3%8DNICA%20-%20COVISA%202017.pdf" target="_blank" rel="noopener"><strong>COVISA / Prefeitura de São Paulo</strong>Manual de Toxicologia Clínica — intoxicação por drogas de abuso.</a></li>
+          <li><a href="https://www.euda.europa.eu/publications/data-factsheet/european-drug-emergencies-network-euro-den-plus-data-and-analysis_en" target="_blank" rel="noopener"><strong>European Union Drugs Agency</strong>Dados de emergências relacionadas a GHB/GBL.</a></li>
+          <li><a href="https://www.nhs.uk/conditions/poisoning/" target="_blank" rel="noopener"><strong>NHS</strong>Conduta inicial diante de suspeita de intoxicação.</a></li>
+          <li><a href="https://www.gov.br/anvisa/pt-br/assuntos/agrotoxicos/disque-intoxicacao" target="_blank" rel="noopener"><strong>Anvisa</strong>Disque-Intoxicação e Centros de Informação e Assistência Toxicológica.</a></li>
+          <li><a href="https://ciatox.saude.sc.gov.br/index.php/servicos/primeiros-socorros" target="_blank" rel="noopener"><strong>CIATox Santa Catarina</strong>Primeiros socorros: não oferecer sucos cítricos, líquidos ou receitas caseiras sem orientação médica.</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="help">
+      <div class="container">
+        <div class="help-box reveal"><h2>Ajuda no Brasil</h2><p>Atendimento do SUS é gratuito. Para dependência e redução de danos, procure uma UBS ou CAPS AD. Em intoxicação ou perda de consciência, ligue 192.</p><div class="contacts"><div class="contact"><strong>192</strong><span>SAMU · emergência médica</span></div><div class="contact"><strong>0800 722 6001</strong><span>Disque-Intoxicação</span></div><div class="contact"><strong>136</strong><span>Disque Saúde · localizar serviços</span></div><div class="contact"><strong>180 / 190</strong><span>Violência contra a mulher / risco imediato</span></div></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p><strong>Guia Técnico Educacional</strong> — conteúdo de saúde pública e redução de danos.</p><p>Não incentiva nem instrui o consumo. Revisão farmacocinética atualizada em agosto de 2026.</p></footer>
+  <button class="back-top" id="backTop" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script>
+    const progress = document.getElementById('progress');
+    const backTop = document.getElementById('backTop');
+    const updateScroll = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+      backTop.classList.toggle('show', scrollY > 700);
+    };
+    addEventListener('scroll', updateScroll, {passive:true});
+    backTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    }), {threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    updateScroll();
+
+    const kineticCanvas = document.getElementById('kineticCanvas');
+    const decayCanvas = document.getElementById('decayCanvas');
+    const profileButtons = [...document.querySelectorAll('[data-profile]')];
+    const scenarioButtons = [...document.querySelectorAll('[data-scenario]')];
+    const halfLifeInput = document.getElementById('halfLifeInput');
+    const elapsedInput = document.getElementById('elapsedInput');
+    const halfLifeOutput = document.getElementById('halfLifeOutput');
+    const elapsedOutput = document.getElementById('elapsedOutput');
+    const remainingFormula = document.getElementById('remainingFormula');
+    const scenarioOutput = document.getElementById('scenarioOutput');
+    const curvePeak = document.getElementById('curvePeak');
+    const curveExplanation = document.getElementById('curveExplanation');
+    const primaryLegend = document.getElementById('primaryLegend');
+    const precursorLegend = document.getElementById('precursorLegend');
+
+    const labState = { profile:'ghb', scenario:'mid', halfLife:45, elapsed:90 };
+    const scenarioNames = { slow:'mais lento', mid:'intermediário', fast:'mais rápido' };
+    const scenarioRates = { slow:.018, mid:.028, fast:.045 };
+    const cssColor = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+    const prepareCanvas = canvas => {
+      const rect = canvas.getBoundingClientRect();
+      const ratio = Math.min(devicePixelRatio || 1, 2);
+      const width = Math.max(280, Math.round(rect.width));
+      const height = Math.max(190, Math.round(rect.height));
+      if (canvas.width !== width * ratio || canvas.height !== height * ratio) {
+        canvas.width = width * ratio;
+        canvas.height = height * ratio;
+      }
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(ratio,0,0,ratio,0,0);
+      ctx.clearRect(0,0,width,height);
+      return {ctx,width,height};
+    };
+
+    const roundedNumber = value => value >= 10 ? Math.round(value) : Math.round(value * 10) / 10;
+
+    const drawAxes = (ctx,width,height,margins,xTicks,yTicks,xLabel,yLabel,xMax,yMax) => {
+      const plotW = width - margins.left - margins.right;
+      const plotH = height - margins.top - margins.bottom;
+      const grid = cssColor('--border');
+      const muted = cssColor('--text-dim');
+      ctx.save();
+      ctx.strokeStyle = grid;
+      ctx.fillStyle = muted;
+      ctx.lineWidth = 1;
+      ctx.font = '11px "DM Mono", monospace';
+      ctx.textBaseline = 'middle';
+      xTicks.forEach(tick => {
+        const x = margins.left + tick / xMax * plotW;
+        ctx.beginPath(); ctx.moveTo(x,margins.top); ctx.lineTo(x,margins.top+plotH); ctx.stroke();
+        ctx.textAlign = tick === 0 ? 'left' : tick === xMax ? 'right' : 'center';
+        ctx.fillText(tick === 0 ? '0' : `${tick/60}h`,x,height-18);
+      });
+      yTicks.forEach(tick => {
+        const y = margins.top + plotH - tick / yMax * plotH;
+        ctx.beginPath(); ctx.moveTo(margins.left,y); ctx.lineTo(margins.left+plotW,y); ctx.stroke();
+        ctx.textAlign = 'right';
+        ctx.fillText(`${tick}%`,margins.left-8,y);
+      });
+      ctx.fillStyle = cssColor('--text-secondary');
+      ctx.textAlign = 'right';
+      ctx.fillText(xLabel,width-margins.right,height-4);
+      ctx.save();
+      ctx.translate(12,margins.top);
+      ctx.rotate(-Math.PI/2);
+      ctx.textAlign = 'right';
+      ctx.fillText(yLabel,0,0);
+      ctx.restore();
+      ctx.restore();
+      return {plotW,plotH};
+    };
+
+    const bateman = (minute,ka,ke) => minute <= 0 ? 0 : (ka / (ka-ke)) * (Math.exp(-ke*minute)-Math.exp(-ka*minute));
+
+    const drawKinetics = () => {
+      if (!kineticCanvas) return;
+      const {ctx,width,height} = prepareCanvas(kineticCanvas);
+      const margins = {left:54,right:18,top:20,bottom:38};
+      const xMax = 300;
+      const yMax = 110;
+      const {plotW,plotH} = drawAxes(ctx,width,height,margins,[0,60,120,180,240,300],[0,25,50,75,100],'tempo após consumo','nível relativo',xMax,yMax);
+      const x = minute => margins.left + minute / xMax * plotW;
+      const y = value => margins.top + plotH - value / yMax * plotH;
+      const elimination = Math.log(2) / 45;
+      const absorption = labState.profile === 'ghb' ? .035 : scenarioRates[labState.scenario];
+      const raw = [];
+      for (let minute=0; minute<=xMax; minute+=2) raw.push({minute,value:bateman(minute,absorption,elimination)});
+      const maxValue = Math.max(...raw.map(point => point.value));
+      const values = raw.map(point => ({minute:point.minute,value:point.value/maxValue*100}));
+      const peakPoint = values.reduce((best,point) => point.value > best.value ? point : best,values[0]);
+      const peakWindow = labState.profile === 'ghb' ? [30,75] : [28,51];
+
+      ctx.save();
+      ctx.fillStyle = 'rgba(102,200,255,.09)';
+      ctx.fillRect(x(peakWindow[0]),margins.top,x(peakWindow[1])-x(peakWindow[0]),plotH);
+      ctx.strokeStyle = 'rgba(102,200,255,.25)';
+      ctx.setLineDash([4,5]);
+      [peakWindow[0],peakWindow[1]].forEach(minute => {ctx.beginPath();ctx.moveTo(x(minute),margins.top);ctx.lineTo(x(minute),margins.top+plotH);ctx.stroke();});
+      ctx.setLineDash([]);
+
+      const gradient = ctx.createLinearGradient(0,margins.top,0,margins.top+plotH);
+      gradient.addColorStop(0,'rgba(82,224,156,.24)');
+      gradient.addColorStop(1,'rgba(82,224,156,0)');
+      ctx.beginPath();
+      values.forEach((point,index) => index ? ctx.lineTo(x(point.minute),y(point.value)) : ctx.moveTo(x(point.minute),y(point.value)));
+      ctx.lineTo(x(xMax),y(0));ctx.lineTo(x(0),y(0));ctx.closePath();ctx.fillStyle=gradient;ctx.fill();
+      ctx.beginPath();
+      values.forEach((point,index) => index ? ctx.lineTo(x(point.minute),y(point.value)) : ctx.moveTo(x(point.minute),y(point.value)));
+      ctx.strokeStyle = cssColor('--accent');ctx.lineWidth=2.5;ctx.stroke();
+
+      if (labState.profile === 'bd') {
+        const precursor = values.map(point => ({minute:point.minute,value:100*Math.exp(-absorption*point.minute)}));
+        ctx.beginPath();
+        precursor.forEach((point,index) => index ? ctx.lineTo(x(point.minute),y(point.value)) : ctx.moveTo(x(point.minute),y(point.value)));
+        ctx.strokeStyle = cssColor('--blue');ctx.lineWidth=1.8;ctx.setLineDash([6,5]);ctx.stroke();ctx.setLineDash([]);
+      }
+
+      ctx.beginPath();ctx.arc(x(peakPoint.minute),y(peakPoint.value),5,0,Math.PI*2);ctx.fillStyle=cssColor('--accent-bright');ctx.fill();
+      ctx.fillStyle=cssColor('--text');ctx.font='11px "DM Mono", monospace';ctx.textAlign='center';ctx.fillText(`pico ~${Math.round(peakPoint.minute)} min`,x(peakPoint.minute),Math.max(12,y(peakPoint.value)-14));
+      ctx.restore();
+
+      curvePeak.textContent = `pico ~${Math.round(peakPoint.minute)} min`;
+      if (labState.profile === 'ghb') {
+        curveExplanation.textContent = 'No GHB oral, absorção e eliminação acontecem ao mesmo tempo. Formulação, alimentação e metabolismo mudam o formato real.';
+        primaryLegend.textContent = 'GHB no plasma';
+        precursorLegend.style.display = 'none';
+      } else {
+        curveExplanation.textContent = `Neste cenário ${scenarioNames[labState.scenario]}, a etapa ADH/ALDH desloca o pico do GHB formado. O modelo não identifica o metabolismo de uma pessoa.`;
+        primaryLegend.textContent = 'GHB formado';
+        precursorLegend.style.display = 'inline-flex';
+      }
+      kineticCanvas.setAttribute('aria-label',`Curva ilustrativa de ${labState.profile === 'ghb' ? 'GHB oral' : 'GHB formado a partir de 1,4-butanodiol'}, com pico relativo por volta de ${Math.round(peakPoint.minute)} minutos e queda ao longo de cinco horas.`);
+    };
+
+    const drawDecay = () => {
+      if (!decayCanvas) return;
+      const {ctx,width,height} = prepareCanvas(decayCanvas);
+      const margins = {left:54,right:18,top:16,bottom:38};
+      const xMax = 240;
+      const yMax = 100;
+      const {plotW,plotH} = drawAxes(ctx,width,height,margins,[0,60,120,180,240],[0,25,50,75,100],'tempo desde o pico','fração restante',xMax,yMax);
+      const x = minute => margins.left + minute / xMax * plotW;
+      const y = value => margins.top + plotH - value / yMax * plotH;
+      const remain = (minute,halfLife) => 100*Math.pow(.5,minute/halfLife);
+
+      ctx.beginPath();
+      for(let minute=0;minute<=xMax;minute+=3) minute ? ctx.lineTo(x(minute),y(remain(minute,60))) : ctx.moveTo(x(minute),y(remain(minute,60)));
+      for(let minute=xMax;minute>=0;minute-=3) ctx.lineTo(x(minute),y(remain(minute,30)));
+      ctx.closePath();ctx.fillStyle='rgba(102,200,255,.12)';ctx.fill();
+      ctx.beginPath();
+      for(let minute=0;minute<=xMax;minute+=3) minute ? ctx.lineTo(x(minute),y(remain(minute,labState.halfLife))) : ctx.moveTo(x(minute),y(remain(minute,labState.halfLife)));
+      ctx.strokeStyle=cssColor('--accent');ctx.lineWidth=2.5;ctx.stroke();
+      const current = remain(labState.elapsed,labState.halfLife);
+      ctx.beginPath();ctx.arc(x(labState.elapsed),y(current),5,0,Math.PI*2);ctx.fillStyle=cssColor('--accent-bright');ctx.fill();
+      ctx.fillStyle=cssColor('--text');ctx.font='11px "DM Mono", monospace';ctx.textAlign=labState.elapsed>190?'right':'left';ctx.fillText(`${roundedNumber(current)}%`,x(labState.elapsed)+(labState.elapsed>190?-10:10),Math.max(12,y(current)-10));
+
+      halfLifeOutput.textContent = `${labState.halfLife} min`;
+      elapsedOutput.textContent = `${labState.elapsed} min`;
+      remainingFormula.textContent = `Após ${labState.elapsed} min: ~${roundedNumber(current)}% do nível relativo do pico`;
+      decayCanvas.setAttribute('aria-label',`Curva ilustrativa de eliminação com meia-vida de ${labState.halfLife} minutos. Após ${labState.elapsed} minutos, resta aproximadamente ${roundedNumber(current)} por cento do nível relativo do pico.`);
+    };
+
+    profileButtons.forEach(button => button.addEventListener('click',() => {
+      labState.profile = button.dataset.profile;
+      profileButtons.forEach(item => item.setAttribute('aria-pressed',String(item === button)));
+      scenarioButtons.forEach(item => item.disabled = labState.profile !== 'bd');
+      scenarioOutput.textContent = labState.profile === 'bd' ? scenarioNames[labState.scenario] : 'não se aplica';
+      drawKinetics();
+    }));
+    scenarioButtons.forEach(button => button.addEventListener('click',() => {
+      labState.scenario = button.dataset.scenario;
+      scenarioButtons.forEach(item => item.setAttribute('aria-pressed',String(item === button)));
+      scenarioOutput.textContent = scenarioNames[labState.scenario];
+      drawKinetics();
+    }));
+    halfLifeInput.addEventListener('input',() => {labState.halfLife=Number(halfLifeInput.value);drawDecay();});
+    elapsedInput.addEventListener('input',() => {labState.elapsed=Number(elapsedInput.value);drawDecay();});
+
+    const drawAllCharts = () => {drawKinetics();drawDecay();};
+    const canvasResize = new ResizeObserver(() => requestAnimationFrame(drawAllCharts));
+    [kineticCanvas,decayCanvas].forEach(canvas => canvas && canvasResize.observe(canvas));
+    if (document.fonts?.ready) document.fonts.ready.then(drawAllCharts); else drawAllCharts();
+
+    const sectionLinks = [...document.querySelectorAll('.top-links a[href^="#"]')];
+    const navSections = sectionLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    const navObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+      if (!visible) return;
+      sectionLinks.forEach(link => link.setAttribute('aria-current',String(link.getAttribute('href') === `#${visible.target.id}`)));
+    },{rootMargin:'-25% 0px -60% 0px',threshold:[0,.2,.5]});
+    navSections.forEach(section => navObserver.observe(section));
+  </script>
+</body>
+</html>
