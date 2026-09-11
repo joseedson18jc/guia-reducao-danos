@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://guia-ghb.netlify.app/sitemap.xml
+Sitemap: https://guia-reducaorisco.netlify.app/sitemap.xml

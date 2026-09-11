@@ -1,6 +1,6 @@
 # Guia GHB
 
-Source of <https://guia-ghb.netlify.app>: Portuguese-language educational and
+Source of <https://guia-reducaorisco.netlify.app>: Portuguese-language educational and
 harm-reduction guides. Static site, no build step.
 
 ```

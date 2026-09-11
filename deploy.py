@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Publish the site/ folder to https://guia-ghb.netlify.app
+Publish the site/ folder to https://guia-reducaorisco.netlify.app
 
     npx netlify-cli login        # once per machine
     python3 deploy.py --draft    # preview deploy at a temporary URL, production untouched
@@ -16,7 +16,7 @@ import subprocess
 import sys
 
 SITE_ID = "d2e20143-bd73-4cb8-afef-fb8597f94724"
-LIVE_URL = "https://guia-ghb.netlify.app"
+LIVE_URL = "https://guia-reducaorisco.netlify.app"
 REPO = os.path.dirname(os.path.abspath(__file__))
 SITE_DIR = os.path.join(REPO, "site")
 NETLIFY = ["npx", "--yes", "netlify-cli"]
