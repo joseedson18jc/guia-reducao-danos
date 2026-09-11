@@ -959,6 +959,27 @@
       .source-list a::after{content:" (" attr(href) ")";font-size:8pt;color:#555;word-break:break-all}
       .js .reveal{opacity:1!important;transform:none!important}
     }
+  /* ---- enhanced diagram components ---- */
+  .chart-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
+    padding:clamp(1.1rem,3vw,1.8rem);margin-top:var(--s-5)}
+  .chart-card figcaption h3{font-family:var(--display);font-size:var(--f-lg);margin:.35rem 0 .4rem}
+  .chart-card figcaption p{color:var(--text-2);font-size:var(--f-sm);max-width:60ch;margin-bottom:var(--s-4)}
+  .steep-wrap{border:1px solid var(--border);border-radius:var(--r);background:var(--bg-2);overflow:hidden}
+  .steep-wrap canvas{width:100%;height:auto;display:block}
+  .steep-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-4);margin-top:var(--s-4)}
+  .steep-ctl label{font-family:var(--mono);font-size:var(--f-xs);color:var(--text-2);display:flex;gap:.6rem;align-items:center}
+  .steep-ctl input[type=range]{flex:1;min-width:180px;accent-color:var(--accent)}
+  .steep-ctl output{color:var(--accent);font-weight:600;min-width:2.5ch}
+  .steep-zone{flex-basis:100%;border:1px solid var(--border-strong);border-radius:var(--r-sm);
+    padding:.55rem .9rem;font-family:var(--mono);font-size:var(--f-xs);color:var(--accent)}
+  .synapse-wrap{position:relative;border:1px solid var(--border);border-radius:var(--r);
+    background:radial-gradient(ellipse at 50% 120%,rgba(79,217,164,.07),var(--bg-2) 70%);overflow:hidden}
+  .synapse-wrap canvas{width:100%;height:auto;display:block}
+  .synapse-read{position:absolute;top:12px;right:14px;text-align:right;background:color-mix(in srgb, var(--bg) 78%, transparent);
+    border:1px solid var(--border);border-radius:var(--r-sm);padding:.45rem .8rem;backdrop-filter:blur(6px)}
+  .synapse-read b{display:block;font-family:var(--display);font-size:1.4rem;color:var(--accent);line-height:1.1}
+  .synapse-read span{font-size:.7rem;color:var(--text-3);font-family:var(--mono);letter-spacing:.04em}
+  .wd-timeline{margin-top:var(--s-4)}
   </style>
 </head>
 <body>
@@ -1202,8 +1223,47 @@
 
         <div class="grid-2 reveal">
           <div class="molecule">
-            <p class="molecule-formula">HO–CH₂–CH₂–CH₂–COOH<small>estrutura simplificada do ácido</small></p>
-            <p class="pathway"><span>GBL</span><i aria-hidden="true">→</i><strong>conversão no organismo</strong><i aria-hidden="true">→</i><span>GHB</span></p>
+            <svg viewBox="0 0 420 240" role="img" aria-label="Estruturas moleculares: GHB, GBL e 1,4-butanodiol, com a conversão do anel de GBL para a forma aberta GHB" style="width:100%;height:auto;display:block">
+              <defs>
+                <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+                </marker>
+              </defs>
+              <!-- GHB open chain -->
+              <g font-family="var(--mono)" font-size="11" fill="var(--text-2)">
+                <text x="16" y="24" fill="var(--accent)" font-weight="bold">GHB · ácido 4-hidroxibutanoico</text>
+                <!-- bonds -->
+                <g stroke="var(--border-strong)" stroke-width="2" fill="none">
+                  <line x1="40" y1="90" x2="80" y2="70"/><line x1="80" y1="70" x2="120" y2="90"/>
+                  <line x1="120" y1="90" x2="160" y2="70"/><line x1="160" y1="70" x2="200" y2="90"/>
+                </g>
+                <circle cx="40" cy="90" r="16" fill="var(--info-bg)" stroke="var(--info)"/><text x="40" y="94" text-anchor="middle" fill="var(--text)">HO</text>
+                <circle cx="80" cy="70" r="13" fill="var(--surface-3)" stroke="var(--border-strong)"/><text x="80" y="74" text-anchor="middle">C</text>
+                <circle cx="120" cy="90" r="13" fill="var(--surface-3)" stroke="var(--border-strong)"/><text x="120" y="94" text-anchor="middle">C</text>
+                <circle cx="160" cy="70" r="13" fill="var(--surface-3)" stroke="var(--border-strong)"/><text x="160" y="74" text-anchor="middle">C</text>
+                <circle cx="200" cy="90" r="15" fill="var(--accent-bg)" stroke="var(--accent)"/><text x="200" y="94" text-anchor="middle" fill="var(--accent)">COOH</text>
+                <!-- GBL ring -->
+                <text x="266" y="24" fill="var(--warn)" font-weight="bold">GBL · lactona</text>
+                <g stroke="var(--border-strong)" stroke-width="2" fill="none">
+                  <path d="M300 70 L340 55 L380 75 L370 115 L315 112 Z"/>
+                </g>
+                <circle cx="300" cy="70" r="11" fill="var(--warn-bg)" stroke="var(--warn)"/><text x="300" y="74" text-anchor="middle" font-size="9">O</text>
+                <text x="384" y="82" font-size="9" fill="var(--warn)">C=O</text>
+                <!-- conversion arrow animated -->
+                <path d="M232 92 C252 130 280 130 302 128" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arr)" opacity=".9">
+                  <animate attributeName="stroke-dashoffset" from="18" to="0" dur="1.2s" repeatCount="indefinite"/>
+                </path>
+                <text x="230" y="152" font-size="9.5" fill="var(--text-3)">hidrolise no fígado e no sangue</text>
+                <!-- 1,4-BD -->
+                <text x="16" y="196" fill="var(--info)" font-weight="bold">1,4-butanodiol · pró-droga</text>
+                <g stroke="var(--border-strong)" stroke-width="2" fill="none">
+                  <line x1="60" y1="216" x2="100" y2="216"/><line x1="100" y1="216" x2="140" y2="216"/><line x1="140" y1="216" x2="180" y2="216"/>
+                </g>
+                <circle cx="60" cy="216" r="11" fill="var(--info-bg)" stroke="var(--info)"/><text x="60" y="220" text-anchor="middle" font-size="9">HO</text>
+                <text x="188" y="220" font-size="10" fill="var(--info)">HO</text>
+                <text x="240" y="220" font-size="9.5" fill="var(--text-3)">oxidação: ADH → aldeído → ALDH → vira GHB</text>
+              </g>
+            </svg>
           </div>
           <div class="card">
             <span class="card-eyebrow">Visão rápida</span>
@@ -1219,6 +1279,19 @@
           <article class="card"><span class="card-eyebrow">01 · Cérebro</span><h3>Desaceleração</h3><p>Sonolência, desinibição, confusão, perda de coordenação e amnésia podem evoluir para inconsciência e coma.</p></article>
           <article class="card"><span class="card-eyebrow">02 · Respiração</span><h3>Depressão respiratória</h3><p>Em intoxicações graves, a respiração pode ficar lenta, superficial, irregular ou parar.</p></article>
           <article class="card"><span class="card-eyebrow">03 · Resposta</span><h3>Curva acentuada</h3><p>Uma mudança relativamente pequena na exposição pode produzir uma mudança desproporcional no efeito.</p></article>
+        </div>
+
+        <div class="reveal mt-5">
+          <figure class="chart-card" aria-label="Gráfico interativo: curva dose-efeito do GHB mostra zona de efeito desejado estreita entre subdose e intoxicação">
+            <figcaption><span class="kicker">Gráfico interativo · curva dose–efeito</span><h3>A janela entre “funcionar” e “apagar” é estreita</h3>
+            <p>Arraste o controle de dose. A curva não é linear: perto do topo, um pequeno aumento de dose atravessa rapidamente as zonas de sono profundo, coma e depressão respiratória. Modelo educacional, sem escala real de dose.</p></figcaption>
+            <div class="steep-wrap"><canvas id="steepCanvas" aria-hidden="true"></canvas></div>
+            <div class="steep-ctl">
+              <label for="steepDose">Dose relativa <output id="steepDoseOut">55</output>%</label>
+              <input type="range" id="steepDose" min="10" max="95" value="55" aria-label="Dose relativa">
+              <div id="steepZone" class="steep-zone" role="status">zona: efeito desejado · risco baixo-moderado</div>
+            </div>
+          </figure>
         </div>
 
         <p class="note note-warn reveal mt-5"><strong>O ponto crítico:</strong> concentração, composição e identidade podem ser desconhecidas. GHB e GBL não são intercambiáveis, e a aparência do líquido não revela sua potência nem pureza.</p>
@@ -1278,6 +1351,14 @@
             <article class="chain-step"><span class="chain-index" aria-hidden="true">03</span><div><h3>A transmissão neural desacelera</h3><p>O sinal inibitório reduz a excitabilidade de redes neurais. Surgem <strong>sonolência, descoordenação, confusão e amnésia</strong>.</p></div></article>
             <article class="chain-step is-danger"><span class="chain-index" aria-hidden="true">04</span><div><h3>Reflexos protetores e respiração entram em risco</h3><p>Com depressão mais profunda, a pessoa pode perder a consciência, aspirar vômito, convulsionar, entrar em coma ou <strong>parar de respirar</strong>.</p></div></article>
           </div>
+          <figure class="chart-card reveal" aria-label="Animação: sinapse com GHB ligando-se ao receptor GABAB e reduzindo a frequência dos disparos neurais">
+            <figcaption><span class="kicker">Animação · sinapse sob GHB</span><h3>O freio na fenda sináptica</h3>
+            <p>Moléculas de GHB (verdes) ligam-se ao receptor GABA<sub>B</sub> na membrana pós-sináptica. O sinal de alerta (impulsos em azul) diminui de frequência conforme o freio inibitório atua — observe o contador de disparos.</p></figcaption>
+            <div class="synapse-wrap"><canvas id="synapseCanvas" aria-hidden="true"></canvas>
+              <div class="synapse-read" role="status"><b id="fireRate">100%</b><span>frequência de disparos</span></div>
+            </div>
+          </figure>
+
           <aside class="console" aria-label="Efeitos do aumento da depressão do sistema nervoso central">
             <div class="console-head">
               <p class="kicker">Leitura do sistema</p>
@@ -1287,6 +1368,19 @@
             <div class="meter"><div class="meter-top"><b>Coordenação e memória</b><span>comprometidas</span></div><div class="meter-track"><i class="meter-fill" style="width:84%"></i></div></div>
             <div class="meter is-danger"><div class="meter-top"><b>Proteção da via aérea</b><span>risco crítico</span></div><div class="meter-track"><i class="meter-fill" style="width:92%"></i></div></div>
             <div class="meter is-danger"><div class="meter-top"><b>Respiração</b><span>pode falhar</span></div><div class="meter-track"><i class="meter-fill" style="width:100%"></i></div></div>
+            <svg viewBox="0 0 300 150" role="img" aria-label="Diagrama do tronco encefálico: o bulbo abriga o centro respiratório que o GHB em excesso deprime" style="width:100%;height:auto;margin-top:14px">
+              <g font-family="var(--mono)" font-size="10">
+                <path d="M60 25 Q150 5 240 25 L235 55 Q150 40 65 55 Z" fill="var(--surface-3)" stroke="var(--border-strong)"/>
+                <text x="150" y="35" text-anchor="middle" fill="var(--text-3)">córtex · pensamento (afetado depois)</text>
+                <rect x="118" y="55" width="64" height="42" rx="10" fill="var(--surface-2)" stroke="var(--border-strong)"/>
+                <text x="150" y="80" text-anchor="middle" fill="var(--text-2)">tronco</text>
+                <ellipse cx="150" cy="112" rx="34" ry="18" fill="var(--danger-bg)" stroke="var(--danger)" stroke-width="1.5">
+                  <animate attributeName="opacity" values="1;.55;1" dur="2.4s" repeatCount="indefinite"/>
+                </ellipse>
+                <text x="150" y="116" text-anchor="middle" fill="var(--danger-bright)" font-weight="bold">bulbo</text>
+                <text x="150" y="145" text-anchor="middle" fill="var(--danger)">centro respiratório · reflexos protetores</text>
+              </g>
+            </svg>
             <p class="note note-warn"><strong>Importante:</strong> as barras são uma explicação visual, não uma escala de dose. Concentração desconhecida, misturas e diferenças individuais impedem prever uma “zona segura”.</p>
           </aside>
         </div>
@@ -1440,6 +1534,58 @@
           <article class="card is-danger"><span class="card-eyebrow">Depressor + depressor</span><div class="card-title-row"><h3>Opioides</h3><span class="tag tag-danger">Risco extremo</span></div><p>Ambos podem reduzir a respiração. Naloxona só reverte opioides; ela não reverte os efeitos do GHB.</p></article>
           <article class="card is-danger"><span class="card-eyebrow">Falsa sensação de controle</span><div class="card-title-row"><h3>Estimulantes</h3><span class="tag tag-warn">Não protegem</span></div><p>Podem mascarar a sonolência por um tempo, mas não anulam a toxicidade nem impedem colapso quando o estimulante perde efeito.</p></article>
         </div>
+
+        <figure class="chart-card reveal mt-5" aria-label="Matriz de risco das combinações com GHB: quanto mais escuro e vermelho, maior o perigo">
+          <figcaption><span class="kicker is-danger">Matriz de interações · mapa do risco</span><h3>Cada cruzamento escurece o quadro</h3>
+          <p>Linhas: o que pode estar no sistema. Colunas: consequências. O mapa soma evidências clínicas publicadas — não é uma probabilidade individual.</p></figcaption>
+          <div style="overflow-x:auto"><svg viewBox="0 0 560 300" style="min-width:560px;width:100%;height:auto" role="img">
+            <g font-family="var(--mono)" font-size="11">
+              <!-- columns -->
+              <text x="190" y="24" fill="var(--text-3)" text-anchor="middle" font-size="10">vômito/&#8203;aspiração</text>
+              <text x="285" y="24" fill="var(--text-3)" text-anchor="middle" font-size="10">coma</text>
+              <text x="388" y="24" fill="var(--text-3)" text-anchor="middle" font-size="10">depressão respir.</text>
+              <text x="486" y="24" fill="var(--text-3)" text-anchor="middle" font-size="10">morte</text>
+              <!-- rows: labels + heat cells. intensity 1..4 -->
+              <g>
+                <!-- GHB sozinho -->
+                <text x="8" y="58" fill="var(--text)">GHB sozinho</text>
+                <rect x="140" y="44" width="100" height="26" rx="5" fill="rgba(255,128,128,.45)"/>
+                <rect x="250" y="44" width="70" height="26" rx="5" fill="rgba(255,128,128,.45)"/>
+                <rect x="328" y="44" width="120" height="26" rx="5" fill="rgba(255,128,128,.5)"/>
+                <rect x="456" y="44" width="60" height="26" rx="5" fill="rgba(255,128,128,.28)"/>
+                <!-- + álcool -->
+                <text x="8" y="94" fill="var(--text)">+ álcool</text>
+                <rect x="140" y="80" width="100" height="26" rx="5" fill="rgba(255,128,128,.85)"/>
+                <rect x="250" y="80" width="70" height="26" rx="5" fill="rgba(255,128,128,.8)"/>
+                <rect x="328" y="80" width="120" height="26" rx="5" fill="rgba(255,128,128,.9)"/>
+                <rect x="456" y="80" width="60" height="26" rx="5" fill="rgba(255,80,90,.9)"/>
+                <!-- + benzos -->
+                <text x="8" y="130" fill="var(--text)">+ benzodiazepínicos</text>
+                <rect x="140" y="116" width="100" height="26" rx="5" fill="rgba(255,128,128,.7)"/>
+                <rect x="250" y="116" width="70" height="26" rx="5" fill="rgba(255,128,128,.8)"/>
+                <rect x="328" y="116" width="120" height="26" rx="5" fill="rgba(255,128,128,.85)"/>
+                <rect x="456" y="116" width="60" height="26" rx="5" fill="rgba(255,80,90,.75)"/>
+                <!-- + opioides -->
+                <text x="8" y="166" fill="var(--text)">+ opioides</text>
+                <rect x="140" y="152" width="100" height="26" rx="5" fill="rgba(255,128,128,.75)"/>
+                <rect x="250" y="152" width="70" height="26" rx="5" fill="rgba(255,128,128,.85)"/>
+                <rect x="328" y="152" width="120" height="26" rx="5" fill="rgba(255,80,90,.95)"/>
+                <rect x="456" y="152" width="60" height="26" rx="5" fill="rgba(255,80,90,.95)"/>
+                <!-- + estimulantes -->
+                <text x="8" y="202" fill="var(--text)">+ estimulantes</text>
+                <rect x="140" y="188" width="100" height="26" rx="5" fill="rgba(255,202,112,.55)"/>
+                <rect x="250" y="188" width="70" height="26" rx="5" fill="rgba(255,128,128,.5)"/>
+                <rect x="328" y="188" width="120" height="26" rx="5" fill="rgba(255,128,128,.55)"/>
+                <rect x="456" y="188" width="60" height="26" rx="5" fill="rgba(255,128,128,.4)"/>
+              </g>
+              <!-- legend -->
+              <rect x="140" y="240" width="22" height="14" rx="3" fill="rgba(255,202,112,.55)"/><text x="168" y="251" fill="var(--text-3)" font-size="10">atenção</text>
+              <rect x="240" y="240" width="22" height="14" rx="3" fill="rgba(255,128,128,.5)"/><text x="268" y="251" fill="var(--text-3)" font-size="10">risco elevado</text>
+              <rect x="380" y="240" width="22" height="14" rx="3" fill="rgba(255,80,90,.95)"/><text x="408" y="251" fill="var(--text-3)" font-size="10">risco extremo</text>
+              <text x="8" y="285" fill="var(--text-3)" font-size="10">Intensidade qualitativa a partir de relatos clínicos (EUDA/COVISA). Não é cálculo de probabilidade individual.</text>
+            </g>
+          </svg></div>
+        </figure>
       </div>
     </section>
 
@@ -1455,6 +1601,33 @@
           <h3>Não tente interromper sozinho se houver dependência</h3>
           <p>Ansiedade intensa, tremor, insônia, suor, vômitos e aumento da pressão podem progredir para confusão, alucinações, psicose, delirium e convulsões. Procure avaliação médica urgente; o manejo deve ser supervisionado por profissionais.</p>
           <div class="chips"><span>ansiedade</span><span>tremores</span><span>insônia</span><span>confusão</span><span>alucinações</span><span>convulsões</span></div>
+
+          <svg viewBox="0 0 720 210" role="img" aria-label="Linha do tempo da abstinência de GHB: sintomas instalam em 1 a 6 horas, pico de gravidade entre 12 e 72 horas, delirium e convulsões possíveis no pico" style="width:100%;height:auto;margin-top:18px" class="wd-timeline">
+            <g font-family="var(--mono)" font-size="11">
+              <line x1="40" y1="150" x2="690" y2="150" stroke="var(--border-strong)" stroke-width="2"/>
+              <!-- severity curve: rises fast, plateaus dangerous -->
+              <path d="M40 148 C90 146 110 120 150 92 C200 60 260 48 340 44 C420 42 520 50 620 58 L690 62"
+                    fill="none" stroke="var(--danger)" stroke-width="2.5"/>
+              <!-- zones -->
+              <rect x="40" y="30" width="150" height="120" fill="var(--warn-bg)" opacity=".4"/>
+              <rect x="300" y="30" width="260" height="120" fill="var(--danger-bg)" opacity=".45"/>
+              <text x="115" y="24" text-anchor="middle" fill="var(--warn)" font-size="10">instalação 1–6 h</text>
+              <text x="430" y="24" text-anchor="middle" fill="var(--danger)" font-size="10">janela de pico 12–72 h</text>
+              <!-- time ticks -->
+              <g fill="var(--text-3)" text-anchor="middle">
+                <text x="40" y="170">0 h</text><text x="150" y="170">6 h</text><text x="300" y="170">24 h</text>
+                <text x="430" y="170">48 h</text><text x="560" y="170">72 h</text>
+              </g>
+              <!-- symptom markers -->
+              <g fill="var(--text-2)" font-size="10">
+                <circle cx="90" cy="141" r="5" fill="var(--warn)"/><text x="90" y="128" text-anchor="middle">ansiedade · tremor · insônia</text>
+                <circle cx="240" cy="70" r="5" fill="var(--danger)"/><text x="240" y="96" text-anchor="middle">confusão · taquicardia</text>
+                <circle cx="380" cy="45" r="5" fill="var(--danger-bright)"/><text x="380" y="35" text-anchor="middle">alucinações · delirium</text>
+                <circle cx="560" cy="52" r="5" fill="var(--danger-bright)"/><text x="560" y="42" text-anchor="middle">convulsões possíveis</text>
+              </g>
+              <text x="40" y="200" fill="var(--text-3)" font-size="10">Esquema didático dos padrões descritos em literatura clínica; o curso individual varia.</text>
+            </g>
+          </svg>
         </div>
       </div>
     </section>
@@ -1577,6 +1750,149 @@
     matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
       if (!root.dataset.theme) requestAnimationFrame(drawAllCharts);
     });
+
+    /* ---------- dose–response steep curve (interactive) ---------- */
+    (() => {
+      const cv = $('steepCanvas'); if (!cv) return;
+      const out = $('steepDoseOut'), slider = $('steepDose'), zone = $('steepZone');
+      const css = getComputedStyle(document.documentElement);
+      const c = n => css.getPropertyValue(n).trim() || '#4fd9a4';
+      const prepare = (canvas) => {
+        const rect = canvas.getBoundingClientRect();
+        const ratio = Math.min(devicePixelRatio || 1, 2);
+        canvas.width = rect.width * ratio; canvas.height = 300 * ratio;
+        const ctx = canvas.getContext('2d');
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        return { ctx, W: rect.width, H: 300 };
+      };
+      // steep sigmoid: dose 0..100 -> effect 0..100 with knee near 60
+      const curve = d => 100 / (1 + Math.exp(-(d - 62) / 9));
+      function zones(eff) {
+        if (eff < 30) return { label: 'zona: subdose · efeito fraco', col: c('--info') };
+        if (eff < 55) return { label: 'zona: efeito desejado · risco baixo-moderado', col: c('--accent') };
+        if (eff < 75) return { label: 'zona: sono profundo · difícil acordar', col: c('--warn') };
+        if (eff < 88) return { label: 'zona: coma · não responde', col: 'rgba(255,128,128,.9)' };
+        return { label: 'zona: depressão respiratória · EMERGÊNCIA (192)', col: c('--danger') };
+      }
+      function draw() {
+        const { ctx, W, H } = prepare(cv);
+        const padL = 44, padB = 34, padT = 16;
+        const X = d => padL + (d / 100) * (W - padL - 14);
+        const Y = e => padT + (1 - e / 100) * (H - padT - padB);
+        ctx.clearRect(0, 0, W, H);
+        // danger zones background bands
+        const bands = [[75, 88, 'rgba(255,202,112,.08)'], [88, 100, 'rgba(255,128,128,.12)']];
+        bands.forEach(([a, b, col]) => {
+          ctx.fillStyle = col;
+          ctx.fillRect(X(a), padT, X(b) - X(a), H - padT - padB);
+        });
+        // axes
+        ctx.strokeStyle = c('--border-strong'); ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(padL, padT); ctx.lineTo(padL, Y(0)); ctx.lineTo(X(100), Y(0)); ctx.stroke();
+        ctx.fillStyle = c('--text-3'); ctx.font = '11px "DM Mono", monospace';
+        ctx.fillText('dose relativa →', X(100) - 100, Y(0) + 22);
+        ctx.save(); ctx.translate(14, padT + 60); ctx.rotate(-Math.PI / 2);
+        ctx.fillText('efeito →', 0, 0); ctx.restore();
+        // zone labels
+        ctx.font = '10px "DM Mono", monospace';
+        ctx.fillStyle = 'rgba(255,202,112,.8)'; ctx.fillText('coma', X(75) + 4, padT + 12);
+        ctx.fillStyle = 'rgba(255,128,128,.8)'; ctx.fillText('respiração ↓↓', X(88) + 4, padT + 12);
+        // curve
+        ctx.beginPath();
+        for (let d = 0; d <= 100; d += 1) {
+          const y = Y(curve(d));
+          d ? ctx.lineTo(X(d), y) : ctx.moveTo(X(d), y);
+        }
+        ctx.strokeStyle = c('--accent'); ctx.lineWidth = 2.5; ctx.stroke();
+        // current dose marker
+        const dose = +slider.value, eff = curve(dose);
+        ctx.setLineDash([4, 4]); ctx.strokeStyle = c('--text-3'); ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(X(dose), Y(0)); ctx.lineTo(X(dose), Y(eff)); ctx.lineTo(padL, Y(eff)); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.beginPath(); ctx.arc(X(dose), Y(eff), 6, 0, 7);
+        ctx.fillStyle = zones(eff).col; ctx.fill();
+        ctx.strokeStyle = c('--bg'); ctx.lineWidth = 2; ctx.stroke();
+        const z = zones(eff);
+        zone.textContent = z.label; zone.style.borderColor = z.col; zone.style.color = z.col;
+      }
+      slider.addEventListener('input', () => { out.textContent = slider.value; draw(); });
+      addEventListener('resize', draw);
+      new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { draw(); o.disconnect(); } }), { threshold: .2 }).observe(cv);
+      matchMedia('(prefers-color-scheme: light)').addEventListener('change', draw);
+    })();
+
+    /* ---------- synapse animation (GHB on GABA-B, firing rate drops) ---------- */
+    (() => {
+      const cv = $('synapseCanvas'); if (!cv) return;
+      const rateEl = $('fireRate');
+      const css = getComputedStyle(document.documentElement);
+      const c = n => css.getPropertyValue(n).trim() || '#4fd9a4';
+      const prepare = (canvas) => {
+        const rect = canvas.getBoundingClientRect();
+        const ratio = Math.min(devicePixelRatio || 1, 2);
+        canvas.width = rect.width * ratio; canvas.height = 280 * ratio;
+        const ctx = canvas.getContext('2d');
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        return { ctx, W: rect.width, H: 280 };
+      };
+      let t = 0, running = true, raf = 0;
+      function frame() {
+        if (!running) return;
+        const { ctx, W, H } = prepare(cv);
+        t += .016;
+        // effect ramps in over first 10s, then holds: binding level 0..1
+        const bind = Math.min(1, t / 10);
+        const rate = 1 - .72 * bind;                 // firing falls to 28%
+        rateEl.textContent = Math.round(rate * 100) + '%';
+        ctx.clearRect(0, 0, W, H);
+        const axL = 40, axR = W - 40, axY = 60, psY = 205;
+        // pre-synaptic terminal
+        ctx.fillStyle = 'rgba(122,208,255,.10)';
+        ctx.beginPath(); ctx.moveTo(20, 20); ctx.quadraticCurveTo(axL, axY - 8, axL + 130, axY); ctx.lineTo(axL + 130, psY - 60); ctx.lineTo(20, 90); ctx.closePath(); ctx.fill();
+        ctx.fillStyle = c('--text-3'); ctx.font = '11px "DM Mono", monospace';
+        ctx.fillText('terminal pré-sináptico', 30, 44);
+        // postsynaptic membrane
+        ctx.strokeStyle = c('--border-strong'); ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(0, psY); ctx.lineTo(W, psY); ctx.stroke();
+        ctx.fillStyle = 'rgba(79,217,164,.06)'; ctx.fillRect(0, psY, W, H - psY);
+        ctx.fillStyle = c('--text-3'); ctx.fillText('membrana pós-sináptica', 20, psY + 20);
+        // GABA-B receptor with binding sites
+        for (let k = 0; k < 3; k++) {
+          const rx = axL + 160 + k * 130;
+          ctx.strokeStyle = c('--accent'); ctx.lineWidth = 2;
+          ctx.beginPath(); ctx.arc(rx, psY, 16, Math.PI, 0); ctx.stroke();
+          // GHB molecules binding (green dots land on receptor as bind rises)
+          const filled = Math.round(bind * 3 - k * .5);
+          if (filled > 0) {
+            ctx.beginPath(); ctx.arc(rx, psY - 8, 5.5, 0, 7);
+            ctx.fillStyle = c('--accent'); ctx.fill();
+          }
+        }
+        // incoming action potentials: frequency scales with rate
+        const period = 90 / Math.max(.25, rate);
+        for (let k = 0; k < 8; k++) {
+          const ph = ((t * 120 / period + k * period) % 240);
+          const x = axL + 20 + ph * (axR - axL - 40) / 240;
+          if (ph < 4) continue;
+          const y = axY + 14 + Math.sin(x * .02 + k) * 8;
+          const alpha = .85 * (x > axL + 150 ? (1 - bind * .8) : 1);
+          ctx.beginPath(); ctx.arc(x, y, 3.4, 0, 7);
+          ctx.fillStyle = `rgba(122,208,255,${alpha})`;
+          ctx.fill();
+        }
+        // labels
+        ctx.fillStyle = c('--text-3'); ctx.font = '10px "DM Mono", monospace';
+        ctx.fillText('impulsos: ' + Math.round(rate * 100) + '%', axL, H - 8);
+        ctx.fillText('GHB → GABA-B', W - 140, psY + 20);
+        raf = requestAnimationFrame(frame);
+      }
+      // pause when off-screen (performance)
+      new IntersectionObserver(es => es.forEach(e => {
+        running = e.isIntersecting;
+        if (running) { cancelAnimationFrame(raf); frame(); }
+      }), { threshold: .05 }).observe(cv);
+      matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {});
+    })();
 
     /* ---------- scroll chrome ---------- */
     const progress = $('progress');
