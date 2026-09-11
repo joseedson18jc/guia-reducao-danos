@@ -20,7 +20,7 @@ LIVE_URL = "https://guia-ghb.netlify.app"
 REPO = os.path.dirname(os.path.abspath(__file__))
 SITE_DIR = os.path.join(REPO, "site")
 NETLIFY = ["npx", "--yes", "netlify-cli"]
-CHECK = {"/": "index.html", "/ghb/": "ghb/index.html"}
+CHECK = {"/": "index.html", "/ghb/": "ghb/index.html", "/metanfetamina/": "metanfetamina/index.html"}
 
 
 def sha1(data: bytes) -> str:

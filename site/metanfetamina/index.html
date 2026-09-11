@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07090f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Dossiê científico sobre metanfetamina: rota de tráfico, farmacologia, psicose paranoide, manejo clínico, internação e pipeline terapêutico — com evidências citadas e classificadas.">
+<title>Metanfetamina — Dossiê Completo: do tráfico à paranoia e ao tratamento</title>
+<meta name="theme-color" content="#07090f">
+<link rel="canonical" href="https://guia-ghb.netlify.app/metanfetamina/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Guia Técnico Educacional">
+<meta property="og:title" content="Metanfetamina: dossiê científico da paranoia ao tratamento">
+<meta property="og:description" content="Farmacologia, psicose paranoide, curso, diagnóstico diferencial, manejo, internação e pipeline terapêutico — 22 referências com DOI, cada uma classificada por nível de evidência.">
+<meta property="og:url" content="https://guia-ghb.netlify.app/metanfetamina/">
+<meta property="og:image" content="https://guia-ghb.netlify.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Metanfetamina: dossiê científico da paranoia ao tratamento">
+<meta name="twitter:description" content="Evidências classificadas, 22 referências com DOI, modelos interativos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════ TOKENS ═══════════════════════════ */
+:root{
+  --bg:#07090f; --bg2:#0c1018;
+  --card:rgba(255,255,255,.035);
+  --glass:rgba(255,255,255,.055);
+  --glass2:rgba(255,255,255,.09);
+  --line:rgba(255,255,255,.10);
+  --stroke:rgba(255,255,255,.14);
+  --ink:#eef2f8; --ink2:#c6cdd9; --mut:#98a2b6; --mut2:#7f899e;
+  --red:#ff5c67; --red-soft:rgba(255,92,103,.16);
+  --ice:#7cd8f7; --ice2:#38a8d8; --deep:#1b5c7a;
+  --amber:#f0b04c; --green:#48d695; --violet:#a78bff;
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"Sora",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"JetBrains Mono",Menlo,monospace;
+  --r:20px; --r2:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(124,216,247,.28)}
+a{color:var(--ice)}
+:focus-visible{outline:2px solid var(--ice);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;z-index:200;background:var(--ice);color:#04121a;
+  padding:8px 14px;border-radius:8px;font-weight:600}
+.skip:focus{left:12px}
+
+/* ═══════════════════════════ BACKGROUND ═══════════════════════════ */
+.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.mesh .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;
+  animation:drift 26s ease-in-out infinite alternate;will-change:transform}
+.blob.b1{width:56vw;height:56vw;left:-14vw;top:-18vh;background:radial-gradient(circle,#123a52 0%,transparent 65%)}
+.blob.b2{width:44vw;height:44vw;right:-12vw;top:24vh;background:radial-gradient(circle,#4a1220 0%,transparent 65%);animation-delay:-9s}
+.blob.b3{width:38vw;height:38vw;left:22vw;bottom:-22vh;background:radial-gradient(circle,#1c1540 0%,transparent 65%);animation-delay:-17s}
+@media(max-width:700px){.mesh .blob{animation:none}}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(5vw,-4vh) scale(1.12)}100%{transform:translate(-4vw,5vh) scale(.94)}}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.028) 1px,transparent 1px);background-size:3px 3px}
+
+/* ═══════════════════════════ LAYOUT / TYPE ═══════════════════════════ */
+.wrap{max-width:1100px;margin:0 auto;padding:0 26px}
+section{padding:96px 0;position:relative}
+section+section::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(1100px,calc(100% - 52px));height:1px;
+  background:linear-gradient(90deg,transparent,var(--stroke) 20%,var(--stroke) 80%,transparent)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ice2);margin-bottom:14px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+h2{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:600;line-height:1.14;letter-spacing:-.01em;margin-bottom:10px;text-wrap:balance}
+h3{font-size:17px;font-weight:600}
+.lede{font-family:var(--serif);font-size:18.5px;color:var(--ink2);max-width:760px;margin:12px 0 38px;text-wrap:pretty}
+.lede b{color:var(--ink)}
+p.small{font-size:12.5px;color:var(--mut2);line-height:1.55}
+.src{font-family:var(--mono);font-size:12px;color:var(--mut2);border-top:1px dashed var(--stroke);padding-top:12px;margin-top:28px;line-height:1.8}
+.src b{color:#aeb7c6}
+sup.cite{font-family:var(--mono);font-size:max(.7em,10.5px);vertical-align:super;line-height:0;margin-left:2px}
+sup.cite a{padding:2px 1px}
+sup.cite a{color:var(--ice);text-decoration:none;border-bottom:1px dotted rgba(124,216,247,.5)}
+sup.cite a:hover{color:#fff}
+/* tabular figures: stats never jitter */
+.hs .v,.pk .v,.pkreads .v,.traj .big,.istat .v,.nnt b,.donut .ctr .big{font-variant-numeric:tabular-nums}
+/* citation hover preview */
+.refpop{position:absolute;z-index:120;max-width:430px;padding:14px 16px;border-radius:12px;
+  background:#0e1520;border:1px solid var(--stroke);box-shadow:0 18px 44px rgba(0,0,0,.6);
+  font-size:12px;color:var(--ink2);line-height:1.55;pointer-events:none;opacity:0;transform:translateY(6px);
+  transition:opacity .18s ease,transform .18s ease}
+.refpop.on{opacity:1;transform:none}
+.refpop .rp{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--ice2);margin-bottom:5px}
+.refpop .rp .ev{margin-left:8px;padding:2px 7px;font-size:8px}
+.refpop .rp .ev::before{display:none}
+
+/* ═══════════════════════════ GLASS PRIMITIVES ═══════════════════════════ */
+.glass{background:var(--glass);border:1px solid var(--stroke);border-radius:var(--r);
+  backdrop-filter:blur(18px) saturate(1.35);-webkit-backdrop-filter:blur(18px) saturate(1.35);
+  box-shadow:0 18px 50px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.09)}
+.glass-hover{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,background .35s}
+.glass-hover:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.24);background:var(--glass2)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:24px}
+.card h3{font-size:16px;margin-bottom:12px;color:var(--ice)}
+.card p{font-size:14.5px;color:var(--mut)}
+.card p+p{margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+  padding:6px 13px;border-radius:99px;border:1px solid var(--stroke);background:var(--glass);backdrop-filter:blur(10px);color:var(--mut)}
+.chip .d{width:7px;height:7px;border-radius:50%;flex:none}
+/* evidence-level pill */
+.ev{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;padding:5px 11px;border-radius:99px;border:1px solid;font-weight:500}
+.ev::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.ev.A{color:var(--green);border-color:rgba(72,214,149,.4);background:rgba(72,214,149,.08)}
+.ev.B{color:var(--ice);border-color:rgba(124,216,247,.4);background:rgba(124,216,247,.08)}
+.ev.C{color:var(--amber);border-color:rgba(240,176,76,.4);background:rgba(240,176,76,.08)}
+.ev.D{color:var(--mut);border-color:rgba(152,162,182,.35);background:rgba(152,162,182,.06)}
+.ev.X{color:var(--red);border-color:rgba(255,92,103,.4);background:rgba(255,92,103,.08)}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px)}
+.js .rv.on{opacity:1;transform:none;transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1)}
+.js .rv.d1.on{transition-delay:.13s}.js .rv.d2.on{transition-delay:.26s}.js .rv.d3.on{transition-delay:.39s}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}
+
+/* ═══════════════════════════ NAV ═══════════════════════════ */
+.qnav{position:sticky;top:0;z-index:70;display:flex;gap:4px;align-items:center;
+  padding:10px 18px;background:rgba(7,9,15,.74);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);
+  border-bottom:1px solid var(--stroke);font-family:var(--mono);font-size:11.5px;
+  overflow-x:auto;overflow-y:hidden;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.qnav::-webkit-scrollbar{display:none}
+.qnav a{color:var(--mut);text-decoration:none;padding:6px 10px;border-radius:99px;transition:all .25s;letter-spacing:.06em;flex:none}
+.qnav a:hover{color:var(--ink);background:var(--glass2)}
+.qnav a.on{color:var(--ink);background:rgba(124,216,247,.14);box-shadow:inset 0 0 0 1px rgba(124,216,247,.35)}
+.qnav a[aria-current]{color:var(--ink);background:rgba(124,216,247,.14);box-shadow:inset 0 0 0 1px rgba(124,216,247,.35)}
+.qnav .qn{letter-spacing:.16em;font-size:11px;padding:0 8px 0 12px;opacity:.85;flex:none}
+.qnav .qn:first-child{padding-left:0}
+.qbrand{display:inline-flex;align-items:center;gap:8px;color:var(--ink)!important;font-weight:600;letter-spacing:.04em!important;
+  padding:6px 12px 6px 6px!important;margin-right:6px;border:1px solid var(--stroke);border-radius:99px!important;background:var(--glass)}
+.qbrand .mk{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:rgba(124,216,247,.12);border:1px solid rgba(124,216,247,.35);color:var(--ice);font-size:11px}
+.qbrand:hover{background:var(--glass2)!important}
+.qnav .qx{margin-left:auto;color:var(--mut2)!important}
+/* crisis strip: this page is about psychosis, so help must be reachable before the science */
+.crisis{margin:-34px auto 0;position:relative;z-index:3;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;
+  padding:18px 22px;border-color:rgba(255,92,103,.38);background:linear-gradient(120deg,rgba(255,92,103,.12),var(--glass) 55%)}
+.crisis .ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#1a0508;font-family:var(--serif);font-size:24px;font-weight:700}
+.crisis h2{font-family:var(--sans);font-size:16px;margin:0 0 3px;letter-spacing:0}
+.crisis p{font-size:13px;color:var(--mut);line-height:1.5}
+.crisis p a{color:var(--ice)}
+.crisis .lines{display:flex;gap:8px;flex-wrap:wrap}
+.crisis .lines a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink);text-decoration:none;
+  padding:9px 13px;border-radius:99px;border:1px solid var(--stroke);background:rgba(7,9,15,.5);white-space:nowrap}
+.crisis .lines a b{color:var(--red);margin-right:6px}
+.crisis .lines a:hover{border-color:var(--red)}
+@media(max-width:760px){.crisis{grid-template-columns:auto 1fr;margin-top:-20px}.crisis .lines{grid-column:1/-1}}
+.sitelinks{margin-top:26px;padding-top:22px;border-top:1px dashed var(--stroke);font-family:var(--mono);font-size:12px;color:var(--mut);display:flex;gap:10px 22px;flex-wrap:wrap}
+.sitelinks a{color:var(--ice);text-decoration:none}
+.sitelinks a:hover{text-decoration:underline}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:99;background:linear-gradient(90deg,var(--ice2),var(--red));transition:width .1s linear}
+/* floating tweaks */
+.tweaks{position:fixed;bottom:18px;right:18px;z-index:60;display:flex;gap:8px}
+.tbtn{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mut);background:rgba(20,24,34,.78);
+  border:1px solid var(--stroke);border-radius:99px;padding:9px 15px;cursor:pointer;backdrop-filter:blur(12px);transition:all .25s}
+.tbtn:hover{color:var(--ice);border-color:var(--ice2)}
+.tbtn[aria-pressed="true"]{color:var(--ice);border-color:rgba(124,216,247,.5)}
+@media(max-width:600px){.tweaks{bottom:12px;right:12px}.tbtn{padding:7px 11px;font-size:11px}}
+
+/* ═══════════════════════════ HERO ═══════════════════════════ */
+.hero{position:relative;min-height:min(100vh,940px);display:flex;align-items:center;overflow:hidden;padding:80px 0 60px}
+#net3d{position:absolute;inset:0;width:100%;height:100%;opacity:.85}
+.hero .wrap{position:relative;z-index:2}
+.hero-tag{margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,7.4vw,88px);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:22px}
+.hero h1 .glow{background:linear-gradient(100deg,#fff 0%,var(--red) 45%,#d9414f 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{font-family:var(--serif);font-size:clamp(16px,2vw,20.5px);color:var(--ink2);max-width:700px}
+.hero p.sub b{color:var(--ink)}
+.hero .fi{opacity:0;animation:fi 1.2s ease forwards}
+@keyframes fi{to{opacity:1}}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:52px}
+@media(max-width:820px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+.hs{padding:20px 22px;position:relative}
+.hs .v{font-family:var(--serif);font-size:clamp(26px,3vw,36px);line-height:1;color:var(--ice)}
+.hs.hot .v{color:var(--red)}
+.hs .v em{font-style:normal;font-size:.5em;color:var(--mut)}
+.hs .l{font-size:12.5px;color:var(--mut);margin-top:9px;line-height:1.5}
+.hs .ev{position:static;display:inline-flex;margin-bottom:12px;padding:3px 9px;font-size:11px}
+.hs .ev::before{display:none}
+.scrollcue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;color:var(--mut2);z-index:2}
+.scrollcue::after{content:"";display:block;width:1px;height:34px;margin:8px auto 0;background:linear-gradient(180deg,var(--ice2),transparent);animation:cue 1.8s ease-in-out infinite}
+@media(max-width:820px){.scrollcue{display:none}}
+@keyframes cue{0%,100%{opacity:.2;transform:scaleY(.6);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+/* ═══════════════════════════ 00 · MÉTODO ═══════════════════════════ */
+.method{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin-top:20px}
+@media(max-width:860px){.method{grid-template-columns:1fr}}
+.evkey{display:grid;gap:10px}
+.evkey .row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:10px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:13.5px;color:var(--mut)}
+.evkey .row b{color:var(--ink);font-weight:600}
+.meta{font-family:var(--mono);font-size:12.5px;color:var(--mut);line-height:1.9;padding:22px 26px}
+.meta b{color:var(--ice)}
+.meta .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 16px}
+
+/* ═══════════════════════════ 01 · TRÁFICO ═══════════════════════════ */
+.tl{position:relative;margin-top:48px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--ice2),var(--deep) 60%,var(--red))}
+.tl-item{position:relative;padding:0 0 34px 22px}
+.tl-item::before{content:"";position:absolute;left:-31px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ice2);box-shadow:0 0 0 4px rgba(63,169,209,.12)}
+.tl-item.hot::before{border-color:var(--red);box-shadow:0 0 0 4px rgba(229,72,77,.15)}
+.tl-item .yr{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ice2);margin-bottom:4px}
+.tl-item.hot .yr{color:var(--red)}
+.tl-item h4{font-size:17px;margin-bottom:5px;color:var(--ink)}
+.tl-item p{font-size:14.5px;color:var(--mut);max-width:640px}
+.tl-item .note{margin-top:8px;font-size:13.5px;color:var(--amber);border-left:2px solid rgba(240,176,76,.5);padding-left:10px;max-width:640px}
+.routebox{padding:26px;margin:44px 0 8px}
+.routebox svg{width:100%;height:auto;display:block}
+.city{fill:var(--ice);font-family:var(--mono);font-size:11.5px;text-anchor:middle}
+.city.hot{fill:var(--red)}
+.city.mut{fill:var(--mut)}
+.route{fill:none;stroke:var(--ice);stroke-width:1.6;opacity:.75;stroke-dasharray:6 5;animation:dashmove 2.2s linear infinite}
+.route.dark{stroke:var(--red)}
+@keyframes dashmove{to{stroke-dashoffset:-22}}
+.legendrow{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--mut)}
+.legendrow span::before{content:"";display:inline-block;width:22px;height:0;border-top:2px dashed;margin-right:8px;vertical-align:middle}
+.legendrow .li::before{border-color:var(--ice)}.legendrow .lr::before{border-color:var(--red)}
+
+/* ═══════════════════════════ 02 · MOLÉCULA ═══════════════════════════ */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start;margin-top:40px}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.molecule-stage{height:380px;position:relative;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at 50% 60%,#12202b 0%,var(--bg2) 70%);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;touch-action:none;user-select:none}
+.atom{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 11px var(--mono);color:#eaf2f7;
+  box-shadow:inset -4px -6px 10px rgba(0,0,0,.45),0 0 18px rgba(63,169,209,.25);pointer-events:none}
+.atom.N{box-shadow:inset -4px -6px 10px rgba(0,0,0,.45),0 0 22px rgba(167,139,255,.5)}
+.atom.chiral::after{content:"*";position:absolute;top:-8px;right:-4px;color:var(--amber);font-size:14px}
+.bond{position:absolute;transform-origin:0 50%;height:3px;background:linear-gradient(90deg,#2e4a5c,#41586b);border-radius:2px;pointer-events:none}
+.bond.arom{height:5px;background:linear-gradient(90deg,#3b5e73,#4f7188)}
+.mol-label{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:11.5px;color:var(--mut);letter-spacing:.12em;pointer-events:none}
+.mol-label small{display:block;letter-spacing:.04em;color:var(--mut2);font-size:11px;margin-top:3px}
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+@media(max-width:520px){.pk{grid-template-columns:1fr 1fr}}
+.pk .k{padding:12px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.pk .k .v{font-family:var(--serif);font-size:20px;color:var(--ice);line-height:1.1}
+.pk .k .v em{font-style:normal;font-size:.6em;color:var(--mut)}
+.pk .k .l{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mut2);margin-top:5px;text-transform:uppercase}
+.mech{list-style:none;margin-top:6px;counter-reset:m}
+.mech li{position:relative;padding:9px 0 9px 34px;font-size:14px;color:var(--mut);border-bottom:1px dashed rgba(255,255,255,.07);counter-increment:m}
+.mech li:last-child{border-bottom:none}
+.mech li::before{content:counter(m,decimal-leading-zero);position:absolute;left:0;top:10px;font-family:var(--mono);font-size:10px;color:var(--ice2);letter-spacing:.1em}
+.mech li b{color:var(--ink);font-weight:600}
+/* PK simulator */
+.pksim{padding:26px;margin-top:22px}
+.pksim .head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.pksim label{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--mut);display:flex;align-items:center;gap:12px}
+.pksim input[type=range]{width:200px;accent-color:var(--ice)}
+.pksim output{font-family:var(--mono);color:var(--ice);min-width:52px}
+.pksim svg{width:100%;height:auto;display:block}
+.pkreads{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+@media(max-width:640px){.pkreads{grid-template-columns:1fr 1fr}}
+.pkreads .k{padding:10px 12px;border-radius:10px;background:var(--card);border:1px solid var(--line);text-align:center}
+.pkreads .k .v{font-family:var(--serif);font-size:20px;color:var(--ink)}
+.pkreads .k .l{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mut2);text-transform:uppercase;margin-top:3px}
+.chartbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:26px;margin:36px 0}
+.chartbox svg{width:100%;height:auto}
+.axis{stroke:var(--line);stroke-width:1}
+.lab{fill:var(--mut);font-family:var(--mono);font-size:11.5px}
+/* trajectories */
+.traj{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+@media(max-width:860px){.traj{grid-template-columns:1fr}}
+.traj .t{padding:22px 24px;position:relative;overflow:hidden}
+.traj .t::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--c,var(--ice2))}
+.traj .t .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--c,var(--ice2))}
+.traj .t .big{font-family:var(--serif);font-size:38px;line-height:1;margin:10px 0 6px;color:var(--ink)}
+.traj .t .big em{font-style:normal;font-size:.42em;color:var(--mut)}
+.traj .t h4{font-size:15px;margin-bottom:6px}
+.traj .t p{font-size:13.5px;color:var(--mut);line-height:1.55}
+
+/* ═══════════════════════════ 03 · SINTOMA ═══════════════════════════ */
+.duo{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;margin-top:38px}
+@media(max-width:860px){.duo{grid-template-columns:1fr}}
+.quotebox{padding:30px 32px;position:relative}
+.quotebox::before{content:"“";font-family:var(--serif);font-size:110px;line-height:1;position:absolute;top:6px;left:20px;color:var(--red);opacity:.3}
+.quotebox p{font-family:var(--serif);font-size:19px;line-height:1.6;color:#dde3ec;position:relative;padding-left:44px}
+.quotebox .who{font-family:var(--mono);font-size:12px;color:var(--mut);margin-top:16px;padding-left:44px;letter-spacing:.1em;line-height:1.7}
+.symgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.symgrid{grid-template-columns:1fr}}
+.sym{padding:14px 16px;border-radius:14px}
+.sym .t{font-size:13.5px;font-weight:600;display:flex;gap:9px;align-items:baseline}
+.sym .t .ic{font-size:15px}
+.sym .d{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.5}
+
+/* ═══════════════════════════ 04 · CIRCUITO ═══════════════════════════ */
+.sec3d{position:relative;padding:10px}
+#circuit{width:100%;height:clamp(340px,56vw,520px);display:block;border-radius:var(--r);cursor:grab;touch-action:none;
+  background:radial-gradient(ellipse at 50% 120%,#101827 0%,rgba(10,13,20,.4) 60%,transparent)}
+.circuit-cap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:14px 20px 20px}
+.formula{font-family:var(--mono);font-size:12.5px;color:var(--mut);letter-spacing:.06em}
+.formula b{color:var(--red)}
+.nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+@media(max-width:700px){.nodes{grid-template-columns:1fr 1fr}}
+.nodes .nd{padding:12px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--mut)}
+.nodes .nd b{display:block;color:var(--ink);font-size:12.5px;margin-bottom:2px}
+.nodes .nd i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:middle}
+
+/* ═══════════════════════════ 05 · CURSO ═══════════════════════════ */
+.thresh{margin-top:40px;display:grid;gap:14px}
+.trow{display:grid;grid-template-columns:minmax(150px,240px) 1fr auto;gap:18px;align-items:center;padding:16px 22px}
+@media(max-width:700px){.trow{grid-template-columns:1fr;gap:8px}}
+.trow .nm{font-size:14px;font-weight:600}
+.trow .nm small{display:block;font-weight:400;font-size:12px;color:var(--mut);margin-top:2px}
+.trow .track{height:12px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid var(--stroke);overflow:hidden;position:relative}
+.trow .fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--ice2),var(--ice))}
+.trow.hot .fill{background:linear-gradient(90deg,#8f2333,var(--red))}
+.trow .ci{position:absolute;top:0;bottom:0;background:rgba(255,255,255,.14);border-left:1px solid rgba(255,255,255,.4);border-right:1px solid rgba(255,255,255,.4);opacity:0;transition:opacity .8s 1s}
+.trow.on .ci{opacity:1}
+.trow .pc{font-family:var(--mono);font-size:13px;min-width:96px;text-align:right}
+.trow .pc small{display:block;font-size:11px;color:var(--mut2)}
+.trow.hot .pc{color:var(--red)}
+.duel{margin-top:44px;position:relative}
+.duel::before{content:"";position:absolute;left:50%;top:10px;bottom:10px;width:2px;transform:translateX(-50%);background:linear-gradient(180deg,var(--ice2),var(--amber) 45%,var(--red))}
+@media(max-width:760px){.duel::before{left:12px}}
+.drow{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:16px 0;position:relative}
+@media(max-width:760px){.drow{grid-template-columns:1fr;padding-left:38px}}
+.drow .dot{position:absolute;left:50%;top:30px;width:13px;height:13px;border-radius:50%;transform:translateX(-50%);background:var(--bg);border:2.5px solid var(--ice2);box-shadow:0 0 0 5px rgba(56,168,216,.13);z-index:2}
+@media(max-width:760px){.drow .dot{left:12px}}
+.drow.hot .dot{border-color:var(--red);box-shadow:0 0 0 5px rgba(255,92,103,.14)}
+.drow .ph{padding:18px 22px}
+.drow .ph .when{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--ice2);margin-bottom:6px}
+.drow.hot .ph .when{color:var(--red)}
+.drow .ph h4{font-size:15.5px;margin-bottom:6px}
+.drow .ph p{font-size:13.5px;color:var(--mut);line-height:1.6}
+@media(max-width:760px){.drow .left,.drow .right{grid-column:1}}
+
+/* ═══════════════════════════ 06 · DIFERENCIAL ═══════════════════════════ */
+.cmp{margin-top:40px;overflow:hidden}
+.cmp .scroll{overflow-x:auto}
+.cmp table{width:100%;min-width:640px;border-collapse:collapse;font-size:13.5px}
+.cmp th,.cmp td{padding:15px 18px;text-align:left;vertical-align:top}
+.cmp thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--mut);border-bottom:1px solid var(--stroke);text-transform:uppercase}
+.cmp thead th:nth-child(2){color:var(--ice)}
+.cmp thead th:nth-child(3){color:var(--red)}
+.cmp tbody tr{border-bottom:1px solid rgba(255,255,255,.06)}
+.cmp tbody tr:last-child{border-bottom:none}
+.cmp tbody tr:hover{background:rgba(255,255,255,.03)}
+.cmp td:first-child{font-weight:600;font-size:13px;color:var(--ink)}
+.cmp td{color:var(--mut)}
+.cmp td.shade{color:var(--ink2)}
+
+/* ═══════════════════════════ 07 · VÍCIO ═══════════════════════════ */
+.wheel-stage{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:40px}
+@media(max-width:860px){.wheel-stage{grid-template-columns:1fr}}
+.wheelbox svg{width:100%;max-width:460px;height:auto;display:block;margin:0 auto}
+.wseg{transition:opacity .3s,filter .3s;cursor:pointer;outline:none}
+.wseg:hover,.wseg:focus,.wseg.on{opacity:.92!important;filter:drop-shadow(0 0 10px currentColor)}
+.wnode{font-family:var(--mono);font-size:10.5px;fill:#cdd5e1;text-anchor:middle;pointer-events:none}
+.wcenter{font-family:var(--serif);font-size:15px;fill:var(--ice);text-anchor:middle}
+.wl-desc{font-size:14.5px;color:var(--mut);min-height:150px}
+.wl-desc h4{color:var(--ink);font-size:17px;margin-bottom:8px;display:flex;align-items:center}
+.wl-desc .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px}
+.wl-desc .brain{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--ice2);letter-spacing:.06em}
+
+/* ═══════════════════════════ 08 · MANEJO ═══════════════════════════ */
+.mgmt{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+@media(max-width:860px){.mgmt{grid-template-columns:1fr}}
+.mcard{padding:24px;display:flex;flex-direction:column}
+.mcard .step{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ice2);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mcard h4{font-size:16px;margin-bottom:8px}
+.mcard p{font-size:13.5px;color:var(--mut)}
+.mcard ul{margin:10px 0 0 16px;font-size:13.5px;color:var(--mut)}
+.mcard li{margin-bottom:6px}
+.mcard li b{color:var(--ink)}
+.donutwrap{display:grid;grid-template-columns:300px 1fr;gap:30px;align-items:center;margin-top:44px}
+@media(max-width:760px){.donutwrap{grid-template-columns:1fr}}
+.donut{position:relative;width:280px;height:280px;margin:0 auto}
+.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut .ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.donut .ctr .big{font-family:var(--serif);font-size:44px;color:var(--red);line-height:1}
+.donut .ctr .sm{font-size:12.5px;color:var(--mut);margin-top:6px;max-width:160px;line-height:1.45}
+.legend{display:grid;gap:12px}
+.lg{display:grid;grid-template-columns:14px 1fr auto;gap:12px;align-items:baseline;padding:12px 16px;border-radius:12px}
+.lg .sw{width:14px;height:14px;border-radius:4px;align-self:center}
+.lg .t{font-size:13.5px}
+.lg .t small{display:block;color:var(--mut);font-size:12.5px;margin-top:2px}
+.lg .vv{font-family:var(--mono);font-size:13px}
+
+/* ═══════════════════════════ 09 · INTERNAÇÃO ═══════════════════════════ */
+.intdecision{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+@media(max-width:820px){.intdecision{grid-template-columns:1fr}}
+.dec{padding:26px 28px;position:relative;overflow:hidden}
+.dec .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;padding:7px 14px;border-radius:99px;margin-bottom:14px}
+.dec.yes .badge{background:rgba(255,92,103,.13);color:var(--red);border:1px solid rgba(255,92,103,.38)}
+.dec.no .badge{background:rgba(72,214,149,.11);color:var(--green);border:1px solid rgba(72,214,149,.35)}
+.dec h3{font-size:18px;margin-bottom:12px}
+.dec ul{list-style:none;margin-top:4px}
+.dec li{font-size:13.5px;color:var(--mut);padding:9px 0 9px 26px;position:relative;border-bottom:1px dashed rgba(255,255,255,.07)}
+.dec li:last-child{border-bottom:none}
+.dec li::before{position:absolute;left:0;top:8px;font-size:13px}
+.dec.yes li::before{content:"▸";color:var(--red)}
+.dec.no li::before{content:"✓";color:var(--green)}
+.dec li b{color:var(--ink);font-weight:600}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+@media(max-width:820px){.flow{grid-template-columns:1fr}}
+.fstep{padding:20px 22px;position:relative}
+.fstep .n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--ice2);margin-bottom:8px}
+.fstep h4{font-size:15px;margin-bottom:7px}
+.fstep p{font-size:13.5px;color:var(--mut);line-height:1.6}
+.fstep .arrow{position:absolute;right:-15px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--ice2);z-index:2}
+@media(max-width:820px){.fstep .arrow{display:none}}
+.law{padding:28px 30px;margin-top:24px;border-color:rgba(240,176,76,.35);background:rgba(240,176,76,.05)}
+.law h3{display:flex;align-items:center;gap:12px;font-size:17px;margin-bottom:12px;flex-wrap:wrap}
+.law h3 .badge{font-family:var(--mono);font-size:11px;letter-spacing:.1em;background:rgba(240,176,76,.14);color:var(--amber);border:1px solid rgba(240,176,76,.4);padding:5px 11px;border-radius:99px}
+.law p{font-size:14px;color:var(--mut)}
+.law .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:16px}
+@media(max-width:700px){.law .cols{grid-template-columns:1fr}}
+.law h5{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--amber);margin-bottom:8px}
+.law ul{list-style:none}
+.law li{font-size:13px;color:var(--mut);padding:6px 0 6px 18px;position:relative}
+.law li::before{content:"§";position:absolute;left:0;color:var(--amber);font-family:var(--serif)}
+.law li b{color:var(--ink)}
+.istats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+@media(max-width:700px){.istats{grid-template-columns:1fr}}
+.istat{padding:18px 20px;text-align:center}
+.istat .v{font-family:var(--serif);font-size:30px;color:var(--ice);line-height:1}
+.istat .v.hot{color:var(--red)}
+.istat .l{font-size:12.5px;color:var(--mut);margin-top:7px;line-height:1.5}
+
+/* ═══════════════════════════ 10 · TRATAMENTOS ═══════════════════════════ */
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+@media(max-width:860px){.tgrid{grid-template-columns:1fr}}
+.tcard{padding:22px 24px;display:flex;flex-direction:column}
+.tcard .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.tcard .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:4px 10px;border-radius:99px}
+.tag.fail{background:rgba(229,72,77,.14);color:var(--red);border:1px solid rgba(229,72,77,.35)}
+.tag.hope{background:rgba(76,195,138,.13);color:var(--green);border:1px solid rgba(76,195,138,.35)}
+.tag.exp{background:rgba(157,140,255,.13);color:var(--violet);border:1px solid rgba(157,140,255,.35)}
+.tag.warn{background:rgba(226,163,61,.13);color:var(--amber);border:1px solid rgba(226,163,61,.35)}
+.tcard h4{font-size:16.5px;margin-bottom:6px}
+.tcard p{font-size:13.5px;color:var(--mut);flex:1}
+.tcard .evd{font-family:var(--mono);font-size:11.5px;color:#aab2c2;margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);line-height:1.7}
+.effrow{display:grid;grid-template-columns:230px 1fr 90px;gap:14px;align-items:center;margin-bottom:14px}
+@media(max-width:640px){.effrow{grid-template-columns:1fr;gap:6px}.effrow .nm{text-align:left}}
+.effrow .nm{font-size:13px;color:#c3cad6;text-align:right}
+.effrow .nm small{display:block;font-size:11.5px;color:var(--mut2)}
+.effrow .track{height:14px;background:var(--bg2);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.effrow .fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--deep),var(--ice2))}
+.effrow.pl .fill{background:linear-gradient(90deg,#3a3f4b,#5b6273)}
+.effrow.sum .fill{background:linear-gradient(90deg,#1f7a52,var(--green))}
+.effrow .vv{font-family:var(--mono);font-size:12.5px;color:var(--ice)}
+.effrow.pl .vv{color:var(--mut)}
+.effrow.sum .vv{color:var(--green)}
+.nnt{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+.nnt .k{padding:10px 14px;border-radius:10px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--mut)}
+.nnt .k b{font-family:var(--serif);font-size:20px;color:var(--ink);margin-right:6px}
+
+/* ═══════════════════════════ 11 · BRASIL ═══════════════════════════ */
+.chal{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
+@media(max-width:720px){.chal{grid-template-columns:1fr}}
+.chal .c{padding:20px 22px}
+.chal .c .num{font-family:var(--mono);font-size:11.5px;color:var(--red);letter-spacing:.14em}
+.chal .c h4{font-size:15.5px;margin:8px 0 6px}
+.chal .c p{font-size:13.5px;color:var(--mut)}
+
+/* ═══════════════════════════ 12 · PIPELINE ═══════════════════════════ */
+.pipe{margin-top:40px;border-left:2px solid var(--line);padding-left:28px}
+.pipe-item{position:relative;padding-bottom:30px}
+.pipe-item::before{content:"";position:absolute;left:-35px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--violet)}
+.pipe-item.ok::before{border-color:var(--green)}
+.pipe-item h4{font-size:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pipe-item h4 .ph{font-family:var(--mono);font-size:11px;color:var(--violet);letter-spacing:.12em}
+.pipe-item.ok h4 .ph{color:var(--green)}
+.pipe-item p{font-size:14px;color:var(--mut);max-width:680px}
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mut2);text-align:center}
+.stages div{padding:8px 4px;border-radius:8px;background:var(--card);border:1px solid var(--line)}
+.stages div.on{color:var(--ink);border-color:rgba(167,139,255,.5);background:rgba(167,139,255,.1)}
+@media(max-width:640px){.stages{grid-template-columns:repeat(3,1fr)}}
+
+/* ═══════════════════════════ 13 · REFERÊNCIAS ═══════════════════════════ */
+.refs{list-style:none;counter-reset:r;margin-top:30px;display:grid;gap:8px}
+.refs li{counter-increment:r;position:relative;padding:12px 16px 12px 52px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:13.5px;color:var(--mut);line-height:1.6;scroll-margin-top:90px}
+.refs li::before{content:"["counter(r)"]";position:absolute;left:14px;top:12px;font-family:var(--mono);font-size:11px;color:var(--ice2)}
+.refs li:target{border-color:var(--ice);background:rgba(124,216,247,.08)}
+.refs li b{color:var(--ink);font-weight:500}
+.refs li a{font-family:var(--mono);font-size:12px;color:var(--ice);text-decoration:none;word-break:break-all}
+.refs li a:hover{text-decoration:underline}
+.refs li .ev{margin-left:8px;padding:2px 8px;font-size:11px;vertical-align:middle}
+.refs li .ev::before{display:none}
+
+/* ═══════════════════════════ FOOTER ═══════════════════════════ */
+footer{border-top:1px solid var(--stroke);padding:52px 0 90px;margin-top:30px}
+.disc{padding:20px 26px;font-size:13.5px;color:#e8d9b8;max-width:820px;background:rgba(240,176,76,.07);border-color:rgba(240,176,76,.32)}
+.help{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.help .h{padding:14px 20px;font-size:13px}
+@media(max-width:820px){.help{grid-template-columns:1fr}}
+.help .h b{display:block;font-size:15px;color:var(--green)}
+.colophon{margin-top:30px;font-family:var(--mono);font-size:11.5px;color:var(--mut2);line-height:1.8}
+
+/* ═══════════════════════════ MOTION / PRINT ═══════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none}
+  .blob,.route,.scrollcue::after{animation:none}
+  .fi{animation:none;opacity:1}
+  .trow .fill,.effrow .fill{transition:none!important}
+  html{scroll-behavior:auto}
+}
+@media print{
+  .mesh,.grain,.tweaks,.qnav,#prog,#net3d,#circuit,.scrollcue,.refpop{display:none!important}
+  body{background:#fff;color:#111}
+  .glass,.card,.chartbox{background:#fff;border-color:#ccc;box-shadow:none;backdrop-filter:none}
+  .rv{opacity:1;transform:none}
+  section{padding:30px 0}
+  .trow .fill,.effrow .fill{width:var(--w)!important;transition:none!important}
+  a{color:#0a4a6e}
+  .src,.refs li,.small{color:#333}
+  sup.cite a{color:#0a4a6e}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+<a class="skip" href="#gs1">Pular para o conteúdo</a>
+<div class="mesh" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div class="grain" aria-hidden="true"></div>
+<div id="prog" aria-hidden="true"></div>
+
+<nav class="qnav" aria-label="Seções">
+  <a class="qbrand" href="/" title="Página principal do Guia Técnico"><span class="mk" aria-hidden="true">G</span>Guia Técnico</a>
+  <span class="qn" style="color:var(--ice2)">MACRO</span>
+  <a href="#metodo">00 Método</a><a href="#gs1">01 Tráfico</a><a href="#gs2">02 Molécula</a>
+  <span class="qn" style="color:var(--red)">PARANOIA</span>
+  <a href="#s1">03 Sintoma</a><a href="#s2">04 Circuito</a><a href="#s3">05 Curso</a><a href="#s4">06 Diferencial</a>
+  <span class="qn" style="color:var(--amber)">RESPOSTA</span>
+  <a href="#gs3">07 Vício</a><a href="#s5">08 Manejo</a><a href="#s5b">09 Internação</a>
+  <a href="#gs4">10 Tratamentos</a><a href="#gs5">11 Brasil</a><a href="#gs6">12 Pipeline</a>
+  <span class="qn" style="color:var(--green)">BASE</span>
+  <a href="#refs">13 Referências</a>
+  <a class="qx" href="/ghb/" title="Outro guia do site">GHB / GBL →</a>
+</nav>
+<div class="tweaks">
+  <button class="tbtn" id="tSpin" aria-pressed="true">ROTAÇÃO 3D: ON</button>
+  <button class="tbtn" id="tTop">↑ TOPO</button>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero" id="top">
+  <canvas id="net3d" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-tag fi" style="animation-delay:.1s">
+      <span class="chip"><span class="d" style="background:var(--red)"></span>DOSSIÊ · NEUROPSIQUIATRIA E SAÚDE PÚBLICA</span>
+      <span class="chip"><span class="d" style="background:var(--ice)"></span>EVIDÊNCIAS CLASSIFICADAS · REVISÃO SET/2026</span>
+    </div>
+    <h1 class="fi" style="animation-delay:.25s">Paranoia por<br><span class="glow">Metanfetamina</span></h1>
+    <p class="sub fi" style="animation-delay:.45s">O sintoma psiquiátrico mais frequente e mais temido do cristal: um sistema nervoso em alarme permanente que transforma vizinhos em agentes, ruídos em ameaças e a própria mente em campo de batalha. <b>Como nasce, quanto dura, por que volta — e o que a medicina pode fazer, com os números da literatura.</b></p>
+    <div class="hero-stats fi" style="animation-delay:.65s">
+      <div class="hs glass hot"><span class="ev A">META-ANÁLISE</span><div class="v">36,5<em>%</em></div><div class="l">prevalência agregada de transtorno psicótico induzido entre usuários de metanfetamina (17 estudos); 43% quando há transtorno por uso<sup class="cite"><a href="#r1">1</a></sup></div></div>
+      <div class="hs glass hot"><span class="ev B">COORTE</span><div class="v">5,3<em>×</em></div><div class="l">chance de sintomas psicóticos nos meses de uso vs. abstinência — e 11,2× com uso em ≥16 dias/mês<sup class="cite"><a href="#r2">2</a></sup></div></div>
+      <div class="hs glass"><span class="ev C">REVISÃO</span><div class="v">~10<em>h</em></div><div class="l">meia-vida de eliminação média; abstinência aguda dura 7–10 dias, sintomas residuais podem persistir meses<sup class="cite"><a href="#r6">6</a></sup></div></div>
+      <div class="hs glass hot"><span class="ev A">META-ANÁLISE</span><div class="v">22<em>%</em></div><div class="l">das psicoses induzidas por anfetaminas evoluem para esquizofrenia (IC 95% 14–34%); 30% em 8 anos no registro finlandês<sup class="cite"><a href="#r4">4</a>,<a href="#r5">5</a></sup></div></div>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true">ROLAR</div>
+</header>
+
+<div class="wrap">
+  <aside class="glass crisis" aria-labelledby="crisis-title">
+    <div class="ic" aria-hidden="true">!</div>
+    <div>
+      <h2 id="crisis-title">Paranoia ativa é urgência psiquiátrica.</h2>
+      <p>Agitação grave, ameaça a si ou a outros, autolesão, hipertermia ou dias sem dormir: não espere passar. Veja <a href="#s5">o manejo (§08)</a> e <a href="#s5b">quando internar (§09)</a>.</p>
+    </div>
+    <div class="lines">
+      <a href="tel:192"><b>192</b>SAMU</a>
+      <a href="tel:188"><b>188</b>CVV · 24 h</a>
+      <a href="#s5b"><b>CAPS</b>porta do SUS</a>
+    </div>
+  </aside>
+</div>
+
+<!-- ═══════════════ 00 · MÉTODO ═══════════════ -->
+<section id="metodo">
+  <div class="wrap">
+    <div class="kicker rv">00 · Como ler este dossiê</div>
+    <h2 class="rv">Cada número tem uma fonte.<br>Cada fonte tem um peso.</h2>
+    <p class="lede rv d1">Este documento mistura três tipos de conhecimento — epidemiologia de pesquisa, prática clínica e dados policiais/jornalísticos. Eles não valem o mesmo. Por isso cada seção e cada estatística carregam um selo de <b>nível de evidência</b>, e as citações numeradas levam à referência com DOI.</p>
+    <div class="method">
+      <div class="evkey rv">
+        <div class="row"><span class="ev A">A · Meta-análise</span><span><b>Síntese quantitativa</b> de vários estudos; melhor estimativa disponível, com intervalo de confiança.</span></div>
+        <div class="row"><span class="ev B">B · RCT / Coorte</span><span><b>Ensaio randomizado</b> ou estudo longitudinal prospectivo; forte para causalidade ou curso.</span></div>
+        <div class="row"><span class="ev C">C · Séries / Revisão narrativa</span><span><b>Séries clínicas, revisões narrativas, consensos.</b> Úteis para prática; estimativas menos precisas.</span></div>
+        <div class="row"><span class="ev D">D · Institucional / Imprensa</span><span><b>Relatórios de agências</b> (UNODC, PF) e reportagens. Descrevem tendências; não são epidemiologia primária.</span></div>
+        <div class="row"><span class="ev X">Esquemático</span><span><b>Gráfico didático</b>, forma ilustrativa sem escala real. Nunca ler como dado.</span></div>
+      </div>
+      <div class="glass meta rv d1">
+        <div class="kv">
+          <span><b>Revisão</b></span><span>11 set 2026</span>
+          <span><b>Base</b></span><span>PubMed / DOI verificados por item</span>
+          <span><b>Escopo</b></span><span>Metanfetamina (d-MA, "cristal", "ice"); não cobre MDMA nem anfetaminas de prescrição</span>
+          <span><b>Público</b></span><span>Profissionais de saúde, gestores, imprensa, famílias</span>
+          <span><b>Nomenclatura</b></span><span>TUM = transtorno por uso de metanfetamina · PIM = psicose induzida por metanfetamina · CM = <i>contingency management</i></span>
+          <span><b>Limites</b></span><span>Dados brasileiros de prevalência são escassos; seções 01 e 11 são de nível D</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 01 · TRÁFICO ═══════════════ -->
+<section id="gs1">
+  <div class="wrap">
+    <div class="kicker rv">01 · Geografia do tráfico <span class="ev D">Nível D · Institucional</span></div>
+    <h2 class="rv">Uma rota que contorna o mundo<br>e desemboca na fronteira oeste</h2>
+    <p class="lede rv d1">O Brasil foi, por décadas, um mercado de cocaína e crack com metanfetamina apenas em trânsito. A partir dos anos 2010 as apreensões na faixa de fronteira com o Paraguai crescem, e o cristal passa a aparecer nos mercados urbanos. Os relatórios da UNODC descrevem o mercado global de estimulantes anfetamínicos em expansão contínua, com apreensões recordes<sup class="cite"><a href="#r21">21</a></sup>.</p>
+
+    <div class="tl rv">
+      <div class="tl-item">
+        <div class="yr">ANOS 1990–2000</div>
+        <h4>O país de trânsito</h4>
+        <p>O consumo brasileiro de estimulantes era dominado por cocaína, crack e anfetaminas de prescrição desviadas (anorexígenos). A metanfetamina atravessava o território, sobretudo rumo a mercados externos, sem base de consumo local relevante.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2007–2014</div>
+        <h4>Fronteira oeste: primeiras apreensões relevantes</h4>
+        <p>Registros da Polícia Federal passam a incluir metanfetamina em Mato Grosso do Sul e na tríplice fronteira. O eixo Ponta Porã / Pedro Juan Caballero se consolida como porta de entrada de drogas sintéticas.</p>
+        <p class="note"><b>Correção de nomenclatura:</b> o "oxi" do Acre e da região Norte é um derivado de <b>pasta-base de cocaína</b> — não é metanfetamina. A confusão é frequente na imprensa e distorce as estatísticas.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2015–2020</div>
+        <h4>Produção regional e integração às rotas da cocaína</h4>
+        <p>Investigações reportam laboratórios de síntese na região e integração da metanfetamina às redes logísticas já existentes para cocaína. O cristal chega a São Paulo e a capitais do Nordeste; apreensões nacionais sobem ano a ano.</p>
+      </div>
+      <div class="tl-item hot">
+        <div class="yr">2020–HOJE</div>
+        <h4>Mercado interno em formação</h4>
+        <p>Refino e fracionamento locais reduzem a dependência da fronteira. O preço da dose cai e a droga alcança cidades médias. A tendência espelha o que a UNODC descreve para a América Latina: diversificação de mercados e produção mais próxima do consumo<sup class="cite"><a href="#r21">21</a></sup>.</p>
+      </div>
+    </div>
+
+    <div class="routebox glass rv">
+      <svg viewBox="0 0 900 380" role="img" aria-label="Diagrama esquemático das rotas de tráfico de metanfetamina até o Brasil">
+        <g opacity=".12">
+          <path class="axis" d="M0,60 H900 M0,140 H900 M0,220 H900 M0,300 H900"/>
+          <path class="axis" d="M150,0 V380 M300,0 V380 M450,0 V380 M600,0 V380 M750,0 V380"/>
+        </g>
+        <path class="route" d="M120,60 C260,90 340,150 420,225"/>
+        <path class="route" d="M560,90 C560,130 470,180 435,228"/>
+        <path class="route dark" d="M435,232 C470,290 560,320 660,325"/>
+        <path class="route dark" d="M437,234 C520,265 610,255 700,270"/>
+        <path class="route dark" d="M436,233 C500,270 540,300 640,300"/>
+        <path class="route" d="M700,272 C760,278 800,290 840,295" style="stroke:var(--mut)"/>
+        <circle cx="120" cy="60" r="7" fill="#e2a33d"/><text class="city" x="120" y="42" style="fill:#e2a33d">MÉXICO · PRODUÇÃO EM ESCALA</text>
+        <circle cx="560" cy="90" r="7" fill="#e2a33d"/><text class="city" x="560" y="72" style="fill:#e2a33d">ÁSIA/ÁFRICA · PRECURSORES E TRÂNSITO</text>
+        <circle cx="420" cy="228" r="9" fill="#e5484d"/><text class="city hot" x="420" y="255">PONTA PORÃ / TRÍPLICE FRONTEIRA</text>
+        <circle cx="660" cy="325" r="8" fill="#e5484d"/><text class="city hot" x="660" y="350">SÃO PAULO · MAIOR MERCADO URBANO</text>
+        <circle cx="700" cy="270" r="6" fill="#e5484d"/><text class="city hot" x="770" y="262">CENTRO-OESTE</text>
+        <circle cx="640" cy="300" r="6" fill="#e5484d"/><text class="city hot" x="640" y="286" dy="-14">NORDESTE (CRESCIMENTO)</text>
+        <circle cx="840" cy="295" r="6" fill="#8b93a5"/><text class="city mut" x="845" y="318">EUROPA · RE-EXPORTAÇÃO</text>
+      </svg>
+      <div class="legendrow"><span class="li">Tráfico internacional</span><span class="lr">Distribuição interna brasileira</span><span class="ev X" style="margin-left:auto">Esquemático</span></div>
+    </div>
+    <p class="src rv"><b>Fontes:</b> UNODC, <i>World Drug Report</i> 2024/2025 (mercado global de estimulantes tipo anfetamina em expansão; apreensões recordes)<sup class="cite"><a href="#r21">21</a></sup> · registros públicos de apreensão da Polícia Federal e reportagens. <b>Limitação:</b> não há inquérito epidemiológico nacional recente que dimensione o consumo de metanfetamina no Brasil.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 02 · MOLÉCULA ═══════════════ -->
+<section id="gs2">
+  <div class="wrap">
+    <div class="kicker rv">02 · A molécula e o apagão <span class="ev C">Nível C · Revisão farmacológica</span> <span class="ev B">Nível B · PET longitudinal</span></div>
+    <h2 class="rv">A molécula, o pico<br>e o apagão dopaminérgico</h2>
+    <p class="lede rv d1">C₁₀H₁₅N: 149 daltons que abrem as comportas da dopamina. Diferente da cocaína, que apenas <i>bloqueia</i> a recaptação, a metanfetamina entra no neurônio e <b>inverte o transportador</b>, despejando dopamina, noradrenalina e serotonina na fenda sináptica. O problema é o depois: o vale profundo, a neurotoxicidade e o substrato da paranoia.</p>
+
+    <div class="split">
+      <div>
+        <div class="molecule-stage rv" id="molStage" aria-label="Modelo 3D interativo da molécula de metanfetamina" role="img">
+          <div class="mol-label">C₁₀H₁₅N · N-METIL-1-FENILPROPAN-2-AMINA · ARRASTE PARA ROTACIONAR<small>* carbono quiral — o enantiômero (S)-(+) [d-metanfetamina] é o psicoestimulante potente; hidrogênios omitidos</small></div>
+        </div>
+        <div class="pk rv d1">
+          <div class="k"><div class="v">149,24<em> g/mol</em></div><div class="l">Massa molar</div></div>
+          <div class="k"><div class="v">~10<em> h</em></div><div class="l">Meia-vida (variação 6–15 h)<sup class="cite"><a href="#r6">6</a></sup></div></div>
+          <div class="k"><div class="v">9,9</div><div class="l">pKa · base fraca</div></div>
+          <div class="k"><div class="v">67<em>%</em></div><div class="l">Biodisponibilidade oral<sup class="cite"><a href="#r6">6</a></sup></div></div>
+          <div class="k"><div class="v">79<em>%</em></div><div class="l">Intranasal<sup class="cite"><a href="#r6">6</a></sup></div></div>
+          <div class="k"><div class="v">~90<em>%</em></div><div class="l">Fumada (cristal)<sup class="cite"><a href="#r6">6</a></sup></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="card rv">
+          <h3>Mecanismo em cinco passos</h3>
+          <ol class="mech">
+            <li><b>Substrato do DAT/NET/SERT.</b> Por ser estruturalmente análoga às monoaminas, a molécula é transportada para dentro do terminal pré-sináptico.</li>
+            <li><b>Esvazia as vesículas.</b> Inibe o VMAT2 e colapsa o gradiente de pH vesicular: a dopamina vaza para o citoplasma.</li>
+            <li><b>Inverte o transportador.</b> Via TAAR1/PKC o DAT passa a funcionar ao contrário — <i>efluxo</i> de dopamina, independente de potencial de ação.</li>
+            <li><b>Bloqueia a degradação.</b> Inibição da MAO prolonga a vida do neurotransmissor livre.</li>
+            <li><b>Custo tardio.</b> Estresse oxidativo, excitotoxicidade glutamatérgica secundária e neuroinflamação lesam terminais dopaminérgicos estriatais e circuitos pré-frontais<sup class="cite"><a href="#r6">6</a>,<a href="#r7">7</a></sup>.</li>
+          </ol>
+        </div>
+        <div class="card rv d1" style="margin-top:16px">
+          <h3>O cérebro se recupera? Parcialmente, e devagar</h3>
+          <p>PET com marcador de transportador de dopamina: usuários crônicos avaliados com &lt;6 meses de abstinência e reavaliados com 12–17 meses mostraram <b style="color:var(--ice)">+19% de DAT no caudado e +16% no putâmen</b> — recuperação real, porém incompleta, e sem normalização plena do desempenho cognitivo<sup class="cite"><a href="#r7">7</a></sup>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PK simulator -->
+    <div class="glass pksim rv">
+      <div class="head">
+        <div>
+          <div class="kicker" style="margin-bottom:4px">SIMULADOR · ELIMINAÇÃO DE PRIMEIRA ORDEM</div>
+          <p class="small">Fração remanescente C(t) = e<sup>−kt</sup>, k = ln2 / t½. A meia-vida varia entre indivíduos e com o pH urinário (excreção renal maior em urina ácida)<sup class="cite"><a href="#r6">6</a></sup>. Modelo monocompartimental didático — explica por que a psicose pode persistir <i>depois</i> que a droga saiu do corpo.</p>
+        </div>
+        <label>t½ <input type="range" id="pkHalf" min="6" max="15" step="0.5" value="10" aria-label="Meia-vida em horas"> <output id="pkOut">10 h</output></label>
+      </div>
+      <svg id="pkSvg" viewBox="0 0 720 260" role="img" aria-label="Curva de fração remanescente ao longo de 96 horas"></svg>
+      <div class="pkreads">
+        <div class="k"><div class="v" id="pk24">—</div><div class="l">restante em 24 h</div></div>
+        <div class="k"><div class="v" id="pk48">—</div><div class="l">restante em 48 h</div></div>
+        <div class="k"><div class="v" id="pk72">—</div><div class="l">restante em 72 h</div></div>
+        <div class="k"><div class="v" id="pk5">—</div><div class="l">tempo até &lt; 5 %</div></div>
+      </div>
+    </div>
+
+    <div class="chartbox rv">
+      <div class="kicker" style="margin-bottom:10px">DINÂMICA DOPAMINÉRGICA · USO OCASIONAL VS. CRÔNICO <span class="ev X">Esquemático</span></div>
+      <svg viewBox="0 0 720 230" role="img" aria-label="Gráfico esquemático de liberação de dopamina após uso ocasional e crônico">
+        <path class="axis" d="M40,190 H700"/><path class="axis" d="M40,30 V190"/>
+        <text class="lab" x="8" y="34">DA</text><text class="lab" x="680" y="208">tempo</text>
+        <line x1="40" y1="150" x2="700" y2="150" stroke="rgba(255,255,255,.12)" stroke-dasharray="3 4"/>
+        <text class="lab" x="46" y="146" style="fill:#8b93a5">basal</text>
+        <path d="M40,150 C70,90 100,150 140,150 C180,150 220,150 260,150" fill="none" stroke="#48d695" stroke-width="2.2"/>
+        <text class="lab" x="46" y="208" style="fill:#48d695">OCASIONAL · pico e retorno ao basal</text>
+        <path d="M300,150 C315,34 330,34 345,150 C356,180 380,186 420,186 C470,187 560,188 700,178" fill="none" stroke="#ff5c67" stroke-width="2.2"/>
+        <path d="M345,150 C356,180 380,186 420,186 C470,187 560,188 700,178 L700,150 L345,150 Z" fill="rgba(255,92,103,.10)"/>
+        <text class="lab" x="300" y="208" style="fill:#ff5c67">CRÔNICO · pico maior, vale abaixo do basal (anedonia, craving)</text>
+        <text class="lab" x="440" y="130" style="fill:#98a2b6">↓ DAT, ↓ D2 estriatal: recuperação parcial em 12–17 meses</text>
+      </svg>
+    </div>
+
+    <div class="kicker rv" style="margin-top:44px">TRÊS TRAJETÓRIAS APÓS UM EPISÓDIO PSICÓTICO</div>
+    <div class="traj">
+      <div class="glass t glass-hover rv" style="--c:var(--ice)"><div class="n">AGUDA · MAIORIA</div><div class="big">7–10<em> dias</em></div><h4>Remissão com abstinência</h4><p>Na maior parte dos casos os sintomas cedem com a retirada da droga, acompanhando a fase de abstinência aguda. Sintomas residuais podem persistir semanas.<sup class="cite"><a href="#r6">6</a>,<a href="#r9">9</a></sup></p></div>
+      <div class="glass t glass-hover rv d1" style="--c:var(--amber)"><div class="n">RECORRENTE · SENSITIZAÇÃO</div><div class="big">↑<em> a cada episódio</em></div><h4>Recaída com gatilhos menores</h4><p>Após um episódio, novas psicoses surgem com doses menores ou sob estresse — "sensitização", descrita nas coortes japonesas de Ujike &amp; Sato.<sup class="cite"><a href="#r8">8</a></sup></p></div>
+      <div class="glass t glass-hover rv d2" style="--c:var(--red)"><div class="n">PERSISTENTE · TRANSIÇÃO</div><div class="big">22<em>% (14–34)</em></div><h4>Evolução para esquizofrenia</h4><p>Proporção agregada de 5 estudos com psicose por anfetaminas que recebe diagnóstico de esquizofrenia no seguimento; 30% em 8 anos no registro finlandês.<sup class="cite"><a href="#r4">4</a>,<a href="#r5">5</a></sup></p></div>
+    </div>
+    <p class="src rv"><b>Fontes:</b> Cruickshank &amp; Dyer, <i>Addiction</i> 2009 (farmacocinética, t½ ≈ 10 h, abstinência 7–10 dias)<sup class="cite"><a href="#r6">6</a></sup> · Volkow et al., <i>J Neurosci</i> 2001 (recuperação do DAT)<sup class="cite"><a href="#r7">7</a></sup> · Ujike &amp; Sato 2004 (sensitização)<sup class="cite"><a href="#r8">8</a></sup> · Murrie et al., <i>Schizophr Bull</i> 2020<sup class="cite"><a href="#r4">4</a></sup> · Niemi-Pynttäri et al., <i>J Clin Psychiatry</i> 2013<sup class="cite"><a href="#r5">5</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 03 · SINTOMA ═══════════════ -->
+<section id="s1">
+  <div class="wrap">
+    <div class="kicker rv">03 · O sintoma <span class="ev C">Nível C · Clínico</span></div>
+    <h2 class="rv">“Estão me seguindo.”<br>A anatomia de um delírio</h2>
+    <p class="lede rv d1">A paranoia metanfetamínica começa como suspeita vaga e se consolida num sistema de crenças. O conteúdo é tipicamente <b>persecutório e de referência</b>, sincronizado com o binge e a privação de sono; alucinações táteis (formicação) e auditivas são frequentes. Nos casos prolongados, a fronteira com a psicose primária se apaga<sup class="cite"><a href="#r9">9</a>,<a href="#r10">10</a></sup>.</p>
+    <div class="duo">
+      <div class="glass quotebox glass-hover rv">
+        <p>Toda noite alguém mexe no meu dinheiro, nas minhas coisas. Eu sei que parece loucura, mas é real: eles trocam o cheiro, mudam a posição. Minha mãe faz parte, o vizinho grava tudo.</p>
+        <div class="who">— Relato composto, construído a partir de descrições clínicas típicas de emergência psiquiátrica. Não é citação de paciente real.</div>
+      </div>
+      <div class="symgrid">
+        <div class="glass sym glass-hover rv"><div class="t"><span class="ic">👁</span>Hipervigilância</div><div class="d">Checar cortinas, portas, celular; rotas "seguras"; dormir com a luz acesa. Frequentemente o primeiro sinal.</div></div>
+        <div class="glass sym glass-hover rv d1"><div class="t"><span class="ic">🔊</span>Alucinações</div><div class="d">Vozes ameaçadoras, passos, sussurros. Táteis: insetos ou agulhas sob a pele (formicação) — muito sugestivas de estimulante.</div></div>
+        <div class="glass sym glass-hover rv d2"><div class="t"><span class="ic">🔗</span>Ideias de referência</div><div class="d">TV, rádio e redes sociais "falam com o paciente"; placas e números viram mensagens codificadas.</div></div>
+        <div class="glass sym glass-hover rv d3"><div class="t"><span class="ic">⚔️</span>Reatividade defensiva</div><div class="d">Agressão "preemptiva" contra a ameaça imaginada — o principal vetor de violência associada ao cristal.</div></div>
+      </div>
+    </div>
+    <p class="src rv"><b>Fontes:</b> Glasner-Edwards &amp; Mooney, <i>CNS Drugs</i> 2014 (epidemiologia e manejo)<sup class="cite"><a href="#r9">9</a></sup> · Wearne &amp; Cornish, <i>Front Psychiatry</i> 2018 (sintomas positivos, negativos e cognitivos)<sup class="cite"><a href="#r10">10</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 04 · CIRCUITO ═══════════════ -->
+<section id="s2">
+  <div class="wrap">
+    <div class="kicker rv">04 · O circuito <span class="ev C">Nível C · Modelo neurobiológico</span></div>
+    <h2 class="rv">Por que o cérebro passa<br>a enxergar ameaça em tudo</h2>
+    <p class="lede rv d1">A paranoia é o resultado previsível de três sistemas desregulados ao mesmo tempo: dopamina em excesso no circuito mesolímbico (atribuição de <i>salience</i> — tudo parece importante e dirigido a você), amígdala hiperativa (alarme) e córtex pré-frontal hipoativo (freio quebrado). Arraste o circuito abaixo.</p>
+    <div class="glass sec3d rv">
+      <canvas id="circuit" aria-label="Modelo 3D interativo do circuito mesocorticolímbico" role="img"></canvas>
+      <div class="circuit-cap">
+        <span class="formula">DA ↑↑ <b>mesolímbico</b> · NE ↑ · 5-HT ↑ · glutamato ↑ (secundário) · GABA inibitório ↓</span>
+        <span class="chip"><span class="d" style="background:var(--red)"></span>ARRASTE PARA ROTACIONAR</span>
+      </div>
+    </div>
+    <div class="nodes rv d1">
+      <div class="nd"><b><i style="background:#ff5c67"></i>ATV (área tegmental ventral)</b>Origem dos neurônios dopaminérgicos; disparo e efluxo massivo sob metanfetamina.</div>
+      <div class="nd"><b><i style="background:#ff8a5c"></i>Núcleo accumbens</b>Recompensa e <i>salience</i>: estímulos neutros ganham significado e urgência.</div>
+      <div class="nd"><b><i style="background:#f0b04c"></i>Amígdala</b>Detector de ameaça; hiper-reativa amplifica medo e leitura hostil de faces.</div>
+      <div class="nd"><b><i style="background:#7cd8f7"></i>Hipocampo</b>Contextualiza memórias; falha em rotular "falso alarme".</div>
+      <div class="nd"><b><i style="background:#a78bff"></i>Córtex pré-frontal</b>Teste de realidade e inibição; hipoativo no uso crônico.</div>
+      <div class="nd"><b><i style="background:#48d695"></i>Tálamo</b>Filtro sensorial; "portão" aberto deixa passar ruído que vira sinal.</div>
+    </div>
+    <p class="src rv"><b>Nota:</b> modelo esquemático baseado na análise de neurocircuitos de Koob &amp; Volkow<sup class="cite"><a href="#r19">19</a></sup> e na hipótese de <i>salience</i> aberrante para sintomas psicóticos. Posições e conexões são didáticas, não anatômicas.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 05 · CURSO TEMPORAL ═══════════════ -->
+<section id="s3">
+  <div class="wrap">
+    <div class="kicker rv">05 · Curso temporal <span class="ev B">Nível B · Coorte prospectiva</span></div>
+    <h2 class="rv">Dias para "melhorar".<br>Meses para o cérebro reorganizar.</h2>
+    <p class="lede rv d1">O risco de psicose é <b>dose-dependente dentro da mesma pessoa</b>: a coorte australiana de McKetin acompanhou 278 usuários dependentes sem esquizofrenia prévia e mediu a chance de sintomas psicóticos em meses de uso versus meses de abstinência<sup class="cite"><a href="#r2">2</a></sup>.</p>
+
+    <div class="thresh">
+      <div class="trow glass glass-hover rv"><div class="nm">Mês sem uso<small>referência (OR = 1)</small></div><div class="track"><div class="fill" data-w="8"></div></div><div class="pc">OR 1,0<small>referência</small></div></div>
+      <div class="trow glass glass-hover rv"><div class="nm">Uso em 1–15 dias/mês<small>uso intermitente</small></div><div class="track"><div class="fill" data-w="30"></div><div class="ci" style="left:19%;width:29%"></div></div><div class="pc">OR 4,0<small>IC 95% 2,5–6,5</small></div></div>
+      <div class="trow hot glass glass-hover rv"><div class="nm">Uso em ≥16 dias/mês<small>uso quase diário</small></div><div class="track"><div class="fill" data-w="84"></div><div class="ci" style="left:44%;width:56%"></div></div><div class="pc">OR 11,2<small>IC 95% 5,9–21,1</small></div></div>
+    </div>
+    <p class="small rv" style="margin-top:10px">Razão de chances (OR) de sintomas psicóticos clinicamente significativos (BPRS ≥ 4 em suspeição, alucinações ou conteúdo incomum de pensamento) no mês, análise de efeitos fixos intra-indivíduo. Barra em escala linear até OR 13; faixa clara = intervalo de confiança<sup class="cite"><a href="#r2">2</a></sup>. Em corte transversal, 13% dos usuários regulares triaram positivo para psicose e 23% tiveram sintoma clinicamente relevante no ano — 11× a população geral<sup class="cite"><a href="#r3">3</a></sup>.</p>
+
+    <div class="duel">
+      <div class="drow rv">
+        <span class="dot"></span>
+        <div class="glass ph glass-hover left"><div class="when">0–48 HORAS</div><h4>Gatilho</h4><p>Dose alta ou binge; privação de sono &gt;48 h potencializa o efeito psicotogênico. Suspeita vaga, hipervigilância, ideias de referência frouxas.</p></div>
+        <div></div>
+      </div>
+      <div class="drow rv">
+        <span class="dot"></span>
+        <div class="glass ph glass-hover left"><div class="when">DIAS 2–10</div><h4>Psicose aguda + abstinência</h4><p>Delírio persecutório estruturado, alucinações; depois o <i>crash</i>: hipersonia, disforia, anedonia. Pico de risco de agressão e autolesão. A abstinência aguda dura tipicamente 7–10 dias<sup class="cite"><a href="#r6">6</a></sup>.</p></div>
+        <div></div>
+      </div>
+      <div class="drow hot rv">
+        <span class="dot"></span>
+        <div></div>
+        <div class="glass ph glass-hover right"><div class="when">SEMANAS 2–8 · JANELA DE RISCO</div><h4>Recorrência por sensitização</h4><p>Com a droga já eliminada, o quadro pode retornar com uma dose menor que a original ou sob estresse psicossocial — o fenômeno de sensitização descrito por Ujike &amp; Sato em pacientes com história de PIM<sup class="cite"><a href="#r8">8</a></sup>.</p></div>
+      </div>
+      <div class="drow hot rv">
+        <span class="dot"></span>
+        <div></div>
+        <div class="glass ph glass-hover right"><div class="when">MESES 1–12 · FASE CRÍTICA</div><h4>Psicose persistente</h4><p>Quando o delírio não cede com abstinência, o quadro se aproxima clinicamente da esquizofrenia: sintomas negativos, desorganização, declínio funcional. Cerca de 1 em 4–5 receberá o diagnóstico no seguimento<sup class="cite"><a href="#r4">4</a>,<a href="#r5">5</a></sup>.</p></div>
+      </div>
+      <div class="drow rv">
+        <span class="dot"></span>
+        <div class="glass ph glass-hover left"><div class="when">MESMO COM ABSTINÊNCIA</div><h4>Recuperação lenta</h4><p>Marcadores dopaminérgicos estriatais sobem 16–19% entre &lt;6 e 12–17 meses de abstinência<sup class="cite"><a href="#r7">7</a></sup>. Abstinência sustentada é o preditor mais consistente de remissão — cada retomada de uso reabre a janela.</p></div>
+        <div></div>
+      </div>
+    </div>
+    <p class="src rv"><b>Fontes:</b> McKetin et al., <i>JAMA Psychiatry</i> 2013<sup class="cite"><a href="#r2">2</a></sup> · McKetin et al., <i>Addiction</i> 2006<sup class="cite"><a href="#r3">3</a></sup> · Ujike &amp; Sato 2004<sup class="cite"><a href="#r8">8</a></sup> · Volkow et al. 2001<sup class="cite"><a href="#r7">7</a></sup> · Cruickshank &amp; Dyer 2009<sup class="cite"><a href="#r6">6</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 06 · DIFERENCIAL ═══════════════ -->
+<section id="s4">
+  <div class="wrap">
+    <div class="kicker rv">06 · Diagnóstico diferencial <span class="ev C">Nível C · Revisão</span></div>
+    <h2 class="rv">É o cristal ou é esquizofrenia?</h2>
+    <p class="lede rv d1">A pergunta que desafia todo pronto-socorro. A resposta raramente é binária: cerca de <b>um em cada cinco</b> pacientes com psicose induzida por anfetaminas recebe diagnóstico de esquizofrenia no seguimento<sup class="cite"><a href="#r4">4</a></sup>, e os perfis sintomáticos se sobrepõem mais do que se pensava<sup class="cite"><a href="#r10">10</a></sup>. O quadro resume as pistas clínicas — nenhuma é definitiva isoladamente.</p>
+    <div class="glass cmp rv">
+      <div class="scroll">
+      <table>
+        <thead><tr><th>Dimensão</th><th>Psicose induzida por metanfetamina</th><th>Esquizofrenia</th></tr></thead>
+        <tbody>
+          <tr><td>Início</td><td>Súbito, em horas–dias; ligado a binge ou aumento de dose</td><td>Insidioso, meses; pródromo com retraimento e declínio funcional</td></tr>
+          <tr><td>Conteúdo</td><td>Persecutório vívido, referência, ciúme; humor ansioso/irritável</td><td>Persecutório, mas também bizarro, controle do pensamento; afeto embotado</td></tr>
+          <tr><td>Alucinações táteis</td><td>Frequentes (formicação) — muito sugestivas de estimulante</td><td>Incomuns; predominam auditivas</td></tr>
+          <tr><td>Sintomas negativos e cognição</td><td>Menos proeminentes; cognição melhora com abstinência prolongada</td><td>Núcleo do quadro; déficit cognitivo estável</td></tr>
+          <tr><td>Curso com abstinência</td><td>Cede em 7–10 dias na maioria; residual pode persistir semanas</td><td>Independe do uso; remissão exige antipsicótico contínuo</td></tr>
+          <tr><td>Insight entre episódios</td><td>Frequentemente recuperado</td><td>Frequentemente comprometido</td></tr>
+          <tr><td>Neurobiologia</td><td>↓ DAT/D2 estriatal com recuperação parcial em 12–17 meses<sup class="cite"><a href="#r7">7</a></sup></td><td>↑ síntese de dopamina pré-sináptica; alterações estruturais progressivas</td></tr>
+          <tr><td>Zona de sombra</td><td colspan="2" class="shade">22% (IC 14–34%) das psicoses por anfetaminas transitam para esquizofrenia<sup class="cite"><a href="#r4">4</a></sup>; 30% em 8 anos no registro finlandês<sup class="cite"><a href="#r5">5</a></sup>. Os dois quadros coexistem: vulnerabilidade prévia + gatilho farmacológico. DSM-5-TR exige que os sintomas persistam ≥ 1 mês após a abstinência para reconsiderar o diagnóstico primário<sup class="cite"><a href="#r22">22</a></sup>.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <p class="src rv"><b>Fontes:</b> Wearne &amp; Cornish 2018<sup class="cite"><a href="#r10">10</a></sup> · Murrie et al. 2020<sup class="cite"><a href="#r4">4</a></sup> · Niemi-Pynttäri et al. 2013<sup class="cite"><a href="#r5">5</a></sup> · DSM-5-TR / CID-11 (transtorno psicótico induzido por substância)<sup class="cite"><a href="#r22">22</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 07 · VÍCIO ═══════════════ -->
+<section id="gs3">
+  <div class="wrap">
+    <div class="kicker rv">07 · O vício <span class="ev C">Nível C · Modelo de Koob &amp; Volkow</span></div>
+    <h2 class="rv">A roda que não para:<br>binge · crash · craving · repetir</h2>
+    <p class="lede rv d1">A metanfetamina produz um ciclo de consumo diferente das outras drogas comuns ao usuário brasileiro: euforia longa (a meia-vida de ~10 h é 10× a da cocaína), seguida de colapso que só alivia com nova dose. É o ciclo binge–abstinência–preocupação/antecipação do modelo de Koob &amp; Volkow<sup class="cite"><a href="#r19">19</a></sup> — e ele explica por que o transtorno se instala em semanas.</p>
+    <div class="wheel-stage">
+      <div class="wheelbox rv" id="wheelBox">
+        <svg viewBox="0 0 340 340" role="img" aria-label="Diagrama interativo do ciclo do vício">
+          <g id="wheelG"></g>
+          <text class="wcenter" x="170" y="166">CICLO DO</text>
+          <text class="wcenter" x="170" y="186">VÍCIO</text>
+        </svg>
+      </div>
+      <div class="wl-desc rv d1" id="wlDesc" aria-live="polite">
+        <h4><span class="dot" style="background:var(--ice)"></span>Passe o mouse ou use Tab sobre os estágios</h4>
+        <p>Cada estágio alimenta o seguinte. Selecione um segmento para ver o que acontece no cérebro — e no comportamento — naquela fase.</p>
+      </div>
+    </div>
+    <p class="src rv"><b>Nota:</b> diagrama didático baseado no modelo trifásico de Koob &amp; Volkow (binge/intoxicação → abstinência/afeto negativo → preocupação/antecipação)<sup class="cite"><a href="#r19">19</a></sup>. Prevalência de psicose no ciclo: Lecomte et al. 2018<sup class="cite"><a href="#r1">1</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 08 · MANEJO ═══════════════ -->
+<section id="s5">
+  <div class="wrap">
+    <div class="kicker rv">08 · Manejo <span class="ev B">Nível B · Cochrane / RCT</span></div>
+    <h2 class="rv">O que fazer quando a paranoia<br>instala (e o que NÃO fazer)</h2>
+    <p class="lede rv d1">Não existe antídoto. O manejo é de contenção, tempo e neuroproteção — e o erro mais comum é a alta sem plano: a paranoia que cedeu na emergência volta se o uso continuar. A revisão Cochrane sobre psicose por anfetaminas encontrou apenas um ensaio randomizado de qualidade — e nele olanzapina e haloperidol foram igualmente eficazes<sup class="cite"><a href="#r11">11</a>,<a href="#r12">12</a></sup>.</p>
+    <div class="mgmt">
+      <div class="glass mcard glass-hover rv">
+        <div class="step"><span>FASE 1 · AGUDA (0–10 DIAS)</span><span class="ev B">RCT</span></div>
+        <h4>Acalmar o alarme</h4>
+        <p>Ambiente silencioso, pouco iluminado, um interlocutor por vez; contenção física como último recurso (agrava agitação, hipertermia e rabdomiólise).</p>
+        <ul>
+          <li><b>Benzodiazepínicos</b> (diazepam, midazolam, lorazepam) — primeira linha para agitação e para o componente simpaticomimético</li>
+          <li><b>Antipsicótico</b> se delírio/alucinação persistem: olanzapina ≈ haloperidol em eficácia; olanzapina com menos efeitos extrapiramidais<sup class="cite"><a href="#r12">12</a></sup></li>
+          <li>Monitorar temperatura, hidratação, CK, eletrólitos e ECG; tratar hipertermia agressivamente</li>
+        </ul>
+      </div>
+      <div class="glass mcard glass-hover rv d1">
+        <div class="step"><span>FASE 2 · SUBAGUDA (2–8 SEMANAS)</span><span class="ev C">Consenso</span></div>
+        <h4>Segurar a janela de recorrência</h4>
+        <p>O período de risco de retorno dos sintomas. Orientação e engajamento evitam o ciclo de idas e vindas ao pronto-socorro.</p>
+        <ul>
+          <li><b>Não prometer "já passou"</b> — orientar paciente e família sobre sensitização e recorrência<sup class="cite"><a href="#r8">8</a></sup></li>
+          <li>Higiene do sono como intervenção ativa: privação de sono é gatilho de primeira ordem</li>
+          <li>Antipsicótico em manutenção curta se sintomas residuais; reavaliar a cada 2–4 semanas e retirar quando remitir</li>
+        </ul>
+      </div>
+      <div class="glass mcard glass-hover rv d2">
+        <div class="step"><span>FASE 3 · PERSISTENTE (&gt; 1 MÊS)</span><span class="ev C">Consenso</span></div>
+        <h4>Tratar como psicose primária</h4>
+        <p>Quando o delírio não cede após ≥ 1 mês de abstinência, o arsenal é o da esquizofrenia — com adesão ainda mais frágil.</p>
+        <ul>
+          <li>Antipsicótico de 2ª geração em dose de manutenção; <b>cautela com aripiprazol</b> em uso ativo: em RCT, aumentou o uso de anfetamina vs. placebo<sup class="cite"><a href="#r13">13</a></sup></li>
+          <li><b>Injetáveis de longa duração</b> contornam a má adesão</li>
+          <li>Terapia cognitivo-comportamental para psicose + tratamento do TUM em paralelo (seção 10)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="donutwrap">
+      <div class="donut rv" id="donut">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="22"/>
+          <circle class="seg" data-p="78" data-c="--green" cx="100" cy="100" r="80" fill="none" stroke-width="22"/>
+          <circle class="seg" data-p="22" data-c="--red" cx="100" cy="100" r="80" fill="none" stroke-width="22"/>
+          <circle class="ci" data-a="14" data-b="34" cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4"/>
+        </svg>
+        <div class="ctr"><div class="big">22%</div><div class="sm">transitam para esquizofrenia<br>(IC 95% 14–34%)</div></div>
+      </div>
+      <div class="legend">
+        <div class="lg glass glass-hover rv"><span class="sw" style="background:var(--green)"></span><span class="t">Não transitam para transtorno psicótico primário<small>a recorrência depende de continuar ou não o uso — OR 5,3 nos meses de uso<sup class="cite"><a href="#r2">2</a></sup></small></span><span class="vv">~78%</span></div>
+        <div class="lg glass glass-hover rv d1"><span class="sw" style="background:var(--red)"></span><span class="t">Recebem diagnóstico de esquizofrenia no seguimento<small>meta-análise de 5 estudos de psicose por anfetaminas<sup class="cite"><a href="#r4">4</a></sup></small></span><span class="vv">22%</span></div>
+        <div class="lg glass glass-hover rv d2"><span class="sw" style="background:rgba(255,255,255,.35)"></span><span class="t">Faixa de incerteza (arco fino)<small>intervalo de confiança de 95%; o registro finlandês estimou 30% em 8 anos<sup class="cite"><a href="#r5">5</a></sup></small></span><span class="vv">14–34%</span></div>
+      </div>
+    </div>
+    <p class="src rv"><b>Fontes:</b> Shoptaw et al., Cochrane 2009<sup class="cite"><a href="#r11">11</a></sup> · Leelahanaj et al. 2005<sup class="cite"><a href="#r12">12</a></sup> · Tiihonen et al., <i>Am J Psychiatry</i> 2007<sup class="cite"><a href="#r13">13</a></sup> · Murrie et al. 2020<sup class="cite"><a href="#r4">4</a></sup> · Glasner-Edwards &amp; Mooney 2014<sup class="cite"><a href="#r9">9</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 09 · INTERNAÇÃO ═══════════════ -->
+<section id="s5b">
+  <div class="wrap">
+    <div class="kicker rv">09 · Internação psiquiátrica <span class="ev C">Nível C · Consenso + marco legal</span></div>
+    <h2 class="rv">Internar ou não internar?<br>A decisão mais discutida da sala</h2>
+    <p class="lede rv d1">Na paranoia por metanfetamina a internação <b>não é regra</b> — é exceção justificada. A maioria dos episódios agudos se resolve em dias com manejo ambulatorial bem feito. Mas existem critérios objetivos em que internar salva vidas. E, no Brasil, a forma de internar é definida por lei<sup class="cite"><a href="#r20">20</a></sup>.</p>
+
+    <div class="intdecision">
+      <div class="glass dec yes glass-hover rv">
+        <span class="badge">INTERNAR — CRITÉRIOS CLÁSSICOS</span>
+        <h3>Quando o risco manda</h3>
+        <ul>
+          <li><b>Risco a terceiros:</b> agressividade alimentada pelo delírio — o paciente "se defende" de familiares, vizinhos ou desconhecidos</li>
+          <li><b>Risco a si:</b> ideação ou tentativa de suicídio; autolesão (comum na formicação — tentar "retirar insetos" com objetos cortantes)</li>
+          <li><b>Incapacidade de autocuidado:</b> não come, não bebe, não dorme há dias; desidratação ou hipertermia</li>
+          <li><b>Rebaixamento de consciência:</b> desorientação, confusão — suspeitar de causa orgânica associada (trauma, infecção, hiponatremia, hemorragia)</li>
+          <li><b>Falha do manejo ambulatorial:</b> família exausta ou sem estrutura; abandono do tratamento com agravamento</li>
+          <li><b>Comorbidade clínica grave:</b> rabdomiólise, lesão renal aguda, arritmia, convulsão — internação clínica simultânea</li>
+        </ul>
+      </div>
+      <div class="glass dec no glass-hover rv d1">
+        <span class="badge">NÃO INTERNAR — REGRA GERAL</span>
+        <h3>Quando a crise resolve fora</h3>
+        <ul>
+          <li><b>Psicose aguda sem risco:</b> delírio e agitação leve–moderada, controláveis com benzodiazepínico em ambiente calmo</li>
+          <li><b>Família presente e orientada:</b> cuidador capaz de administrar medicação e reduzir estímulos</li>
+          <li><b>Insight parcial:</b> o paciente aceita medicação e reconhece alguma conexão com o uso</li>
+          <li><b>Sintomas em resolução:</b> paranoia que cede em 24–72 h de abstinência supervisionada</li>
+          <li><b>Internação desnecessária tem custo:</b> rompe vínculo, aumenta estigma e afasta do tratamento — sem, por si, reduzir recaída</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="glass fstep glass-hover rv"><span class="arrow">→</span><div class="n">AVALIAR 1</div><h4>Risco</h4><p>Perigo a si ou a outros? Agitação psicomotora grave? Capacidade de se proteger?</p></div>
+      <div class="glass fstep glass-hover rv d1"><span class="arrow">→</span><div class="n">AVALIAR 2</div><h4>Suporte</h4><p>Existe cuidador capacitado? Ambiente com poucos estímulos? Acesso a retorno rápido (CAPS, UPA)?</p></div>
+      <div class="glass fstep glass-hover rv d2"><div class="n">DECISÃO</div><h4>Menos restritivo possível</h4><p>Risco + sem suporte → internar. Sem risco + com suporte → ambulatorial com plano de crise escrito e retorno em 48–72 h.</p></div>
+    </div>
+
+    <div class="glass law rv">
+      <h3><span class="badge">BRASIL · MARCO LEGAL</span>Lei 10.216/2001 — internação como último recurso</h3>
+      <p>A internação psiquiátrica no Brasil é orientada pelo princípio do <b>menor grau de restrição possível</b>. Para a paranoia por metanfetamina, isso significa preferir o tratamento ambulatorial/territorial sempre que o risco permitir.</p>
+      <div class="cols">
+        <div class="col">
+          <h5>INTERNAÇÃO INVOLUNTÁRIA (ART. 6º–8º)</h5>
+          <ul>
+            <li><b>Somente</b> quando os recursos extra-hospitalares se mostrarem insuficientes (art. 4º)</li>
+            <li>Exige laudo médico circunstanciado; comunicação ao <b>Ministério Público em até 72 horas</b> (art. 8º, §1º)</li>
+            <li>Garantir dignidade, sigilo e informação ao paciente e ao responsável legal (art. 2º)</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h5>ALTERNATIVAS PREFERENCIAIS NO SUS (RAPS)</h5>
+          <ul>
+            <li><b>CAPS III / CAPS AD III:</b> acolhimento intensivo diário e leitos de curta permanência sem afastar do território</li>
+            <li><b>Leitos psiquiátricos em hospital geral:</b> para crises com risco, integrados à rede</li>
+            <li><b>Atenção básica + redução de danos + consultório na rua</b> como estratégias de vínculo</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:16px;font-size:12.5px;color:var(--mut)"><b style="color:var(--amber)">Atenção:</b> internações longas em comunidades terapêuticas ou clínicas privadas sem programa terapêutico estruturado têm evidência fraca e histórico de violação de direitos — o modelo comunitário é o recomendado pela OMS e pela legislação brasileira.</p>
+    </div>
+
+    <div class="istats">
+      <div class="glass istat rv"><div class="v">Dias, não meses</div><div class="l">internações por psicose aguda devem ser curtas — a reabilitação acontece na rede territorial</div></div>
+      <div class="glass istat rv d1"><div class="v hot">72 h</div><div class="l">prazo legal para comunicar ao Ministério Público uma internação involuntária<sup class="cite"><a href="#r20">20</a></sup></div></div>
+      <div class="glass istat rv d2"><div class="v">Tratar o TUM</div><div class="l">internar sem tratar o transtorno por uso não reduz a recorrência psicótica — reduzir o uso reduz (OR 5,3)<sup class="cite"><a href="#r2">2</a></sup></div></div>
+    </div>
+
+    <p class="src rv"><b>Fontes:</b> Lei 10.216/2001<sup class="cite"><a href="#r20">20</a></sup> · Portaria GM/MS 3.088/2011 (RAPS) · OMS, <i>mhGAP</i> · consensos de manejo de agitação psicomotora (WPA/ABP)<sup class="cite"><a href="#r9">9</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 10 · TRATAMENTOS ═══════════════ -->
+<section id="gs4">
+  <div class="wrap">
+    <div class="kicker rv">10 · Tratamentos <span class="ev A">Nível A/B · Meta-análises e RCTs</span></div>
+    <h2 class="rv">O que não funciona,<br>o que funciona pouco,<br>o que está sendo testado</h2>
+    <p class="lede rv d1">Não existe medicamento aprovado pela ANVISA ou pela FDA para o transtorno por uso de metanfetamina. A meta-análise de Chan et al. classificou a evidência farmacológica como de <b>força baixa</b> no conjunto<sup class="cite"><a href="#r16">16</a></sup>. O que existe: intervenções comportamentais com efeito replicado, sinais farmacológicos modestos e uma fronteira de pesquisa ativa.</p>
+
+    <div class="tgrid">
+      <div class="glass tcard glass-hover rv">
+        <div class="top"><span class="tag fail">SEM EFICÁCIA PARA O VÍCIO</span><span class="ev B">RCT</span></div>
+        <h4>Antipsicóticos como tratamento do uso</h4>
+        <p>Controlam a psicose aguda, mas não reduzem o consumo. No ensaio de Tiihonen, aripiprazol <b>aumentou</b> a proporção de urinas positivas vs. placebo (OR 3,8), enquanto metilfenidato de liberação lenta reduziu (OR 0,46)<sup class="cite"><a href="#r13">13</a></sup>.</p>
+        <div class="evd">EV: RCT n=53, interrompido na interim · antipsicótico restrito à fase psicótica</div>
+      </div>
+      <div class="glass tcard glass-hover rv d1">
+        <div class="top"><span class="tag warn">SINAL MODESTO · SUBGRUPOS</span><span class="ev B">RCT</span></div>
+        <h4>Mirtazapina · metilfenidato · bupropiona</h4>
+        <p>Mirtazapina 30 mg reduziu urinas positivas em dois RCTs em homens que fazem sexo com homens (o segundo, n=120, replicou o primeiro)<sup class="cite"><a href="#r15">15</a></sup>. Metilfenidato: sinal em usuários injetáveis graves<sup class="cite"><a href="#r13">13</a></sup>. Bupropiona isolada: efeito só em usuários de baixa frequência<sup class="cite"><a href="#r16">16</a></sup>.</p>
+        <div class="evd">EV: RCTs pequenos/médios · resultados dependentes de população · off-label</div>
+      </div>
+      <div class="glass tcard glass-hover rv">
+        <div class="top"><span class="tag warn">PADRÃO ATUAL · EFEITO REPLICADO</span><span class="ev A">META-ANÁLISE EM REDE</span></div>
+        <h4>Contingency management + TCC</h4>
+        <p>Na meta-análise em rede de 50 RCTs (6.942 participantes) para cocaína/anfetaminas, a combinação <b>CM + terapia comunitária de reforço</b> foi a intervenção mais eficaz para abstinência ao fim do tratamento e a de melhor aceitabilidade<sup class="cite"><a href="#r17">17</a></sup>. O efeito decai após a retirada dos incentivos.</p>
+        <div class="evd">EV: 50 RCTs · efeito pequeno–moderado · retenção é o gargalo</div>
+      </div>
+      <div class="glass tcard glass-hover rv d1">
+        <div class="top"><span class="tag hope">MAIOR SINAL FARMACOLÓGICO</span><span class="ev B">RCT MULTICÊNTRICO</span></div>
+        <h4>Naltrexona injetável + bupropiona (ADAPT-2)</h4>
+        <p>NEJM 2021, n=403: naltrexona ER 380 mg a cada 3 semanas + bupropiona ER 450 mg/dia. Resposta ponderada de <b>13,6% vs. 2,5%</b> (≥3 de 4 urinas negativas ao fim de cada estágio)<sup class="cite"><a href="#r14">14</a></sup>. Sem aprovação regulatória; no Brasil, uso off-label e naltrexona injetável indisponível no SUS.</p>
+        <div class="evd">EV: RCT fase 2 com desenho sequencial paralelo · efeito absoluto pequeno, mas consistente nos dois estágios</div>
+      </div>
+      <div class="glass tcard glass-hover rv">
+        <div class="top"><span class="tag exp">FRONTEIRA · EM PESQUISA</span><span class="ev C">FASE 1</span></div>
+        <h4>Imunoterapia: anticorpo monoclonal</h4>
+        <p>O anticorpo quimérico anti-metanfetamina <b>IXT-m200</b> sequestra a droga no plasma e reduz sua entrada no cérebro. O primeiro estudo em humanos (voluntários saudáveis) demonstrou segurança e meia-vida longa<sup class="cite"><a href="#r18">18</a></sup>; eficácia clínica ainda não demonstrada. Vacinas seguem em estágio pré-clínico/inicial.</p>
+        <div class="evd">EV: fase 1 · nenhum desfecho de uso publicado</div>
+      </div>
+      <div class="glass tcard glass-hover rv d1">
+        <div class="top"><span class="tag exp">FRONTEIRA · EM PESQUISA</span><span class="ev C">PILOTOS</span></div>
+        <h4>Neuromodulação (ETCC / EMTr)</h4>
+        <p>Estimulação do córtex pré-frontal dorsolateral reduz <i>craving</i> em estudos piloto, com amostras pequenas e heterogeneidade de protocolo. Para a psicose persistente, o tratamento continua sendo antipsicótico + abstinência prolongada; a recuperação dopaminérgica leva 12+ meses<sup class="cite"><a href="#r7">7</a></sup>.</p>
+        <div class="evd">EV: pilotos e revisões sistemáticas em curso · sem recomendação formal</div>
+      </div>
+    </div>
+
+    <div class="chartbox rv">
+      <div class="kicker" style="margin-bottom:18px">ADAPT-2 · TAXA DE RESPOSTA (≥ 3 DE 4 URINAS NEGATIVAS) <span class="ev B">RCT</span></div>
+      <div id="effChart">
+        <div class="effrow"><div class="nm">Estágio 1 · naltrexona + bupropiona<small>n = 109, 6 semanas</small></div><div class="track"><div class="fill" data-w="82.5"></div></div><div class="vv">16,5%</div></div>
+        <div class="effrow pl"><div class="nm">Estágio 1 · placebo<small>n = 294</small></div><div class="track"><div class="fill" data-w="17"></div></div><div class="vv">3,4%</div></div>
+        <div class="effrow"><div class="nm">Estágio 2 · naltrexona + bupropiona<small>n = 114, não-respondedores re-randomizados</small></div><div class="track"><div class="fill" data-w="57"></div></div><div class="vv">11,4%</div></div>
+        <div class="effrow pl"><div class="nm">Estágio 2 · placebo<small>n = 111</small></div><div class="track"><div class="fill" data-w="9"></div></div><div class="vv">1,8%</div></div>
+        <div class="effrow sum"><div class="nm">Média ponderada · ativo<small>desfecho primário</small></div><div class="track"><div class="fill" data-w="68"></div></div><div class="vv">13,6%</div></div>
+        <div class="effrow pl"><div class="nm">Média ponderada · placebo</div><div class="track"><div class="fill" data-w="12.5"></div></div><div class="vv">2,5%</div></div>
+      </div>
+      <div class="nnt">
+        <div class="k"><b>11,1 pp</b>diferença absoluta de resposta</div>
+        <div class="k"><b>≈ 9</b>número necessário para tratar (NNT) para uma resposta adicional</div>
+        <div class="k"><b>86%</b>dos tratados ainda não respondem — o efeito é real, mas pequeno</div>
+      </div>
+      <p class="small" style="margin-top:14px">Barras em escala 0–20%. Dados do artigo original<sup class="cite"><a href="#r14">14</a></sup>; NNT calculado a partir da diferença ponderada (1 / 0,111).</p>
+    </div>
+    <p class="src rv"><b>Fontes:</b> Trivedi et al., <i>NEJM</i> 2021<sup class="cite"><a href="#r14">14</a></sup> · Chan et al., <i>Addiction</i> 2019<sup class="cite"><a href="#r16">16</a></sup> · De Crescenzo et al., <i>PLoS Med</i> 2018<sup class="cite"><a href="#r17">17</a></sup> · Coffin et al., <i>JAMA Psychiatry</i> 2020<sup class="cite"><a href="#r15">15</a></sup> · Tiihonen et al. 2007<sup class="cite"><a href="#r13">13</a></sup> · Stevens et al., <i>mAbs</i> 2014<sup class="cite"><a href="#r18">18</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 11 · BRASIL ═══════════════ -->
+<section id="gs5">
+  <div class="wrap">
+    <div class="kicker rv">11 · O Brasil na berlinda <span class="ev D">Nível D · Institucional / imprensa</span></div>
+    <h2 class="rv">Uma rede de saúde feita<br>para o crack, recebendo o cristal</h2>
+    <p class="lede rv d1">A rede brasileira de saúde mental foi desenhada na era do crack. O cristal traz um paciente diferente: psicose mais frequente, mais duradoura e com maior risco de agressividade — e os CAPS AD operam com leitos psiquiátricos escassos e sem protocolo nacional específico para metanfetamina.</p>
+    <div class="chal">
+      <div class="glass c glass-hover rv"><div class="num">DESAFIO 01</div><h4>Psicose que lota emergências</h4><p>Quadros agudos de agitação e paranoia exigem leito de observação e equipe treinada em desescalada, não apenas contenção em porta de emergência. Sem seguimento, o ciclo recomeça na alta.</p></div>
+      <div class="glass c glass-hover rv d1"><div class="num">DESAFIO 02</div><h4>Sem medicamento registrado</h4><p>A naltrexona injetável de liberação prolongada não está disponível no Brasil; a combinação do ADAPT-2 é inviável em escala no SUS. Contingency management, a intervenção mais eficaz, ainda não tem financiamento público.</p></div>
+      <div class="glass c glass-hover rv"><div class="num">DESAFIO 03</div><h4>Dados que não enxergam a droga</h4><p>Sistemas de notificação e os inquéritos nacionais não separam bem metanfetamina de outras anfetaminas ou de crack — o tamanho real do problema é desconhecido, e este dossiê não pode estimá-lo.</p></div>
+      <div class="glass c glass-hover rv d1"><div class="num">DESAFIO 04</div><h4>Fronteira viva, preço em queda</h4><p>A fronteira com o Paraguai continua sendo a principal porta de entrada; a economia de escala derruba o preço da dose e amplia o alcance para fora das capitais.</p></div>
+    </div>
+    <p class="src rv"><b>Nota:</b> síntese de documentos públicos (PF, Ministério da Justiça, UNODC)<sup class="cite"><a href="#r21">21</a></sup> e reportagens; não é levantamento epidemiológico primário.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 12 · PIPELINE ═══════════════ -->
+<section id="gs6">
+  <div class="wrap">
+    <div class="kicker rv">12 · O que vem aí <span class="ev C">Nível C · Pipeline</span></div>
+    <h2 class="rv">O pipeline da medicina —<br>da crise psicótica ao anticorpo</h2>
+    <p class="lede rv d1">A paranoia é o alvo terapêutico mais valioso do TUM: é ela que leva o paciente ao sistema de saúde — tratar bem a psicose é a porta de entrada para tratar o vício. Depois de décadas de fracasso farmacológico, a década de 2020 trouxe a primeira onda séria de candidatos.</p>
+    <div class="stages rv"><div>PRÉ-CLÍNICO</div><div class="on">FASE 1</div><div class="on">FASE 2</div><div>FASE 3</div><div>REGISTRO</div></div>
+    <div class="pipe">
+      <div class="pipe-item rv"><h4>Naltrexona ER + bupropiona ER<span class="ph">FASE 2 CONCLUÍDA · AGUARDA CONFIRMAÇÃO</span></h4><p>O ADAPT-2 mostrou 13,6% vs. 2,5% de resposta<sup class="cite"><a href="#r14">14</a></sup>. Um ensaio confirmatório maior, com desfecho de abstinência sustentada, é o passo necessário antes de qualquer pedido de indicação formal.</p></div>
+      <div class="pipe-item rv"><h4>Anticorpo monoclonal IXT-m200<span class="ph">FASE 1 · SEGURANÇA DEMONSTRADA</span></h4><p>Anticorpo quimérico de alta afinidade que captura a metanfetamina no plasma<sup class="cite"><a href="#r18">18</a></sup>. Cenários de uso em estudo: "antídoto" em intoxicação aguda e proteção de pacientes em alto risco de recaída. Falta demonstrar redução do uso.</p></div>
+      <div class="pipe-item rv"><h4>Vacinas anti-metanfetamina<span class="ph">PRÉ-CLÍNICO / FASE INICIAL</span></h4><p>Conjugados hapteno-proteína que induzem anticorpos próprios. Promessa: impedir o pico dopaminérgico que dispara o episódio psicótico. Barreiras: título de anticorpos variável e necessidade de doses de reforço.</p></div>
+      <div class="pipe-item rv"><h4>Neuromodulação (ETCC e EMTr)<span class="ph">PILOTOS · RESULTADOS INICIAIS</span></h4><p>Protocolos sobre o córtex pré-frontal dorsolateral reduzem <i>craving</i> em pilotos; ensaios controlados maiores em andamento, inclusive no Brasil. Sem recomendação formal.</p></div>
+      <div class="pipe-item ok rv"><h4>Contingency management digital<span class="ph">DISPONÍVEL (EUA) · ADAPTÁVEL AO SUS</span></h4><p>Plataformas de recompensa por urina negativa via aplicativo já operam nos EUA. É a intervenção com melhor evidência<sup class="cite"><a href="#r17">17</a></sup> — e a mais barata de escalar. Modelo proposto para piloto em CAPS AD.</p></div>
+    </div>
+    <p class="src rv"><b>Fontes:</b> Trivedi et al. 2021<sup class="cite"><a href="#r14">14</a></sup> · Stevens et al. 2014<sup class="cite"><a href="#r18">18</a></sup> · De Crescenzo et al. 2018<sup class="cite"><a href="#r17">17</a></sup> · NIDA / NIH HEAL Initiative (programas de imunofarmacoterapia).</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 13 · REFERÊNCIAS ═══════════════ -->
+<section id="refs">
+  <div class="wrap">
+    <div class="kicker rv">13 · Referências <span class="ev A">DOIs verificados</span></div>
+    <h2 class="rv">Base bibliográfica</h2>
+    <p class="lede rv d1">Ordem de citação no texto. Cada item leva ao registro original; o selo indica o tipo de estudo.</p>
+    <ol class="refs rv">
+      <li id="r1"><b>Lecomte T, Dumais A, Dugré JR, Potvin S.</b> The prevalence of substance-induced psychotic disorder in methamphetamine misusers: a meta-analysis. <i>Psychiatry Res</i>. 2018;268:189-192. <a href="https://doi.org/10.1016/j.psychres.2018.05.033" target="_blank" rel="noopener">doi:10.1016/j.psychres.2018.05.033</a><span class="ev A">Meta-análise</span></li>
+      <li id="r2"><b>McKetin R, Lubman DI, Baker AL, Dawe S, Ali RL.</b> Dose-related psychotic symptoms in chronic methamphetamine users: evidence from a prospective longitudinal study. <i>JAMA Psychiatry</i>. 2013;70(3):319-324. <a href="https://doi.org/10.1001/jamapsychiatry.2013.283" target="_blank" rel="noopener">doi:10.1001/jamapsychiatry.2013.283</a><span class="ev B">Coorte</span></li>
+      <li id="r3"><b>McKetin R, McLaren J, Lubman DI, Hides L.</b> The prevalence of psychotic symptoms among methamphetamine users. <i>Addiction</i>. 2006;101(10):1473-1478. <a href="https://doi.org/10.1111/j.1360-0443.2006.01496.x" target="_blank" rel="noopener">doi:10.1111/j.1360-0443.2006.01496.x</a><span class="ev B">Transversal</span></li>
+      <li id="r4"><b>Murrie B, Lappin J, Large M, Sara G.</b> Transition of substance-induced, brief, and atypical psychoses to schizophrenia: a systematic review and meta-analysis. <i>Schizophr Bull</i>. 2020;46(3):505-516. <a href="https://doi.org/10.1093/schbul/sbz102" target="_blank" rel="noopener">doi:10.1093/schbul/sbz102</a><span class="ev A">Meta-análise</span></li>
+      <li id="r5"><b>Niemi-Pynttäri JA, Sund R, Putkonen H, Vorma H, Wahlbeck K, Pirkola SP.</b> Substance-induced psychoses converting into schizophrenia: a register-based study of 18,478 Finnish inpatient cases. <i>J Clin Psychiatry</i>. 2013;74(1):e94-e99. <a href="https://doi.org/10.4088/JCP.12m07822" target="_blank" rel="noopener">doi:10.4088/JCP.12m07822</a><span class="ev B">Registro</span></li>
+      <li id="r6"><b>Cruickshank CC, Dyer KR.</b> A review of the clinical pharmacology of methamphetamine. <i>Addiction</i>. 2009;104(7):1085-1099. <a href="https://doi.org/10.1111/j.1360-0443.2009.02564.x" target="_blank" rel="noopener">doi:10.1111/j.1360-0443.2009.02564.x</a><span class="ev C">Revisão</span></li>
+      <li id="r7"><b>Volkow ND, Chang L, Wang GJ, et al.</b> Loss of dopamine transporters in methamphetamine abusers recovers with protracted abstinence. <i>J Neurosci</i>. 2001;21(23):9414-9418. <a href="https://doi.org/10.1523/JNEUROSCI.21-23-09414.2001" target="_blank" rel="noopener">doi:10.1523/JNEUROSCI.21-23-09414.2001</a><span class="ev B">PET longitudinal</span></li>
+      <li id="r8"><b>Ujike H, Sato M.</b> Clinical features of sensitization to methamphetamine observed in patients with methamphetamine dependence and psychosis. <i>Ann N Y Acad Sci</i>. 2004;1025:279-287. <a href="https://doi.org/10.1196/annals.1316.035" target="_blank" rel="noopener">doi:10.1196/annals.1316.035</a><span class="ev C">Série clínica</span></li>
+      <li id="r9"><b>Glasner-Edwards S, Mooney LJ.</b> Methamphetamine psychosis: epidemiology and management. <i>CNS Drugs</i>. 2014;28(12):1115-1126. <a href="https://doi.org/10.1007/s40263-014-0209-8" target="_blank" rel="noopener">doi:10.1007/s40263-014-0209-8</a><span class="ev C">Revisão</span></li>
+      <li id="r10"><b>Wearne TA, Cornish JL.</b> A comparison of methamphetamine-induced psychosis and schizophrenia: a review of positive, negative, and cognitive symptomatology. <i>Front Psychiatry</i>. 2018;9:491. <a href="https://doi.org/10.3389/fpsyt.2018.00491" target="_blank" rel="noopener">doi:10.3389/fpsyt.2018.00491</a><span class="ev C">Revisão</span></li>
+      <li id="r11"><b>Shoptaw SJ, Kao U, Ling W.</b> Treatment for amphetamine psychosis. <i>Cochrane Database Syst Rev</i>. 2009;(1):CD003026. <a href="https://doi.org/10.1002/14651858.CD003026.pub3" target="_blank" rel="noopener">doi:10.1002/14651858.CD003026.pub3</a><span class="ev A">Cochrane</span></li>
+      <li id="r12"><b>Leelahanaj T, Kongsakon R, Netrakom P.</b> A 4-week, double-blind comparison of olanzapine with haloperidol in the treatment of amphetamine psychosis. <i>J Med Assoc Thai</i>. 2005;88 Suppl 3:S43-S52. <a href="https://pubmed.ncbi.nlm.nih.gov/16858942/" target="_blank" rel="noopener">PMID 16858942</a><span class="ev B">RCT</span></li>
+      <li id="r13"><b>Tiihonen J, Kuoppasalmi K, Föhr J, et al.</b> A comparison of aripiprazole, methylphenidate, and placebo for amphetamine dependence. <i>Am J Psychiatry</i>. 2007;164(1):160-162. <a href="https://doi.org/10.1176/ajp.2007.164.1.160" target="_blank" rel="noopener">doi:10.1176/ajp.2007.164.1.160</a><span class="ev B">RCT</span></li>
+      <li id="r14"><b>Trivedi MH, Walker R, Ling W, et al.</b> Bupropion and naltrexone in methamphetamine use disorder. <i>N Engl J Med</i>. 2021;384(2):140-153. <a href="https://doi.org/10.1056/NEJMoa2020214" target="_blank" rel="noopener">doi:10.1056/NEJMoa2020214</a><span class="ev B">RCT</span></li>
+      <li id="r15"><b>Coffin PO, Santos GM, Hern J, et al.</b> Effects of mirtazapine for methamphetamine use disorder among cisgender men and transgender women who have sex with men: a placebo-controlled randomized clinical trial. <i>JAMA Psychiatry</i>. 2020;77(3):246-255. <a href="https://doi.org/10.1001/jamapsychiatry.2019.3655" target="_blank" rel="noopener">doi:10.1001/jamapsychiatry.2019.3655</a><span class="ev B">RCT</span></li>
+      <li id="r16"><b>Chan B, Freeman M, Kondo K, et al.</b> Pharmacotherapy for methamphetamine/amphetamine use disorder — a systematic review and meta-analysis. <i>Addiction</i>. 2019;114(12):2122-2136. <a href="https://doi.org/10.1111/add.14755" target="_blank" rel="noopener">doi:10.1111/add.14755</a><span class="ev A">Meta-análise</span></li>
+      <li id="r17"><b>De Crescenzo F, Ciabattini M, D'Alò GL, et al.</b> Comparative efficacy and acceptability of psychosocial interventions for individuals with cocaine and amphetamine addiction: a systematic review and network meta-analysis. <i>PLoS Med</i>. 2018;15(12):e1002715. <a href="https://doi.org/10.1371/journal.pmed.1002715" target="_blank" rel="noopener">doi:10.1371/journal.pmed.1002715</a><span class="ev A">Meta-análise em rede</span></li>
+      <li id="r18"><b>Stevens MW, Tawney RL, West CM, et al.</b> First human study of a chimeric anti-methamphetamine monoclonal antibody in healthy volunteers. <i>mAbs</i>. 2014;6(6):1649-1656. <a href="https://doi.org/10.4161/19420862.2014.976431" target="_blank" rel="noopener">doi:10.4161/19420862.2014.976431</a><span class="ev C">Fase 1</span></li>
+      <li id="r19"><b>Koob GF, Volkow ND.</b> Neurobiology of addiction: a neurocircuitry analysis. <i>Lancet Psychiatry</i>. 2016;3(8):760-773. <a href="https://doi.org/10.1016/S2215-0366(16)00104-8" target="_blank" rel="noopener">doi:10.1016/S2215-0366(16)00104-8</a><span class="ev C">Revisão</span></li>
+      <li id="r20"><b>Brasil.</b> Lei nº 10.216, de 6 de abril de 2001. Dispõe sobre a proteção e os direitos das pessoas portadoras de transtornos mentais e redireciona o modelo assistencial em saúde mental. <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10216.htm" target="_blank" rel="noopener">planalto.gov.br</a><span class="ev D">Legislação</span></li>
+      <li id="r21"><b>UNODC.</b> World Drug Report 2025. Vienna: United Nations Office on Drugs and Crime. <a href="https://www.unodc.org/unodc/en/data-and-analysis/world-drug-report-2025.html" target="_blank" rel="noopener">unodc.org</a><span class="ev D">Institucional</span></li>
+      <li id="r22"><b>American Psychiatric Association.</b> DSM-5-TR: Manual Diagnóstico e Estatístico de Transtornos Mentais, 5ª ed., texto revisado. 2022 · <b>OMS.</b> CID-11, 6C46.6 (transtorno psicótico induzido por estimulantes incluindo anfetaminas). <a href="https://icd.who.int/browse/latest-release/mms/en" target="_blank" rel="noopener">icd.who.int</a><span class="ev D">Classificação</span></li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="glass disc rv"><b>⚠ Documento educativo.</b> Conteúdo informativo em saúde mental, com fontes citadas e classificadas por nível de evidência. Faixas percentuais variam entre estudos e populações; gráficos marcados como "esquemáticos" não têm escala real. Não substitui avaliação médica — <b>paranoia ativa é urgência psiquiátrica</b>.</div>
+    <div class="help">
+      <div class="glass h rv"><b>CAPS / CAPS AD</b>Centros de Atenção Psicossocial da sua cidade — porta de entrada do SUS para psicose e uso de drogas</div>
+      <div class="glass h rv d1"><b>CVV 188</b>Centro de Valorização da Vida — 24 h, gratuito, sigiloso</div>
+      <div class="glass h rv d2"><b>192 / SAMU</b>Emergência com risco imediato (agitação grave, autolesão, hipertermia)</div>
+    </div>
+    <p class="sitelinks"><span>Outros guias deste site:</span><a href="/">Física inalatória (página principal)</a><a href="/ghb/">GHB · GBL · 1,4-butanodiol</a></p>
+    <p class="colophon">Revisado em 11 set 2026 · Referências verificadas em PubMed/DOI · Modelos 3D e simulador farmacocinético são didáticos · Tipografia: Newsreader, Sora, JetBrains Mono.</p>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════ utilidades ═══════════════════════ */
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+/* ---------- progress bar ---------- */
+const prog = $('#prog');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  prog.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, {passive:true});
+
+/* ---------- reveal ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+}), {threshold:.12});
+$$('.rv').forEach(el => io.observe(el));
+/* failsafe: never leave content hidden if the observer does not report */
+setTimeout(() => $$('.rv').forEach(el => el.classList.add('on')), 2500);
+
+/* ---------- scrollspy ---------- */
+(() => {
+  const links = $$('.qnav a');
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const nav = $('.qnav');
+  const spy = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.classList.remove('on'));
+      const a = map.get(e.target.id);
+      if (a) {
+        a.classList.add('on');
+        // keep the active link visible in the scrollable nav
+        const r = a.getBoundingClientRect(), n = nav.getBoundingClientRect();
+        if (r.left < n.left || r.right > n.right) nav.scrollTo({left: a.offsetLeft - n.width/2 + r.width/2, behavior:'smooth'});
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  $$('section[id]').forEach(s => spy.observe(s));
+})();
+
+/* ---------- animated horizontal bars (thresholds + ADAPT-2) ---------- */
+const bio = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    e.target.querySelectorAll('.fill').forEach((f, i) => {
+      f.style.transition = REDUCED ? 'none' : `width 1.4s cubic-bezier(.2,.7,.2,1) ${i*.08}s`;
+      f.style.width = f.dataset.w + '%';
+    });
+    e.target.querySelectorAll('.trow').forEach(r => r.classList.add('on'));
+    bio.unobserve(e.target);
+  }
+}), {threshold:.3});
+$$('.thresh, #effChart').forEach(el => bio.observe(el));
+
+/* ---------- donut with confidence-interval arc ---------- */
+const dio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const R = 80, C = 2*Math.PI*R;
+  let offset = 0;
+  e.target.querySelectorAll('.seg').forEach((s, i) => {
+    const frac = (+s.dataset.p)/100;
+    s.style.strokeDasharray = `${frac*C - 3} ${C}`;
+    s.style.strokeDashoffset = -offset;
+    s.style.stroke = cssVar(s.dataset.c);
+    offset += frac*C;
+    s.style.opacity = 0; s.style.transition = 'opacity 1s ease';
+    setTimeout(() => s.style.opacity = 1, 150 + i*350);
+  });
+  // CI arc: from a% to b% of the circle, aligned with the red segment (which starts at 78%)
+  const ci = e.target.querySelector('.ci');
+  if (ci) {
+    const a = +ci.dataset.a/100, b = +ci.dataset.b/100, start = 1 - b;   // red segment ends at 100%
+    ci.setAttribute('r', 96); const C2 = 2*Math.PI*96;
+    ci.style.strokeDasharray = `${(b-a)*C2} ${C2}`;
+    ci.style.strokeDashoffset = -(start*C2);
+    ci.style.opacity = 0; ci.style.transition = 'opacity 1s ease 1s';
+    setTimeout(() => ci.style.opacity = 1, 900);
+  }
+  dio.unobserve(e.target);
+}), {threshold:.4});
+if ($('#donut')) dio.observe($('#donut'));
+
+/* ---------- shared 3D toggle ---------- */
+const spinState = {on:true, listeners:[]};
+$('#tSpin').addEventListener('click', function(){
+  spinState.on = !spinState.on;
+  this.textContent = 'ROTAÇÃO 3D: ' + (spinState.on ? 'ON' : 'OFF');
+  this.setAttribute('aria-pressed', spinState.on);
+  spinState.listeners.forEach(fn => fn(spinState.on));
+});
+$('#tTop').addEventListener('click', () => scrollTo({top:0, behavior: REDUCED ? 'auto' : 'smooth'}));
+
+/* pause a rAF loop when its canvas is off-screen */
+function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.isIntersecting)), {threshold:.02}).observe(el); }
+
+/* ═══════════════════════ HERO · rede neural 3D ═══════════════════════ */
+(() => {
+  const cv = $('#net3d'), ctx = cv.getContext('2d');
+  let W, H, mx = 0, my = 0, tmx = 0, tmy = 0, run = true, spin = true;
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  function size(){ W = cv.width = innerWidth*dpr; H = cv.height = innerHeight*dpr; }
+  size(); addEventListener('resize', size);
+  addEventListener('mousemove', e => { if (!spin) return; tmx = e.clientX/innerWidth - .5; tmy = e.clientY/innerHeight - .5; }, {passive:true});
+  const N = 72, pts = [];
+  for (let i = 0; i < N; i++) pts.push({bx:(Math.random()-.5)*2, by:(Math.random()-.5)*2, bz:(Math.random()-.5)*2, ph:Math.random()*Math.PI*2});
+  function project(p, t){
+    const a = mx*.6 + (spin ? t*.05 : 0), b = my*.4;
+    // bounded oscillation around base position (no drift)
+    const px = p.bx + Math.sin(t*.4 + p.ph)*.05, py = p.by + Math.cos(t*.33 + p.ph)*.05, pz = p.bz;
+    let x = px*Math.cos(a) - pz*Math.sin(a), z = px*Math.sin(a) + pz*Math.cos(a);
+    let y = py*Math.cos(b) - z*Math.sin(b); z = py*Math.sin(b) + z*Math.cos(b);
+    const f = 1.7/(2.2 + z*.9);
+    return {sx: W/2 + x*f*W*.42, sy: H/2 + y*f*H*.42, f};
+  }
+  function draw(){
+    if (!run) return;
+    mx += (tmx - mx)*.04; my += (tmy - my)*.04;
+    ctx.clearRect(0,0,W,H);
+    const t = performance.now()/1000;
+    const P = pts.map(p => project(p, t)), lim = W*.075;
+    for (let i = 0; i < N; i++) for (let j = i+1; j < N; j++) {
+      const a = P[i], b = P[j], d = Math.hypot(a.sx-b.sx, a.sy-b.sy);
+      if (d < lim) {
+        const alpha = (1 - d/lim)*.28*Math.min(a.f,b.f);
+        const threat = Math.sin(t*1.4 + i*.7 + j*.3) > .82;
+        ctx.strokeStyle = threat ? `rgba(255,92,103,${alpha*2.1})` : `rgba(124,216,247,${alpha})`;
+        ctx.lineWidth = dpr*(threat ? 1.1 : .7);
+        ctx.beginPath(); ctx.moveTo(a.sx,a.sy); ctx.lineTo(b.sx,b.sy); ctx.stroke();
+      }
+    }
+    P.forEach((q, i) => {
+      const pr = 2.4*q.f*dpr, threat = Math.sin(t*1.4 + i*.7) > .82;
+      ctx.fillStyle = threat ? 'rgba(255,92,103,.9)' : 'rgba(124,216,247,.55)';
+      ctx.beginPath(); ctx.arc(q.sx,q.sy,pr,0,7); ctx.fill();
+      if (threat) {
+        const g = ctx.createRadialGradient(q.sx,q.sy,0,q.sx,q.sy,pr*6);
+        g.addColorStop(0,'rgba(255,92,103,.32)'); g.addColorStop(1,'rgba(255,92,103,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(q.sx,q.sy,pr*6,0,7); ctx.fill();
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  if (REDUCED) { // single static frame
+    run = false; ctx.clearRect(0,0,W,H);
+    pts.map(p => project(p, 0)).forEach(q => { ctx.fillStyle = 'rgba(124,216,247,.5)'; ctx.beginPath(); ctx.arc(q.sx,q.sy,2.4*q.f*dpr,0,7); ctx.fill(); });
+  } else { visible(cv, v => { const was = run; run = v; if (v && !was) draw(); }); draw(); }
+  spinState.listeners.push(on => { spin = on; if (!on) { tmx = 0; tmy = 0; } });
+})();
+
+/* ═══════════════════════ 02 · molécula 3D (C10H15N, hidrogênios omitidos) ═══════════════════════ */
+(() => {
+  const stage = $('#molStage'); if (!stage) return;
+  // Geometry: benzene ring (C1–C6, planar) + CH2 (C7) + chiral CH (C8) + CH3 (C9) + N + N-CH3 (C10)
+  const ring = [];
+  for (let i = 0; i < 6; i++) { const a = i*Math.PI/3; ring.push({el:'C', x:-75 + 40*Math.cos(a), y:40*Math.sin(a), z:0}); }
+  const atoms = [
+    ...ring,                                              // 0..5  (0 = C1, attachment point at angle 0)
+    {el:'C', x:8,   y:-24, z:12},                         // 6  C7 (CH2)
+    {el:'C', x:48,  y:0,   z:-6, chiral:true},            // 7  C8 (CH, chiral centre)
+    {el:'C', x:58,  y:46,  z:14},                         // 8  C9 (CH3 on C8)
+    {el:'N', x:90,  y:-24, z:-14},                        // 9  N  (secondary amine)
+    {el:'C', x:132, y:0,   z:4}                           // 10 C10 (N-CH3)
+  ];
+  const bonds = [[0,1,1],[1,2,1],[2,3,1],[3,4,1],[4,5,1],[5,0,1], [0,6],[6,7],[7,8],[7,9],[9,10]];
+  const color = {C:'#5a6b7d', N:'#7f6cff'};
+  const els = [], bls = [];
+  bonds.forEach(b => { const d = document.createElement('div'); d.className = 'bond' + (b[2] ? ' arom' : ''); stage.appendChild(d); bls.push({el:d, a:b[0], b:b[1]}); });
+  atoms.forEach(a => {
+    const d = document.createElement('div'); d.className = 'atom ' + a.el + (a.chiral ? ' chiral' : '');
+    const px = a.el === 'N' ? 36 : 34; d.style.width = d.style.height = px + 'px';
+    d.style.background = `radial-gradient(circle at 32% 30%, #ffffffcc 0%, ${color[a.el]} 45%, #0a0e13 130%)`;
+    d.textContent = a.el; d.title = a.el === 'N' ? 'Nitrogênio (amina secundária)' : a.chiral ? 'C quiral — define d-/l-metanfetamina' : 'Carbono';
+    stage.appendChild(d); els.push(d);
+  });
+  let ry = .3, rx = -.35, drag = false, lx = 0, ly = 0, run = true, auto = true;
+  stage.addEventListener('pointerdown', e => { drag = true; lx = e.clientX; ly = e.clientY; stage.setPointerCapture(e.pointerId); stage.style.cursor = 'grabbing'; });
+  stage.addEventListener('pointerup', () => { drag = false; stage.style.cursor = 'grab'; });
+  stage.addEventListener('pointercancel', () => { drag = false; });
+  stage.addEventListener('pointermove', e => {
+    if (!drag) return;
+    ry += (e.clientX - lx)*.012; rx += (e.clientY - ly)*.012; rx = Math.max(-1.2, Math.min(1.2, rx));
+    lx = e.clientX; ly = e.clientY; if (REDUCED) render();
+  });
+  stage.style.cursor = 'grab';
+  const R = 120;
+  function render(){
+    const cy = Math.cos(ry), sy = Math.sin(ry), cx = Math.cos(rx), sx = Math.sin(rx);
+    const W = stage.clientWidth/2, H = stage.clientHeight/2 - 8;
+    const proj = atoms.map(a => {
+      let X = a.x*cy + a.z*sy, Z = -a.x*sy + a.z*cy;
+      let Y = a.y*cx - Z*sx; Z = a.y*sx + Z*cx;
+      const s = 1/(1 + Z/(R*3));
+      return {X: X*s + W, Y: Y*s + H, Z, s};
+    });
+    bls.forEach(b => {
+      const p1 = proj[b.a], p2 = proj[b.b];
+      b.el.style.width = Math.hypot(p2.X-p1.X, p2.Y-p1.Y) + 'px';
+      b.el.style.left = p1.X + 'px'; b.el.style.top = p1.Y + 'px';
+      b.el.style.transform = `rotate(${Math.atan2(p2.Y-p1.Y, p2.X-p1.X)}rad)`;
+      b.el.style.opacity = Math.min(p1.s, p2.s)*.85;
+    });
+    atoms.forEach((a, i) => {
+      const p = proj[i], e = els[i];
+      e.style.left = (p.X - e.offsetWidth/2) + 'px'; e.style.top = (p.Y - e.offsetHeight/2) + 'px';
+      e.style.zIndex = Math.round(1000 - p.Z*10);
+      e.style.transform = `scale(${.75 + p.s*.35})`;
+      e.style.filter = `brightness(${.55 + p.s*.5})`;
+    });
+  }
+  function tick(){ if (!run) return; if (auto && !drag) ry += .006; render(); requestAnimationFrame(tick); }
+  if (REDUCED) render();
+  else { visible(stage, v => { const was = run; run = v; if (v && !was) tick(); }); tick(); }
+  spinState.listeners.push(on => auto = on);
+})();
+
+/* ═══════════════════════ 02 · simulador farmacocinético ═══════════════════════ */
+(() => {
+  const svg = $('#pkSvg'), slider = $('#pkHalf'), out = $('#pkOut'); if (!svg) return;
+  const W = 720, H = 260, L = 46, Rm = 16, T = 18, B = 34, TMAX = 96;
+  const px = t => L + (t/TMAX)*(W-L-Rm), py = v => T + (1 - v)*(H-T-B);
+  const NS = 'http://www.w3.org/2000/svg', el = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const curve = t => Math.exp(-Math.LN2/ (+slider.value) * t);
+  function path(half){ let d = ''; for (let t = 0; t <= TMAX; t += 1) d += (t ? 'L' : 'M') + px(t).toFixed(1) + ',' + py(Math.exp(-Math.LN2/half*t)).toFixed(1); return d; }
+  // static scaffold
+  svg.innerHTML = '';
+  svg.appendChild(el('path', {class:'axis', d:`M${L},${py(0)} H${W-Rm} M${L},${py(0)} V${T}`}));
+  [0,.25,.5,.75,1].forEach(v => { svg.appendChild(el('line', {x1:L, x2:W-Rm, y1:py(v), y2:py(v), stroke:'rgba(255,255,255,.06)'})); const t = el('text', {class:'lab', x:L-8, y:py(v)+3, 'text-anchor':'end'}); t.textContent = (v*100)+'%'; svg.appendChild(t); });
+  [0,12,24,36,48,60,72,84,96].forEach(h => { const t = el('text', {class:'lab', x:px(h), y:H-16, 'text-anchor':'middle'}); t.textContent = h+'h'; svg.appendChild(t); });
+  // variability band (t½ 6–15 h)
+  const band = el('path', {fill:'rgba(124,216,247,.08)', stroke:'none'});
+  let d = path(15); const back = []; for (let t = TMAX; t >= 0; t -= 1) back.push(px(t).toFixed(1)+','+py(Math.exp(-Math.LN2/6*t)).toFixed(1)); d += ' L' + back.join(' L') + ' Z';
+  band.setAttribute('d', d); svg.appendChild(band);
+  const bl = el('text', {class:'lab', x:px(30), y:py(.62), style:'fill:#7f899e'}); bl.textContent = 'faixa de variação individual (t½ 6–15 h)'; svg.appendChild(bl);
+  // 5% threshold
+  svg.appendChild(el('line', {x1:L, x2:W-Rm, y1:py(.05), y2:py(.05), stroke:'rgba(255,92,103,.45)', 'stroke-dasharray':'4 4'}));
+  const tl = el('text', {class:'lab', x:L+8, y:py(.05)-6, style:'fill:#ff5c67'}); tl.textContent = '< 5% ≈ eliminação prática'; svg.appendChild(tl);
+  // markers + curve
+  const line = el('path', {fill:'none', stroke:'#7cd8f7', 'stroke-width':'2.4', 'stroke-linejoin':'round'}); svg.appendChild(line);
+  const marks = [24,48,72].map(h => { const g = el('g', {}); const c = el('circle', {r:4.5, fill:'#7cd8f7', stroke:'#07090f', 'stroke-width':'2'}); const t = el('text', {class:'lab', 'text-anchor':'middle', style:'fill:#eef2f8'}); g.appendChild(c); g.appendChild(t); svg.appendChild(g); return {h, c, t}; });
+  const fmt = v => v >= 10 ? Math.round(v)+'%' : v >= 1 ? v.toFixed(1)+'%' : v.toFixed(2)+'%';
+  function update(){
+    const half = +slider.value; out.value = half.toFixed(1).replace('.0','') + ' h';
+    line.setAttribute('d', path(half));
+    marks.forEach(m => { const v = curve(m.h); m.c.setAttribute('cx', px(m.h)); m.c.setAttribute('cy', py(v)); m.t.setAttribute('x', px(m.h)); m.t.setAttribute('y', py(v) - 10); m.t.textContent = fmt(v*100); });
+    $('#pk24').textContent = fmt(curve(24)*100); $('#pk48').textContent = fmt(curve(48)*100); $('#pk72').textContent = fmt(curve(72)*100);
+    const t5 = Math.log(20)/Math.LN2*half; $('#pk5').textContent = t5 < 48 ? Math.round(t5)+' h' : (t5/24).toFixed(1)+' dias';
+  }
+  slider.addEventListener('input', update); update();
+})();
+
+/* ═══════════════════════ 04 · circuito 3D ═══════════════════════ */
+(() => {
+  const cv = $('#circuit'); if (!cv) return;
+  const ctx = cv.getContext('2d'), dpr = Math.min(devicePixelRatio || 1, 2);
+  let R;
+  function fit(){ const r = cv.getBoundingClientRect(); cv.width = r.width*dpr; cv.height = r.height*dpr; R = Math.min(cv.width, cv.height)*.30; }
+  fit(); addEventListener('resize', fit);
+  const nodes = [
+    {l:'ATV',                c:'#ff5c67', r:26, th:0.3, y:-40,  tag:'dopamina ↑↑'},
+    {l:'Núcleo accumbens',   c:'#ff8a5c', r:30, th:1.6, y:60,   tag:'salience desregulada'},
+    {l:'Amígdala',           c:'#f0b04c', r:24, th:2.8, y:-90,  tag:'alarme hiperativo'},
+    {l:'Hipocampo',          c:'#7cd8f7', r:22, th:4.1, y:120,  tag:'memória de ameaça'},
+    {l:'Córtex pré-frontal', c:'#a78bff', r:28, th:5.2, y:-150, tag:'freio cortical ↓'},
+    {l:'Tálamo',             c:'#48d695', r:20, th:2.0, y:170,  tag:'portão sensorial'}
+  ];
+  const links = [[0,1],[1,3],[0,2],[1,4],[2,4],[3,5],[4,5],[1,2],[1,5]];
+  let ry = .5, rxp = -.15, drag = false, lx = 0, ly = 0, auto = true, run = true;
+  cv.addEventListener('pointerdown', e => { drag = true; lx = e.clientX; ly = e.clientY; cv.setPointerCapture(e.pointerId); cv.style.cursor = 'grabbing'; });
+  cv.addEventListener('pointerup', () => { drag = false; cv.style.cursor = 'grab'; });
+  cv.addEventListener('pointercancel', () => { drag = false; });
+  cv.addEventListener('pointermove', e => {
+    if (!drag) return;
+    ry += (e.clientX-lx)*.008; rxp = Math.max(-.9, Math.min(.9, rxp + (e.clientY-ly)*.006));
+    lx = e.clientX; ly = e.clientY; if (REDUCED) frame(0);
+  });
+  function frame(t){
+    const w = cv.width, h = cv.height, cx0 = w/2, cy0 = h/2;
+    ctx.clearRect(0,0,w,h);
+    const proj = nodes.map(n => {
+      const yy = n.y/300, xx = Math.cos(n.th)*1.05, zz = Math.sin(n.th)*1.05;
+      let X = xx*Math.cos(ry) - zz*Math.sin(ry), Z = xx*Math.sin(ry) + zz*Math.cos(ry);
+      let Y = yy*Math.cos(rxp) - Z*Math.sin(rxp); Z = yy*Math.sin(rxp) + Z*Math.cos(rxp);
+      const f = 1/(1 + Z*.22);
+      return {x: cx0 + X*R*f, y: cy0 + Y*R*f, f, Z, n};
+    });
+    const order = proj.map((p,i) => i).sort((a,b) => proj[b].Z - proj[a].Z); // painter's order
+    links.forEach(([i,j], li) => {
+      const a = proj[i], b = proj[j], hot = Math.sin(t*1.8 + li) > .55;
+      ctx.strokeStyle = hot ? 'rgba(255,92,103,.75)' : 'rgba(124,216,247,.22)';
+      ctx.lineWidth = dpr*(hot ? 2.2 : 1.2);
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+      if (hot) { const k = (t*1.2 + li*.25)%1; ctx.fillStyle = 'rgba(255,92,103,.95)'; ctx.beginPath(); ctx.arc(a.x+(b.x-a.x)*k, a.y+(b.y-a.y)*k, 3.4*dpr*Math.min(a.f,b.f), 0, 7); ctx.fill(); }
+    });
+    order.forEach(i => {
+      const p = proj[i], r = p.n.r*dpr*p.f;
+      const g = ctx.createRadialGradient(p.x-r*.3,p.y-r*.3,r*.1,p.x,p.y,r);
+      g.addColorStop(0,'rgba(255,255,255,.9)'); g.addColorStop(.4,p.n.c); g.addColorStop(1,'#0a0e15');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,r,0,7); ctx.fill();
+      ctx.textAlign = 'center';
+      ctx.fillStyle = 'rgba(238,242,248,.92)'; ctx.font = `600 ${12*dpr*p.f}px Sora,-apple-system,sans-serif`; ctx.fillText(p.n.l, p.x, p.y - r - 7*dpr);
+      ctx.fillStyle = 'rgba(152,162,182,.85)'; ctx.font = `${9.5*dpr*p.f}px JetBrains Mono,Menlo,monospace`; ctx.fillText(p.n.tag, p.x, p.y + r + 15*dpr);
+    });
+  }
+  function tick(){ if (!run) return; if (auto && !drag) ry += .0035; frame(performance.now()/1000); requestAnimationFrame(tick); }
+  if (REDUCED) frame(0);
+  else { visible(cv, v => { const was = run; run = v; if (v && !was) tick(); }); tick(); }
+  spinState.listeners.push(on => auto = on);
+})();
+
+/* ═══════════════════════ 07 · roda do vício ═══════════════════════ */
+(() => {
+  const g = $('#wheelG'); if (!g) return;
+  const stages = [
+    {n:'BINGE / INTOXICAÇÃO', c:'#8fdcf5', brain:'DA estriatal ↑↑ · ATV → accumbens',
+     d:'Doses repetidas em sequência. Euforia intensa, hiperatividade, insônia por dias, anorexia. Dopamina extracelular sobe a múltiplos do basal; alta vulnerabilidade cardiovascular e hipertérmica.'},
+    {n:'TOLERÂNCIA', c:'#3fa9d1', brain:'↓ DAT, ↓ D2 · neuroadaptação',
+     d:'O cérebro reduz transportadores e receptores: doses maiores são necessárias para o mesmo efeito. O ciclo acelera e o dano oxidativo aos terminais dopaminérgicos se acumula.'},
+    {n:'ABSTINÊNCIA / CRASH', c:'#e2a33d', brain:'sistema de estresse (CRF, dinorfina) ↑ · recompensa ↓',
+     d:'Colapso: exaustão, anedonia, hipersonia e disforia por 1–3 dias; abstinência aguda de 7–10 dias. O "apagão" dopaminérgico leva o usuário a buscar a próxima dose para simplesmente funcionar.'},
+    {n:'CRAVING', c:'#e5484d', brain:'amígdala + pré-frontal · cues condicionados',
+     d:'Desejo intenso disparado por lugares, pessoas, cheiros e estresse. Cues condicionados ativam o circuito límbico mesmo após meses de abstinência — principal causa de recaída.'},
+    {n:'PSICOSE / COMPLICAÇÃO', c:'#9d8cff', brain:'salience aberrante · sensitização',
+     d:'Transtorno psicótico induzido em ~37% dos usuários (43% quando há transtorno por uso): paranoia, alucinações, delírio. Pode surgir no binge ou depois — e, numa minoria, persistir por meses (seções 03–06).'},
+    {n:'RECAÍDA', c:'#e5484d', brain:'controle executivo ↓ · hábito',
+     d:'Craving + anedonia + psicose residual formam a tempestade perfeita. A recaída reinicia o ciclo em nível maior de disfunção — até que o tratamento quebre a roda (seções 08–10).'}
+  ];
+  const NS = 'http://www.w3.org/2000/svg', cx = 170, cy = 170, R = 118, r = 74, desc = $('#wlDesc');
+  const mk = el => document.createElementNS(NS, el);
+  let segs = [];
+  function show(i){
+    segs.forEach((p, k) => p.classList.toggle('on', k === i));
+    const s = stages[i];
+    desc.innerHTML = `<h4><span class="dot" style="background:${s.c}"></span>${i+1}. ${s.n}</h4><p>${s.d}</p><div class="brain">${s.brain}</div>`;
+  }
+  stages.forEach((s, i) => {
+    const a0 = (i/stages.length)*Math.PI*2 - Math.PI/2, a1 = ((i+1)/stages.length)*Math.PI*2 - Math.PI/2, gap = .045;
+    const p = mk('path');
+    p.setAttribute('d', `M ${cx + R*Math.cos(a0+gap)} ${cy + R*Math.sin(a0+gap)} A ${R} ${R} 0 0 1 ${cx + R*Math.cos(a1-gap)} ${cy + R*Math.sin(a1-gap)} L ${cx + r*Math.cos(a1-gap)} ${cy + r*Math.sin(a1-gap)} A ${r} ${r} 0 0 0 ${cx + r*Math.cos(a0+gap)} ${cy + r*Math.sin(a0+gap)} Z`);
+    p.setAttribute('fill', s.c); p.setAttribute('class', 'wseg'); p.setAttribute('opacity', '.28'); p.style.color = s.c;
+    p.setAttribute('tabindex', '0'); p.setAttribute('role', 'button'); p.setAttribute('aria-label', `${i+1}. ${s.n}`);
+    p.addEventListener('pointerenter', () => show(i)); p.addEventListener('focus', () => show(i)); p.addEventListener('click', () => show(i));
+    g.appendChild(p); segs.push(p);
+    const mid = (a0+a1)/2, lr = (R+r)/2 + 2, t = mk('text');
+    t.setAttribute('class', 'wnode'); t.setAttribute('x', cx + lr*Math.cos(mid)); t.setAttribute('y', cy + lr*Math.sin(mid) + 3);
+    t.textContent = (i+1) + '·' + s.n.split(' ')[0]; g.appendChild(t);
+    // arrow hint between segments
+    const ar = mk('text'); ar.setAttribute('class','wnode'); ar.setAttribute('x', cx + (R+12)*Math.cos(a1)); ar.setAttribute('y', cy + (R+12)*Math.sin(a1) + 3); ar.textContent = '›'; ar.setAttribute('style','fill:#7f899e;font-size:12px'); g.appendChild(ar);
+  });
+})();
+</script>
+</body>
+</html>

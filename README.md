@@ -1,12 +1,14 @@
 # Guia GHB
 
-Source of <https://guia-ghb.netlify.app>: a Portuguese-language harm-reduction
-guide on GHB, GBL and 1,4-butanodiol. Static site, no build step.
+Source of <https://guia-ghb.netlify.app>: Portuguese-language educational and
+harm-reduction guides. Static site, no build step.
 
 ```
 site/            the whole site, deployed as-is
   index.html     homepage
-  ghb/index.html the guide: inline CSS, inline JS, two <canvas> charts
+  ghb/index.html            GHB / GBL / 1,4-BD guide: inline CSS+JS, two <canvas> charts
+  metanfetamina/index.html  methamphetamine dossier: evidence-graded, 22 DOI refs,
+                            3D molecule, circuit, PK simulator, addiction wheel
   ghb/og-ghb-v2.png, og.png, favicons, robots.txt, sitemap.xml
 ```
 
@@ -25,6 +27,11 @@ npx netlify-cli login        # once per machine
 python3 deploy.py --draft    # preview at a temporary URL, production untouched
 python3 deploy.py            # publish, then verify the live bytes
 ```
+
+## Where the repository lives
+
+`~/guia-ghb`. Do not keep it on the Desktop: iCloud Drive manages that folder
+on this Mac and evicts files to the cloud, which blocks git on every read.
 
 ## History
 
