@@ -74,7 +74,7 @@ def main():
         match = live == local
         ok &= match
         print(f"  {path}: {'OK, matches repository' if match else 'DIFFERS from repository (CDN cache? retry in a minute)'}")
-    print("\nLive:", LIVE_URL + "/ghb/" if ok else "verification incomplete, see above")
+    print("\nLive:", LIVE_URL + "/" if ok else "verification incomplete, see above")
 
 
 if __name__ == "__main__":
