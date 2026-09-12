@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07090f; --bg2:#0c1018; --ink:#eef2f8; --ink2:#c6cdd9; --mut:#98a2b6;
+    --ice:#7cd8f7; --red:#ff5c67; --amber:#f0b04c; --green:#48d695; --violet:#a78bff;
+    --serif:"Newsreader",Georgia,serif; --sans:"Sora",-apple-system,sans-serif; --mono:"JetBrains Mono",Menlo,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    background:
+      radial-gradient(880px 520px at 10% -12%, rgba(72,214,149,.15), transparent 60%),
+      radial-gradient(780px 470px at 90% 110%, rgba(124,216,247,.14), transparent 62%),
+      radial-gradient(620px 400px at 55% 0%, rgba(240,176,76,.10), transparent 62%),
+      linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+    color:var(--ink); font-family:var(--sans); position:relative;
+  }
+  .rule{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--green),var(--ice) 52%,var(--violet))}
+  .grid{position:absolute;inset:0;opacity:.28;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:60px 60px}
+  .wrap{position:relative;display:grid;grid-template-columns:1fr 392px;gap:36px;height:100%;padding:62px 64px 96px 74px}
+  .eyebrow{font-family:var(--mono);font-size:14px;letter-spacing:.20em;text-transform:uppercase;color:var(--green);margin-bottom:20px}
+  .eyebrow b{color:var(--ink2);font-weight:500}
+  h1{font-family:var(--serif);font-weight:500;font-size:66px;line-height:1.04;letter-spacing:-.02em}
+  h1 em{font-style:italic;color:var(--ink2)}
+  .accent{width:132px;height:4px;margin:24px 0 22px;border-radius:3px;background:linear-gradient(90deg,var(--green),var(--ice),var(--violet))}
+  .sub{font-size:20.5px;line-height:1.5;color:var(--ink2);max-width:648px}
+  .sub b{color:var(--ink);font-weight:600}
+  .chips{display:flex;gap:11px;margin-top:26px;flex-wrap:wrap}
+  .chip{font-family:var(--mono);font-size:14px;color:var(--ink2);border:1px solid rgba(255,255,255,.14);
+        background:rgba(255,255,255,.055);border-radius:999px;padding:8px 16px;white-space:nowrap}
+  .chip i{font-style:normal;color:var(--green)}
+  .foot{position:absolute;left:74px;bottom:40px;font-family:var(--mono);font-size:15px;color:var(--mut)}
+  .foot b{color:var(--ink2);font-weight:500}
+  .art{display:flex;align-items:center;justify-content:center;position:relative}
+  .art .halo{position:absolute;width:330px;height:330px;border-radius:50%;
+    background:radial-gradient(circle,rgba(72,214,149,.15),rgba(72,214,149,.03) 55%,transparent 72%)}
+  .art svg{position:relative;width:100%;height:100%}
+  .lyr{fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .lbl{font-family:"JetBrains Mono",monospace;fill:var(--ink2)}
+</style>
+</head>
+<body>
+  <div class="rule"></div>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Guia independente · <b>Redução de danos</b></div>
+      <h1>Guia de Redução<br><em>de Danos</em></h1>
+      <div class="accent"></div>
+      <p class="sub">O que fazer em casos de <b>over use</b>, dinâmica inalatória com modelos interativos e guias científicos sobre <b>GHB</b> e <b>metanfetamina</b> — com referências classificadas por nível de evidência.</p>
+      <div class="chips">
+        <span class="chip">Simuladores <i>2D e 3D</i></span>
+        <span class="chip"><i>GHB</i></span>
+        <span class="chip"><i>Metanfetamina</i></span>
+        <span class="chip">Referências com <i>DOI</i></span>
+      </div>
+    </div>
+    <div class="art">
+      <div class="halo"></div>
+      <svg viewBox="0 0 380 470" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="gCurve" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#ff5c67"/>
+            <stop offset=".45" stop-color="#f0b04c"/>
+            <stop offset="1" stop-color="#7cd8f7"/>
+          </linearGradient>
+        </defs>
+
+        <!-- eixos -->
+        <line class="lyr" stroke="rgba(255,255,255,.22)" stroke-width="2" x1="46" y1="340" x2="356" y2="340"/>
+        <line class="lyr" stroke="rgba(255,255,255,.22)" stroke-width="2" x1="46" y1="340" x2="46" y2="70"/>
+        <text class="lbl" x="302" y="368" font-size="14" fill="#98a2b6">tempo</text>
+        <text class="lbl" x="14" y="64" font-size="16" fill="#c6cdd9">T</text>
+
+        <!-- faixa de temperatura de trabalho -->
+        <rect x="46" y="84" width="310" height="34" fill="rgba(240,176,76,.10)"/>
+        <text class="lbl" x="58" y="107" font-size="14" fill="#f0b04c">250–400 °C · superfície</text>
+
+        <!-- ambiente -->
+        <line x1="46" y1="322" x2="356" y2="322" stroke="rgba(124,216,247,.32)" stroke-width="1.6" stroke-dasharray="7 6"/>
+        <text class="lbl" x="266" y="313" font-size="14" fill="#7cd8f7">~20 °C</text>
+
+        <!-- curva exponencial (lei de resfriamento de Newton) -->
+        <path class="lyr" stroke="url(#gCurve)" stroke-width="4"
+              d="M46 101 C 120 116, 176 216, 244 288 S 320 316, 356 320"/>
+
+        <!-- marcadores -->
+        <circle cx="46" cy="101" r="7.5" fill="#ff5c67"/>
+        <circle cx="176" cy="216" r="6" fill="#f0b04c"/>
+        <circle cx="300" cy="314" r="6" fill="#7cd8f7"/>
+
+        <!-- constante de tempo τ -->
+        <line class="lyr" stroke="rgba(167,139,255,.55)" stroke-width="1.6" stroke-dasharray="5 5" x1="176" y1="216" x2="176" y2="340"/>
+        <text class="lbl" x="166" y="364" font-size="16" fill="#a78bff">τ</text>
+        <text class="lbl" x="46" y="424" font-size="14" fill="#a78bff">τ = constante de tempo térmica</text>
+
+        <!-- fórmula -->
+        <text class="lbl" x="46" y="456" font-size="17" fill="#c6cdd9">T(t) = T∞ + (T₀ − T∞)·e^(−t/τ)</text>
+      </svg>
+    </div>
+  </div>
+  <div class="foot"><b>guia-reducaorisco.netlify.app</b> · conteúdo educativo</div>
+</body>
+</html>
