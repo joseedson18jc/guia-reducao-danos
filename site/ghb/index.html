@@ -288,6 +288,8 @@
         radial-gradient(ellipse 60% 50% at 10% 5%,var(--info-bg),transparent 70%);
     }
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:var(--s-8);align-items:center}
+    #ghbHero{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.8}
+    .hero .wrap{position:relative;z-index:1}
     .hero h1{
       font-size:var(--f-hero);line-height:.88;letter-spacing:-.05em;font-weight:700;
       margin:var(--s-5) 0 var(--s-2);
@@ -949,7 +951,7 @@
       }
       body{font-size:10.5pt;padding-bottom:0}
       .topbar,.navrail,.progress,.back-top,.callbar,.skip-link,.hero-viz,.hero-actions,
-      .tabs,.controls,.decay-controls,.theme-toggle,.chart-wrap,.chart-legend,.viz-orbit{display:none!important}
+      .tabs,.controls,.decay-controls,.theme-toggle,#ghbHero,.chart-wrap,.chart-legend,.viz-orbit{display:none!important}
       .hero{padding:0 0 1rem;min-height:0}
       .section{padding:1.2rem 0;break-inside:avoid}
       .triage,.step,.signal,.card,.panel,.dont-card,.help-box{break-inside:avoid;box-shadow:none}
@@ -1045,6 +1047,7 @@
   <main id="conteudo">
     <!-- ===================== HERO ===================== -->
     <section class="hero">
+      <canvas id="ghbHero" aria-hidden="true"></canvas>
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy reveal">
@@ -1253,7 +1256,7 @@
                 <path d="M232 92 C252 130 280 130 302 128" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arr)" opacity=".9">
                   <animate attributeName="stroke-dashoffset" from="18" to="0" dur="1.2s" repeatCount="indefinite"/>
                 </path>
-                <text x="230" y="152" font-size="9.5" fill="var(--text-3)">hidrolise no fígado e no sangue</text>
+                <text x="230" y="152" font-size="9.5" fill="var(--text-3)">hidrólise no fígado e no sangue</text>
                 <!-- 1,4-BD -->
                 <text x="16" y="196" fill="var(--info)" font-weight="bold">1,4-butanodiol · pró-droga</text>
                 <g stroke="var(--border-strong)" stroke-width="2" fill="none">
@@ -1750,6 +1753,139 @@
     matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
       if (!root.dataset.theme) requestAnimationFrame(drawAllCharts);
     });
+
+    /* ---------- hero: sedation field, two layers + parallax ---------- */
+    (() => {
+      const cv = $('ghbHero'); if (!cv) return;
+      let ctx = null;
+      try { ctx = cv.getContext('2d'); } catch { return; }
+      if (!ctx) return;
+      const hero = cv.closest('.hero') || document.body;
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const css = () => getComputedStyle(document.documentElement);
+      // theme-aware palette (dark + light); refreshed when the theme flips
+      let PAL = null;
+      const readPal = () => {
+        const g = css().getPropertyValue.bind(css());
+        const hex = h => {
+          h = (g(h) || '').trim();
+          const m = /^#([0-9a-f]{6})$/i.exec(h);
+          return m ? [parseInt(m[1].slice(0, 2), 16), parseInt(m[1].slice(2, 4), 16), parseInt(m[1].slice(4, 6), 16)] : [79, 217, 164];
+        };
+        PAL = { accent: hex('--accent'), info: hex('--info'), danger: hex('--danger') };
+      };
+      readPal();
+      new MutationObserver(readPal).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+      const R = Math.random;
+      const mk = (back, init, W, H) => ({
+        x: R() * W, y: init ? R() * H : (back ? -20 - R() * 30 : H + 20 + R() * 30),
+        vx: (R() - .5) * (back ? 6 : 10), vy: back ? 4 + R() * 8 : -(2 + R() * 6),
+        r: back ? 2.5 + R() * 4 : 1.2 + R() * 2.4,
+        life: 0, max: 9 + R() * 9, seed: R() * 1000,
+        danger: !back && R() < .18
+      });
+      let W = 0, H = 0, back = [], front = [];
+      const ratio = () => Math.min(devicePixelRatio || 1, 2);
+      function size() {
+        const rect = cv.getBoundingClientRect();
+        const w = Math.max(1, Math.round(rect.width || hero.clientWidth || 800));
+        const h = Math.max(1, Math.round(rect.height || hero.clientHeight || 500));
+        const k = ratio();
+        // cap absurdo: nunca alocar mais que ~2.5 MP (blinda contra inset vazado)
+        const scale = Math.min(1, Math.sqrt(2500000 / (w * h * k * k)));
+        W = w; H = h;
+        cv.width = Math.round(w * k * scale); cv.height = Math.round(h * k * scale);
+        ctx.setTransform(k * scale, 0, 0, k * scale, 0, 0);
+        if (!back.length) { for (let i = 0; i < 46; i++) back.push(mk(true, true, W, H)); }
+        if (!front.length) { for (let i = 0; i < 26; i++) front.push(mk(false, true, W, H)); }
+      }
+      size();
+      addEventListener('resize', size);
+      // smoothed pointer in -1..1 (target + eased value)
+      const par = { tx: 0, ty: 0, x: 0, y: 0, lastMove: 0 };
+      if (!reduced) {
+        addEventListener('pointermove', e => {
+          const r = hero.getBoundingClientRect();
+          if (e.clientX < r.left - 40 || e.clientX > r.right + 40 || e.clientY < r.top - 40 || e.clientY > r.bottom + 40) return;
+          par.tx = ((e.clientX - r.left) / Math.max(1, r.width) - .5) * 2;
+          par.ty = ((e.clientY - r.top) / Math.max(1, r.height) - .5) * 2;
+          par.lastMove = performance.now();
+        }, { passive: true });
+        addEventListener('blur', () => { par.tx = 0; par.ty = 0; });
+      }
+      const rgba = (c, a) => `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${a})`;
+      function blob(p, col, alpha) {
+        const fade = Math.min(1, p.life / 1.2) * Math.min(1, (p.max - p.life) / 2.5);
+        const a = alpha * Math.max(0, fade);
+        if (a <= .004) return;
+        const rad = p.r * 5;
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, rad);
+        g.addColorStop(0, rgba(col, a)); g.addColorStop(1, rgba(col, 0));
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(p.x, p.y, rad, 0, 7); ctx.fill();
+      }
+      function step(dt, t) {
+        if (W <= 0 || H <= 0) return;
+        const k = dt > 0 ? 1 - Math.exp(-3 * dt) : 1;
+        const ix = Math.sin(t * .1) * .5, iy = Math.cos(t * .083) * .35;
+        // sem movimento recente do mouse, o alvo volta à deriva ociosa
+        const live = par.lastMove && performance.now() - par.lastMove < 4000;
+        const gx = live ? par.tx : ix, gy = live ? par.ty : iy;
+        par.x += (gx - par.x) * k; par.y += (gy - par.y) * k;
+        ctx.clearRect(0, 0, W, H);
+        ctx.globalCompositeOperation = 'lighter';
+        // fundo: moléculas lentas afundando (o "freio"), sem cursor
+        ctx.save(); ctx.translate(par.x * W * .016, par.y * H * .016);
+        for (const b of back) {
+          if (dt > 0) {
+            b.x += (b.vx + Math.sin(t * .35 + b.seed) * 4) * dt;
+            b.y += b.vy * dt; b.life += dt;
+            if (b.x < -60) b.x = W + 60; else if (b.x > W + 60) b.x = -60;
+            if (b.y > H + 50 || b.life > b.max) Object.assign(b, mk(true, false, W, H));
+          }
+          blob(b, (Math.sin(b.seed) > .6 ? PAL.info : PAL.accent), .13);
+        }
+        ctx.restore();
+        // frente: brilhos nítidos + elos tênues; poucos pontos de risco
+        ctx.save(); ctx.translate(par.x * W * .05, par.y * H * .05);
+        const F = [];
+        for (const p of front) {
+          if (dt > 0) {
+            p.x += (p.vx + Math.sin(t * .6 + p.seed) * 5) * dt;
+            p.y += p.vy * dt; p.life += dt;
+            if (p.x < -30) p.x = W + 30; else if (p.x > W + 30) p.x = -30;
+            if (p.y < -40 || p.y > H + 40 || p.life > p.max) Object.assign(p, mk(false, false, W, H));
+          }
+          F.push(p);
+        }
+        const lim = Math.min(W, H) * .22;
+        ctx.lineWidth = 1;
+        for (let i = 0; i < F.length; i++) for (let j = i + 1; j < F.length; j++) {
+          const a = F[i], b = F[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d > lim) continue;
+          ctx.strokeStyle = rgba(PAL.accent, (1 - d / lim) * .14);
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+        for (const p of F) blob(p, p.danger ? PAL.danger : PAL.accent, p.danger ? .4 : .5);
+        ctx.restore();
+        ctx.globalCompositeOperation = 'source-over';
+      }
+      if (reduced) { for (const p of [...back, ...front]) p.life = 2 + R() * 4; step(0, 0); return; }
+      let raf = 0, visible = false, last = 0, start = 0;
+      const loop = now => {
+        if (!visible) return;
+        if (!start) { start = now; last = now; }
+        let dt = (now - last) / 1000;
+        if (dt > .05) dt = .05; if (dt < 0) dt = 0;
+        last = now;
+        try { step(dt, (now - start) / 1000); } catch {}
+        raf = requestAnimationFrame(loop);
+      };
+      new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting && !visible) { visible = true; last = performance.now(); raf = requestAnimationFrame(loop); }
+        else if (!e.isIntersecting && visible) { visible = false; cancelAnimationFrame(raf); }
+      })).observe(cv);
+    })();
 
     /* ---------- dose–response steep curve (interactive) ---------- */
     (() => {

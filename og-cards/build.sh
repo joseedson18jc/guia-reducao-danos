@@ -36,5 +36,8 @@ kill "$CHROME_PID" 2>/dev/null || true
 [ -f "$TMP/shot.png" ] || { echo "FALHOU: o Chrome não gerou o screenshot"; exit 1; }
 
 sips --resampleWidth 1200 "$TMP/shot.png" --out "$OUT" >/dev/null
+# Recompressão lossless (pixels idênticos, ~20% menor): parte do build,
+# para o card continuar reproduzível byte a byte.
+python3 -c "from PIL import Image; im = Image.open('$OUT'); im.save('$OUT', optimize=True)"
 echo "gerado: $OUT"
 sips -g pixelWidth -g pixelHeight "$OUT" | tail -2

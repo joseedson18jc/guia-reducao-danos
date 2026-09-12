@@ -2401,9 +2401,8 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;bac
 .lab-menu-btn{display:none;border:1px solid var(--border-strong);background:var(--surface);color:var(--text);width:40px;height:40px;border-radius:12px}
 
 /* new hero, while retaining the original animated particle field */
-.hero{min-height:900px;display:block;text-align:left;padding:74px max(28px,calc((100vw - 1180px)/2)) 80px;overflow:hidden;background:radial-gradient(circle at 76% 48%,rgba(190,255,62,.08),transparent 30%),linear-gradient(180deg,#050b08 0%,#07100c 100%)}
+.hero{position:relative;min-height:900px;display:block;text-align:left;padding:74px max(28px,calc((100vw - 1180px)/2)) 80px;overflow:hidden;background:radial-gradient(circle at 76% 48%,rgba(190,255,62,.08),transparent 30%),linear-gradient(180deg,#050b08 0%,#07100c 100%)}
 .hero:before{background:linear-gradient(90deg,rgba(190,255,62,.04) 1px,transparent 1px),linear-gradient(rgba(190,255,62,.04) 1px,transparent 1px);background-size:76px 76px;mask-image:linear-gradient(to bottom,black,transparent 86%)}
-.hero>.hero-eyebrow,.hero>h1,.hero>.hero-desc,.hero>div[style*="display:flex"],.hero>.hero-scroll{display:none!important}
 .pl1-vapor{opacity:.64;mix-blend-mode:screen;mask-image:linear-gradient(90deg,transparent 0%,black 38%,black 100%)}
 .hero-console{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(380px,.92fr);gap:70px;align-items:center;min-height:720px}
 .hero-primary{padding-top:34px}.hero-index{display:flex;align-items:center;gap:14px;color:var(--accent);font:500 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase}.hero-index:before{content:'';width:42px;height:2px;background:var(--accent);box-shadow:14px 0 0 rgba(190,255,62,.35)}
@@ -2423,6 +2422,14 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;bac
 .lab-overview .container{max-width:1240px}.overview-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:end;margin-bottom:54px}.overview-kicker{font:600 .68rem var(--font-mono);letter-spacing:.13em;text-transform:uppercase;color:#547513}.overview-head h2{font:700 clamp(3rem,6vw,6.2rem)/.9 var(--font-display);letter-spacing:-.07em;margin:14px 0 0}.overview-head p{font-size:1.13rem;color:#465249;max-width:640px;margin:0}.overview-head p strong{color:#071008}
 .lab-metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #bac5b6;border-radius:18px;overflow:hidden;margin-bottom:18px}.lab-metric{padding:20px;background:#f7f9f2;border-right:1px solid #bac5b6}.lab-metric:last-child{border:0}.lab-metric strong{display:block;font:700 2.1rem var(--font-display);letter-spacing:-.05em}.lab-metric span{font:500 .62rem var(--font-mono);text-transform:uppercase;color:#5f6b62}
 .module-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #bac5b6;border-radius:24px;overflow:hidden}.module-card{min-height:190px;padding:24px;text-decoration:none;color:#071008;background:#f7f9f2;border-right:1px solid #bac5b6;border-bottom:1px solid #bac5b6;position:relative;transition:background .2s,transform .2s}.module-card:nth-child(3n){border-right:0}.module-card:nth-last-child(-n+3){border-bottom:0}.module-card:hover{background:var(--accent);z-index:2;box-shadow:0 24px 50px rgba(7,16,8,.16)}.module-top{display:flex;justify-content:space-between;gap:12px;font:600 .59rem var(--font-mono);text-transform:uppercase;color:#5a675e}.module-top b{color:#071008}.module-card h3{font:700 1.45rem/1.05 var(--font-display);letter-spacing:-.035em;margin:40px 0 10px}.module-card p{font-size:.8rem;color:#59655d;margin:0;max-width:34ch}.module-card:hover p,.module-card:hover .module-top{color:#213216}.module-arrow{position:absolute;right:22px;bottom:20px;width:30px;height:30px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center}
+.trail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.trail{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border:1px solid var(--border-strong);border-radius:18px;background:var(--surface);text-decoration:none;color:var(--text);position:relative;transition:border-color .2s,transform .2s}
+.trail:hover{border-color:var(--accent);transform:translateY(-2px)}
+.trail b{font:700 1rem var(--font-display);letter-spacing:-.02em}
+.trail span{font-size:.78rem;color:var(--text-secondary)}
+.trail i{position:absolute;right:16px;top:16px;font-style:normal;color:var(--accent)}
+.trail-urgent{border-color:rgba(255,107,107,.45);background:rgba(255,50,50,.06)}
+@media(max-width:640px){.trail-grid{grid-template-columns:1fr}}
 
 /* deep-dive modules */
 .section{padding:118px 0 126px;position:relative;overflow:clip;background:linear-gradient(180deg,rgba(5,11,8,.86),rgba(8,19,14,.92))}.section:nth-of-type(even){background:linear-gradient(180deg,#07120d,#091710)}.section+.section{border-top:1px solid var(--border-strong)}
@@ -2528,31 +2535,7 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;bac
       <div class="telemetry"><div><small>Escala</small><strong>micro → macro</strong></div><div><small>Camadas</small><strong>2D + 3D</strong></div><div><small>Estado</small><strong>interativo</strong></div></div>
     </aside>
   </div>
-  <div class="hero-eyebrow">Estudo Técnico</div>
-  <h1>Insights em <em>Engenharia Inalatória</em> em bongs de vidro percolator e outros materiais, <em>Física Termodinâmica</em>, alertas e curiosidades sobre saúde em entorpecentes.</h1>
-  <p class="hero-desc">
-    Termodinâmica · Mecânica dos Fluidos · Ciência dos Materiais · Curiosidades e Insights sobre diferentes tipos de drogas lícitas e ilícitas — <strong style="color:var(--accent-bright); font-weight:600">the ultimate guide</strong> (junho de 2026, atualizado)<br>
-    Simuladores interativos de física · Educação em redução de danos.
-  </p>
-  <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:2rem; justify-content:center; opacity:0; animation: revealUp .7s cubic-bezier(.22,1,.36,1) .9s forwards;">
-    <a href="#s1" style="padding:0.35rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">§1 Anatomia</a>
-    <a href="#s2" style="padding:0.35rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">§2 Termodinâmica</a>
-    <a href="#s3" style="padding:0.35rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">§3 Percolação</a>
-    <a href="#s4" style="padding:0.35rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">§4 Nail</a>
-    <a href="#s5" style="padding:0.35rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">§5 Materiais</a>
-    <a href="#s6" style="padding:0.35rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">§6 Conexões</a>
-    <a href="#s7" style="padding:0.35rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">§7 Limpeza</a>
-    <a href="#s8" style="padding:0.35rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='';this.style.color=''">§8 Síntese</a>
-    <a href="#s9" style="padding:0.35rem 0.8rem; background:rgba(255,50,50,0.06); border:1px solid rgba(255,70,70,0.2); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:#ff8a8a; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='rgba(255,50,50,0.12)'" onmouseout="this.style.background='rgba(255,50,50,0.06)'">§9 ⚠️ Saúde</a>
-    <a href="/ghb/" style="padding:0.35rem 0.8rem; background:rgba(155,123,255,0.08); border:1px solid rgba(155,123,255,0.35); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:#c6b6ff; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='rgba(155,123,255,0.16)'" onmouseout="this.style.background='rgba(155,123,255,0.08)'">Novo guia · GHB / GBL →</a>
-    <a href="/metanfetamina/" style="padding:0.35rem 0.8rem; background:rgba(255,92,103,0.08); border:1px solid rgba(255,92,103,0.38); border-radius:16px; font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:#ffb3b8; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='rgba(255,92,103,0.16)'" onmouseout="this.style.background='rgba(255,92,103,0.08)'">Dossiê · Metanfetamina →</a>
-  </div>
-  <div class="hero-scroll">
-    <span>Explorar</span>
-    <div class="arrow"></div>
-  </div>
 </section>
-
 <!-- ════════════════════════════ VISÃO GERAL DO LABORATÓRIO ════════════════════════════ -->
 <section class="lab-overview" id="overview">
   <div class="container">
@@ -2573,6 +2556,11 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;bac
       <a class="module-card" href="#s7"><div class="module-top"><span>Módulo 07</span><b>3D + CURVAS</b></div><h3>Química da limpeza</h3><p>Solvatação, abrasão, eficácia comparada e frasco 3D manipulável.</p><span class="module-arrow">↘</span></a>
       <a class="module-card" href="#s8"><div class="module-top"><span>Módulo 08</span><b>SÍNTESE</b></div><h3>Sistema integrado</h3><p>Conecte calor, fluxo, materiais e manutenção em uma visão única.</p><span class="module-arrow">↘</span></a>
       <a class="module-card" href="#s9"><div class="module-top"><span>Módulo 09</span><b>SAÚDE</b></div><h3>Riscos & redução de danos</h3><p>Neurotoxicidade, corpo, recuperação, emergência e rede de apoio.</p><span class="module-arrow">↘</span></a>
+    </div>
+    <div class="trail-grid reveal" aria-label="Caminhos sugeridos de leitura">
+      <a class="trail trail-urgent" href="#s9"><b>Alguém em risco agora?</b><span>Emergência + rede de apoio (§9) — vá direto.</span><i>→</i></a>
+      <a class="trail" href="#s1"><b>Quero a física</b><span>Anatomia → calor → bolhas → síntese (§1 · §2 · §3 · §8).</span><i>→</i></a>
+      <a class="trail" href="#s2"><b>Do zero, na ordem</b><span>Nove módulos em sequência, ~40 min de laboratório.</span><i>→</i></a>
     </div>
   </div>
 </section>
@@ -5646,6 +5634,44 @@ window.initPL1 = function(){
 
   var mouse = { x: -9999, y: -9999, active: false };
 
+  /* ── camada de fundo (profundidade) + parallax suavizado ──
+     Fundo: lento, fosco, ignora o cursor. Frente: rápida, nítida, repele.
+     O mouse desloca cada camada numa amplitude diferente (fundo 1.6%,
+     frente 5%) — o olho lê como profundidade. Sem mouse, deriva ociosa
+     lenta mantém a cena viva. */
+  var par = { tx: 0, ty: 0, x: 0, y: 0 };
+  var MAXB = 42, back = [];
+  var DIM = '#5e7568';
+  function spawnBack(b, init){
+    var s = heroSize();
+    var w = s.w > 0 ? s.w : 1, h = s.h > 0 ? s.h : 1;
+    b.x = Math.random() * (w + 120) - 60;
+    b.y = init ? Math.random() * h : h + Math.random() * 40;
+    b.vx = (Math.random() - 0.5) * 6;
+    b.vy = -(3 + Math.random() * 7);
+    b.r = 3 + Math.random() * 4.5;
+    b.life = 0;
+    b.maxLife = 10 + Math.random() * 8;
+    b.seed = Math.random() * 1000;
+    var pick = Math.random();
+    b.col = pick < 0.45 ? cVapor : (pick < 0.8 ? cAccent : hexToRgb(DIM));
+  }
+  function ensureBack(){
+    while(back.length < MAXB){ var b = {}; spawnBack(b, true); back.push(b); }
+  }
+  function drawBack(b, s){
+    var lifeFade = PL.clamp(b.life / 1.2, 0, 1) * PL.clamp((b.maxLife - b.life) / 2.5, 0, 1);
+    var alpha = 0.13 * lifeFade;
+    if(alpha <= 0.004) return;
+    var rad = b.r * 6;
+    var g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, rad);
+    var rgb = Math.round(b.col[0])+','+Math.round(b.col[1])+','+Math.round(b.col[2]);
+    g.addColorStop(0, 'rgba('+rgb+','+alpha.toFixed(3)+')');
+    g.addColorStop(1, 'rgba('+rgb+',0)');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(b.x, b.y, rad, 0, Math.PI*2); ctx.fill();
+  }
+
   function heroSize(){
     return { w: view.w, h: view.h };
   }
@@ -5701,6 +5727,7 @@ window.initPL1 = function(){
     return [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16)];
   }
   var cAccent = hexToRgb(ACCENT), cVapor = hexToRgb(VAPOR), cWarm = hexToRgb(WARM);
+  ensureBack(); // após as cores: spawnBack usa cAccent/cVapor
   function mix3(a,b,t){ return [ a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t ]; }
 
   function draw(p, s){
@@ -5739,7 +5766,7 @@ window.initPL1 = function(){
     ctx.font = "600 11px 'Fira Code', monospace";
     ctx.fillStyle = 'rgba(143,164,152,0.55)';
     var pad = 16;
-    ctx.fillText('VAPOR · ADVECÇÃO LAGRANGIANA', pad, s.h - 30);
+    ctx.fillText('VAPOR · DUAS CAMADAS · PARALLAX', pad, s.h - 30);
     ctx.font = "12px 'Fira Code', monospace";
     ctx.fillStyle = 'rgba(168,230,207,0.5)';
     ctx.fillText('a = b·θ − k·v      v_t = b/k', pad, s.h - 14);
@@ -5749,8 +5776,32 @@ window.initPL1 = function(){
   function step(dt, t){
     var s = heroSize();
     if(s.w <= 0 || s.h <= 0) return; // not laid out yet; harness getters update live
+    if(hero.clientHeight > 0 && s.h > hero.clientHeight * 1.2){ try{ view.resize(); }catch(e){} s = heroSize(); }
+    // parallax suavizado (converge exponencial); deriva ociosa quando sem mouse
+    var kk = dt > 0 ? 1 - Math.exp(-3 * dt) : 1;
+    var idleX = Math.sin(t * 0.11) * 0.5, idleY = Math.cos(t * 0.09) * 0.35;
+    par.x += ((mouse.active ? par.tx : idleX) - par.x) * kk;
+    par.y += ((mouse.active ? par.ty : idleY) - par.y) * kk;
+    var oxB = par.x * s.w * 0.016, oyB = par.y * s.h * 0.016;
+    var oxF = par.x * s.w * 0.05,  oyF = par.y * s.h * 0.05;
     ctx.clearRect(0, 0, s.w, s.h);
     ctx.globalCompositeOperation = 'lighter';
+    // ── fundo: campo distante, lento, sem repulsão ──
+    ctx.save(); ctx.translate(oxB, oyB);
+    for(var j = 0; j < back.length; j++){
+      var b = back[j];
+      if(dt > 0){
+        b.x += (b.vx + Math.sin(t * 0.4 + b.seed) * 4) * dt;
+        b.y += b.vy * dt;
+        b.life += dt;
+        if(b.x < -70) b.x = s.w + 70; else if(b.x > s.w + 70) b.x = -70;
+        if(b.y < -50 || b.life > b.maxLife) spawnBack(b, false);
+      }
+      drawBack(b, s);
+    }
+    ctx.restore();
+    // ── frente: plume nítido com repulsão ao cursor ──
+    ctx.save(); ctx.translate(oxF, oyF);
 
     var R = s.h * REP_FRAC;
     var R2 = R * R;
@@ -5801,6 +5852,7 @@ window.initPL1 = function(){
 
       draw(p, s);
     }
+    ctx.restore(); // fecha o translate da frente
     ctx.globalCompositeOperation = 'source-over';
     drawLabel(s);
   }
@@ -5812,6 +5864,8 @@ window.initPL1 = function(){
     var y = e.clientY - rect.top;
     if(x >= -40 && x <= rect.width + 40 && y >= -40 && y <= rect.height + 40){
       mouse.x = x; mouse.y = y; mouse.active = true;
+      par.tx = PL.clamp((x / Math.max(1, rect.width) - 0.5) * 2, -1, 1);
+      par.ty = PL.clamp((y / Math.max(1, rect.height) - 0.5) * 2, -1, 1);
     } else {
       mouse.active = false;
     }
@@ -5831,6 +5885,11 @@ window.initPL1 = function(){
       var pp = particles[k];
       pp.y = Math.random() * hh;
       pp.life = 0.9 + Math.random() * 3;
+    }
+    for(var k2=0;k2<back.length;k2++){
+      var bb = back[k2];
+      bb.y = Math.random() * hh;
+      bb.life = 1.2 + Math.random() * 4;
     }
     PL.loop(canvas, function(dt, t){ step(0, 0); });
   } else {
