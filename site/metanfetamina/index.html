@@ -794,7 +794,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
       <span class="chip"><span class="d" style="background:var(--red)"></span>DOSSIÊ · NEUROPSIQUIATRIA E SAÚDE PÚBLICA</span>
       <span class="chip"><span class="d" style="background:var(--ice)"></span>EVIDÊNCIAS CLASSIFICADAS · REVISÃO 28 SET/2026</span>
       <a class="chip" href="/" style="text-decoration:none"><span class="d" style="background:var(--green)"></span>← LABORATÓRIO · GUIA DE REDUÇÃO DE DANOS</a>
-      <a class="chip" href="#aexp-s2" style="text-decoration:none" title="Narrações em §02, §04, §05 e §10"><span class="d" style="background:var(--violet)"></span>🎧 4 EXPLICAÇÕES EM ÁUDIO</a>
+      <a class="chip" href="#aexp-s2" style="text-decoration:none" title="Narrações em §02, §03, §04, §05 e §10"><span class="d" style="background:var(--violet)"></span>🎧 5 EXPLICAÇÕES EM ÁUDIO</a>
     </div>
     <h1 class="fi" style="animation-delay:.25s">Paranoia por<br><span class="glow">Metanfetamina</span></h1>
     <p class="sub fi" style="animation-delay:.45s">O sintoma psiquiátrico mais frequente e mais temido do cristal: um sistema nervoso em alarme permanente que transforma vizinhos em agentes, ruídos em ameaças e a própria mente em campo de batalha. <b>Como nasce, quanto dura, por que volta — e o que a medicina pode fazer, com os números da literatura.</b></p>
@@ -845,7 +845,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
           <span><b>Público</b></span><span>Profissionais de saúde, gestores, imprensa, famílias</span>
           <span><b>Nomenclatura</b></span><span>TUM = transtorno por uso de metanfetamina · PIM = psicose induzida por metanfetamina · CM = <i>contingency management</i></span>
           <span><b>Limites</b></span><span>Dados brasileiros de prevalência são escassos; seções 01 e 11 são de nível D</span>
-          <span><b>Áudio</b></span><span>Explicações narradas nos tópicos mais difíceis (<a href="#aexp-gs2">§02</a>, <a href="#aexp-s2">§04</a>, <a href="#aexp-s3">§05</a>, <a href="#aexp-gs4">§10</a>) · voz sintética ElevenLabs, roteiro escrito a partir das fontes citadas · transcrição completa em cada player</span>
+          <span><b>Áudio</b></span><span>Explicações narradas nos tópicos mais difíceis (<a href="#aexp-gs2">§02</a>, <a href="#aexp-s1">§03</a>, <a href="#aexp-s2">§04</a>, <a href="#aexp-s3">§05</a>, <a href="#aexp-gs4">§10</a>) · voz sintética ElevenLabs, roteiro escrito a partir das fontes citadas · transcrição completa em cada player</span>
         </div>
       </div>
     </div>
@@ -1064,7 +1064,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
     <h2 class="rv">“Estão me seguindo.”<br>A anatomia de um delírio</h2>
     <p class="lede rv d1">A paranoia metanfetamínica começa como suspeita vaga e se consolida num sistema de crenças. O conteúdo é tipicamente <b>persecutório e de referência</b>, sincronizado com o binge e a privação de sono; alucinações táteis (formicação) e auditivas são frequentes. Nos casos prolongados, a fronteira com a psicose primária se apaga<sup class="cite"><a href="#r9">9</a>,<a href="#r10">10</a></sup>.</p>
     <div class="duo">
-      <div class="glass quotebox glass-hover rv">
+      <div class="glass quotebox glass-hover rv" data-aexp-label="Relato composto">
         <p>Toda noite alguém mexe no meu dinheiro, nas minhas coisas. Eu sei que parece loucura, mas é real: eles trocam o cheiro, mudam a posição. Minha mãe faz parte, o vizinho grava tudo.</p>
         <div class="who">— Relato composto, construído a partir de descrições clínicas típicas de emergência psiquiátrica. Não é citação de paciente real.</div>
       </div>
@@ -2334,9 +2334,11 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
   dock.inert = true;
 
   function labelOf(el) {
-    const h = el.querySelector('h4') || el.querySelector('.nm') || el.querySelector('b'); if (!h) return '';
+    if (el.dataset.aexpLabel) return el.dataset.aexpLabel;
+    const h = el.querySelector('h4') || el.querySelector('.nm') || el.querySelector('.t') || el.querySelector('.day') ||
+              el.querySelector('figcaption b') || el.querySelector('.kicker') || el.querySelector('b'); if (!h) return '';
     const tn = [...h.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
-    let s = (tn ? tn.textContent : h.textContent).trim().replace(/[.:]$/, '');
+    let s = (tn ? tn.textContent : h.textContent).trim().replace(/\s*—\s*$/, '').replace(/[.:]$/, '');
     s = s.split(' — ')[0].split(' (')[0];
     return s.length > 34 ? s.slice(0, 32) + '…' : s;
   }
@@ -2377,7 +2379,7 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
     }
     function setFocus(ids) {
       targets.forEach((el, k) => el.classList.toggle('aexp-lit', ids.includes(k)));
-      focus.replaceChildren(...ids.filter(k => targets[k]).map(k => { const b = document.createElement('b'); b.textContent = labelOf(targets[k]); return b; }));
+      focus.replaceChildren(...ids.filter(k => targets[k] && labelOf(targets[k])).map(k => { const b = document.createElement('b'); b.textContent = labelOf(targets[k]); return b; }));
       if (circuit) { window.circuitFocus = ids; window.circuitRedraw && window.circuitRedraw(); }
     }
     P.clearFocus = () => { setFocus([]); if (cur >= 0 && spans[cur]) spans[cur].classList.remove('cur'); cur = -1; cap.textContent = capIdle; };
