@@ -677,6 +677,88 @@ h2{letter-spacing:-.01em}
 }
 @media(prefers-reduced-motion:reduce){.glass-hover:hover{transform:none}}
 
+/* ═══════════ EXPLICAÇÕES EM ÁUDIO (ElevenLabs) ═══════════ */
+.aexp{margin:-14px 0 36px;padding:16px 18px 12px;border-radius:var(--r2);max-width:780px;position:relative;
+  border-color:rgba(124,216,247,.28);background:linear-gradient(120deg,rgba(124,216,247,.09),var(--glass) 62%);
+  transition:border-color .3s,box-shadow .3s}
+.aexp.playing{border-color:rgba(124,216,247,.6);box-shadow:0 0 0 1px rgba(124,216,247,.18),0 20px 44px -24px rgba(124,216,247,.55)}
+.aexp-head{display:flex;align-items:center;gap:14px}
+.aexp-btn{flex:none;position:relative;width:50px;height:50px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--ice),var(--ice2));color:#04121b;box-shadow:0 8px 20px -8px rgba(56,168,216,.8);transition:transform .2s}
+.aexp-btn:hover{transform:scale(1.06)}
+.aexp-btn:focus-visible,.aexp-spd button:focus-visible,.aexp-tr summary:focus-visible,.aexp-dock button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.aexp-btn svg{width:20px;height:20px}
+.aexp-btn .i-pause,.aexp.playing .aexp-btn .i-play{display:none}
+.aexp.playing .aexp-btn .i-pause{display:block}
+.aexp-btn.loading::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid transparent;border-top-color:var(--ice);animation:aspin .8s linear infinite}
+@keyframes aspin{to{transform:rotate(360deg)}}
+.aexp.playing .aexp-btn::before{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(124,216,247,.5);animation:apulse 1.8s ease-out infinite}
+@keyframes apulse{to{box-shadow:0 0 0 14px rgba(124,216,247,0)}}
+.aexp-meta{min-width:0;flex:1}
+.aexp-k{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ice2)}
+.aexp-k svg{width:14px;height:14px;flex:none}
+.aexp-t{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.25;margin-top:3px}
+.aexp-spd{display:flex;gap:4px;flex:none}
+.aexp-spd button{font-family:var(--mono);font-size:10.5px;padding:5px 8px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--mut);cursor:pointer;transition:all .2s}
+.aexp-spd button:hover{color:var(--ink)}
+.aexp-spd button.on{color:var(--ice);border-color:rgba(124,216,247,.5);background:rgba(124,216,247,.08)}
+.aexp-wave{margin-top:12px;height:46px;cursor:pointer;border-radius:8px;touch-action:none}
+.aexp-wave canvas{width:100%;height:100%;display:block}
+.aexp-wave:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+.aexp-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px;font-family:var(--mono);font-size:11px;color:var(--mut2)}
+.aexp-focus{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.aexp-focus b{font-weight:500;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ice);border:1px solid rgba(124,216,247,.4);border-radius:99px;padding:2px 8px;animation:afade .35s ease}
+@keyframes afade{from{opacity:0;transform:translateY(3px)}}
+.aexp-cap{margin:8px 0 2px;min-height:1.6em;font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;color:var(--ink2);text-wrap:pretty}
+.aexp.playing .aexp-cap{color:var(--ink)}
+.aexp audio{width:100%;margin-top:10px}
+html.js .aexp audio{display:none}
+html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:not(.js) .aexp-row,html:not(.js) .aexp-cap{display:none}
+.aexp-tr{margin-top:8px;border-top:1px dashed var(--stroke);padding-top:8px}
+.aexp-tr summary{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);cursor:pointer;padding:4px 0;list-style:none}
+.aexp-tr summary::-webkit-details-marker{display:none}
+.aexp-tr summary::before{content:"+";display:inline-block;width:14px;color:var(--ice2)}
+.aexp-tr[open] summary::before{content:"−"}
+.aexp-tr summary:hover{color:var(--ink)}
+.aexp-tr .tx{position:relative;max-height:230px;overflow:auto;margin-top:6px;padding-right:6px;font-size:15px;color:var(--ink2);line-height:1.75;overscroll-behavior:contain}
+.aexp-tr .tx span{cursor:pointer;border-radius:4px;padding:1px 0;transition:background .2s,color .2s}
+.aexp-tr .tx span:hover{color:var(--ink);text-decoration:underline dotted rgba(124,216,247,.55);text-underline-offset:4px}
+.aexp-tr .tx span.cur{background:rgba(124,216,247,.16);color:#fff;box-shadow:0 0 0 2px rgba(124,216,247,.16)}
+.aexp-note{font-family:var(--mono);font-size:10.5px;color:var(--mut2);margin:10px 0 2px;line-height:1.6}
+.aexp.err .aexp-cap{color:var(--amber)}
+/* alvos que acendem durante a narração */
+.aexp-lit{border-color:rgba(124,216,247,.65)!important;box-shadow:0 0 0 1px rgba(124,216,247,.3),0 12px 30px -14px rgba(124,216,247,.65)!important}
+.nodes .nd,.mech li,.trow,.duel .ph,.tgrid .tcard{transition:border-color .35s,box-shadow .35s,background .35s,color .35s}
+.nodes .nd.aexp-lit{background:rgba(124,216,247,.08);color:var(--ink2)}
+.mech li.aexp-lit{box-shadow:none!important;color:var(--ink2);background:linear-gradient(90deg,rgba(124,216,247,.12),transparent 85%);border-radius:8px}
+/* mini-player flutuante */
+.aexp-dock{position:fixed;left:50%;bottom:18px;z-index:62;display:flex;align-items:center;gap:10px;padding:7px 8px 7px 7px;border-radius:99px;
+  background:rgba(12,16,26,.9);border:1px solid rgba(124,216,247,.42);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 18px 40px -16px rgba(0,0,0,.8);transform:translate(-50%,160%);opacity:0;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .35s;max-width:calc(100vw - 32px);overflow:hidden}
+.aexp-dock.show{transform:translate(-50%,0);opacity:1}
+.aexp-dock .db{flex:none;width:36px;height:36px;border-radius:50%;border:0;display:grid;place-items:center;cursor:pointer;background:linear-gradient(135deg,var(--ice),var(--ice2));color:#04121b}
+.aexp-dock .db svg{width:15px;height:15px}
+.aexp-dock .db .i-pause,.aexp-dock.playing .db .i-play{display:none}
+.aexp-dock.playing .db .i-pause{display:block}
+.aexp-dock .dt{min-width:0;display:flex;flex-direction:column;line-height:1.25}
+.aexp-dock .dt a{font-family:var(--serif);font-size:14px;color:var(--ink);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48vw}
+.aexp-dock .dt a:hover{color:var(--ice)}
+.aexp-dock .dt span{font-family:var(--mono);font-size:10px;color:var(--mut2);letter-spacing:.08em}
+.aexp-dock .dx{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--mut);cursor:pointer;font-size:14px;line-height:1}
+.aexp-dock .dx:hover{color:var(--ink);border-color:var(--stroke)}
+.aexp-dock .dp{position:absolute;left:0;bottom:0;height:2px;background:var(--ice);width:0}
+@media(max-width:640px){
+  .aexp{padding:14px 14px 10px}
+  .aexp-head{flex-wrap:wrap;gap:12px}
+  .aexp-spd{width:100%;order:3}
+  .aexp-t{font-size:17px}
+  .aexp-k{letter-spacing:.1em}
+  .aexp-cap{font-size:15px}
+  .aexp-dock{bottom:62px}
+}
+@media(prefers-reduced-motion:reduce){.aexp.playing .aexp-btn::before,.aexp-btn.loading::after,.aexp-focus b{animation:none}.aexp-dock{transition:none}}
+@media print{.aexp-btn,.aexp-spd,.aexp-wave,.aexp-row,.aexp-cap,.aexp-dock,.aexp audio{display:none!important}.aexp-tr .tx{max-height:none}}
+
 </style>
 </head>
 <body>
@@ -712,6 +794,7 @@ h2{letter-spacing:-.01em}
       <span class="chip"><span class="d" style="background:var(--red)"></span>DOSSIÊ · NEUROPSIQUIATRIA E SAÚDE PÚBLICA</span>
       <span class="chip"><span class="d" style="background:var(--ice)"></span>EVIDÊNCIAS CLASSIFICADAS · REVISÃO 28 SET/2026</span>
       <a class="chip" href="/" style="text-decoration:none"><span class="d" style="background:var(--green)"></span>← LABORATÓRIO · GUIA DE REDUÇÃO DE DANOS</a>
+      <a class="chip" href="#aexp-s2" style="text-decoration:none" title="Narrações em §02, §04, §05 e §10"><span class="d" style="background:var(--violet)"></span>🎧 4 EXPLICAÇÕES EM ÁUDIO</a>
     </div>
     <h1 class="fi" style="animation-delay:.25s">Paranoia por<br><span class="glow">Metanfetamina</span></h1>
     <p class="sub fi" style="animation-delay:.45s">O sintoma psiquiátrico mais frequente e mais temido do cristal: um sistema nervoso em alarme permanente que transforma vizinhos em agentes, ruídos em ameaças e a própria mente em campo de batalha. <b>Como nasce, quanto dura, por que volta — e o que a medicina pode fazer, com os números da literatura.</b></p>
@@ -756,12 +839,13 @@ h2{letter-spacing:-.01em}
       </div>
       <div class="glass meta rv d1">
         <div class="kv">
-          <span><b>Revisão</b></span><span><time datetime="2026-09-28">11 set 2026</time></span>
+          <span><b>Revisão</b></span><span><time datetime="2026-09-28">28 set 2026</time></span>
           <span><b>Base</b></span><span>PubMed / DOI verificados por item</span>
           <span><b>Escopo</b></span><span>Metanfetamina (d-MA, "cristal", "ice"); não cobre MDMA nem anfetaminas de prescrição</span>
           <span><b>Público</b></span><span>Profissionais de saúde, gestores, imprensa, famílias</span>
           <span><b>Nomenclatura</b></span><span>TUM = transtorno por uso de metanfetamina · PIM = psicose induzida por metanfetamina · CM = <i>contingency management</i></span>
           <span><b>Limites</b></span><span>Dados brasileiros de prevalência são escassos; seções 01 e 11 são de nível D</span>
+          <span><b>Áudio</b></span><span>Explicações narradas nos tópicos mais difíceis (<a href="#aexp-gs2">§02</a>, <a href="#aexp-s2">§04</a>, <a href="#aexp-s3">§05</a>, <a href="#aexp-gs4">§10</a>) · voz sintética ElevenLabs, roteiro escrito a partir das fontes citadas · transcrição completa em cada player</span>
         </div>
       </div>
     </div>
@@ -845,6 +929,25 @@ h2{letter-spacing:-.01em}
     <div class="kicker rv">02 · A molécula e o apagão <span class="ev C">Nível C · Revisão farmacológica</span> <span class="ev B">Nível B · PET longitudinal</span></div>
     <h2 class="rv">A molécula, o pico<br>e o apagão dopaminérgico</h2>
     <p class="lede rv d1">C₁₀H₁₅N: 149 daltons que abrem as comportas da dopamina. Diferente da cocaína, que apenas <i>bloqueia</i> a recaptação, a metanfetamina entra no neurônio e <b>inverte o transportador</b>, despejando dopamina, noradrenalina e serotonina na fenda sináptica. O problema é o depois: o vale profundo, a neurotoxicidade e o substrato da paranoia.</p>
+    <figure class="aexp glass rv d1" id="aexp-gs2" data-dur="88.63" data-targets="#gs2 ol.mech > li" data-peaks="87,84,58,27,91,78,58,52,22,66,56,87,68,70,20,85,36,41,75,28,91,62,62,16,40,86,54,56,71,59,75,67,66,61,62,40,48,74,45,74,91,35,83,62,99,45,33,72,89,77,65,16,74,99,47,78,42,86,16,65,24,88,92,41,35,70,53,18,83,86,52,47,26,54,71,48,86,33,46,77,40,58,40,90,87,53,16,99,46,71,99,83,16,56,91,16">
+      <div class="aexp-head">
+        <button class="aexp-btn" type="button" aria-pressed="false" aria-label="Ouvir: A molécula, explicada"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h4v14h-4zM13.5 5h4v14h-4z" fill="currentColor"/></svg></button>
+        <div class="aexp-meta">
+          <div class="aexp-k"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="3" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/><rect x="16.5" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/></svg>Explicação em áudio · §02 · 1:28</div>
+          <figcaption class="aexp-t">A molécula, explicada</figcaption>
+        </div>
+        <div class="aexp-spd" role="group" aria-label="Velocidade da narração"><button type="button" data-r="0.85">0,85×</button><button type="button" data-r="1" class="on">1×</button><button type="button" data-r="1.25">1,25×</button><button type="button" data-r="1.5">1,5×</button></div>
+      </div>
+      <div class="aexp-wave" role="slider" tabindex="0" aria-label="Posição da narração" aria-valuemin="0" aria-valuemax="89" aria-valuenow="0" aria-valuetext="0:00 de 1:28"><canvas aria-hidden="true"></canvas></div>
+      <div class="aexp-row"><span class="aexp-time">0:00 / 1:28</span><span class="aexp-focus" aria-hidden="true"></span></div>
+      <p class="aexp-cap" aria-hidden="true">Toque em ▶ — acompanhe os 5 passos do mecanismo acendendo à medida que a narração avança.</p>
+      <audio preload="none" controls src="audio/gs2.mp3"></audio>
+      <details class="aexp-tr">
+        <summary>Transcrição · toque numa frase para ir até ela</summary>
+        <div class="tx"><span data-t="0.00">Vamos entender o que torna a metanfetamina diferente.</span> <span data-t="3.40">Pense no neurônio como uma fábrica que guarda dopamina em pequenos pacotes, as vesículas, e que depois recolhe de volta o que liberou, usando uma bomba: o transportador de dopamina.</span> <span data-t="16.02">A cocaína apenas trava essa bomba, e a dopamina já liberada fica mais tempo na sinapse.</span> <span data-t="22.40">A metanfetamina faz algo mais radical.</span> <span data-t="25.40" data-n="0">Como ela se parece com a própria dopamina, a bomba a puxa para dentro do neurônio.</span> <span data-t="30.64" data-n="1,2">Lá dentro, ela esvazia as vesículas, espalhando dopamina pelo interior da célula, e depois inverte a bomba, que passa a despejar dopamina para fora, sem nenhum comando elétrico.</span> <span data-t="42.86" data-n="3">Ao mesmo tempo, ela bloqueia a enzima que degradaria esse excesso.</span> <span data-t="47.86">O resultado é uma inundação de dopamina, noradrenalina e serotonina.</span> <span data-t="54.20" data-n="4">Mas existe um custo tardio.</span> <span data-t="55.76" data-n="4">A dopamina acumulada fora das vesículas se oxida, gera radicais livres e inflamação, e isso lesa os terminais nervosos do estriado e do córtex pré-frontal.</span> <span data-t="67.96">Por isso, depois do pico vem um vale abaixo do normal.</span> <span data-t="72.16">O cérebro se recupera, mas devagar: exames de PET mostraram um aumento de dezesseis a dezenove por cento nos transportadores de dopamina entre menos de seis meses e pouco mais de um ano de abstinência.</span> <span data-t="85.92">É uma recuperação real, porém incompleta.</span></div>
+        <p class="aexp-note">Narração com voz sintética (ElevenLabs · “Beatriz”), roteiro escrito a partir das fontes citadas nesta seção. Conteúdo educativo; não substitui avaliação profissional.</p>
+      </details>
+    </figure>
 
     <div class="split">
       <div>
@@ -1041,6 +1144,25 @@ h2{letter-spacing:-.01em}
     <div class="kicker rv">04 · O circuito <span class="ev C">Nível C · Modelo neurobiológico</span></div>
     <h2 class="rv">Por que o cérebro passa<br>a enxergar ameaça em tudo</h2>
     <p class="lede rv d1">A paranoia é o resultado previsível de três sistemas desregulados ao mesmo tempo: dopamina em excesso no circuito mesolímbico (atribuição de <i>salience</i> — tudo parece importante e dirigido a você), amígdala hiperativa (alarme) e córtex pré-frontal hipoativo (freio quebrado). Arraste o circuito abaixo.</p>
+    <figure class="aexp glass rv d1" id="aexp-s2" data-dur="95.53" data-targets="#s2 .nodes .nd" data-circuit="1" data-peaks="57,98,16,87,74,17,64,44,84,24,99,24,67,32,83,56,66,44,63,67,66,52,68,41,74,52,35,56,89,25,80,58,16,41,49,24,66,16,71,58,76,44,99,43,63,85,78,65,16,94,49,45,71,16,65,72,57,62,53,31,66,56,54,74,83,48,28,84,50,58,45,31,99,57,60,41,87,64,81,39,45,31,77,35,48,61,16,99,78,44,66,64,35,57,70,20">
+      <div class="aexp-head">
+        <button class="aexp-btn" type="button" aria-pressed="false" aria-label="Ouvir: O circuito da paranoia, explicado"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h4v14h-4zM13.5 5h4v14h-4z" fill="currentColor"/></svg></button>
+        <div class="aexp-meta">
+          <div class="aexp-k"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="3" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/><rect x="16.5" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/></svg>Explicação em áudio · §04 · 1:35</div>
+          <figcaption class="aexp-t">O circuito da paranoia, explicado</figcaption>
+        </div>
+        <div class="aexp-spd" role="group" aria-label="Velocidade da narração"><button type="button" data-r="0.85">0,85×</button><button type="button" data-r="1" class="on">1×</button><button type="button" data-r="1.25">1,25×</button><button type="button" data-r="1.5">1,5×</button></div>
+      </div>
+      <div class="aexp-wave" role="slider" tabindex="0" aria-label="Posição da narração" aria-valuemin="0" aria-valuemax="96" aria-valuenow="0" aria-valuetext="0:00 de 1:35"><canvas aria-hidden="true"></canvas></div>
+      <div class="aexp-row"><span class="aexp-time">0:00 / 1:35</span><span class="aexp-focus" aria-hidden="true"></span></div>
+      <p class="aexp-cap" aria-hidden="true">Toque em ▶ — as regiões citadas acendem no circuito 3D e nos cartões abaixo.</p>
+      <audio preload="none" controls src="audio/s2.mp3"></audio>
+      <details class="aexp-tr">
+        <summary>Transcrição · toque numa frase para ir até ela</summary>
+        <div class="tx"><span data-t="0.00">Esta seção explica por que a paranoia aparece.</span> <span data-t="2.98">Ela não nasce de uma única região do cérebro, e sim de três sistemas que saem do equilíbrio ao mesmo tempo.</span> <span data-t="9.64">Imagine um marcador de importância, um alarme e um freio.</span> <span data-t="14.04" data-n="0,1">O marcador de importância começa na área tegmental ventral, onde nascem os neurônios de dopamina, e chega ao núcleo accumbens.</span> <span data-t="22.38" data-n="0,1">Normalmente, esse circuito diz ao cérebro o que merece atenção.</span> <span data-t="25.76" data-n="1">Com a metanfetamina, a dopamina em excesso faz com que tudo pareça importante e dirigido a você: um carro que passa devagar, a tosse do vizinho, uma frase na televisão.</span> <span data-t="37.72" data-n="1">Os pesquisadores chamam isso de saliência aberrante.</span> <span data-t="41.44" data-n="2">O alarme é a amígdala.</span> <span data-t="44.28" data-n="2">Hiperativa, ela amplifica o medo e passa a ler rostos neutros como hostis.</span> <span data-t="48.82" data-n="4">O freio é o córtex pré-frontal, responsável pelo teste de realidade, aquele pensamento de: espera, isso não faz sentido.</span> <span data-t="56.96" data-n="4">No uso crônico, ele fica hipoativo.</span> <span data-t="60.16" data-n="3,5">Some a isso o hipocampo, que falha em rotular a situação como falso alarme, e o tálamo, um filtro sensorial que deixa passar ruído, e esse ruído vira sinal.</span> <span data-t="71.18" data-n="1,2,4">Com importância exagerada, alarme ligado e freio fraco, a conclusão de que alguém está perseguindo parece lógica para quem vive o quadro.</span> <span data-t="79.86">É por isso que confrontar a pessoa raramente funciona, enquanto reduzir estímulos e recuperar o sono ajudam.</span> <span data-t="86.52">Lembre que este é um modelo didático, baseado na análise de circuitos de Koob e Volkow; as posições no desenho não são anatômicas.</span></div>
+        <p class="aexp-note">Narração com voz sintética (ElevenLabs · “Beatriz”), roteiro escrito a partir das fontes citadas nesta seção. Conteúdo educativo; não substitui avaliação profissional.</p>
+      </details>
+    </figure>
     <div class="glass sec3d rv">
       <canvas id="circuit" tabindex="0" role="application" aria-label="Modelo 3D interativo do circuito mesocorticolímbico. Use as setas do teclado para rotacionar."></canvas>
       <div class="circuit-cap">
@@ -1067,6 +1189,25 @@ h2{letter-spacing:-.01em}
     <div class="kicker rv">05 · Curso temporal <span class="ev B">Nível B · Coorte prospectiva</span></div>
     <h2 class="rv">Dias para "melhorar".<br>Meses para o cérebro reorganizar.</h2>
     <p class="lede rv d1">O risco de psicose é <b>dose-dependente dentro da mesma pessoa</b>: a coorte australiana de McKetin acompanhou 278 usuários dependentes sem esquizofrenia prévia e mediu a chance de sintomas psicóticos em meses de uso versus meses de abstinência<sup class="cite"><a href="#r2">2</a></sup>.</p>
+    <figure class="aexp glass rv d1" id="aexp-s3" data-dur="96.03" data-targets="#s3 .thresh .trow, #s3 .duel .ph" data-peaks="99,28,52,42,55,55,49,71,76,71,47,49,64,93,37,84,69,17,54,79,80,28,51,70,62,47,81,65,99,36,16,67,65,36,50,48,61,79,40,80,63,70,49,99,33,81,29,80,77,63,85,67,42,38,78,88,51,86,16,66,50,69,21,85,34,44,38,39,67,49,62,38,99,46,61,77,70,87,16,57,16,87,54,62,27,95,71,21,95,64,28,53,64,64,85,16">
+      <div class="aexp-head">
+        <button class="aexp-btn" type="button" aria-pressed="false" aria-label="Ouvir: Curso temporal e razão de chances, explicados"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h4v14h-4zM13.5 5h4v14h-4z" fill="currentColor"/></svg></button>
+        <div class="aexp-meta">
+          <div class="aexp-k"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="3" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/><rect x="16.5" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/></svg>Explicação em áudio · §05 · 1:36</div>
+          <figcaption class="aexp-t">Curso temporal e razão de chances, explicados</figcaption>
+        </div>
+        <div class="aexp-spd" role="group" aria-label="Velocidade da narração"><button type="button" data-r="0.85">0,85×</button><button type="button" data-r="1" class="on">1×</button><button type="button" data-r="1.25">1,25×</button><button type="button" data-r="1.5">1,5×</button></div>
+      </div>
+      <div class="aexp-wave" role="slider" tabindex="0" aria-label="Posição da narração" aria-valuemin="0" aria-valuemax="96" aria-valuenow="0" aria-valuetext="0:00 de 1:36"><canvas aria-hidden="true"></canvas></div>
+      <div class="aexp-row"><span class="aexp-time">0:00 / 1:36</span><span class="aexp-focus" aria-hidden="true"></span></div>
+      <p class="aexp-cap" aria-hidden="true">Toque em ▶ — as barras de risco e as fases da linha do tempo acendem durante a narração.</p>
+      <audio preload="none" controls src="audio/s3.mp3"></audio>
+      <details class="aexp-tr">
+        <summary>Transcrição · toque numa frase para ir até ela</summary>
+        <div class="tx"><span data-t="0.00">Aqui a pergunta é: quanto mais uso, mais risco?</span> <span data-t="4.36">O estudo de McKetin, na Austrália, acompanhou duzentas e setenta e oito pessoas dependentes, sem esquizofrenia prévia, e comparou cada pessoa com ela mesma, em meses de uso e em meses sem uso.</span> <span data-t="18.00">Isso é importante, porque elimina as diferenças entre pessoas.</span> <span data-t="22.40">O resultado aparece como razão de chances.</span> <span data-t="25.38" data-n="0">Uma razão de chances igual a um significa o mesmo risco dos meses sem uso.</span> <span data-t="30.94" data-n="1">Nos meses com uso em até quinze dias, a chance de sintomas psicóticos foi cerca de quatro vezes maior.</span> <span data-t="38.64" data-n="2">Nos meses de uso quase diário, dezesseis dias ou mais, foi onze vezes maior.</span> <span data-t="44.72" data-n="2">O intervalo de confiança, de cerca de seis a vinte e um, mostra a incerteza, mas mesmo o limite inferior é alto.</span> <span data-t="52.32">E o tempo importa.</span> <span data-t="53.70" data-n="3">Nas primeiras quarenta e oito horas, a privação de sono acelera o quadro.</span> <span data-t="58.76" data-n="4">Entre o segundo e o décimo dia vêm a psicose aguda e, depois, o colapso, com sono excessivo e tristeza profunda; a abstinência aguda costuma durar de sete a dez dias.</span> <span data-t="71.74" data-n="5">Mesmo com a droga já eliminada, nas semanas seguintes o quadro pode voltar com uma dose menor ou sob estresse: é a sensitização.</span> <span data-t="81.06" data-n="6">E entre as pessoas que tiveram uma psicose induzida por anfetaminas, cerca de uma em cada quatro ou cinco recebe depois o diagnóstico de esquizofrenia.</span> <span data-t="91.06" data-n="5">O ponto central: cada retomada de uso reabre essa janela de risco.</span></div>
+        <p class="aexp-note">Narração com voz sintética (ElevenLabs · “Beatriz”), roteiro escrito a partir das fontes citadas nesta seção. Conteúdo educativo; não substitui avaliação profissional.</p>
+      </details>
+    </figure>
 
     <div class="thresh">
       <div class="trow glass glass-hover rv"><div class="nm">Mês sem uso<small>referência (OR = 1)</small></div><div class="track"><div class="fill" data-w="8"></div></div><div class="pc">OR 1,0<small>referência</small></div></div>
@@ -1322,6 +1463,25 @@ h2{letter-spacing:-.01em}
     <div class="kicker rv">10 · Tratamentos <span class="ev A">Nível A/B · Meta-análises e RCTs</span></div>
     <h2 class="rv">O que não funciona,<br>o que funciona pouco,<br>o que está sendo testado</h2>
     <p class="lede rv d1">Não existe medicamento aprovado pela ANVISA ou pela FDA para o transtorno por uso de metanfetamina. A meta-análise de Chan et al. classificou a evidência farmacológica como de <b>força baixa</b> no conjunto<sup class="cite"><a href="#r16">16</a></sup>. O que existe: intervenções comportamentais com efeito replicado, sinais farmacológicos modestos e uma fronteira de pesquisa ativa.</p>
+    <figure class="aexp glass rv d1" id="aexp-gs4" data-dur="91.85" data-targets="#gs4 .tgrid > .tcard" data-peaks="99,66,47,99,71,72,52,92,48,16,83,41,55,45,90,50,16,68,77,67,58,44,45,91,66,63,69,94,28,44,84,16,99,72,64,82,55,62,66,43,76,43,99,49,37,79,78,77,62,26,68,68,67,52,16,52,55,75,33,69,17,98,52,59,80,67,78,84,61,49,23,78,52,86,16,96,76,56,79,21,71,57,41,58,78,51,62,97,64,73,76,56,50,52,86,43">
+      <div class="aexp-head">
+        <button class="aexp-btn" type="button" aria-pressed="false" aria-label="Ouvir: Tratamentos e números, explicados"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h4v14h-4zM13.5 5h4v14h-4z" fill="currentColor"/></svg></button>
+        <div class="aexp-meta">
+          <div class="aexp-k"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="3" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/><rect x="16.5" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/></svg>Explicação em áudio · §10 · 1:31</div>
+          <figcaption class="aexp-t">Tratamentos e números, explicados</figcaption>
+        </div>
+        <div class="aexp-spd" role="group" aria-label="Velocidade da narração"><button type="button" data-r="0.85">0,85×</button><button type="button" data-r="1" class="on">1×</button><button type="button" data-r="1.25">1,25×</button><button type="button" data-r="1.5">1,5×</button></div>
+      </div>
+      <div class="aexp-wave" role="slider" tabindex="0" aria-label="Posição da narração" aria-valuemin="0" aria-valuemax="92" aria-valuenow="0" aria-valuetext="0:00 de 1:31"><canvas aria-hidden="true"></canvas></div>
+      <div class="aexp-row"><span class="aexp-time">0:00 / 1:31</span><span class="aexp-focus" aria-hidden="true"></span></div>
+      <p class="aexp-cap" aria-hidden="true">Toque em ▶ — os cartões de cada tratamento acendem quando a narração fala deles.</p>
+      <audio preload="none" controls src="audio/gs4.mp3"></audio>
+      <details class="aexp-tr">
+        <summary>Transcrição · toque numa frase para ir até ela</summary>
+        <div class="tx"><span data-t="0.00">Existe remédio para a dependência de metanfetamina?</span> <span data-t="3.26">Até hoje, nenhum medicamento foi aprovado pela FDA ou pela ANVISA para esse fim.</span> <span data-t="9.08" data-n="2">O que funciona melhor são as intervenções psicossociais, principalmente o chamado manejo de contingências: a pessoa recebe pequenas recompensas a cada exame que confirma a abstinência, junto com terapia.</span> <span data-t="22.16" data-n="2">Numa grande meta-análise, com cinquenta ensaios, essa foi a abordagem mais eficaz.</span> <span data-t="28.24">Entre os medicamentos, há dois sinais.</span> <span data-t="30.58" data-n="3">O primeiro é a combinação de naltrexona injetável com bupropiona, testada no estudo ADAPT dois: cerca de treze por cento responderam, contra dois e meio por cento com placebo.</span> <span data-t="42.82" data-n="3">Parece pouco, e é.</span> <span data-t="44.40" data-n="3">O número necessário para tratar é cerca de nove: é preciso tratar nove pessoas para que uma responda além do que responderia com placebo.</span> <span data-t="52.12" data-n="1">O segundo sinal, mais recente, é a mirtazapina, um antidepressivo barato.</span> <span data-t="58.36" data-n="1">Em dois mil e vinte e seis, um ensaio de fase três na Austrália mostrou uma redução média de cerca de dois dias de uso por mês em comparação com o placebo.</span> <span data-t="68.00" data-n="1">É um efeito modesto, medido pelo relato dos participantes, mas é o primeiro resultado de fase três para um remédio já disponível.</span> <span data-t="76.98" data-n="0">Um alerta: antipsicóticos tratam a psicose aguda, mas não reduzem o uso; num estudo, o aripiprazol chegou a aumentá-lo.</span> <span data-t="85.22">Qualquer tratamento deve ser orientado por um profissional, e no SUS a porta de entrada é o CAPS AD.</span></div>
+        <p class="aexp-note">Narração com voz sintética (ElevenLabs · “Beatriz”), roteiro escrito a partir das fontes citadas nesta seção. Conteúdo educativo; não substitui avaliação profissional.</p>
+      </details>
+    </figure>
 
     <div class="tgrid">
       <div class="glass tcard glass-hover rv">
@@ -1967,9 +2127,16 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
       ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
       if (hot) { const k = (t*1.2 + li*.25)%1; ctx.fillStyle = 'rgba(255,92,103,.95)'; ctx.beginPath(); ctx.arc(a.x+(b.x-a.x)*k, a.y+(b.y-a.y)*k, 3.4*dpr*Math.min(a.f,b.f), 0, 7); ctx.fill(); }
     });
+    const FOC = window.circuitFocus || [];  // regiões citadas pela narração em áudio (§04)
     order.forEach(i => {
       const p = proj[i], r = p.n.r*dpr*p.f;
       if (!(isFinite(p.x) && isFinite(p.y) && isFinite(r) && r > 0)) return;
+      ctx.globalAlpha = (FOC.length && !FOC.includes(i)) ? .38 : 1;
+      if (FOC.includes(i)) {
+        const pr = (r + 9*dpr) * (1 + (REDUCED ? 0 : .10*Math.sin(t*4)));
+        ctx.strokeStyle = p.n.c; ctx.lineWidth = 2.4*dpr; ctx.shadowColor = p.n.c; ctx.shadowBlur = 18*dpr;
+        ctx.beginPath(); ctx.arc(p.x,p.y,pr,0,7); ctx.stroke(); ctx.shadowBlur = 0;
+      }
       const g = ctx.createRadialGradient(p.x-r*.3,p.y-r*.3,r*.1,p.x,p.y,r);
       g.addColorStop(0,'rgba(255,255,255,.9)'); g.addColorStop(.4,p.n.c); g.addColorStop(1,'#0a0e15');
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,r,0,7); ctx.fill();
@@ -1977,7 +2144,9 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
       ctx.fillStyle = 'rgba(238,242,248,.92)'; ctx.font = `600 ${12*dpr*p.f}px Sora,-apple-system,sans-serif`; ctx.fillText(p.n.l, p.x, p.y - r - 7*dpr);
       ctx.fillStyle = 'rgba(152,162,182,.85)'; ctx.font = `${9.5*dpr*p.f}px JetBrains Mono,Menlo,monospace`; ctx.fillText(p.n.tag, p.x, p.y + r + 15*dpr);
     });
+    ctx.globalAlpha = 1;
   }
+  window.circuitRedraw = () => { if (REDUCED || !run) frame(REDUCED ? 0 : performance.now()/1000); };
   function tick(){ if (!run) return; if (auto && !drag) ry += .0035; frame(performance.now()/1000); requestAnimationFrame(tick); }
   if (REDUCED) frame(0);
   else { visible(cv, v => { const was = run; run = v; if (v && !was) tick(); }); tick(); }
@@ -2132,6 +2301,170 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
 })();
 
 
+</script>
+<script>
+/* ═══════════ EXPLICAÇÕES EM ÁUDIO — player, legenda sincronizada, destaque de regiões ═══════════ */
+(() => {
+  const figs = [...document.querySelectorAll('.aexp')]; if (!figs.length) return;
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fmt = s => { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0'); };
+  const SPEEDS = [0.85, 1, 1.25, 1.5];
+  let rate = 1; try { const v = parseFloat(localStorage.getItem('aexpRate')); if (SPEEDS.includes(v)) rate = v; } catch (e) {}
+  const players = []; let active = null;
+  const PLAY = '<svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg>';
+  const PAUSE = '<svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h4v14h-4zM13.5 5h4v14h-4z" fill="currentColor"/></svg>';
+
+  /* mini-player flutuante: aparece quando a narração ativa sai da tela */
+  const dock = document.createElement('div');
+  dock.className = 'aexp-dock'; dock.setAttribute('role', 'region'); dock.setAttribute('aria-label', 'Narração em andamento');
+  dock.innerHTML = `<button class="db" type="button" aria-label="Pausar ou continuar a narração">${PLAY}${PAUSE}</button>
+    <div class="dt"><a href="#"></a><span></span></div><button class="dx" type="button" aria-label="Parar a narração">✕</button><i class="dp"></i>`;
+  document.body.appendChild(dock);
+  const dBtn = dock.querySelector('.db'), dLink = dock.querySelector('.dt a'), dTime = dock.querySelector('.dt span'), dBar = dock.querySelector('.dp');
+  dBtn.addEventListener('click', () => active && active.toggle());
+  dock.querySelector('.dx').addEventListener('click', () => { if (active) { active.au.pause(); active.clearFocus(); } dock.classList.remove('show'); active = null; });
+  function updateDock() {
+    const a = active, show = !!(a && !a.visible && a.au.currentTime > 0 && !a.au.ended);
+    dock.classList.toggle('show', show); dock.inert = !show;
+    if (!a) return;
+    dock.classList.toggle('playing', !a.au.paused);
+    dTime.textContent = fmt(a.au.currentTime) + ' / ' + fmt(a.DUR);
+    dBar.style.width = (100 * a.au.currentTime / a.dur()).toFixed(2) + '%';
+  }
+  dock.inert = true;
+
+  function labelOf(el) {
+    const h = el.querySelector('h4') || el.querySelector('.nm') || el.querySelector('b'); if (!h) return '';
+    const tn = [...h.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    let s = (tn ? tn.textContent : h.textContent).trim().replace(/[.:]$/, '');
+    s = s.split(' — ')[0].split(' (')[0];
+    return s.length > 34 ? s.slice(0, 32) + '…' : s;
+  }
+
+  figs.forEach(fig => {
+    const au = fig.querySelector('audio'), btn = fig.querySelector('.aexp-btn'), wave = fig.querySelector('.aexp-wave'),
+          cv = wave.querySelector('canvas'), ctx = cv.getContext('2d'), time = fig.querySelector('.aexp-time'),
+          cap = fig.querySelector('.aexp-cap'), focus = fig.querySelector('.aexp-focus'), tx = fig.querySelector('.tx'),
+          det = fig.querySelector('details'), spans = [...fig.querySelectorAll('.tx span[data-t]')],
+          title = fig.querySelector('.aexp-t').textContent,
+          peaks = (fig.dataset.peaks || '').split(',').map(Number), DUR = parseFloat(fig.dataset.dur) || 90,
+          targets = fig.dataset.targets ? [...document.querySelectorAll(fig.dataset.targets)] : [],
+          circuit = fig.dataset.circuit === '1', capIdle = cap.textContent;
+    const P = { au, fig, visible: true, DUR };
+    P.dur = () => (isFinite(au.duration) && au.duration > 0) ? au.duration : DUR;
+    au.removeAttribute('controls'); au.preload = 'none'; au.defaultPlaybackRate = rate; au.playbackRate = rate;
+    let cur = -1, raf = 0, hoverX = -1, pending = null;
+
+    function draw() {
+      const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+      if (!r.width) return;
+      const W = Math.round(r.width * dpr), H = Math.round(r.height * dpr);
+      if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
+      ctx.clearRect(0, 0, W, H);
+      const n = peaks.length, gap = Math.max(1, Math.round(W / n * .32)), bw = Math.max(1, W / n - gap);
+      const t = pending != null ? pending : au.currentTime, frac = Math.min(1, t / P.dur()), hf = hoverX >= 0 ? hoverX / r.width : -1;
+      for (let i = 0; i < n; i++) {
+        const x = i * (W / n), h = Math.max(2 * dpr, (peaks[i] / 99) * (H - 4 * dpr)), y = (H - h) / 2, c = (i + .5) / n;
+        ctx.fillStyle = c <= frac ? (c > frac - 1/n ? '#ffffff' : '#7cd8f7') : (hf >= 0 && c <= hf ? 'rgba(124,216,247,.42)' : 'rgba(255,255,255,.17)');
+        const rr = Math.min(bw / 2, 2 * dpr);
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(x, y, bw, h, rr); else ctx.rect(x, y, bw, h);
+        ctx.fill();
+      }
+      // marcadores de início de frase
+      ctx.fillStyle = 'rgba(167,139,255,.55)';
+      spans.forEach((s, i) => { if (!i) return; const x = (parseFloat(s.dataset.t) / P.dur()) * W; ctx.fillRect(x, H - 2 * dpr, 1.5 * dpr, 2 * dpr); });
+    }
+    function setFocus(ids) {
+      targets.forEach((el, k) => el.classList.toggle('aexp-lit', ids.includes(k)));
+      focus.replaceChildren(...ids.filter(k => targets[k]).map(k => { const b = document.createElement('b'); b.textContent = labelOf(targets[k]); return b; }));
+      if (circuit) { window.circuitFocus = ids; window.circuitRedraw && window.circuitRedraw(); }
+    }
+    P.clearFocus = () => { setFocus([]); if (cur >= 0 && spans[cur]) spans[cur].classList.remove('cur'); cur = -1; cap.textContent = capIdle; };
+    function setSentence(i) {
+      if (i === cur) return;
+      if (cur >= 0 && spans[cur]) spans[cur].classList.remove('cur');
+      cur = i;
+      if (i < 0) { setFocus([]); return; }
+      const s = spans[i]; s.classList.add('cur'); cap.textContent = s.textContent;
+      setFocus((s.dataset.n || '').split(',').filter(Boolean).map(Number));
+      if (det.open) { const top = s.offsetTop; if (top < tx.scrollTop + 8 || top > tx.scrollTop + tx.clientHeight - 48) tx.scrollTo({ top: Math.max(0, top - 24), behavior: REDUCED ? 'auto' : 'smooth' }); }
+    }
+    function sync() {
+      const t = pending != null ? pending : au.currentTime, d = P.dur();
+      time.textContent = fmt(t) + ' / ' + fmt(DUR);
+      wave.setAttribute('aria-valuenow', Math.round(t)); wave.setAttribute('aria-valuetext', fmt(t) + ' de ' + fmt(DUR));
+      if (t > 0 || !au.paused) { let i = -1; for (let k = 0; k < spans.length; k++) { if (parseFloat(spans[k].dataset.t) <= t + .08) i = k; else break; } setSentence(i); }
+      draw(); if (active === P) updateDock();
+    }
+    function loop() { sync(); if (!au.paused) raf = requestAnimationFrame(loop); }
+    function seek(t) {
+      t = Math.max(0, Math.min(P.dur() - .05, t));
+      if (au.readyState < 1) { pending = t; au.preload = 'metadata'; au.load(); } else { pending = null; au.currentTime = t; }
+      sync();
+    }
+    P.toggle = () => {
+      if (au.paused) {
+        btn.classList.add('loading');
+        const pr = au.play();
+        if (pr && pr.catch) pr.catch(err => { btn.classList.remove('loading'); if (err && err.name !== 'AbortError') cap.textContent = 'Não foi possível tocar agora — toque em ▶ de novo ou leia a transcrição.'; });
+      } else au.pause();
+    };
+    P.pause = () => au.pause();
+
+    au.addEventListener('loadedmetadata', () => { if (pending != null) { const t = pending; pending = null; au.currentTime = t; } sync(); });
+    au.addEventListener('play', () => {
+      players.forEach(o => { if (o !== P && !o.au.paused) o.au.pause(); });
+      if (active && active !== P) active.clearFocus();
+      active = P; dLink.textContent = title; dLink.href = '#' + fig.id; fig.classList.add('playing'); btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', 'Pausar: ' + title);
+      cancelAnimationFrame(raf); loop();
+    });
+    au.addEventListener('playing', () => btn.classList.remove('loading'));
+    au.addEventListener('canplay', () => btn.classList.remove('loading'));
+    au.addEventListener('waiting', () => { if (!au.paused) btn.classList.add('loading'); });
+    au.addEventListener('pause', () => { fig.classList.remove('playing'); btn.classList.remove('loading'); btn.setAttribute('aria-pressed', 'false'); btn.setAttribute('aria-label', 'Ouvir: ' + title); cancelAnimationFrame(raf); sync(); });
+    au.addEventListener('ended', () => { P.clearFocus(); cap.textContent = 'Fim da explicação. Toque em ▶ para ouvir de novo.'; if (active === P) updateDock(); });
+    au.addEventListener('seeked', sync);
+    au.addEventListener('error', () => { fig.classList.add('err'); btn.classList.remove('loading'); cap.textContent = 'O áudio não carregou (conexão?). A transcrição completa está logo abaixo.'; });
+
+    btn.addEventListener('click', P.toggle);
+    /* onda: clique/arraste para navegar */
+    const xFrac = e => { const r = wave.getBoundingClientRect(); return Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)); };
+    let scrub = false;
+    wave.addEventListener('pointerdown', e => { scrub = true; wave.setPointerCapture(e.pointerId); seek(xFrac(e) * P.dur()); });
+    wave.addEventListener('pointermove', e => { const r = wave.getBoundingClientRect(); hoverX = e.clientX - r.left; if (scrub) seek(xFrac(e) * P.dur()); else draw(); });
+    wave.addEventListener('pointerup', () => { scrub = false; });
+    wave.addEventListener('pointercancel', () => { scrub = false; });
+    wave.addEventListener('pointerleave', () => { hoverX = -1; draw(); });
+    wave.addEventListener('keydown', e => {
+      const t = pending != null ? pending : au.currentTime;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') seek(t + 5);
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') seek(t - 5);
+      else if (e.key === 'Home') seek(0);
+      else if (e.key === 'End') seek(P.dur());
+      else if (e.key === ' ' || e.key === 'Enter') P.toggle();
+      else return;
+      e.preventDefault();
+    });
+    /* transcrição: clique numa frase = ir até ela e tocar */
+    spans.forEach(s => s.addEventListener('click', () => { seek(parseFloat(s.dataset.t)); if (au.paused) P.toggle(); }));
+    /* velocidade (vale para todas as narrações) */
+    fig.querySelectorAll('.aexp-spd button').forEach(b => b.addEventListener('click', () => {
+      rate = parseFloat(b.dataset.r); try { localStorage.setItem('aexpRate', String(rate)); } catch (e) {}
+      players.forEach(o => { o.au.defaultPlaybackRate = rate; o.au.playbackRate = rate; o.fig.querySelectorAll('.aexp-spd button').forEach(x => { const on = parseFloat(x.dataset.r) === rate; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); }); });
+    }));
+    fig.querySelectorAll('.aexp-spd button').forEach(x => { const on = parseFloat(x.dataset.r) === rate; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
+    det.addEventListener('toggle', () => { if (det.open && cur >= 0) { const s = spans[cur]; tx.scrollTop = Math.max(0, s.offsetTop - 24); } });
+
+    new IntersectionObserver(es => es.forEach(e => { P.visible = e.isIntersecting; if (active === P) updateDock(); }), { threshold: 0 }).observe(fig);
+    P.draw = draw; players.push(P);
+    requestAnimationFrame(draw);
+  });
+  dLink.addEventListener('click', e => { e.preventDefault(); if (active) active.fig.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block: 'center' }); });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => players.forEach(p => p.draw()), 150); });
+  /* atalho: tecla K pausa/continua a narração ativa */
+  addEventListener('keydown', e => { if ((e.key === 'k' || e.key === 'K') && active && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) && !e.metaKey && !e.ctrlKey && !e.altKey) { active.toggle(); } });
+})();
 </script>
 </body>
 </html>

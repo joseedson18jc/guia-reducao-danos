@@ -10,6 +10,8 @@ site/            the whole site, deployed as-is
   metanfetamina/index.html  methamphetamine dossier: evidence-graded, 26 DOI refs,
                             3D molecule, circuit, PK simulator, addiction wheel,
                             2023–2026 update timeline, canvas charts
+  metanfetamina/audio/*.mp3 narrated explanations (ElevenLabs, PT-BR, 64 kbps mono)
+                            for §02, §04, §05, §10; transcript + timing live in the HTML
   ghb/og-ghb-v2.png, og.png, favicons, robots.txt, sitemap.xml
 ```
 
