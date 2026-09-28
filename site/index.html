@@ -2004,8 +2004,26 @@ body::after {
 .v2-paused .v2-ember,
 .v2-paused .v2-hot-pulse{animation:none !important}
 @media (prefers-reduced-motion:reduce){
-  .v2-vapor,.v2-bub,.v2-perc-bub,.v2-mouth,.v2-ember,.v2-hot-pulse{animation:none !important}
+  .v2-root:not(.v2-force) .v2-vapor,.v2-root:not(.v2-force) .v2-bub,.v2-root:not(.v2-force) .v2-perc-bub,
+  .v2-root:not(.v2-force) .v2-mouth,.v2-root:not(.v2-force) .v2-ember,.v2-root:not(.v2-force) .v2-hot-pulse,
+  .v2-root:not(.v2-force) .v2-water-surf{animation:none !important}
 }
+/* ▼ fluxo vivo ▼ */
+.v2-flow circle{pointer-events:none}
+.v2-water-surf{transform-box:fill-box;animation:v2surf 3.4s ease-in-out infinite}
+@keyframes v2surf{0%,100%{transform:translate(0,0)}50%{transform:translate(-7px,1.6px)}}
+.v2-paused .v2-water-surf{animation:none !important}
+.v2-thermo-mk{fill:#fff;stroke:#0b100d;stroke-width:1.2;filter:drop-shadow(0 0 4px rgba(255,255,255,.55))}
+.v2-live{display:flex;align-items:center;gap:9px;margin:0;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;line-height:1.45;color:var(--text-secondary)}
+.v2-live i{flex:none;width:10px;height:10px;border-radius:50%;background:#ff6b4a;box-shadow:0 0 10px #ff6b4a;transition:background .3s,box-shadow .3s}
+.v2-live b{color:var(--text);font-weight:600}
+.v2-toolbar{gap:8px;flex-wrap:wrap}
+.v2-tour-toggle{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent-bright);background:var(--accent-glow);border:1px solid var(--accent);border-radius:999px;padding:6px 13px;cursor:pointer;transition:all .18s}
+.v2-tour-toggle:hover{filter:brightness(1.15)}
+.v2-tour-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.v2-tour-toggle[aria-pressed="true"]{background:var(--accent);color:#0b100d}
+.v2-tour-ic{font-size:9px}
 
 .v2-side{display:flex;flex-direction:column;gap:12px;min-width:0}
 .v2-info{
@@ -2644,7 +2662,7 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;bac
         </clipPath>
         <g clip-path="url(#v2-waterclip)">
           <rect x="118" y="296" width="124" height="120" fill="url(#v2-water)"/>
-          <path d="M118 300 q14 -7 28 0 t28 0 t28 0 t28 0 v120 h-140 z" fill="#4dc9f6" opacity="0.12"/>
+          <path class="v2-water-surf" d="M118 300 q14 -7 28 0 t28 0 t28 0 t28 0 v120 h-140 z" fill="#4dc9f6" opacity="0.12"/>
         </g>
       </g>
 
@@ -2713,6 +2731,10 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;bac
         <circle class="v2-bub v2-bub--e" cx="174" cy="316" r="2.1"/>
       </g>
 
+      <!-- ▼ fluxo vivo: trajetória do vapor, pacotes animados e marcador no termômetro (JS: initV2Flow) ▼ -->
+      <path id="v2-journey" d="M276 214 L276 226 q-8 12 -40 18 L196 320 Q186 318 182 300 L180 230 L180 70 L180 30" fill="none" stroke="none"/>
+      <g class="v2-flow" aria-hidden="true"></g>
+      <g class="v2-thermo" aria-hidden="true"><path class="v2-thermo-mk" d="M21 0 l9 -5.5 v11 z" transform="translate(0,420)"/></g>
       <g class="v2-hotspots">
         <g class="v2-hotspot" data-part="bocal" tabindex="0" role="button" aria-pressed="false" aria-label="Bocal">
           <circle class="v2-hot-hit" cx="180" cy="58" r="20"/>
@@ -2805,7 +2827,12 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;bac
       <button type="button" class="v2-chip" data-part="bocal" aria-pressed="false">Bocal</button>
     </div>
 
+    <p class="v2-live" aria-hidden="true"><i></i><span>Pacote destacado: <b>Nail</b> · vaporiza a ~250–400 °C (aprox.)</span></p>
+
     <div class="v2-toolbar">
+      <button type="button" class="v2-tour-toggle" aria-pressed="false" title="Acompanha um pacote de vapor do nail ao bocal, parando em cada parte">
+        <span class="v2-tour-ic" aria-hidden="true">▶</span><span class="v2-tour-label">Seguir o vapor</span>
+      </button>
       <button type="button" class="v2-anim-toggle" aria-pressed="true">
         <span class="v2-anim-dot"></span><span class="v2-anim-label">Pausar fluxo</span>
       </button>
@@ -6822,19 +6849,175 @@ window.initV2 = function(){
   setAnim(animOn);
   if(btn){
     if(prefersReduced){
-      // CSS forces animation:none !important under reduced motion, so the
-      // toggle would lie if it claimed to re-enable it. Lock it instead.
-      btn.disabled = true;
-      btn.setAttribute('aria-disabled', 'true');
-      btn.title = 'Animação desativada pela sua preferência de movimento reduzido.';
+      // Reduced motion: stay still by default, but let the reader opt in.
+      // .v2-force lifts the CSS reduced-motion lock (see stylesheet).
+      btn.title = 'Seu sistema pede movimento reduzido, por isso o fluxo começa parado. Toque para animar mesmo assim.';
       var lbl0 = btn.querySelector('.v2-anim-label');
-      if(lbl0) lbl0.textContent = 'Movimento reduzido';
+      if(lbl0) lbl0.textContent = 'Animar mesmo assim';
+      btn.addEventListener('click', function(){ scope.classList.add('v2-force'); animOn = !animOn; setAnim(animOn); });
     } else {
       btn.addEventListener('click', function(){ animOn = !animOn; setAnim(animOn); });
     }
   }
 
   select('nail');
+};
+
+/* ── module: v2 fluxo vivo — pacotes de vapor ao longo do rig + tour "Seguir o vapor" ── */
+window.initV2Flow = function(){
+  var scope = document.querySelector('.anat-panel[data-view="v2"] .v2-root');
+  if(!scope || scope.dataset.flowReady === '1') return;
+  var svg = scope.querySelector('.v2-svg'),
+      path = svg && svg.querySelector('#v2-journey'),
+      layer = svg && svg.querySelector('.v2-flow'),
+      mk = svg && svg.querySelector('.v2-thermo-mk');
+  if(!path || !layer || typeof path.getTotalLength !== 'function') return;
+  scope.dataset.flowReady = '1';
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduce = false; try{ reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+
+  // --- amostra a trajetória e marca a zona (parte do rig) de cada ponto ---
+  var ORDER = ['nail','downstem','agua','base','perc','ice','tubo','bocal'];
+  var NAME  = {nail:'Nail', downstem:'DownStem', agua:'Água', base:'Base', perc:'Percolator', ice:'Ice Catcher', tubo:'Tubo Condutor', bocal:'Bocal'};
+  var STATE = {nail:'vaporiza a ~250–400 °C (aprox.)', downstem:'vapor quente descendo para a água', agua:'borbulha e perde calor na água',
+               base:'sobe pela câmara, já morno', perc:'quebrado em microbolhas', ice:'esfria no contato com o gelo',
+               tubo:'segue esfriando no tubo', bocal:'sai frio, perto da temperatura ambiente'};
+  var TSTART = [0, .12, .30, .56, .63, .73, .88, .95];           // 0 = quente (nail) · 1 = frio (bocal)
+  var SPEED  = {nail:.45, downstem:1.25, agua:.42, base:.95, perc:.5, ice:.75, tubo:1.15, bocal:.9};
+  var L = path.getTotalLength(), N = 360, PX = [], PY = [], Z = [], T = [];
+  var i, z = 0, starts = [0];
+  for(i = 0; i <= N; i++){
+    var pt = path.getPointAtLength(L * i / N), x = pt.x, y = pt.y;
+    if(z === 0 && x < 262){ z = 1; starts.push(i); }
+    else if(z === 1 && y >= 318){ z = 2; starts.push(i); }
+    else if(z === 2 && y < 297){ z = 3; starts.push(i); }
+    else if(z === 3 && y < 212){ z = 4; starts.push(i); }
+    else if(z === 4 && y < 186){ z = 5; starts.push(i); }
+    else if(z === 5 && y < 118){ z = 6; starts.push(i); }
+    else if(z === 6 && y < 70){ z = 7; starts.push(i); }
+    PX.push(x); PY.push(y); Z.push(z);
+  }
+  starts.push(N + 1);
+  var okZones = starts.length === 9;
+  for(i = 0; i <= N; i++){
+    if(!okZones){ T.push(i / N); continue; }
+    var k = Z[i], a = starts[k], b = starts[k + 1], t0 = TSTART[k], t1 = k < 7 ? TSTART[k + 1] : 1;
+    T.push(t0 + (t1 - t0) * ((i - a) / Math.max(1, b - a)));
+  }
+  // mesma escala de cor da régua de temperatura à esquerda (#v2-temp)
+  var STOPS = [[0,[255,107,74]],[.35,[255,183,77]],[.7,[82,224,156]],[1,[77,201,246]]];
+  function color(t){
+    for(var j = 1; j < STOPS.length; j++){
+      if(t <= STOPS[j][0]){
+        var u = (t - STOPS[j-1][0]) / (STOPS[j][0] - STOPS[j-1][0]), A = STOPS[j-1][1], B = STOPS[j][1];
+        return 'rgb(' + Math.round(A[0]+(B[0]-A[0])*u) + ',' + Math.round(A[1]+(B[1]-A[1])*u) + ',' + Math.round(A[2]+(B[2]-A[2])*u) + ')';
+      }
+    }
+    return 'rgb(77,201,246)';
+  }
+
+  // --- pacotes de vapor ---
+  function mkCircle(attrs){ var c = document.createElementNS(NS, 'circle'); for(var k in attrs) c.setAttribute(k, attrs[k]); layer.appendChild(c); return c; }
+  var COUNT = 11, parts = [];
+  for(i = 0; i < COUNT; i++){
+    parts.push({ s: L * i / COUNT, seed: i * 1.7 + .3,
+      halo: mkCircle({r:7, opacity:.22}), core: mkCircle({r:3}) });
+  }
+  var lead = parts[0];
+  lead.ring = mkCircle({r:8, fill:'none', stroke:'#ffffff', 'stroke-width':1.3, opacity:.85});
+  lead.s = 0;
+
+  var live = scope.querySelector('.v2-live'), liveDot = live && live.querySelector('i'), liveTxt = live && live.querySelector('span');
+  var info = scope.querySelector('.v2-info');
+  var chips = Array.prototype.slice.call(scope.querySelectorAll('.v2-chip'));
+  var hotspots = Array.prototype.slice.call(scope.querySelectorAll('.v2-hotspot'));
+  var tourBtn = scope.querySelector('.v2-tour-toggle'), animBtn = scope.querySelector('.v2-anim-toggle');
+  var touring = false, dwell = 0, lastZone = -1, autoSel = false, t = 0;
+
+  function selectPart(id){
+    var chip = chips.filter(function(c){ return c.getAttribute('data-part') === id; })[0];
+    if(chip){ autoSel = true; chip.click(); autoSel = false; }
+  }
+  function place(p, isLead){
+    var f = p.s / L, idx = Math.min(N, Math.max(0, Math.round(f * N))), zone = ORDER[Z[idx]] || 'nail';
+    var x = PX[idx], y = PY[idx], r = 3.6;
+    if(zone === 'agua'){ x += Math.sin(t * 5 + p.seed) * 2.6; r = 3.0; }
+    else if(zone === 'base'){ x += Math.sin(t * 3 + p.seed) * 1.6; }
+    else if(zone === 'perc'){ x += Math.sin(t * 11 + p.seed) * 4.2; r = 2.2; }
+    else if(zone === 'bocal'){ r = 3.9; }
+    if(isLead) r += 1.3;
+    var op = Math.min(1, f / .03) * Math.min(1, (1 - f) / .06), col = color(T[idx]);
+    p.core.setAttribute('cx', x.toFixed(1)); p.core.setAttribute('cy', y.toFixed(1)); p.core.setAttribute('r', r.toFixed(2));
+    p.core.setAttribute('fill', col); p.core.setAttribute('opacity', (op * .95).toFixed(2));
+    p.halo.setAttribute('cx', x.toFixed(1)); p.halo.setAttribute('cy', y.toFixed(1)); p.halo.setAttribute('r', (r * 2.4).toFixed(2));
+    p.halo.setAttribute('fill', col); p.halo.setAttribute('opacity', (op * .26).toFixed(2));
+    if(p.ring){ p.ring.setAttribute('cx', x.toFixed(1)); p.ring.setAttribute('cy', y.toFixed(1)); p.ring.setAttribute('opacity', (op * (touring ? .95 : .6)).toFixed(2));
+                p.ring.setAttribute('r', (r + 4 + (touring && dwell > 0 ? Math.sin(t * 6) * 1.6 : 0)).toFixed(2)); }
+    return { zone: Z[idx], temp: T[idx], col: col };
+  }
+  function report(info){
+    if(mk) mk.setAttribute('transform', 'translate(0,' + (420 - info.temp * 380).toFixed(1) + ')');
+    if(info.zone !== lastZone){
+      lastZone = info.zone;
+      var id = ORDER[info.zone];
+      if(liveTxt) liveTxt.innerHTML = 'Pacote destacado: <b>' + NAME[id] + '</b> · ' + STATE[id];
+      if(touring){ dwell = 2.4; selectPart(id); }
+    }
+    if(liveDot){ liveDot.style.background = info.col; liveDot.style.boxShadow = '0 0 10px ' + info.col; }
+  }
+  function step(dt){
+    t += dt;
+    var base = L / 5.8;
+    for(var j = 0; j < parts.length; j++){
+      var p = parts[j], idx = Math.min(N, Math.round(p.s / L * N)), zone = ORDER[Z[idx]] || 'nail';
+      if(p === lead && touring && dwell > 0){ dwell -= dt; }
+      else { p.s += base * SPEED[zone] * dt * (p === lead && touring ? .85 : 1); }
+      if(p.s >= L){ p.s -= L; if(p === lead) lastZone = -1; }
+      var inf = place(p, p === lead);
+      if(p === lead) report(inf);
+    }
+  }
+
+  // --- laço: só roda com a animação ligada, visível e com a aba ativa ---
+  var raf = 0, last = 0, visible = true;
+  function running(){ return !scope.classList.contains('v2-paused') && visible && !document.hidden; }
+  function frame(now){
+    raf = 0;
+    if(!running()) return;
+    var dt = last ? Math.min(.05, (now - last) / 1000) : 0; last = now;
+    step(dt);
+    raf = requestAnimationFrame(frame);
+  }
+  function kick(){ if(!raf && running()){ last = 0; raf = requestAnimationFrame(frame); } }
+  step(0);                                   // desenha a posição inicial (também no modo parado)
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; if(visible) kick(); }); }, {threshold: .02}).observe(scope);   // o bloco inteiro: no celular o painel do tour fica abaixo do desenho
+  }
+  document.addEventListener('visibilitychange', kick);
+  new MutationObserver(function(){ kick(); if(scope.classList.contains('v2-paused') && touring) setTour(false); })
+    .observe(scope, {attributes: true, attributeFilter: ['class']});
+
+  // --- tour guiado ---
+  function setTour(on){
+    touring = on; dwell = 0;
+    if(tourBtn){
+      tourBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var lb = tourBtn.querySelector('.v2-tour-label'), ic = tourBtn.querySelector('.v2-tour-ic');
+      if(lb) lb.textContent = on ? 'Parar tour' : 'Seguir o vapor';
+      if(ic) ic.textContent = on ? '■' : '▶';
+    }
+    if(info) info.setAttribute('aria-live', on ? 'off' : 'polite');
+    if(on){
+      if(scope.classList.contains('v2-paused') && animBtn) animBtn.click();   // clique explícito do leitor = liga a animação
+      lead.s = 0; lastZone = -1;
+    }
+    kick();
+  }
+  if(tourBtn) tourBtn.addEventListener('click', function(){ setTour(!touring); });
+  function manualStop(){ if(!autoSel && touring) setTour(false); }
+  chips.forEach(function(c){ c.addEventListener('click', manualStop); });
+  hotspots.forEach(function(h){ h.addEventListener('click', manualStop); h.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') manualStop(); }); });
+  kick();
 };
 
 /* ── module: v3 (3D Three.js, lazy-init via abas) ── */
@@ -8719,7 +8902,7 @@ window.initClean3D = function () {
 
 /* ── boot all PhysLab modules ── */
 (function bootPhysLab(){
-  function boot(){ ['initPL1','initPL2','initPL3','initPL4','initNtxTips','initA11y','initDiagramKeyboard','initV2','initCmp','initAnatViz','initCleanLab','initCleanChart','initClean3D'].forEach(function(n){
+  function boot(){ ['initPL1','initPL2','initPL3','initPL4','initNtxTips','initA11y','initDiagramKeyboard','initV2','initV2Flow','initCmp','initAnatViz','initCleanLab','initCleanChart','initClean3D'].forEach(function(n){
     try{ if(typeof window[n]==='function') window[n](); }catch(e){ console.warn('[PhysLab]', n, e); }
   }); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot);
