@@ -17,7 +17,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Guia Técnico Educacional">
 <meta property="og:title" content="Metanfetamina: dossiê científico da paranoia ao tratamento">
-<meta property="og:description" content="Farmacologia, psicose paranoide, curso, diagnóstico diferencial, manejo, internação e pipeline terapêutico — 22 referências com DOI, cada uma classificada por nível de evidência.">
+<meta property="og:description" content="Farmacologia, psicose paranoide, curso, diagnóstico diferencial, manejo, internação e pipeline terapêutico — 26 referências com DOI, cada uma classificada por nível de evidência.">
 <meta property="og:url" content="https://guia-reducaorisco.netlify.app/metanfetamina/">
 <meta property="og:image" content="https://guia-reducaorisco.netlify.app/metanfetamina/og-metanfetamina-v1.png">
 <meta property="og:image:type" content="image/png">
@@ -26,17 +26,17 @@
 <meta property="og:image:alt" content="Metanfetamina — dossiê científico: estrutura molecular, farmacologia, psicose paranoide e tratamento">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Metanfetamina: dossiê científico da paranoia ao tratamento">
-<meta name="twitter:description" content="Evidências classificadas, 22 referências com DOI, modelos interativos.">
+<meta name="twitter:description" content="Evidências classificadas, 26 referências com DOI, modelos interativos.">
 <meta name="twitter:image" content="https://guia-reducaorisco.netlify.app/metanfetamina/og-metanfetamina-v1.png">
 <meta property="article:published_time" content="2026-09-11">
-<meta property="article:modified_time" content="2026-09-11">
+<meta property="article:modified_time" content="2026-09-28">
 <meta name="author" content="Guia Técnico Educacional">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MedicalWebPage",
  "headline":"Metanfetamina — Dossiê Completo: do tráfico à paranoia e ao tratamento",
  "description":"Dossiê científico sobre metanfetamina: rota de tráfico, farmacologia, psicose paranoide, manejo clínico, internação e pipeline terapêutico — com evidências citadas e classificadas.",
  "url":"https://guia-reducaorisco.netlify.app/metanfetamina/",
- "inLanguage":"pt-BR","datePublished":"2026-09-11","dateModified":"2026-09-11",
+ "inLanguage":"pt-BR","datePublished":"2026-09-11","dateModified":"2026-09-28",
  "about":[{"@type":"MedicalCondition","name":"Transtorno psicótico induzido por metanfetamina"}],
  "audience":{"@type":"PeopleAudience","audienceType":"Profissionais de saúde, gestores, imprensa, famílias"}}
 </script>
@@ -640,6 +640,43 @@ footer{padding-bottom:60px}
   .src,.refs li,.small{color:#333}
   sup.cite a{color:#0a4a6e}
 }
+
+/* ═══════════ 2026 REFRESH — visual layer ═══════════ */
+html,body{overflow-x:clip}  /* decorative hero blobs overflowed 390px viewports (pre-existing) */
+body{background:
+  radial-gradient(1200px 600px at 80% -10%, rgba(124,216,247,.07), transparent 60%),
+  radial-gradient(900px 500px at 10% 30%, rgba(255,92,103,.05), transparent 60%),
+  var(--bg)}
+.glass{backdrop-filter:blur(10px) saturate(1.15);-webkit-backdrop-filter:blur(10px) saturate(1.15);
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset, 0 10px 30px -18px rgba(0,0,0,.7)}
+.glass-hover{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
+.glass-hover:hover{transform:translateY(-3px);border-color:var(--stroke);box-shadow:0 18px 40px -20px rgba(124,216,247,.25)}
+h2{letter-spacing:-.01em}
+/* canvas charts */
+.cv-wrap{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);border:1px solid var(--line);border-radius:var(--r2);padding:12px;overflow:hidden}
+.cv-wrap canvas{display:block;width:100%;height:auto;border-radius:10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mut);cursor:pointer;transition:all .2s}
+.chip:hover,.chip.on{color:var(--ice);border-color:rgba(124,216,247,.5);background:rgba(124,216,247,.08)}
+/* timeline (10b) */
+.tl{list-style:none;padding:0;margin:26px 0 0;position:relative}
+.tl::before{content:"";position:absolute;left:92px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--ice2),var(--green) 70%,var(--violet));opacity:.6}
+.tl-i{display:grid;grid-template-columns:76px 1fr;gap:28px;align-items:start;margin-bottom:14px;position:relative}
+.tl-i::after{content:"";position:absolute;left:86px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--ice2);box-shadow:0 0 0 4px rgba(124,216,247,.12)}
+.tl-i:nth-child(4)::after{border-color:var(--green);box-shadow:0 0 0 4px rgba(72,214,149,.18)}
+.tl-d{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ice2);padding-top:14px;text-align:right}
+.tl-c{padding:18px 20px;border-radius:var(--r2)}
+.tl-c h4{margin:8px 0 6px;font-family:var(--serif);font-size:20px;line-height:1.25;color:var(--ink)}
+.tl-c p{margin:0;color:var(--ink2);font-size:14.5px}
+.tl-c .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:4px 10px;border-radius:99px}
+.tl-c.on-hi{border-color:rgba(72,214,149,.45);background:linear-gradient(135deg,rgba(72,214,149,.10),var(--glass))}
+@media(max-width:720px){
+  .tl::before{left:12px}.tl-i{grid-template-columns:1fr;gap:6px;padding-left:34px}.tl-i::after{left:6px;top:4px}
+  .tl-d{text-align:left;padding-top:0}
+  .cv-wrap{padding:8px}.chip{font-size:10px;padding:6px 10px}
+}
+@media(prefers-reduced-motion:reduce){.glass-hover:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -657,7 +694,7 @@ footer{padding-bottom:60px}
   <a href="#s1">03 Sintoma</a><a href="#s2">04 Circuito</a><a href="#s3">05 Curso</a><a href="#s4">06 Diferencial</a>
   <span class="qn" style="color:var(--amber)">RESPOSTA</span>
   <a href="#gs3">07 Vício</a><a href="#s5">08 Manejo</a><a href="#s5b">09 Internação</a>
-  <a href="#gs4">10 Tratamentos</a><a href="#gs5">11 Brasil</a><a href="#gs6">12 Pipeline</a>
+  <a href="#gs4">10 Tratamentos</a><a href="#gs4b">10b 2026</a><a href="#gs5">11 Brasil</a><a href="#gs6">12 Pipeline</a>
   <span class="qn" style="color:var(--green)">BASE</span>
   <a href="#refs">13 Referências</a>
   <a class="qx" href="/ghb/" title="Outro guia do site">GHB / GBL →</a>
@@ -673,7 +710,7 @@ footer{padding-bottom:60px}
   <div class="wrap">
     <div class="hero-tag fi" style="animation-delay:.1s">
       <span class="chip"><span class="d" style="background:var(--red)"></span>DOSSIÊ · NEUROPSIQUIATRIA E SAÚDE PÚBLICA</span>
-      <span class="chip"><span class="d" style="background:var(--ice)"></span>EVIDÊNCIAS CLASSIFICADAS · REVISÃO SET/2026</span>
+      <span class="chip"><span class="d" style="background:var(--ice)"></span>EVIDÊNCIAS CLASSIFICADAS · REVISÃO 28 SET/2026</span>
       <a class="chip" href="/" style="text-decoration:none"><span class="d" style="background:var(--green)"></span>← LABORATÓRIO · GUIA DE REDUÇÃO DE DANOS</a>
     </div>
     <h1 class="fi" style="animation-delay:.25s">Paranoia por<br><span class="glow">Metanfetamina</span></h1>
@@ -719,7 +756,7 @@ footer{padding-bottom:60px}
       </div>
       <div class="glass meta rv d1">
         <div class="kv">
-          <span><b>Revisão</b></span><span><time datetime="2026-09-11">11 set 2026</time></span>
+          <span><b>Revisão</b></span><span><time datetime="2026-09-28">11 set 2026</time></span>
           <span><b>Base</b></span><span>PubMed / DOI verificados por item</span>
           <span><b>Escopo</b></span><span>Metanfetamina (d-MA, "cristal", "ice"); não cobre MDMA nem anfetaminas de prescrição</span>
           <span><b>Público</b></span><span>Profissionais de saúde, gestores, imprensa, famílias</span>
@@ -1294,10 +1331,10 @@ footer{padding-bottom:60px}
         <div class="evd">EV: RCT n=53, interrompido na interim · antipsicótico restrito à fase psicótica</div>
       </div>
       <div class="glass tcard glass-hover rv d1">
-        <div class="top"><span class="tag warn">SINAL MODESTO · SUBGRUPOS</span><span class="ev B">RCT</span></div>
-        <h4>Mirtazapina · metilfenidato · bupropiona</h4>
-        <p>Mirtazapina 30 mg reduziu urinas positivas em dois RCTs em homens que fazem sexo com homens (o segundo, n=120, replicou o primeiro)<sup class="cite"><a href="#r15">15</a></sup>. Metilfenidato: sinal em usuários injetáveis graves<sup class="cite"><a href="#r13">13</a></sup>. Bupropiona isolada: efeito só em usuários de baixa frequência<sup class="cite"><a href="#r16">16</a></sup>.</p>
-        <div class="evd">EV: RCTs pequenos/médios · resultados dependentes de população · off-label</div>
+        <div class="top"><span class="tag hope">NOVO · FASE 3 (2026)</span><span class="ev B">RCT MULTICÊNTRICO</span></div>
+        <h4>Mirtazapina — primeiro sinal de fase 3 em prática real</h4>
+        <p>Depois de dois RCTs em HSH<sup class="cite"><a href="#r15">15</a></sup>, o ensaio pragmático australiano de McKetin (n = 344, 6 clínicas) publicado no <i>JAMA Psychiatry</i> em 2026 mostrou que mirtazapina 30 mg/dia por 12 semanas reduziu <b>7,0 dias de uso/28</b> vs. 4,8 no placebo (diferença 2,2 dias; IC 95% 0,2–4,2; p = 0,02)<sup class="cite"><a href="#r23">23</a></sup>. Sem efeito em desfechos secundários (inclusive saliva); sonolência 47% vs 33%; 23% vs 15% descontinuaram por eventos adversos. Metilfenidato: sinal em injetáveis graves<sup class="cite"><a href="#r13">13</a></sup>; bupropiona isolada: só em uso de baixa frequência<sup class="cite"><a href="#r16">16</a></sup>.</p>
+        <div class="evd">EV: fase 3 pragmático · efeito modesto, autorrelato · barato e disponível no SUS (off-label)</div>
       </div>
       <div class="glass tcard glass-hover rv">
         <div class="top"><span class="tag warn">PADRÃO ATUAL · EFEITO REPLICADO</span><span class="ev A">META-ANÁLISE EM REDE</span></div>
@@ -1342,7 +1379,52 @@ footer{padding-bottom:60px}
       </div>
       <p class="small" style="margin-top:14px">Barras em escala 0–20%. Dados do artigo original<sup class="cite"><a href="#r14">14</a></sup>; NNT calculado a partir da diferença ponderada (1 / 0,111).</p>
     </div>
-    <p class="src rv"><b>Fontes:</b> Trivedi et al., <i>NEJM</i> 2021<sup class="cite"><a href="#r14">14</a></sup> · Chan et al., <i>Addiction</i> 2019<sup class="cite"><a href="#r16">16</a></sup> · De Crescenzo et al., <i>PLoS Med</i> 2018<sup class="cite"><a href="#r17">17</a></sup> · Coffin et al., <i>JAMA Psychiatry</i> 2020<sup class="cite"><a href="#r15">15</a></sup> · Tiihonen et al. 2007<sup class="cite"><a href="#r13">13</a></sup> · Stevens et al., <i>mAbs</i> 2014<sup class="cite"><a href="#r18">18</a></sup>.</p>
+
+    <div class="chartbox rv" style="margin-top:22px">
+      <div class="kicker" style="margin-bottom:14px">MIRTAZAPINA · DIAS DE USO EM 28 (McKETIN 2026) <span class="ev B">FASE 3</span></div>
+      <div class="cv-wrap"><canvas id="cvMirt" width="900" height="300" aria-label="Redução de dias de uso: mirtazapina vs placebo"></canvas></div>
+      <div class="nnt">
+        <div class="k"><b>−2,2 dias</b>diferença média em 28 dias (IC 95% 0,2–4,2)</div>
+        <div class="k"><b>p = 0,02</b>desfecho primário (autorrelato)</div>
+        <div class="k"><b>0</b>desfechos secundários positivos — saliva sem diferença</div>
+      </div>
+      <p class="small" style="margin-top:14px">Barra cinza = mediana basal da amostra total (24 de 28 dias); barra colorida = basal menos a redução <b>média</b> de cada grupo — ilustra a diferença, não reproduz a trajetória individual. Dados do artigo<sup class="cite"><a href="#r23">23</a></sup>; escala 0–28 dias.</p>
+    </div>
+
+    <div class="chartbox rv" style="margin-top:22px">
+      <div class="kicker" style="margin-bottom:14px">PANORAMA · TAMANHO DE EFEITO DAS INTERVENÇÕES <span class="ev A">SÍNTESE</span></div>
+      <div class="cv-wrap"><canvas id="cvFx" width="900" height="360" aria-label="Comparação qualitativa de tamanho de efeito"></canvas></div>
+      <div class="chips" role="group" aria-label="Filtro">
+        <button class="chip on" data-f="all">Todas</button><button class="chip" data-f="pharm">Farmacológicas</button><button class="chip" data-f="psych">Psicossociais</button><button class="chip" data-f="exp">Experimentais</button>
+      </div>
+      <p class="small" style="margin-top:12px"><b>Leitura:</b> o eixo é uma escala ordinal didática (0–10) que resume magnitude × força da evidência, <u>não</u> um tamanho de efeito estatístico. Contingency management continua no topo<sup class="cite"><a href="#r17">17</a></sup>; naltrexona+bupropiona<sup class="cite"><a href="#r14">14</a></sup> e mirtazapina<sup class="cite"><a href="#r23">23</a></sup> são os únicos fármacos com sinal replicado/fase 3. Antipsicóticos não reduzem uso<sup class="cite"><a href="#r13">13</a></sup>.</p>
+    </div>
+    <p class="src rv"><b>Fontes:</b> Trivedi et al., <i>NEJM</i> 2021<sup class="cite"><a href="#r14">14</a></sup> · Chan et al., <i>Addiction</i> 2019<sup class="cite"><a href="#r16">16</a></sup> · De Crescenzo et al., <i>PLoS Med</i> 2018<sup class="cite"><a href="#r17">17</a></sup> · Coffin et al., <i>JAMA Psychiatry</i> 2020<sup class="cite"><a href="#r15">15</a></sup> · Tiihonen et al. 2007<sup class="cite"><a href="#r13">13</a></sup> · Stevens et al., <i>mAbs</i> 2014<sup class="cite"><a href="#r18">18</a></sup> · McKetin et al., <i>JAMA Psychiatry</i> 2026<sup class="cite"><a href="#r23">23</a></sup> · FDA 2023<sup class="cite"><a href="#r24">24</a></sup>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 10b · ATUALIZAÇÃO 2023–2026 ═══════════════ -->
+<section id="gs4b">
+  <div class="wrap">
+    <div class="kicker rv">10b · O que mudou <span class="ev B">Atualizado 28 set 2026</span></div>
+    <h2 class="rv">Três anos de ciência —<br>o que avançou, o que não avançou</h2>
+    <p class="lede rv d1">Entre a diretriz da FDA (2023) e o ensaio de fase 3 da mirtazapina (2026), a metanfetamina ganhou seu primeiro caminho regulatório e o primeiro fármaco com resultado positivo em prática clínica real — ainda sem registro. Em paralelo, coortes populacionais consolidaram o risco de Parkinson e o mercado global bateu recordes.</p>
+
+    <ol class="tl rv">
+      <li class="tl-i"><span class="tl-d">Out 2023</span><div class="glass tl-c glass-hover"><span class="tag hope">REGULAÇÃO</span><h4>FDA publica a primeira diretriz para fármacos contra transtorno por uso de estimulantes</h4><p><i>Stimulant Use Disorders: Developing Drugs for Treatment</i> (draft guidance): define populações, desenhos e desfechos aceitáveis — inclusive <b>redução de uso</b>, não só abstinência total. Abre a porta que ADAPT-2 e mirtazapina agora podem atravessar<sup class="cite"><a href="#r24">24</a></sup>.</p></div></li>
+      <li class="tl-i"><span class="tl-d">2024</span><div class="glass tl-c glass-hover"><span class="tag warn">CONSOLIDAÇÃO</span><h4>Análise estendida do ADAPT-2 mantém o sinal; naltrexona ER segue fora do SUS</h4><p>Resposta ponderada 13,6% vs 2,5% (NNT ≈ 9)<sup class="cite"><a href="#r14">14</a></sup>. Nenhum pedido de indicação formal; o ensaio confirmatório ainda não foi publicado.</p></div></li>
+      <li class="tl-i"><span class="tl-d">Jun 2025</span><div class="glass tl-c glass-hover"><span class="tag fail">MERCADO</span><h4>UNODC: 316 milhões de usuários de drogas; estimulantes anfetamínicos ≈ metade das apreensões sintéticas</h4><p>Apreensões de ATS em máxima histórica (2023). Sudeste Asiático: 236 t de metanfetamina em 2024 (+24%). O Brasil continua sem inquérito nacional que separe a metanfetamina de outras anfetaminas<sup class="cite"><a href="#r21">21</a></sup>.</p></div></li>
+      <li class="tl-i"><span class="tl-d">Jun 2026</span><div class="glass tl-c glass-hover on-hi"><span class="tag hope">FASE 3</span><h4>Mirtazapina reduz uso de metanfetamina em 6 clínicas australianas (n = 344)</h4><p>−2,2 dias de uso/28 vs placebo (p = 0,02); sem efeito em saliva, depressão, insônia ou qualidade de vida; sonolência e ganho de peso mais frequentes<sup class="cite"><a href="#r23">23</a></sup>. Efeito <b>modesto</b>, mas o primeiro de fase 3 para um fármaco genérico e barato.</p></div></li>
+      <li class="tl-i"><span class="tl-d">Em curso</span><div class="glass tl-c glass-hover"><span class="tag exp">FRONTEIRA</span><h4>GLP-1, anticorpo IXT-m200, neuromodulação, CM digital</h4><p>Agonistas de GLP-1 entram em ensaios iniciais para fissura por estimulantes; IXT-m200 passou de fase 1<sup class="cite"><a href="#r18">18</a></sup>; ETCC/EMTr reduzem craving em pilotos; CM por aplicativo já opera nos EUA<sup class="cite"><a href="#r17">17</a></sup>.</p></div></li>
+    </ol>
+
+    <div class="chartbox rv" style="margin-top:26px">
+      <div class="kicker" style="margin-bottom:14px">RISCO DE PARKINSON · COORTES POPULACIONAIS <span class="ev B">COORTE</span></div>
+      <div class="cv-wrap"><canvas id="cvPD" width="900" height="300" aria-label="Hazard ratio de Parkinson em usuários de metanfetamina"></canvas></div>
+      <p class="small" style="margin-top:12px">HR com IC 95%. Califórnia (Callaghan 2011; n = 40.472 internações relacionadas a meth/anfetamina, seguimento até 16 anos): HR 1,76 vs apendicite e 2,44 vs cocaína<sup class="cite"><a href="#r25">25</a></sup>. Utah (Curtin 2014; n = 4.935): HR 2,8 vs população; <b>cocaína sem risco elevado</b> nas duas coortes — reforça a especificidade dopaminérgica<sup class="cite"><a href="#r26">26</a></sup>.</p>
+    </div>
+
+    <p class="src rv"><b>Fontes:</b> FDA 2023<sup class="cite"><a href="#r24">24</a></sup> · Trivedi 2021<sup class="cite"><a href="#r14">14</a></sup> · UNODC 2025<sup class="cite"><a href="#r21">21</a></sup> · McKetin 2026<sup class="cite"><a href="#r23">23</a></sup> · Callaghan 2011<sup class="cite"><a href="#r25">25</a></sup> · Curtin 2014<sup class="cite"><a href="#r26">26</a></sup>.</p>
   </div>
 </section>
 
@@ -1354,7 +1436,7 @@ footer{padding-bottom:60px}
     <p class="lede rv d1">A rede brasileira de saúde mental foi desenhada na era do crack. O cristal traz um paciente diferente: psicose mais frequente, mais duradoura e com maior risco de agressividade — e os CAPS AD operam com leitos psiquiátricos escassos e sem protocolo nacional específico para metanfetamina.</p>
     <div class="chal">
       <div class="glass c glass-hover rv"><div class="num">DESAFIO 01</div><h4>Psicose que lota emergências</h4><p>Quadros agudos de agitação e paranoia exigem leito de observação e equipe treinada em desescalada, não apenas contenção em porta de emergência. Sem seguimento, o ciclo recomeça na alta.</p></div>
-      <div class="glass c glass-hover rv d1"><div class="num">DESAFIO 02</div><h4>Sem medicamento registrado</h4><p>A naltrexona injetável de liberação prolongada não está disponível no Brasil; a combinação do ADAPT-2 é inviável em escala no SUS. Contingency management, a intervenção mais eficaz, ainda não tem financiamento público.</p></div>
+      <div class="glass c glass-hover rv d1"><div class="num">DESAFIO 02</div><h4>Sem medicamento registrado</h4><p>A naltrexona injetável de liberação prolongada não está disponível no Brasil; a combinação do ADAPT-2 é inviável em escala no SUS. Contingency management, a intervenção mais eficaz, ainda não tem financiamento público. A mirtazapina (genérica, na RENAME) é hoje a única opção com fase 3 positiva acessível no SUS — off-label e com efeito modesto<sup class="cite"><a href="#r23">23</a></sup>.</p></div>
       <div class="glass c glass-hover rv"><div class="num">DESAFIO 03</div><h4>Dados que não enxergam a droga</h4><p>Sistemas de notificação e os inquéritos nacionais não separam bem metanfetamina de outras anfetaminas ou de crack — o tamanho real do problema é desconhecido, e este dossiê não pode estimá-lo.</p></div>
       <div class="glass c glass-hover rv d1"><div class="num">DESAFIO 04</div><h4>Fronteira viva, preço em queda</h4><p>A fronteira com o Paraguai continua sendo a principal porta de entrada; a economia de escala derruba o preço da dose e amplia o alcance para fora das capitais.</p></div>
     </div>
@@ -1384,15 +1466,16 @@ footer{padding-bottom:60px}
     <div class="kicker rv">12 · O que vem aí <span class="ev C">Nível C · Pipeline</span></div>
     <h2 class="rv">O pipeline da medicina —<br>da crise psicótica ao anticorpo</h2>
     <p class="lede rv d1">A paranoia é o alvo terapêutico mais valioso do TUM: é ela que leva o paciente ao sistema de saúde — tratar bem a psicose é a porta de entrada para tratar o vício. Depois de décadas de fracasso farmacológico, a década de 2020 trouxe a primeira onda séria de candidatos.</p>
-    <div class="stages rv"><div>PRÉ-CLÍNICO</div><div class="on">FASE 1</div><div class="on">FASE 2</div><div>FASE 3</div><div>REGISTRO</div></div>
+    <div class="stages rv"><div>PRÉ-CLÍNICO</div><div class="on">FASE 1</div><div class="on">FASE 2</div><div class="on">FASE 3</div><div>REGISTRO</div></div>
     <div class="pipe">
+      <div class="pipe-item ok rv"><h4>Mirtazapina 30 mg<span class="ph">FASE 3 POSITIVA (2026) · SEM REGISTRO</span></h4><p>Primeiro fármaco genérico com fase 3 pragmática positiva<sup class="cite"><a href="#r23">23</a></sup>. Efeito modesto e autorrelatado; uso off-label já é possível no SUS. Próximo passo: replicação e desfechos objetivos.</p></div>
       <div class="pipe-item rv"><h4>Naltrexona ER + bupropiona ER<span class="ph">FASE 2 CONCLUÍDA · AGUARDA CONFIRMAÇÃO</span></h4><p>O ADAPT-2 mostrou 13,6% vs. 2,5% de resposta<sup class="cite"><a href="#r14">14</a></sup>. Um ensaio confirmatório maior, com desfecho de abstinência sustentada, é o passo necessário antes de qualquer pedido de indicação formal.</p></div>
       <div class="pipe-item rv"><h4>Anticorpo monoclonal IXT-m200<span class="ph">FASE 1 · SEGURANÇA DEMONSTRADA</span></h4><p>Anticorpo quimérico de alta afinidade que captura a metanfetamina no plasma<sup class="cite"><a href="#r18">18</a></sup>. Cenários de uso em estudo: "antídoto" em intoxicação aguda e proteção de pacientes em alto risco de recaída. Falta demonstrar redução do uso.</p></div>
       <div class="pipe-item rv"><h4>Vacinas anti-metanfetamina<span class="ph">PRÉ-CLÍNICO / FASE INICIAL</span></h4><p>Conjugados hapteno-proteína que induzem anticorpos próprios. Promessa: impedir o pico dopaminérgico que dispara o episódio psicótico. Barreiras: título de anticorpos variável e necessidade de doses de reforço.</p></div>
       <div class="pipe-item rv"><h4>Neuromodulação (ETCC e EMTr)<span class="ph">PILOTOS · RESULTADOS INICIAIS</span></h4><p>Protocolos sobre o córtex pré-frontal dorsolateral reduzem <i>craving</i> em pilotos; ensaios controlados maiores em andamento, inclusive no Brasil. Sem recomendação formal.</p></div>
       <div class="pipe-item ok rv"><h4>Contingency management digital<span class="ph">DISPONÍVEL (EUA) · ADAPTÁVEL AO SUS</span></h4><p>Plataformas de recompensa por urina negativa via aplicativo já operam nos EUA. É a intervenção com melhor evidência<sup class="cite"><a href="#r17">17</a></sup> — e a mais barata de escalar. Modelo proposto para piloto em CAPS AD.</p></div>
     </div>
-    <p class="src rv"><b>Fontes:</b> Trivedi et al. 2021<sup class="cite"><a href="#r14">14</a></sup> · Stevens et al. 2014<sup class="cite"><a href="#r18">18</a></sup> · De Crescenzo et al. 2018<sup class="cite"><a href="#r17">17</a></sup> · NIDA / NIH HEAL Initiative (programas de imunofarmacoterapia).</p>
+    <p class="src rv"><b>Fontes:</b> Trivedi et al. 2021<sup class="cite"><a href="#r14">14</a></sup> · Stevens et al. 2014<sup class="cite"><a href="#r18">18</a></sup> · De Crescenzo et al. 2018<sup class="cite"><a href="#r17">17</a></sup> · McKetin 2026<sup class="cite"><a href="#r23">23</a></sup> · NIDA / NIH HEAL Initiative (programas de imunofarmacoterapia).</p>
   </div>
 </section>
 
@@ -1425,6 +1508,10 @@ footer{padding-bottom:60px}
       <li id="r20"><b>Brasil.</b> Lei nº 10.216, de 6 de abril de 2001. Dispõe sobre a proteção e os direitos das pessoas portadoras de transtornos mentais e redireciona o modelo assistencial em saúde mental. <a href="https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10216.htm" target="_blank" rel="noopener">planalto.gov.br</a><span class="ev D">Legislação</span></li>
       <li id="r21"><b>UNODC.</b> World Drug Report 2025. Vienna: United Nations Office on Drugs and Crime. <a href="https://www.unodc.org/unodc/en/data-and-analysis/world-drug-report-2025.html" target="_blank" rel="noopener">unodc.org</a><span class="ev D">Institucional</span></li>
       <li id="r22"><b>American Psychiatric Association.</b> DSM-5-TR: Manual Diagnóstico e Estatístico de Transtornos Mentais, 5ª ed., texto revisado. 2022 · <b>OMS.</b> CID-11, 6C46.6 (transtorno psicótico induzido por estimulantes incluindo anfetaminas). <a href="https://icd.who.int/browse/latest-release/mms/en" target="_blank" rel="noopener">icd.who.int</a><span class="ev D">Classificação</span></li>
+      <li id="r23"><b>McKetin R, Shoptaw S, Saunders L, et al.</b> Mirtazapine for methamphetamine use disorder: a randomized clinical trial. <i>JAMA Psychiatry</i>. 2026;83(6):581-589. <a href="https://doi.org/10.1001/jamapsychiatry.2026.0159" target="_blank" rel="noopener">doi:10.1001/jamapsychiatry.2026.0159</a><span class="ev B">RCT fase 3</span></li>
+      <li id="r24"><b>U.S. Food and Drug Administration.</b> Stimulant Use Disorders: Developing Drugs for Treatment — draft guidance for industry. Oct 2023. <a href="https://www.fda.gov/news-events/press-announcements/fda-takes-steps-advance-development-novel-therapies-stimulant-use-disorders" target="_blank" rel="noopener">fda.gov</a><span class="ev D">Regulatório</span></li>
+      <li id="r25"><b>Callaghan RC, Cunningham JK, Sykes J, Kish SJ.</b> Increased risk of Parkinson's disease in individuals hospitalized with conditions related to the use of methamphetamine or other amphetamine-type drugs. <i>Drug Alcohol Depend</i>. 2012;120(1-3):35-40. <a href="https://doi.org/10.1016/j.drugalcdep.2011.06.013" target="_blank" rel="noopener">doi:10.1016/j.drugalcdep.2011.06.013</a><span class="ev B">Coorte</span></li>
+      <li id="r26"><b>Curtin K, Fleckenstein AE, Robison RJ, Crookston MJ, Smith KR, Hanson GR.</b> Methamphetamine/amphetamine abuse and risk of Parkinson's disease in Utah: a population-based assessment. <i>Drug Alcohol Depend</i>. 2015;146:30-38. <a href="https://doi.org/10.1016/j.drugalcdep.2014.10.027" target="_blank" rel="noopener">doi:10.1016/j.drugalcdep.2014.10.027</a><span class="ev B">Coorte</span></li>
     </ol>
   </div>
 </section>
@@ -1438,7 +1525,7 @@ footer{padding-bottom:60px}
       <div class="glass h rv d2"><b>192 / SAMU</b>Emergência com risco imediato (agitação grave, autolesão, hipertermia)</div>
     </div>
     <p class="sitelinks"><span>Outros guias deste site:</span><a href="/">Guia de Redução de Danos (página principal)</a><a href="/ghb/">GHB · GBL · 1,4-butanodiol</a></p>
-    <p class="colophon"><time datetime="2026-09-11">Revisado em 11 set 2026</time> · Referências verificadas em PubMed/DOI · Modelos 3D e simulador farmacocinético são didáticos · Tipografia: Newsreader, Sora, JetBrains Mono.</p>
+    <p class="colophon"><time datetime="2026-09-28">Revisado em 28 set 2026</time> · Referências verificadas em PubMed/DOI · Modelos 3D e simulador farmacocinético são didáticos · Tipografia: Newsreader, Sora, JetBrains Mono.</p>
   </div>
 </footer>
 
@@ -1681,7 +1768,7 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
       const pr = q.r*q.f*dpr, threat = threatOn && Math.sin(t*1.4 + i*.7) > .82;
       ctx.fillStyle = threat ? 'rgba(255,92,103,.9)' : color;
       ctx.beginPath(); ctx.arc(q.sx,q.sy,pr,0,7); ctx.fill();
-      if (threat && glow) {
+      if (threat && glow && isFinite(q.sx) && isFinite(q.sy) && isFinite(pr) && pr > 0) {
         const g = ctx.createRadialGradient(q.sx,q.sy,0,q.sx,q.sy,pr*6);
         g.addColorStop(0,'rgba(255,92,103,.32)'); g.addColorStop(1,'rgba(255,92,103,0)');
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(q.sx,q.sy,pr*6,0,7); ctx.fill();
@@ -1882,6 +1969,7 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
     });
     order.forEach(i => {
       const p = proj[i], r = p.n.r*dpr*p.f;
+      if (!(isFinite(p.x) && isFinite(p.y) && isFinite(r) && r > 0)) return;
       const g = ctx.createRadialGradient(p.x-r*.3,p.y-r*.3,r*.1,p.x,p.y,r);
       g.addColorStop(0,'rgba(255,255,255,.9)'); g.addColorStop(.4,p.n.c); g.addColorStop(1,'#0a0e15');
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,r,0,7); ctx.fill();
@@ -1937,6 +2025,113 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
     const ar = mk('text'); ar.setAttribute('class','wnode'); ar.setAttribute('x', cx + (R+12)*Math.cos(a1)); ar.setAttribute('y', cy + (R+12)*Math.sin(a1) + 3); ar.textContent = '›'; ar.setAttribute('style','fill:#7f899e;font-size:12px'); g.appendChild(ar);
   });
 })();
+</script>
+<script>
+/* ═══════════ 2026 REFRESH — canvas charts ═══════════ */
+(() => {
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const C = { ink: cssVar('--ink')||'#eef2f8', mut: cssVar('--mut')||'#98a2b6', mut2: cssVar('--mut2')||'#7f899e',
+    ice: cssVar('--ice')||'#7cd8f7', ice2: cssVar('--ice2')||'#38a8d8', red: cssVar('--red')||'#ff5c67',
+    green: cssVar('--green')||'#48d695', amber: cssVar('--amber')||'#f0b04c', violet: cssVar('--violet')||'#a78bff' };
+  const MONO = '"JetBrains Mono",Menlo,monospace', SANS = '"Sora",sans-serif';
+  const ease = t => 1 - Math.pow(1 - t, 3);
+
+  function setup(id, minH=0){ const c=document.getElementById(id); if(!c) return null;
+    const dpr=Math.min(devicePixelRatio||1,2), w=c.clientWidth||900, h=Math.max(minH, Math.round(w*c.getAttribute('height')/c.getAttribute('width')));
+    c.width=w*dpr; c.height=h*dpr; c.style.height=h+'px'; const x=c.getContext('2d'); x.setTransform(dpr,0,0,dpr,0,0); return {x,w,h}; }
+  function grid(x,x0,y0,x1,y1,nx,ny){ x.strokeStyle='rgba(255,255,255,.06)'; x.lineWidth=1;
+    for(let i=0;i<=nx;i++){const X=x0+(x1-x0)*i/nx; x.beginPath(); x.moveTo(X,y0); x.lineTo(X,y1); x.stroke();}
+    for(let i=0;i<=ny;i++){const Y=y0+(y1-y0)*i/ny; x.beginPath(); x.moveTo(x0,Y); x.lineTo(x1,Y); x.stroke();} }
+  function animate(draw, ms=1400){ if(REDUCED){draw(1);return;} const t0=performance.now();
+    (function f(n){ const p=Math.min(1,(n-t0)/ms); draw(ease(p)); if(p<1) requestAnimationFrame(f); })(t0); }
+  function rr(x,X,Y,W,H,r){ x.beginPath(); x.roundRect ? x.roundRect(X,Y,W,H,r) : x.rect(X,Y,W,H); }
+
+  /* ── 1) Mirtazapine: grouped bars (baseline → week 12) ── */
+  function drawMirt(p=1){ const s=setup('cvMirt', ((document.getElementById('cvMirt')||{}).clientWidth||900)<640 ? 260 : 0); if(!s) return; const {x,w,h}=s;
+    const px=56, py=22, pw=w-px-20, ph=h-py-46, ymax=28; x.clearRect(0,0,w,h); grid(x,px,py,px+pw,py+ph,2,4);
+    const Y=v=>py+ph*(1-v/ymax);
+    const groups=[{l:'Placebo (n=167)',base:24,drop:4.8,col:C.mut},{l:'Mirtazapina 30 mg (n=172)',base:24,drop:7.0,col:C.green}];
+    const gw=pw/2, bw=Math.min(110,gw*0.28);
+    groups.forEach((g,i)=>{ const cx=px+gw*(i+0.5);
+      // baseline bar
+      const bh=(g.base/ymax)*ph*p; rr(x,cx-bw-8,Y(0)-bh,bw,bh,6); x.fillStyle='rgba(255,255,255,.10)'; x.fill();
+      // week-12 bar
+      const v12=g.base-g.drop, h12=(v12/ymax)*ph*p; rr(x,cx+8,Y(0)-h12,bw,h12,6);
+      const gr=x.createLinearGradient(0,Y(0)-h12,0,Y(0)); gr.addColorStop(0,g.col); gr.addColorStop(1,g.col+'55'); x.fillStyle=gr; x.fill();
+      // drop annotation
+      x.fillStyle=g.col; x.font=`600 15px ${MONO}`; x.textAlign='center'; x.fillText('−'+g.drop.toFixed(1).replace('.',',')+' dias',cx+8+bw/2,Y(v12)-10);
+      x.fillStyle=C.mut2; x.font=`11px ${MONO}`; x.fillText('basal 24',cx-bw/2-8,Y(g.base)-8);
+      x.fillStyle=C.ink; x.font=`13px ${SANS}`; x.fillText(g.l,cx,py+ph+20);
+      x.fillStyle=C.mut2; x.font=`10px ${MONO}`; x.fillText('basal → sem. 12',cx,py+ph+36); });
+    x.textAlign='left'; x.fillStyle=C.mut2; x.font=`10px ${MONO}`; for(let v=0;v<=28;v+=7){ x.fillText(v,px-30,Y(v)+4); }
+    x.save(); x.translate(14,py+ph/2); x.rotate(-Math.PI/2); x.textAlign='center'; x.fillText('dias de uso / 28',0,0); x.restore(); }
+
+  /* ── 2) Intervention effect landscape (ordinal, filterable) ── */
+  const FX=[
+    {n:'Contingency management + TCC',v:7.5,t:'psych',c:C.green,ref:'[17] meta-análise em rede, 50 RCTs'},
+    {n:'Naltrexona ER + bupropiona (ADAPT-2)',v:5.5,t:'pharm',c:C.ice,ref:'[14] RCT fase 2, 13,6% vs 2,5%'},
+    {n:'Mirtazapina 30 mg',v:4.5,t:'pharm',c:C.ice,ref:'[23] fase 3, −2,2 dias/28'},
+    {n:'Metilfenidato ER (subgrupo grave)',v:3.5,t:'pharm',c:C.ice2,ref:'[13] RCT n=53'},
+    {n:'Bupropiona isolada',v:2.5,t:'pharm',c:C.ice2,ref:'[16] só uso de baixa frequência'},
+    {n:'Neuromodulação (ETCC/EMTr)',v:2.5,t:'exp',c:C.violet,ref:'pilotos, craving'},
+    {n:'Anticorpo IXT-m200',v:1.5,t:'exp',c:C.violet,ref:'[18] fase 1, sem desfecho de uso'},
+    {n:'Agonistas GLP-1',v:1.0,t:'exp',c:C.violet,ref:'ensaios iniciais'},
+    {n:'Antipsicóticos (para o uso)',v:0.5,t:'pharm',c:C.red,ref:'[13] aripiprazol ↑ uso'} ];
+  let fxFilter='all';
+  function drawFx(p=1){
+    const rows=FX.filter(r=>fxFilter==='all'||r.t===fxFilter);
+    const cw=(document.getElementById('cvFx')||{}).clientWidth||900, narrow=cw<640;
+    const s=setup('cvFx', narrow ? rows.length*52+44 : 0); if(!s) return; const {x,w,h}=s;
+    const px=narrow?10:Math.min(300,w*0.36), py=narrow?8:16, pw=w-px-(narrow?40:24), ph=h-py-32;
+    x.clearRect(0,0,w,h); grid(x,px,py,px+pw,py+ph,10,rows.length);
+    const rh=ph/rows.length, bh=narrow?12:Math.min(22,rh*0.55);
+    rows.forEach((r,i)=>{ const yc=narrow ? py+rh*i+rh*0.70 : py+rh*(i+0.5), bw=pw*(r.v/10)*p;
+      rr(x,px,yc-bh/2,Math.max(bw,2),bh,5); const g=x.createLinearGradient(px,0,px+Math.max(bw,2),0); g.addColorStop(0,r.c+'66'); g.addColorStop(1,r.c); x.fillStyle=g; x.fill();
+      if(narrow){ x.textAlign='left'; x.fillStyle=C.ink; x.font=`12px ${SANS}`; x.fillText(r.n,px,py+rh*i+14); }
+      else { x.fillStyle=C.ink; x.font=`13px ${SANS}`; x.textAlign='right'; x.fillText(r.n,px-12,yc+4); x.fillStyle=C.mut2; x.font=`10px ${MONO}`; x.fillText(r.ref,px-12,yc+17); }
+      x.textAlign='left'; x.fillStyle=r.c; x.font=`600 12px ${MONO}`; x.fillText(r.v.toFixed(1).replace('.',','),Math.min(px+bw+8,w-30),yc+4); });
+    x.fillStyle=C.mut2; x.font=`10px ${MONO}`; x.textAlign='center'; for(let v=0;v<=10;v+=2){ x.fillText(v,px+pw*v/10,py+ph+16);} x.fillText('escala ordinal didática (0–10)',px+pw/2,py+ph+28); x.textAlign='left'; }
+  document.querySelectorAll('.chips .chip').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('.chips .chip').forEach(c=>c.classList.remove('on')); b.classList.add('on'); fxFilter=b.dataset.f; animate(drawFx,900); }));
+
+  /* ── 3) Parkinson HR forest plot ── */
+  function drawPD(p=1){
+    const rows=[{l:'Califórnia · vs apendicite',hr:1.76,lo:1.12,hi:2.75,c:C.amber},{l:'Califórnia · vs cocaína',hr:2.44,lo:1.32,hi:4.41,c:C.amber},{l:'Utah · vs população (PD)',hr:2.8,lo:1.6,hi:4.8,c:C.red},{l:'Utah · PD/parkinsonismo/tremor',hr:3.1,lo:1.9,hi:4.9,c:C.red},{l:'Cocaína (Califórnia) · controle',hr:1.04,lo:0.56,hi:1.93,c:C.mut}];
+    const cw=(document.getElementById('cvPD')||{}).clientWidth||900, narrow=cw<640;
+    const s=setup('cvPD', narrow ? rows.length*64+56 : 0); if(!s) return; const {x,w,h}=s;
+    const rc=narrow?0:150, px=narrow?10:Math.min(260,w*0.30), py=narrow?10:16, pw=w-px-rc-(narrow?10:20), ph=h-py-34, xmin=0.4, xmax=5.2;
+    x.clearRect(0,0,w,h);
+    const X=v=>px+pw*(Math.log(v)-Math.log(xmin))/(Math.log(xmax)-Math.log(xmin));
+    grid(x,px,py,px+pw,py+ph,0,rows.length);
+    x.strokeStyle='rgba(255,255,255,.25)'; x.setLineDash([4,4]); x.beginPath(); x.moveTo(X(1),py); x.lineTo(X(1),py+ph); x.stroke(); x.setLineDash([]);
+    if(!narrow){ x.fillStyle=C.mut2; x.font=`10px ${MONO}`; x.fillText('HR = 1 (sem efeito)',X(1)+6,py+10); }
+    const rh=ph/rows.length;
+    rows.forEach((r,i)=>{ const yc=narrow ? py+rh*i+rh*0.66 : py+rh*(i+0.5);
+      const lo=1+(r.lo-1)*p, hi=1+(r.hi-1)*p, hr=1+(r.hr-1)*p;
+      x.strokeStyle=r.c; x.lineWidth=2; x.beginPath(); x.moveTo(X(lo),yc); x.lineTo(X(hi),yc); x.stroke();
+      [lo,hi].forEach(v=>{ x.beginPath(); x.moveTo(X(v),yc-6); x.lineTo(X(v),yc+6); x.stroke(); });
+      x.fillStyle=r.c; x.beginPath(); x.arc(X(hr),yc,narrow?5:6,0,Math.PI*2); x.fill();
+      const lab='HR '+r.hr.toFixed(2).replace('.',',')+' ('+r.lo.toFixed(2).replace('.',',')+'–'+r.hi.toFixed(2).replace('.',',')+')';
+      if(narrow){
+        const ty=py+rh*i+16;
+        x.textAlign='left'; x.fillStyle=C.ink; x.font=`12px ${SANS}`; x.fillText(r.l,px,ty);
+        x.textAlign='right'; x.fillStyle=r.c; x.font=`600 10.5px ${MONO}`; x.fillText(lab,w-10,ty+14); x.textAlign='left';
+      } else {
+        x.fillStyle=C.ink; x.font=`13px ${SANS}`; x.textAlign='right'; x.fillText(r.l,px-10,yc+4);
+        x.fillStyle=r.c; x.font=`600 12px ${MONO}`; x.fillText(lab,w-8,yc+4); x.textAlign='left';
+      } });
+    x.fillStyle=C.mut2; x.font=`10px ${MONO}`; x.textAlign='center'; [0.5,1,2,3,4,5].forEach(v=>x.fillText(String(v).replace('.',','),X(v),py+ph+16));
+    x.fillText(narrow?'hazard ratio · log · linha = HR 1':'hazard ratio · escala log',px+pw/2,py+ph+29); x.textAlign='left'; }
+
+  /* lazy + resize */
+  const draws={cvMirt:drawMirt,cvFx:drawFx,cvPD:drawPD};
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ animate(draws[e.target.id]); cio.unobserve(e.target);} }),{threshold:.35});
+  Object.keys(draws).forEach(id=>{ const el=document.getElementById(id); if(el) cio.observe(el); });
+  let rt; addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>Object.values(draws).forEach(d=>d(1)),160); });
+  setTimeout(()=>Object.values(draws).forEach(d=>{ const c=document.getElementById(Object.keys(draws).find(k=>draws[k]===d)); if(c && !c.dataset.drawn) d(1); }),4000);
+})();
+
+
 </script>
 </body>
 </html>
