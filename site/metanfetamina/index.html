@@ -728,7 +728,8 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
 .aexp.err .aexp-cap{color:var(--amber)}
 /* alvos que acendem durante a narração */
 .aexp-lit{border-color:rgba(124,216,247,.65)!important;box-shadow:0 0 0 1px rgba(124,216,247,.3),0 12px 30px -14px rgba(124,216,247,.65)!important}
-.nodes .nd,.mech li,.trow,.duel .ph,.tgrid .tcard{transition:border-color .35s,box-shadow .35s,background .35s,color .35s}
+.nodes .nd,.mech li,.trow,.duel .ph,.tgrid .tcard,#s1 .sym,#s1 .vig,#s1 .quotebox,#s1 .fig,#s1 .sleepdiag{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s,background .35s,color .35s}
+#s1 .fig.aexp-lit{border-radius:14px}
 .nodes .nd.aexp-lit{background:rgba(124,216,247,.08);color:var(--ink2)}
 .mech li.aexp-lit{box-shadow:none!important;color:var(--ink2);background:linear-gradient(90deg,rgba(124,216,247,.12),transparent 85%);border-radius:8px}
 /* mini-player flutuante */
@@ -794,7 +795,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
       <span class="chip"><span class="d" style="background:var(--red)"></span>DOSSIÊ · NEUROPSIQUIATRIA E SAÚDE PÚBLICA</span>
       <span class="chip"><span class="d" style="background:var(--ice)"></span>EVIDÊNCIAS CLASSIFICADAS · REVISÃO 28 SET/2026</span>
       <a class="chip" href="/" style="text-decoration:none"><span class="d" style="background:var(--green)"></span>← LABORATÓRIO · GUIA DE REDUÇÃO DE DANOS</a>
-      <a class="chip" href="#aexp-s2" style="text-decoration:none" title="Narrações em §02, §04, §05 e §10"><span class="d" style="background:var(--violet)"></span>🎧 4 EXPLICAÇÕES EM ÁUDIO</a>
+      <a class="chip" href="#aexp-s2" style="text-decoration:none" title="Narrações em §02, §03, §04, §05 e §10"><span class="d" style="background:var(--violet)"></span>🎧 5 EXPLICAÇÕES EM ÁUDIO</a>
     </div>
     <h1 class="fi" style="animation-delay:.25s">Paranoia por<br><span class="glow">Metanfetamina</span></h1>
     <p class="sub fi" style="animation-delay:.45s">O sintoma psiquiátrico mais frequente e mais temido do cristal: um sistema nervoso em alarme permanente que transforma vizinhos em agentes, ruídos em ameaças e a própria mente em campo de batalha. <b>Como nasce, quanto dura, por que volta — e o que a medicina pode fazer, com os números da literatura.</b></p>
@@ -845,7 +846,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
           <span><b>Público</b></span><span>Profissionais de saúde, gestores, imprensa, famílias</span>
           <span><b>Nomenclatura</b></span><span>TUM = transtorno por uso de metanfetamina · PIM = psicose induzida por metanfetamina · CM = <i>contingency management</i></span>
           <span><b>Limites</b></span><span>Dados brasileiros de prevalência são escassos; seções 01 e 11 são de nível D</span>
-          <span><b>Áudio</b></span><span>Explicações narradas nos tópicos mais difíceis (<a href="#aexp-gs2">§02</a>, <a href="#aexp-s2">§04</a>, <a href="#aexp-s3">§05</a>, <a href="#aexp-gs4">§10</a>) · voz sintética ElevenLabs, roteiro escrito a partir das fontes citadas · transcrição completa em cada player</span>
+          <span><b>Áudio</b></span><span>Explicações narradas nos tópicos mais difíceis (<a href="#aexp-gs2">§02</a>, <a href="#aexp-s1">§03</a>, <a href="#aexp-s2">§04</a>, <a href="#aexp-s3">§05</a>, <a href="#aexp-gs4">§10</a>) · voz sintética ElevenLabs, roteiro escrito a partir das fontes citadas · transcrição completa em cada player</span>
         </div>
       </div>
     </div>
@@ -1063,8 +1064,27 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
     <div class="kicker rv">03 · O sintoma <span class="ev C">Nível C · Clínico</span></div>
     <h2 class="rv">“Estão me seguindo.”<br>A anatomia de um delírio</h2>
     <p class="lede rv d1">A paranoia metanfetamínica começa como suspeita vaga e se consolida num sistema de crenças. O conteúdo é tipicamente <b>persecutório e de referência</b>, sincronizado com o binge e a privação de sono; alucinações táteis (formicação) e auditivas são frequentes. Nos casos prolongados, a fronteira com a psicose primária se apaga<sup class="cite"><a href="#r9">9</a>,<a href="#r10">10</a></sup>.</p>
+    <figure class="aexp glass rv d1" id="aexp-s1" data-dur="67.89" data-targets="#s1 .quotebox, #s1 .sym, #s1 .vig, #s1 .fig, #s1 .sleepdiag" data-peaks="99,60,68,16,48,53,39,79,59,50,54,52,52,16,73,83,79,59,31,51,77,31,83,29,47,93,77,36,88,72,54,51,46,96,25,65,56,77,59,64,47,63,33,45,99,69,74,19,52,73,79,81,43,16,99,99,34,85,81,71,51,50,76,19,72,66,76,53,31,70,76,63,58,61,59,59,37,97,78,65,84,82,53,16,76,52,79,36,75,16,70,52,71,72,53,56">
+      <div class="aexp-head">
+        <button class="aexp-btn" type="button" aria-pressed="false" aria-label="Ouvir: A anatomia de um delírio, explicada"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h4v14h-4zM13.5 5h4v14h-4z" fill="currentColor"/></svg></button>
+        <div class="aexp-meta">
+          <div class="aexp-k"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="3" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/><rect x="16.5" y="13.5" width="4.5" height="7" rx="1.6" fill="currentColor"/></svg>Explicação em áudio · §03 · 1:07</div>
+          <figcaption class="aexp-t">A anatomia de um delírio, explicada</figcaption>
+        </div>
+        <div class="aexp-spd" role="group" aria-label="Velocidade da narração"><button type="button" data-r="0.85">0,85×</button><button type="button" data-r="1" class="on">1×</button><button type="button" data-r="1.25">1,25×</button><button type="button" data-r="1.5">1,5×</button></div>
+      </div>
+      <div class="aexp-wave" role="slider" tabindex="0" aria-label="Posição da narração" aria-valuemin="0" aria-valuemax="67" aria-valuenow="0" aria-valuetext="0:00 de 1:07"><canvas aria-hidden="true"></canvas></div>
+      <div class="aexp-row"><span class="aexp-time">0:00 / 1:07</span><span class="aexp-focus" aria-hidden="true"></span></div>
+      <p class="aexp-cap" aria-hidden="true">Toque em ▶ — os sinais, as vinhetas e as figuras desta seção acendem durante a narração.</p>
+      <audio preload="none" controls src="audio/s1.mp3"></audio>
+      <details class="aexp-tr">
+        <summary>Transcrição · toque numa frase para ir até ela</summary>
+        <div class="tx"><span data-t="0.00" data-n="8">O delírio de perseguição se forma em etapas: começa como suspeita vaga e, com o uso em sequência e a falta de sono, vira um sistema de crenças.</span> <span data-t="10.06" data-n="1,5">O primeiro sinal costuma ser a hipervigilância: checar cortinas, portas e o celular o tempo todo.</span> <span data-t="17.40" data-n="3,6">Depois vêm as ideias de referência: a televisão e as redes sociais parecem mandar recados.</span> <span data-t="23.00" data-n="2,7">São comuns as alucinações, inclusive a sensação de insetos sob a pele, a formicação, com risco de autolesão.</span> <span data-t="30.64" data-n="4">O mais perigoso é a reatividade defensiva: atacar primeiro para se proteger de uma ameaça imaginada.</span> <span data-t="38.16" data-n="9">O delírio não inventa o mundo, ele reinterpreta objetos comuns como prova; por isso discutir raramente funciona.</span> <span data-t="45.44" data-n="1,2,3,4">Ajuda reduzir estímulos, falar um de cada vez, reconhecer o medo sem confirmar a crença e manter distância, com uma saída livre.</span> <span data-t="53.70" data-n="8,10">Dormir interrompe a escalada; mais de quarenta e oito horas acordado a acelera.</span> <span data-t="59.46">Se houver risco, ligue para o SAMU, no cento e noventa e dois.</span> <span data-t="63.62" data-n="0,5,6,7">Os relatos desta seção são compostos, não falas de pacientes reais.</span></div>
+        <p class="aexp-note">Narração com voz sintética (ElevenLabs · “Beatriz”), roteiro escrito a partir das fontes citadas nesta seção. Conteúdo educativo; não substitui avaliação profissional.</p>
+      </details>
+    </figure>
     <div class="duo">
-      <div class="glass quotebox glass-hover rv">
+      <div class="glass quotebox glass-hover rv" data-aexp-label="Relato composto">
         <p>Toda noite alguém mexe no meu dinheiro, nas minhas coisas. Eu sei que parece loucura, mas é real: eles trocam o cheiro, mudam a posição. Minha mãe faz parte, o vizinho grava tudo.</p>
         <div class="who">— Relato composto, construído a partir de descrições clínicas típicas de emergência psiquiátrica. Não é citação de paciente real.</div>
       </div>
@@ -1082,7 +1102,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
       <div class="glass vig glass-hover rv d2"><div class="day">DIA 8 · O CORPO ENTRA</div><p>"Sinto os furos no braço, por onde eles entram. Tentei tirar com a pinça."</p><div class="tag">vinheta composta · formicação + risco de autolesão</div></div>
     </div>
     <p class="small rv" style="margin-top:10px">Relatos compostos a partir de descrições clínicas típicas de emergência psiquiátrica — <b>não são citações de pacientes reais</b>. O arco segue a escalada da Figura 3.1.</p>
-    <figure class="fig rv" style="margin-top:30px">
+    <figure class="fig rv" style="margin-top:30px" data-aexp-label="Fig. 3.1 · escalada">
       <svg viewBox="0 0 720 190" role="img" aria-label="Escalada típica do delírio: suspeita vaga, hipervigilância, ideias de referência e delírio estruturado">
         <text x="36" y="28" font-family="JetBrains Mono,Menlo,monospace" font-size="11" letter-spacing="2" fill="#38a8d8">ESCALADA TÍPICA · BINGE + PRIVAÇÃO DE SONO</text>
         <path d="M60,92 H660" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
@@ -1101,7 +1121,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
       </svg>
       <figcaption><b>Figura 3.1 —</b> a paranoia se consolida em etapas; dormir interrompe a escalada, e a privação de sono &gt;48 h a acelera. Diagrama didático, sem escala temporal real.</figcaption>
     </figure>
-    <figure class="fig rv">
+    <figure class="fig rv" data-aexp-label="Fig. 3.2 · duas leituras">
       <svg viewBox="0 0 720 250" role="img" aria-label="A mesma cena lida de dois jeitos: o que há de fato e o que a paranoia enxerga">
         <text x="36" y="28" font-family="JetBrains Mono,Menlo,monospace" font-size="11" letter-spacing="2" fill="#38a8d8">A MESMA CENA, DUAS LEITURAS</text>
         <rect x="36" y="44" width="318" height="172" rx="12" fill="rgba(124,216,247,.06)" stroke="rgba(124,216,247,.35)"/>
@@ -1125,7 +1145,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
       </svg>
       <figcaption><b>Figura 3.2 —</b> o delírio não inventa o mundo: ele <b>reinterpreta</b> objetos comuns como prova. Por isso confrontar ("não tem ninguém aí") raramente funciona — e reduzir estímulos, sim. Ilustração didática.</figcaption>
     </figure>
-    <div class="glass sleepdiag rv">
+    <div class="glass sleepdiag rv" data-aexp-label="Simulador de sono">
       <div class="head">
         <div class="kicker" style="margin-bottom:0">SIMULADOR · HORAS SEM DORMIR × INTENSIDADE</div>
         <label>sono <input type="range" id="sleepH" min="0" max="72" step="1" value="30" aria-label="Horas sem dormir"> <output id="sleepOut">30 h</output></label>
@@ -2334,9 +2354,11 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
   dock.inert = true;
 
   function labelOf(el) {
-    const h = el.querySelector('h4') || el.querySelector('.nm') || el.querySelector('b'); if (!h) return '';
+    if (el.dataset.aexpLabel) return el.dataset.aexpLabel;
+    const h = el.querySelector('h4') || el.querySelector('.nm') || el.querySelector('.t') || el.querySelector('.day') ||
+              el.querySelector('figcaption b') || el.querySelector('.kicker') || el.querySelector('b'); if (!h) return '';
     const tn = [...h.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
-    let s = (tn ? tn.textContent : h.textContent).trim().replace(/[.:]$/, '');
+    let s = (tn ? tn.textContent : h.textContent).trim().replace(/\s*—\s*$/, '').replace(/[.:]$/, '');
     s = s.split(' — ')[0].split(' (')[0];
     return s.length > 34 ? s.slice(0, 32) + '…' : s;
   }
@@ -2377,7 +2399,7 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
     }
     function setFocus(ids) {
       targets.forEach((el, k) => el.classList.toggle('aexp-lit', ids.includes(k)));
-      focus.replaceChildren(...ids.filter(k => targets[k]).map(k => { const b = document.createElement('b'); b.textContent = labelOf(targets[k]); return b; }));
+      focus.replaceChildren(...ids.filter(k => targets[k] && labelOf(targets[k])).map(k => { const b = document.createElement('b'); b.textContent = labelOf(targets[k]); return b; }));
       if (circuit) { window.circuitFocus = ids; window.circuitRedraw && window.circuitRedraw(); }
     }
     P.clearFocus = () => { setFocus([]); if (cur >= 0 && spans[cur]) spans[cur].classList.remove('cur'); cur = -1; cap.textContent = capIdle; };
