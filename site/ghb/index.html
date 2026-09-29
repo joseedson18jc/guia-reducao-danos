@@ -982,6 +982,256 @@
   .synapse-read b{display:block;font-family:var(--display);font-size:1.4rem;color:var(--accent);line-height:1.1}
   .synapse-read span{font-size:.7rem;color:var(--text-3);font-family:var(--mono);letter-spacing:.04em}
   .wd-timeline{margin-top:var(--s-4)}
+
+  /* ============================================================
+     15. UPGRADE 2026-09 — dados, ferramentas de socorro, fórmulas
+     Paleta de séries validada (dataviz: CVD e contraste, claro/escuro).
+     ============================================================ */
+  :root{
+    --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
+    --series-muted:rgba(173,196,190,.34);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --series-1:#2a78d6; --series-2:#eb6834; --series-3:#1baf7a; --series-4:#eda100;
+      --series-muted:rgba(59,82,76,.26);
+    }
+  }
+  :root[data-theme="light"]{
+    --series-1:#2a78d6; --series-2:#eb6834; --series-3:#1baf7a; --series-4:#eda100;
+    --series-muted:rgba(59,82,76,.26);
+  }
+  :root[data-theme="dark"]{
+    --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
+    --series-muted:rgba(173,196,190,.34);
+  }
+
+  /* ---- KPI band ---- */
+  .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3);margin-top:var(--s-5)}
+  .kpi{position:relative;padding:var(--s-5) var(--s-4) var(--s-4);border:1px solid var(--border);border-radius:var(--r-lg);
+    background:linear-gradient(180deg,var(--surface-2),var(--surface));overflow:hidden}
+  .kpi::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--kpi-c,var(--accent))}
+  .kpi b{display:block;font-family:var(--display);font-size:clamp(2rem,1.5rem + 1.6vw,2.8rem);font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--text)}
+  .kpi b small{font-size:.5em;color:var(--text-3);margin-left:.15em;font-weight:600}
+  .kpi p{margin-top:.55rem;font-size:var(--f-sm);color:var(--text-2);line-height:1.45}
+  .kpi cite{display:block;margin-top:.6rem;font-style:normal;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;color:var(--text-3)}
+  .kpi.is-danger{--kpi-c:var(--danger)} .kpi.is-warn{--kpi-c:var(--warn)} .kpi.is-info{--kpi-c:var(--info)}
+  .kpi-head{display:flex;justify-content:space-between;align-items:end;gap:var(--s-4);flex-wrap:wrap}
+  .kpi-head h2{font-size:var(--f-2xl);letter-spacing:-.02em}
+  .kpi-head p{max-width:52ch;color:var(--text-2);font-size:var(--f-sm)}
+  .kpi-wrap{margin-top:var(--s-7)}
+
+  /* ---- generic data figure ---- */
+  .gv{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:clamp(1rem,2.6vw,1.6rem);position:relative;min-width:0}
+  .gv + .gv{margin-top:var(--s-4)}
+  .gv-head{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s-4);flex-wrap:wrap;margin-bottom:var(--s-4)}
+  .gv-head h3{font-family:var(--display);font-size:var(--f-lg);margin:.3rem 0 .35rem;letter-spacing:-.01em}
+  .gv-head p{font-size:var(--f-sm);color:var(--text-2);max-width:62ch}
+  .gv-foot{margin-top:var(--s-4);font-size:.78rem;color:var(--text-3);line-height:1.55}
+  .gv-foot a{color:var(--text-2)}
+  .gv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-4);margin-top:var(--s-5)}
+  .gv-grid > .gv + .gv{margin-top:0}
+  .gv-legend{display:flex;flex-wrap:wrap;gap:.35rem 1rem;margin:.2rem 0 .8rem;font-size:var(--f-xs);color:var(--text-2)}
+  .gv-legend span{display:inline-flex;align-items:center;gap:.45rem}
+  .gv-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--c)}
+  .gv-legend i.is-line{height:2.5px;width:16px;border-radius:2px}
+  .gv-legend i.is-dash{height:0;width:16px;border-top:2.5px dashed var(--c);background:none;border-radius:0}
+  .chips-row{display:flex;flex-wrap:wrap;gap:.4rem}
+  .chip-btn{font:500 var(--f-xs)/1 var(--mono);letter-spacing:.04em;padding:.5rem .8rem;border-radius:var(--r-full);
+    border:1px solid var(--border-strong);background:var(--surface-2);color:var(--text-2);cursor:pointer;transition:all .15s}
+  .chip-btn:hover{color:var(--text);border-color:var(--accent)}
+  .chip-btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+  /* horizontal bars (HTML: reflows on any width) */
+  .hb{display:grid;gap:.7rem}
+  .hb-row{display:grid;grid-template-columns:minmax(118px,.9fr) minmax(0,2.1fr);gap:.35rem .9rem;align-items:center}
+  .hb-label{font-size:var(--f-sm);color:var(--text);line-height:1.3}
+  .hb-label small{display:block;font-size:.74rem;color:var(--text-3);font-family:var(--mono);margin-top:.12rem}
+  .hb-track{position:relative;display:grid;gap:4px}
+  .hb-bar{position:relative;height:18px;display:flex;align-items:center;outline:none}
+  .hb-bar > i{display:block;height:100%;width:0;border-radius:0 4px 4px 0;background:var(--c,var(--series-1));
+    transition:width .9s cubic-bezier(.2,.8,.2,1),filter .15s}
+  .hb-bar > em{font-style:normal;font-family:var(--mono);font-size:var(--f-xs);color:var(--text);margin-left:.5rem;white-space:nowrap}
+  .hb-bar:hover > i,.hb-bar:focus-visible > i{filter:brightness(1.15)}
+  .hb-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .hb.is-grouped .hb-bar{height:14px}
+  .hb-axis{grid-column:2;display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;color:var(--text-3);border-top:1px solid var(--border);padding-top:.3rem}
+  @media (max-width:560px){
+    .hb-row{grid-template-columns:1fr}
+    .hb-axis{grid-column:1}
+  }
+
+  /* SVG line charts */
+  .lc{position:relative;width:100%}
+  .lc svg{display:block;width:100%;height:auto;overflow:visible}
+  .lc .grid line{stroke:var(--border);stroke-width:1}
+  .lc .axis text{fill:var(--text-3);font-family:var(--mono);font-size:11px}
+  .lc .series path{fill:none;stroke-width:2.25;stroke-linejoin:round;stroke-linecap:round}
+  .lc .series .area{stroke:none;opacity:.1}
+  .lc .dot{stroke:var(--surface);stroke-width:2}
+  .lc .lbl{font-family:var(--body);font-size:12px;font-weight:600;fill:var(--text)}
+  .lc .note-lbl{font-family:var(--mono);font-size:10.5px;fill:var(--text-3)}
+  .lc .xhair{stroke:var(--text-3);stroke-width:1;opacity:0;pointer-events:none}
+  .lc.is-hover .xhair{opacity:.6}
+  .gv-tip{position:absolute;z-index:5;pointer-events:none;min-width:150px;max-width:240px;padding:.55rem .7rem;border-radius:var(--r-sm);
+    background:var(--surface);border:1px solid var(--border-strong);box-shadow:var(--shadow-2);font-size:var(--f-xs);color:var(--text-2);
+    opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s}
+  .gv-tip.is-on{opacity:1;transform:none}
+  .gv-tip b{display:block;font-family:var(--mono);color:var(--text-3);font-weight:500;margin-bottom:.25rem;font-size:.72rem;letter-spacing:.04em}
+  .gv-tip div{display:flex;align-items:center;gap:.45rem;line-height:1.5}
+  .gv-tip div i{display:inline-block;width:12px;height:2.5px;border-radius:2px;background:var(--c)}
+  .gv-tip div strong{color:var(--text);font-family:var(--mono);margin-left:auto;padding-left:.6rem}
+  .gv-table{margin-top:var(--s-3)}
+  .gv-table summary{font-family:var(--mono);font-size:.74rem;color:var(--text-3);cursor:pointer;padding:.3rem 0;border:0;background:none}
+  .gv-table table{width:100%;border-collapse:collapse;margin-top:.4rem;font-size:var(--f-xs)}
+  .gv-table th,.gv-table td{padding:.35rem .5rem;border-bottom:1px solid var(--border);text-align:left}
+  .gv-table th{color:var(--text-3);font-weight:600;font-family:var(--mono);font-size:.72rem}
+  .gv-table td{color:var(--text-2);font-variant-numeric:tabular-nums}
+  .gv-table .tbl-scroll{overflow-x:auto}
+
+  /* ---- first-aid tools ---- */
+  .aid-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:var(--s-4);margin-top:var(--s-6)}
+  .tool{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface);padding:clamp(1.1rem,2.8vw,1.6rem);position:relative;overflow:hidden}
+  .tool.is-danger{border-color:var(--danger-border);background:linear-gradient(160deg,var(--danger-bg),transparent 55%),var(--surface)}
+  .tool h3{font-family:var(--display);font-size:var(--f-lg);margin:.35rem 0 .45rem}
+  .tool > p{font-size:var(--f-sm);color:var(--text-2)}
+  .flow-steps{display:flex;gap:.35rem;margin:var(--s-4) 0}
+  .flow-steps i{flex:1;height:4px;border-radius:4px;background:var(--border)}
+  .flow-steps i.is-done{background:var(--accent)} .flow-steps i.is-now{background:var(--warn)}
+  .flow-q{font-family:var(--display);font-size:var(--f-xl);line-height:1.2;letter-spacing:-.02em;margin:.2rem 0 .5rem}
+  .flow-hint{font-size:var(--f-sm);color:var(--text-2)}
+  .flow-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:var(--s-4)}
+  .flow-actions .btn{min-width:8rem;justify-content:center}
+  .flow-out{margin-top:var(--s-4);padding:var(--s-4);border-radius:var(--r);border:1px solid var(--border-strong);background:var(--surface-2)}
+  .flow-out.is-danger{border-color:var(--danger-border);background:var(--danger-bg)}
+  .flow-out.is-warn{border-color:var(--warn-border);background:var(--warn-bg)}
+  .flow-out h4{font-family:var(--display);font-size:var(--f-lg);margin-bottom:.4rem}
+  .flow-out ol{margin:.5rem 0 0 1.15rem;display:grid;gap:.3rem;font-size:var(--f-sm);color:var(--text-2)}
+  .flow-out .btn{margin-top:var(--s-4)}
+  .flow-restart{background:none;border:0;color:var(--text-3);font:500 var(--f-xs) var(--mono);cursor:pointer;margin-top:var(--s-3);text-decoration:underline;text-underline-offset:3px}
+  .flow-restart:hover{color:var(--text)}
+
+  .breath-core{display:grid;grid-template-columns:auto 1fr;gap:var(--s-4);align-items:center;margin-top:var(--s-4)}
+  .breath-ring{position:relative;width:132px;height:132px}
+  .breath-ring svg{width:132px;height:132px;transform:rotate(-90deg)}
+  .breath-ring circle{fill:none;stroke-width:8}
+  .breath-ring .trk{stroke:var(--border)}
+  .breath-ring .prg{stroke:var(--accent);stroke-linecap:round;transition:stroke-dashoffset .25s linear}
+  .breath-ring .ctr{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+  .breath-ring .ctr b{display:block;font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--text)}
+  .breath-ring .ctr span{font-family:var(--mono);font-size:.7rem;color:var(--text-3)}
+  .breath-tap{width:100%;min-height:64px;border-radius:var(--r);border:2px dashed var(--border-strong);background:var(--surface-2);
+    color:var(--text);font:600 var(--f-md) var(--body);cursor:pointer;transition:transform .08s,background .15s}
+  .breath-tap:active{transform:scale(.98)}
+  .breath-tap.is-live{border-style:solid;border-color:var(--accent);background:var(--accent-bg)}
+  .breath-tap.pulse{animation:bpulse .35s ease}
+  @keyframes bpulse{0%{box-shadow:0 0 0 0 var(--accent-bg)}100%{box-shadow:0 0 0 14px transparent}}
+  .breath-res{margin-top:var(--s-4);padding:var(--s-4);border-radius:var(--r);border:1px solid var(--border);background:var(--surface-2);font-size:var(--f-sm);color:var(--text-2)}
+  .breath-res.is-danger{border-color:var(--danger-border);background:var(--danger-bg)}
+  .breath-res.is-ok{border-color:var(--border-strong)}
+  .breath-res strong{color:var(--text)}
+  .eqline{font-family:var(--mono);font-size:var(--f-xs);color:var(--text-3);margin-top:.5rem}
+
+  /* recovery position */
+  .rp{margin-top:var(--s-6)}
+  .rp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3);margin-top:var(--s-4);counter-reset:rp}
+  .rp-card{border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface);padding:var(--s-3);counter-increment:rp;display:flex;flex-direction:column}
+  .rp-card svg{width:100%;height:auto;display:block;border-radius:var(--r);background:var(--bg-2)}
+  .rp-card h4{font-family:var(--body);font-size:var(--f-sm);font-weight:700;margin:.7rem 0 .25rem;display:flex;gap:.5rem;align-items:baseline}
+  .rp-card h4::before{content:counter(rp);font-family:var(--mono);font-size:.72rem;color:var(--accent-ink);background:var(--accent);border-radius:var(--r-full);
+    min-width:1.5rem;height:1.5rem;display:inline-grid;place-items:center}
+  .rp-card p{font-size:var(--f-xs);color:var(--text-2);line-height:1.5}
+  .rp svg .body{fill:var(--surface-3);stroke:var(--text-3);stroke-width:1.6}
+  .rp svg .limb{stroke:var(--text-3);stroke-width:9;stroke-linecap:round;fill:none}
+  .rp svg .limb-in{stroke:var(--surface-3);stroke-width:6;stroke-linecap:round;fill:none}
+  .rp svg .hi{stroke:var(--accent)}
+  .rp svg .hi-in{stroke:var(--accent-bg)}
+  .rp svg .arrow{stroke:var(--warn);stroke-width:2.2;fill:none;stroke-linecap:round}
+  .rp svg .arrowhead{fill:var(--warn)}
+  .rp svg .floor{stroke:var(--border-strong);stroke-width:1.5;stroke-dasharray:4 5}
+  .rp svg text{font-family:var(--mono);font-size:10px;fill:var(--text-3)}
+
+  /* ---- formula / MathML ---- */
+  .eq{margin:var(--s-4) 0;padding:var(--s-4) var(--s-5);border:1px solid var(--border-strong);border-radius:var(--r);background:var(--bg-2);
+    display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-4);justify-content:space-between}
+  .eq math{font-size:1.35rem;color:var(--text)}
+  .eq .eq-legend{font-size:var(--f-xs);color:var(--text-2);display:grid;gap:.2rem;max-width:34ch}
+  .eq .eq-legend b{font-family:var(--mono);color:var(--accent)}
+  .mm-read{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-top:var(--s-4)}
+  .mm-read div{padding:.8rem .9rem;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--surface-2)}
+  .mm-read b{display:block;font-family:var(--display);font-size:1.5rem;color:var(--text);line-height:1.1}
+  .mm-read span{font-size:.76rem;color:var(--text-3);font-family:var(--mono)}
+  .range-row{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:var(--s-4);font-family:var(--mono);font-size:var(--f-xs);color:var(--text-2)}
+  .range-row input{flex:1;min-width:180px;accent-color:var(--accent)}
+  .range-row output{color:var(--accent);font-weight:600;min-width:4ch}
+
+  /* ---- mobile-friendly matrix + withdrawal phases ---- */
+  .mx-list{display:none;gap:.6rem;margin-top:var(--s-4)}
+  .mx-item{border:1px solid var(--border);border-radius:var(--r);padding:.8rem .9rem;background:var(--surface-2)}
+  .mx-item b{display:block;font-size:var(--f-sm);margin-bottom:.5rem}
+  .mx-cells{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.35rem}
+  .mx-cells span{font-family:var(--mono);font-size:.72rem;padding:.35rem .5rem;border-radius:6px;color:var(--text);border:1px solid var(--border)}
+  .mx-cells .r1{background:var(--warn-bg);border-color:var(--warn-border)}
+  .mx-cells .r2{background:var(--danger-bg);border-color:var(--danger-border)}
+  .mx-cells .r3{background:color-mix(in srgb,var(--danger) 26%,transparent);border-color:var(--danger)}
+  @media (max-width:640px){ .mx-list{display:grid} .mx-svg{display:none} }
+  .wd-phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem;margin-top:var(--s-4)}
+  .wd-phase{border:1px solid var(--border);border-radius:var(--r);padding:.85rem .9rem;background:var(--surface)}
+  .wd-phase .when{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--warn)}
+  .wd-phase.is-danger{border-color:var(--danger-border)} .wd-phase.is-danger .when{color:var(--danger)}
+  .wd-phase b{display:block;margin:.3rem 0 .2rem;font-size:var(--f-sm)}
+  .wd-phase p{font-size:var(--f-xs);color:var(--text-2);line-height:1.5}
+  .wd-phase cite{display:block;margin-top:.4rem;font-style:normal;font-family:var(--mono);font-size:.72rem;color:var(--text-3)}
+
+  /* ---- regulatory timeline ---- */
+  .tl2{list-style:none;margin:var(--s-5) 0 0;padding:0;position:relative}
+  .tl2::before{content:"";position:absolute;left:5.6rem;top:.4rem;bottom:.4rem;width:2px;background:linear-gradient(var(--accent),var(--info))}
+  .tl2 li{display:grid;grid-template-columns:4.6rem 1fr;gap:2rem;padding:.55rem 0;position:relative}
+  .tl2 li::after{content:"";position:absolute;left:calc(5.6rem - 5px);top:1.1rem;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2.5px solid var(--dot,var(--accent))}
+  .tl2 li[data-k="br"]{--dot:var(--series-4)} .tl2 li[data-k="int"]{--dot:var(--info)} .tl2 li[data-k="med"]{--dot:var(--accent)}
+  .tl2 li[hidden]{display:none}
+  .tl2 .y{font-family:var(--mono);font-size:var(--f-sm);color:var(--text-2);text-align:right;padding-top:.45rem}
+  .tl2 .c{border:1px solid var(--border);border-radius:var(--r);background:var(--surface);padding:.75rem .95rem}
+  .tl2 .c b{display:block;font-size:var(--f-sm);color:var(--text);margin-bottom:.15rem}
+  .tl2 .c p{font-size:var(--f-xs);color:var(--text-2);line-height:1.55}
+  .tl2 .c .k{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:.25rem}
+  @media (max-width:640px){
+    .tl2::before{left:.45rem}
+    .tl2 li{grid-template-columns:1fr;gap:.25rem;padding-left:1.5rem}
+    .tl2 li::after{left:0}
+    .tl2 .y{text-align:left;padding-top:0}
+  }
+
+  /* ---- panorama ---- */
+  .br-box{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:var(--s-4);margin-top:var(--s-4)}
+  .stat-big{font-family:var(--display);font-size:clamp(2.4rem,2rem + 2vw,3.4rem);font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--text)}
+  .stat-cap{font-size:var(--f-sm);color:var(--text-2);margin-top:.4rem}
+
+  @media (max-width:1000px){
+    .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .aid-grid,.gv-grid,.br-box{grid-template-columns:1fr}
+    .rp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .wd-phases{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:640px){
+    .wd-timeline{display:none}
+    .mm-read{grid-template-columns:1fr}
+    .breath-core{grid-template-columns:1fr;justify-items:center}
+    .flow-actions .btn{flex:1}
+  }
+  @media (max-width:420px){
+    .kpis{grid-template-columns:1fr}
+    .wd-phases{grid-template-columns:1fr}
+  }
+  .withdrawal .gv p,.withdrawal .gv-head p{font-size:var(--f-sm);color:var(--text-2)}
+  .withdrawal .gv .gv-foot{font-size:.78rem;color:var(--text-3)}
+  .withdrawal .gv h3{font-size:var(--f-lg);color:var(--text)}
+  @media (prefers-reduced-motion:reduce){ .hb-bar > i{transition:none} .breath-tap.pulse{animation:none} }
+  @media print{
+    .flow-actions,.breath-tap,.breath-ring,.chips-row,.gv-tip,.range-row{display:none!important}
+    .gv,.tool,.rp-card,.kpi,.wd-phase,.tl2 .c{break-inside:avoid;box-shadow:none}
+    .mx-list{display:grid!important} .gv-table[open],.gv-table{display:block}
+  }
   </style>
 </head>
 <body>
@@ -1014,6 +1264,7 @@
         <a href="#cinetica">Absorção e meia-vida</a>
         <a href="#butanodiol">1,4-BD</a>
         <a href="#riscos">Misturas</a>
+        <a href="#dados">Dados</a>
         <a class="nav-home" href="/">← Página principal</a>
       </nav>
       <div class="header-actions">
@@ -1038,6 +1289,8 @@
       <a href="#abstinencia">Abstinência</a>
       <a href="#consentimento">Consentimento</a>
       <a href="#mitos">Mitos</a>
+      <a href="#dados">Dados</a>
+      <a href="#regulacao">Regulação</a>
       <a href="#fontes">Fontes</a>
       <a href="#ajuda">Ajuda</a>
       <a class="nav-home" href="/">← Página principal</a>
@@ -1114,6 +1367,25 @@
       </section>
     </div>
 
+    <!-- ===================== EM NÚMEROS (2026-09) ===================== -->
+    <div class="wrap kpi-wrap">
+      <section class="reveal" aria-labelledby="kpi-title">
+        <div class="kpi-head">
+          <div>
+            <p class="kicker">Em números</p>
+            <h2 id="kpi-title">O que os dados de emergência mostram</h2>
+          </div>
+          <p>Quatro números conferidos na fonte original. Nenhum deles é uma dose: todos descrevem risco, desfecho ou tempo.</p>
+        </div>
+        <div class="kpis">
+          <div class="kpi is-danger"><b><span data-count="23">23</span><small>%</small></b><p>das emergências com GHB/GBL foram para <strong>cuidados críticos</strong> — a maior proporção entre as drogas monitoradas na Europa.</p><cite>Euro-DEN Plus 2024 · EUDA</cite></div>
+          <div class="kpi is-warn"><b><span data-count="55">55</span><small>%</small></b><p>foram para cuidados críticos quando havia <strong>álcool junto</strong>, contra 22% sem álcool.</p><cite>Galicia et al., Toxicol Lett 2019 · n = 609</cite></div>
+          <div class="kpi is-info"><b>×3,7</b><p>foi o aumento dos níveis no sangue quando a quantidade diária <strong>dobrou</strong>: a eliminação satura.</p><cite>Bula do oxibato de sódio · FDA</cite></div>
+          <div class="kpi"><b>1–6<small>h</small></b><p>depois do último uso, em quem tem dependência, a <strong>abstinência</strong> pode começar.</p><cite>Dyer et al., Ann Emerg Med 2001</cite></div>
+        </div>
+      </section>
+    </div>
+
     <!-- ===================== ÍNDICE ===================== -->
     <div class="wrap">
       <nav class="index reveal" aria-labelledby="index-title">
@@ -1134,7 +1406,9 @@
           <a class="index-item" href="#abstinencia"><span class="index-num">§7</span> <span class="index-body"><b>Dependência</b> <small>Abstinência pode ser uma emergência médica</small></span></a>
           <a class="index-item" href="#consentimento"><span class="index-num">§8</span> <span class="index-body"><b>Segurança</b> <small>Consciência alterada não é consentimento</small></span></a>
           <a class="index-item" href="#mitos"><span class="index-num">§9</span> <span class="index-body"><b>Perguntas diretas</b> <small>Mitos que podem custar tempo</small></span></a>
-          <a class="index-item" href="#fontes"><span class="index-num">§10</span> <span class="index-body"><b>Referências</b> <small>Fontes para continuar lendo</small></span></a>
+          <a class="index-item" href="#dados"><span class="index-num">§10</span> <span class="index-body"><b>Panorama em dados</b> <small>Pronto-socorro, óbitos, tratamento e Brasil</small></span></a>
+          <a class="index-item" href="#regulacao"><span class="index-num">§11</span> <span class="index-body"><b>Contexto</b> <small>Uso médico, controle internacional e situação no Brasil</small></span></a>
+          <a class="index-item" href="#fontes"><span class="index-num">§12</span> <span class="index-body"><b>Referências</b> <small>Fontes para continuar lendo</small></span></a>
         </div>
         <p class="index-foot"><a href="#ajuda">Ajuda no Brasil</a> — SAMU 192, Disque-Intoxicação 0800 722 6001, Disque Saúde 136 e canais para violência.</p>
       </nav>
@@ -1189,6 +1463,105 @@
           <article class="step"><div><h3>Fique junto e monitore</h3><p>Observe continuamente a respiração e a resposta. Não deixe a pessoa sozinha, mesmo que pareça melhorar.</p></div></article>
           <article class="step"><div><h3>Entregue informações úteis</h3><p>Guarde a embalagem ou o frasco, se houver, e conte à equipe o que sabe. Informação honesta ajuda o atendimento.</p></div></article>
         </div>
+
+
+        <!-- ===== ferramentas de socorro (2026-09) ===== -->
+        <div class="aid-grid reveal">
+          <article class="tool is-danger" id="decisao" aria-labelledby="flow-title">
+            <p class="kicker is-danger">Ferramenta · decisão rápida</p>
+            <h3 id="flow-title">O que fazer agora?</h3>
+            <p>Responda olhando para a pessoa. Na dúvida, ligue 192 — o atendente orienta você pelo telefone.</p>
+            <div class="flow-steps" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="flow-stage" id="flowStage" aria-live="polite">
+              <p class="flow-q">Não responde, ou não respira normalmente?</p>
+              <p class="flow-hint">Ligue 192. Se não respira normalmente, comece a RCP. Se respira, coloque de lado e fique junto.</p>
+            </div>
+          </article>
+
+          <article class="tool" id="respiracao" aria-labelledby="breath-title">
+            <p class="kicker">Ferramenta · enquanto o socorro não chega</p>
+            <h3 id="breath-title">Contador de respiração</h3>
+            <p>Olhe o peito subir e descer. Toque em “Iniciar” e depois toque uma vez a cada respiração, durante 30 segundos.</p>
+            <div class="breath-core">
+              <div class="breath-ring" aria-hidden="true">
+                <svg viewBox="0 0 132 132"><circle class="trk" cx="66" cy="66" r="58"/><circle class="prg" id="brRing" cx="66" cy="66" r="58" stroke-dasharray="364.4" stroke-dashoffset="364.4"/></svg>
+                <div class="ctr"><div><b id="brCount">0</b><span id="brTime">30 s</span></div></div>
+              </div>
+              <div style="width:100%">
+                <button class="breath-tap" id="brTap" type="button">Iniciar contagem</button>
+                <p class="eqline">FR = respirações contadas × (60 ÷ segundos)</p>
+              </div>
+            </div>
+            <div class="breath-res" id="brRes" aria-live="polite">Referência para adultos em repouso: cerca de <strong>12 a 20 respirações por minuto</strong>. Pausas longas, ronco, gorgolejo ou menos de 10 por minuto são sinais de emergência.</div>
+          </article>
+        </div>
+
+        <!-- ===== posição lateral de segurança (ilustrada) ===== -->
+        <section class="rp reveal" aria-labelledby="rp-title">
+          <div class="subhead">
+            <p class="kicker">Passo a passo ilustrado</p>
+            <h3 id="rp-title">Posição lateral de segurança</h3>
+            <p>Para quem está inconsciente <strong>e respirando</strong>. Mantém a via aérea aberta e deixa o vômito escorrer para fora da boca. Se a respiração parar ou ficar anormal, vire a pessoa de costas e comece a RCP.</p>
+          </div>
+          <div class="rp-grid">
+            <figure class="rp-card">
+              <svg viewBox="0 0 200 160" role="img" aria-label="Vista de cima: pessoa deitada de costas; o braço do lado de quem socorre está em ângulo reto, com a palma para cima">
+                <line class="floor" x1="10" y1="146" x2="190" y2="146"/><text x="100" y="157" text-anchor="middle">você está deste lado</text>
+                <path class="limb" d="M124 64 L186 60"/><path class="limb-in" d="M124 64 L186 60"/>
+                <path class="limb" d="M124 82 L186 86"/><path class="limb-in" d="M124 82 L186 86"/>
+                <path class="limb" d="M58 56 L112 42"/><path class="limb-in" d="M58 56 L112 42"/>
+                <path class="limb hi" d="M58 90 L58 126 L34 126"/><path class="limb-in hi-in" d="M58 90 L58 126 L34 126"/>
+                <rect class="body" x="48" y="54" width="76" height="38" rx="17"/>
+                <circle class="body" cx="32" cy="73" r="14"/>
+              </svg>
+              <h4>Braço mais próximo em ângulo reto</h4>
+              <p>Ajoelhe-se ao lado. Dobre o braço da pessoa que está do seu lado em ângulo reto, com a palma para cima.</p>
+            </figure>
+            <figure class="rp-card">
+              <svg viewBox="0 0 200 160" role="img" aria-label="O outro braço cruza o peito e o dorso da mão fica apoiado na bochecha do lado de quem socorre">
+                <line class="floor" x1="10" y1="146" x2="190" y2="146"/><text x="100" y="157" text-anchor="middle">você está deste lado</text>
+                <path class="limb" d="M124 64 L186 60"/><path class="limb-in" d="M124 64 L186 60"/>
+                <path class="limb" d="M124 82 L186 86"/><path class="limb-in" d="M124 82 L186 86"/>
+                <path class="limb" d="M58 90 L58 126 L34 126"/><path class="limb-in" d="M58 90 L58 126 L34 126"/>
+                <rect class="body" x="48" y="54" width="76" height="38" rx="17"/>
+                <circle class="body" cx="32" cy="73" r="14"/>
+                <path class="limb hi" d="M58 56 L94 78 L42 86"/><path class="limb-in hi-in" d="M58 56 L94 78 L42 86"/>
+              </svg>
+              <h4>A outra mão no rosto</h4>
+              <p>Traga o outro braço por cima do peito e apoie o dorso da mão na bochecha do lado de você. Segure a mão ali.</p>
+            </figure>
+            <figure class="rp-card">
+              <svg viewBox="0 0 200 160" role="img" aria-label="O joelho mais distante é dobrado para cima, com o pé apoiado no chão; uma seta indica puxar esse joelho na direção de quem socorre">
+                <line class="floor" x1="10" y1="146" x2="190" y2="146"/><text x="100" y="157" text-anchor="middle">você está deste lado</text>
+                <path class="limb" d="M124 82 L186 86"/><path class="limb-in" d="M124 82 L186 86"/>
+                <path class="limb" d="M58 90 L58 126 L34 126"/><path class="limb-in" d="M58 90 L58 126 L34 126"/>
+                <path class="limb hi" d="M124 64 L150 40 L168 64"/><path class="limb-in hi-in" d="M124 64 L150 40 L168 64"/>
+                <rect class="body" x="48" y="54" width="76" height="38" rx="17"/>
+                <circle class="body" cx="32" cy="73" r="14"/>
+                <path class="limb" d="M58 56 L94 78 L42 86"/><path class="limb-in" d="M58 56 L94 78 L42 86"/>
+                <path class="arrow" d="M160 34 C196 56 194 112 158 128"/><path class="arrowhead" d="M152 131 L163 122 L164 134 Z"/>
+                <text x="192" y="98" text-anchor="end">puxe</text>
+              </svg>
+              <h4>Dobre o joelho de lá</h4>
+              <p>Com a outra mão, levante o joelho mais distante até o pé ficar apoiado no chão.</p>
+            </figure>
+            <figure class="rp-card">
+              <svg viewBox="0 0 200 160" role="img" aria-label="Pessoa de lado, com o rosto virado para quem socorre: perna de cima dobrada em ângulo reto para a frente e mão de cima apoiando a bochecha">
+                <line class="floor" x1="10" y1="146" x2="190" y2="146"/><text x="100" y="157" text-anchor="middle">você está deste lado</text>
+                <text x="100" y="18" text-anchor="middle">de lado · rosto para você</text>
+                <path class="limb" d="M122 68 L188 64"/><path class="limb-in" d="M122 68 L188 64"/>
+                <rect class="body" x="46" y="58" width="78" height="26" rx="12"/>
+                <circle class="body" cx="30" cy="70" r="13"/>
+                <path class="body" d="M22 79 L16 89 L29 83 Z"/>
+                <path class="limb hi" d="M122 80 L140 114 L178 112"/><path class="limb-in hi-in" d="M122 80 L140 114 L178 112"/>
+                <path class="limb hi" d="M62 82 L66 106 L36 92"/><path class="limb-in hi-in" d="M62 82 L66 106 L36 92"/>
+              </svg>
+              <h4>Role e abra a via aérea</h4>
+              <p>Puxe o joelho dobrado para rolar a pessoa na sua direção. Deixe o joelho de cima em ângulo reto e a mão sob a bochecha; incline a cabeça levemente para trás. Confira a respiração a cada minuto até o socorro chegar.</p>
+            </figure>
+          </div>
+          <p class="gv-foot">Sequência de primeiros socorros usada por serviços como o NHS e a Cruz Vermelha. Ilustrações esquemáticas, vistas de cima.</p>
+        </section>
 
         <div class="dont-panel reveal">
           <div class="dont-head">
@@ -1471,6 +1844,54 @@
           </div>
         </div>
 
+
+        <!-- ===== cinética não linear (2026-09) ===== -->
+        <div id="naolinear">
+          <div class="subhead reveal">
+            <p class="kicker is-info">Cinética não linear · fórmula</p>
+            <h3>Por que o dobro <em>não é</em> o dobro</h3>
+            <p>A eliminação do GHB depende de enzimas com capacidade limitada. Quando elas se aproximam da saturação, o corpo passa a eliminar uma quantidade quase fixa por unidade de tempo, e a exposição cresce mais que proporcionalmente à quantidade.</p>
+          </div>
+          <div class="gv-grid reveal">
+            <figure class="gv" id="mmFig">
+              <div class="gv-head"><div><p class="kicker">Equação de Michaelis–Menten</p><h3>Velocidade de eliminação × concentração</h3></div></div>
+              <div class="eq">
+                <math display="block" aria-label="v igual a V max vezes C, dividido por K m mais C"><mi>v</mi><mo>=</mo><mfrac><mrow><msub><mi>V</mi><mi>max</mi></msub><mo>·</mo><mi>C</mi></mrow><mrow><msub><mi>K</mi><mi>m</mi></msub><mo>+</mo><mi>C</mi></mrow></mfrac></math>
+                <div class="eq-legend"><span><b>v</b> — velocidade de eliminação</span><span><b>V<sub>max</sub></b> — capacidade máxima das enzimas</span><span><b>K<sub>m</sub></b> — concentração em que v chega à metade de V<sub>max</sub></span><span><b>C</b> — concentração no sangue</span></div>
+              </div>
+              <div class="lc" id="mmRateChart" data-label="Curva de Michaelis-Menten: a velocidade de eliminação sobe com a concentração e se aproxima de um teto"></div>
+              <div class="range-row"><label for="mmC">Concentração relativa (C ÷ K<sub>m</sub>)</label><input type="range" id="mmC" min="0.1" max="10" step="0.1" value="1"><output id="mmCOut" for="mmC">1,0</output></div>
+              <div class="mm-read" aria-live="polite">
+                <div><b id="mmV">50%</b><span>da capacidade máxima em uso</span></div>
+                <div><b id="mmT">×2,0</b><span>meia-vida aparente vs. concentração baixa</span></div>
+                <div><b id="mmOrder">transição</b><span>regime de eliminação</span></div>
+              </div>
+              <p class="gv-foot">Meia-vida aparente = ln 2 × (K<sub>m</sub> + C) ÷ V<sub>max</sub>, por unidade de volume: ela cresce junto com a concentração. Com C muito menor que K<sub>m</sub>, a eliminação é de primeira ordem (proporcional); com C muito maior, aproxima-se da ordem zero (quantidade fixa por hora). Base: Palatini et al., <i>Eur J Clin Pharmacol</i> 1993; Busardò &amp; Jones, <i>Curr Neuropharmacol</i> 2015.</p>
+            </figure>
+            <figure class="gv" id="mmSimFig">
+              <div class="gv-head"><div><p class="kicker">Modelo didático · unidades relativas</p><h3>Dobrar a quantidade: o esperado e o observado</h3><p>Simulação com eliminação saturável, calibrada apenas para reproduzir a razão descrita em bula. O eixo do tempo não representa horas reais.</p></div></div>
+              <div class="gv-legend" id="mmLegend"></div>
+              <div class="lc" id="mmCurveChart" data-label="Três curvas simuladas: referência, o dobro se a eliminação fosse proporcional, e o dobro com eliminação saturável, mais alta e mais longa"></div>
+              <p class="kicker" style="margin-top:var(--s-4)">Exposição total (área sob a curva), relativa à referência</p>
+              <div id="mmAucBars" style="margin-top:.6rem"></div>
+              <p class="gv-foot">Na bula do oxibato de sódio (FDA, 2025), dobrar a quantidade diária total elevou os níveis no sangue cerca de <strong>3,7 vezes</strong>, e não 2. O modelo ilustra o mecanismo; ele não prevê o que acontece com uma pessoa.</p>
+            </figure>
+          </div>
+          <div class="gv-grid reveal">
+            <figure class="gv" id="liverFig">
+              <div class="gv-head"><div><p class="kicker">Fígado · bula (FDA)</p><h3>Quem elimina mais devagar</h3><p>Meia-vida média do GHB em pessoas com função hepática normal e com cirrose. Na cirrose, a exposição total dobrou.</p></div></div>
+              <div id="liverBars"></div>
+              <p class="gv-foot">16 pacientes com cirrose (8 Child A, sem ascite; 8 Child C, com ascite) e 8 controles. DailyMed, bula do Xyrem, seção 12.3.</p>
+            </figure>
+            <figure class="gv" id="foodFig">
+              <div class="gv-head"><div><p class="kicker">Alimentação · bula (FDA)</p><h3>Refeição gordurosa muda a curva</h3><p>Valores após refeição rica em gordura, em relação ao jejum (= 100%).</p></div></div>
+              <div id="foodBars"></div>
+              <div class="mm-read" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div><b>0,75 h</b><span>tempo médio até o pico, em jejum</span></div><div><b>2 h</b><span>tempo até o pico, após refeição gordurosa</span></div></div>
+              <p class="gv-foot"><strong>Pico mais tardio não significa menos risco:</strong> o efeito pode chegar até cerca de 2 h depois e somar-se ao de novos usos. A curva real depende de formulação, alimento, fígado e outras substâncias. DailyMed, bula do Xyrem, seção 12.3.</p>
+            </figure>
+          </div>
+        </div>
+
         <!-- variação -->
         <div id="variacao">
           <div class="subhead reveal">
@@ -1501,6 +1922,24 @@
               <p class="note note-warn mt-5"><strong>O tamanho da incerteza importa.</strong> No estudo-piloto, quatro participantes com o haplótipo variante tiveram depuração aparente média menor que quatro participantes sem a variante, mas com enorme dispersão e P=0,061. Isso gera uma hipótese — não um teste genético de risco.</p>
             </div>
           </div>
+          <!-- ===== ADH comprovada em humanos (2026-09) ===== -->
+          <div class="gv-grid reveal">
+            <figure class="gv" id="fomepFig">
+              <div class="gv-head"><div><p class="kicker is-info">Ensaio duplo-cego · 6 voluntários</p><h3>Bloquear a ADH quase impede o 1,4-BD de virar GHB</h3><p>Pico no sangue depois do 1,4-butanodiol, com placebo ou com fomepizol (inibidor da álcool desidrogenase), em µg/mL.</p></div></div>
+              <div class="gv-legend" id="fomepLegend"></div>
+              <div id="fomepBars"></div>
+              <p class="gv-foot">Liakoni et al., <i>Clin Pharmacol Ther</i> 2019. Com o bloqueio, a meia-vida do GHB formado passou de 35 para 85 min. Fomepizol é um medicamento hospitalar e seu valor clínico nessa intoxicação é incerto, porque a conversão é rápida. Não existe versão caseira desse bloqueio.</p>
+            </figure>
+            <figure class="gv">
+              <div class="gv-head"><div><p class="kicker is-info">GBL → GHB</p><h3>A lactona abre no sangue</h3><p>A GBL é hidrolisada por lactonases do sangue e dos tecidos, entre elas a paraoxonase PON1. O dado humano controlado é mínimo.</p></div></div>
+              <div class="mm-read" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+                <div><b>~15 min</b><span>primeiros efeitos no SNC, em 2 voluntários</span></div>
+                <div><b>20 min</b><span>pico de GHB no soro, nos mesmos 2 voluntários</span></div>
+              </div>
+              <p class="note note-warn mt-5"><strong>Evidência frágil.</strong> O único estudo humano controlado com GBL teve 2 participantes (Schröck et al., <i>Drug Test Anal</i> 2014). Os dados de conversão rápida vêm também de estudos em animais. A OMS descreve a GBL como “rapidamente convertida em GHB por lactonases do sangue” (ECDD, 2014).</p>
+            </figure>
+          </div>
+
         </div>
 
         <!-- detalhes médicos -->
@@ -1538,10 +1977,27 @@
           <article class="card is-danger"><span class="card-eyebrow">Falsa sensação de controle</span><div class="card-title-row"><h3>Estimulantes</h3><span class="tag tag-warn">Não protegem</span></div><p>Podem mascarar a sonolência por um tempo, mas não anulam a toxicidade nem impedem colapso quando o estimulante perde efeito.</p></article>
         </div>
 
+
+        <!-- ===== evidência de pronto-socorro sobre álcool (2026-09) ===== -->
+        <div class="gv-grid reveal">
+          <figure class="gv" id="alcFig">
+            <div class="gv-head"><div><p class="kicker is-danger">Euro-DEN · 609 atendimentos</p><h3>GHB/GBL sozinho × com álcool</h3><p>Pacientes atendidos em prontos-socorros europeus por intoxicação com GHB/GBL, separados pelo uso de álcool junto.</p></div></div>
+            <div class="gv-legend" id="alcLegend"></div>
+            <div id="alcBars"></div>
+            <p class="gv-foot">Galicia et al., <i>Toxicology Letters</i> 2019 (183 sem álcool × 426 com álcool). Diferenças estatisticamente significativas em todas as linhas mostradas.</p>
+          </figure>
+          <figure class="gv" id="depFig">
+            <div class="gv-head"><div><p class="kicker is-danger">Euro-DEN · 7.644 atendimentos</p><h3>Depressores com e sem etanol</h3><p>Atendimentos por drogas depressoras (GHB/GBL, opioides, benzodiazepínicos e outras). O coma profundo (Glasgow ≤ 8) foi mais comum quando o álcool se juntou ao GHB/GBL ou a opioides.</p></div></div>
+            <div class="gv-legend" id="depLegend"></div>
+            <div id="depBars"></div>
+            <p class="gv-foot">Heier et al., <i>Eur J Emerg Med</i> 2022 (etanol em 49,9% dos casos; p &lt; 0,001 em todas as linhas). Em laboratório, com 16 voluntários saudáveis, a combinação GHB + álcool causou 6 episódios de vômito e a maior queda de saturação de oxigênio (Thai et al., <i>J Clin Psychopharmacol</i> 2006).</p>
+          </figure>
+        </div>
+
         <figure class="chart-card reveal mt-5" aria-label="Matriz de risco das combinações com GHB: quanto mais escuro e vermelho, maior o perigo">
           <figcaption><span class="kicker is-danger">Matriz de interações · mapa do risco</span><h3>Cada cruzamento escurece o quadro</h3>
           <p>Linhas: o que pode estar no sistema. Colunas: consequências. O mapa soma evidências clínicas publicadas — não é uma probabilidade individual.</p></figcaption>
-          <div style="overflow-x:auto"><svg viewBox="0 0 560 300" style="min-width:560px;width:100%;height:auto" role="img">
+          <div class="mx-svg" style="overflow-x:auto"><svg viewBox="0 0 560 300" style="min-width:560px;width:100%;height:auto" role="img">
             <g font-family="var(--mono)" font-size="11">
               <!-- columns -->
               <text x="190" y="24" fill="var(--text-3)" text-anchor="middle" font-size="10">vômito/&#8203;aspiração</text>
@@ -1588,6 +2044,15 @@
               <text x="8" y="285" fill="var(--text-3)" font-size="10">Intensidade qualitativa a partir de relatos clínicos (EUDA/COVISA). Não é cálculo de probabilidade individual.</text>
             </g>
           </svg></div>
+
+          <div class="mx-list" aria-label="Matriz de interações em lista">
+            <div class="mx-item"><b>GHB sozinho</b><div class="mx-cells"><span class="r2">vômito/aspiração · elevado</span><span class="r2">coma · elevado</span><span class="r2">depressão respiratória · elevado</span><span class="r2">morte · elevado</span></div></div>
+            <div class="mx-item"><b>+ álcool</b><div class="mx-cells"><span class="r3">vômito/aspiração · extremo</span><span class="r3">coma · extremo</span><span class="r3">depressão respiratória · extremo</span><span class="r3">morte · extremo</span></div></div>
+            <div class="mx-item"><b>+ benzodiazepínicos</b><div class="mx-cells"><span class="r2">vômito/aspiração · elevado</span><span class="r3">coma · extremo</span><span class="r3">depressão respiratória · extremo</span><span class="r3">morte · extremo</span></div></div>
+            <div class="mx-item"><b>+ opioides</b><div class="mx-cells"><span class="r2">vômito/aspiração · elevado</span><span class="r3">coma · extremo</span><span class="r3">depressão respiratória · extremo</span><span class="r3">morte · extremo</span></div></div>
+            <div class="mx-item"><b>+ estimulantes</b><div class="mx-cells"><span class="r1">vômito/aspiração · atenção</span><span class="r2">coma · elevado</span><span class="r2">depressão respiratória · elevado</span><span class="r2">morte · elevado</span></div></div>
+            <p class="gv-foot">Intensidade qualitativa a partir de relatos clínicos (EUDA/COVISA). Não é cálculo de probabilidade individual.</p>
+          </div>
         </figure>
       </div>
     </section>
@@ -1605,7 +2070,7 @@
           <p>Ansiedade intensa, tremor, insônia, suor, vômitos e aumento da pressão podem progredir para confusão, alucinações, psicose, delirium e convulsões. Procure avaliação médica urgente; o manejo deve ser supervisionado por profissionais.</p>
           <div class="chips"><span>ansiedade</span><span>tremores</span><span>insônia</span><span>confusão</span><span>alucinações</span><span>convulsões</span></div>
 
-          <svg viewBox="0 0 720 210" role="img" aria-label="Linha do tempo da abstinência de GHB: sintomas instalam em 1 a 6 horas, pico de gravidade entre 12 e 72 horas, delirium e convulsões possíveis no pico" style="width:100%;height:auto;margin-top:18px" class="wd-timeline">
+          <svg viewBox="0 0 720 210" role="img" aria-label="Linha do tempo da abstinência de GHB: sintomas começam 1 a 6 horas após o último uso; confusão, alucinações e delírio podem surgir entre 24 horas e 6 dias; convulsões são possíveis" style="width:100%;height:auto;margin-top:18px" class="wd-timeline">
             <g font-family="var(--mono)" font-size="11">
               <line x1="40" y1="150" x2="690" y2="150" stroke="var(--border-strong)" stroke-width="2"/>
               <!-- severity curve: rises fast, plateaus dangerous -->
@@ -1615,11 +2080,11 @@
               <rect x="40" y="30" width="150" height="120" fill="var(--warn-bg)" opacity=".4"/>
               <rect x="300" y="30" width="260" height="120" fill="var(--danger-bg)" opacity=".45"/>
               <text x="115" y="24" text-anchor="middle" fill="var(--warn)" font-size="10">instalação 1–6 h</text>
-              <text x="430" y="24" text-anchor="middle" fill="var(--danger)" font-size="10">janela de pico 12–72 h</text>
+              <text x="430" y="24" text-anchor="middle" fill="var(--danger)" font-size="10">delírio: 24 h a 6 dias</text>
               <!-- time ticks -->
               <g fill="var(--text-3)" text-anchor="middle">
                 <text x="40" y="170">0 h</text><text x="150" y="170">6 h</text><text x="300" y="170">24 h</text>
-                <text x="430" y="170">48 h</text><text x="560" y="170">72 h</text>
+                <text x="430" y="170">48 h</text><text x="560" y="170">72 h +</text>
               </g>
               <!-- symptom markers -->
               <g fill="var(--text-2)" font-size="10">
@@ -1631,6 +2096,28 @@
               <text x="40" y="200" fill="var(--text-3)" font-size="10">Esquema didático dos padrões descritos em literatura clínica; o curso individual varia.</text>
             </g>
           </svg>
+
+          <!-- ===== fases e dados da abstinência (2026-09) ===== -->
+          <div class="wd-phases" aria-label="Fases típicas da abstinência de GHB">
+            <div class="wd-phase"><span class="when">1–6 h após o último uso</span><b>Começo rápido</b><p>Ansiedade, tremor, insônia, suor e taquicardia.</p><cite>Dyer et al. 2001 · 8 casos</cite></div>
+            <div class="wd-phase is-danger"><span class="when">24 h a 6 dias</span><b>Risco de delírio</b><p>Confusão, alucinações e agitação intensa, que podem exigir sedação e internação.</p><cite>Busardò &amp; Jones 2015 · revisão</cite></div>
+            <div class="wd-phase"><span class="when">3 a 21 dias</span><b>Duração total</b><p>Sintomas episódicos podem seguir por 1 a 2 semanas; a duração média descrita vai de 3 a 21 dias.</p><cite>Busardò &amp; Jones 2015 · Dyer 2001</cite></div>
+            <div class="wd-phase is-danger"><span class="when">Complicações</span><b>Convulsões e rabdomiólise</b><p>Cada uma em cerca de 7% dos episódios publicados; óbitos são raros, mas foram descritos.</p><cite>Wojtowicz et al. 2008 · 57 episódios</cite></div>
+          </div>
+
+          <div class="gv-grid">
+            <figure class="gv" id="delirFig">
+              <div class="gv-head"><div><p class="kicker is-info">Delírio na abstinência</p><h3>O número depende de onde se mede</h3><p>Proporção de pessoas com delírio em diferentes estudos. Casos publicados tendem a ser os mais graves; a desintoxicação planejada, com retirada gradual supervisionada, teve os menores números.</p></div></div>
+              <div id="delirBars"></div>
+              <p class="gv-foot">McDonough et al., <i>Drug Alcohol Depend</i> 2004 · Neu et al., <i>Addict Sci Clin Pract</i> 2023 · Siefried et al., <i>Psychopharmacology</i> 2023 · de Jong et al., <i>Eur Addict Res</i> 2012 (piloto, 23 pacientes). Definições diferentes: compare com cautela.</p>
+            </figure>
+            <figure class="gv" id="detoxFig">
+              <div class="gv-head"><div><p class="kicker is-info">Depois da desintoxicação</p><h3>Concluir é possível; manter é o desafio</h3><p>Resultados de centros especializados na Holanda. O acompanhamento depois da desintoxicação faz diferença.</p></div></div>
+              <div id="detoxBars"></div>
+              <p class="gv-foot">Dijkstra et al., <i>Drug Alcohol Depend</i> 2017 (229 pacientes, 274 internações) · Beurmanjer et al., <i>CNS Drugs</i> 2018 (107 pacientes; estudo aberto, não randomizado). Nenhum esquema de retirada do GHB tem ensaio randomizado.</p>
+            </figure>
+          </div>
+          <p class="note note-info mt-5"><strong>Não interrompa sozinho.</strong> Quem usa GHB ou GBL várias vezes ao dia pode precisar de retirada supervisionada. No SUS, a porta de entrada é o CAPS AD ou a UBS; com confusão, alucinações ou convulsão, procure o pronto-socorro ou ligue 192.</p>
         </div>
       </div>
     </section>
@@ -1670,7 +2157,128 @@
           <details><summary>“Se a pessoa voltou a falar, o perigo acabou?”</summary><div class="details-body">Não necessariamente. O nível de consciência pode oscilar e outras substâncias podem prolongar ou agravar o quadro. Continue observando e siga a orientação médica.</div></details>
           <details><summary>“GHB tem antídoto?”</summary><div class="details-body">Não existe um antídoto doméstico ou específico de uso leigo. O tratamento de intoxicação é suporte médico, com proteção da via aérea, respiração e monitorização.</div></details>
           <details><summary>“GBL e GHB são a mesma coisa?”</summary><div class="details-body">Não. GBL é um precursor convertido em GHB no organismo. As concentrações e a velocidade dos efeitos podem diferir, o que aumenta a imprevisibilidade.</div></details>
+
+          <details><summary>“Acordou no hospital em duas horas, então era leve?”</summary><div class="details-body">Não. Nas séries de pronto-socorro, metade ou mais chegou em coma e a maioria acordou em 1 a 2,5 horas — porque estava monitorada, com oxigênio e via aérea protegida. Até 15% dos comatosos precisaram de intubação. O mesmo quadro em casa, sem suporte, pode terminar em aspiração ou parada respiratória.</div></details>
+          <details><summary>“Álcool junto só dá mais sono?”</summary><div class="details-body">Não. Na rede europeia Euro-DEN, 55% dos atendimentos por GHB/GBL com álcool foram para cuidados críticos, contra 22% sem álcool. Em outra análise da mesma rede, com todos os depressores, vômito, coma profundo e UTI foram mais frequentes com álcool — o coma profundo, sobretudo quando o álcool se juntou ao GHB/GBL ou a opioides.</div></details>
+          <details><summary>“Se dobrar, o efeito só dobra?”</summary><div class="details-body">Não. A eliminação do GHB satura: na bula do oxibato de sódio, dobrar a quantidade diária elevou os níveis no sangue cerca de 3,7 vezes. Por isso pequenas diferenças podem levar ao coma.</div></details>
+          <details><summary>“GBL é liberada no Brasil?”</summary><div class="details-body">Não. Desde abril de 2023 a GBL está nominalmente na Lista B1 da Anvisa (RDC nº 784/2023), a mesma do GHB, e também é produto químico controlado pela Polícia Federal. O 1,4-butanodiol não aparece nominalmente nas listas — o que não o torna seguro: o corpo o transforma em GHB.</div></details>
         </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== §10 PANORAMA EM DADOS (2026-09) ===================== -->
+    <section class="section" id="dados">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="kicker is-info">§10 — Panorama</p>
+          <h2>O que os hospitais e os registros <em>mostram</em></h2>
+          <p class="section-intro">Séries de pronto-socorro, redes europeias de vigilância e registros de óbito. Cada fonte mede uma coisa diferente, então os números não se somam; juntos, mostram um padrão consistente de intoxicação grave e rápida.</p>
+        </div>
+
+        <figure class="gv reveal" id="edFig">
+          <div class="gv-head">
+            <div><p class="kicker">Seis séries de pronto-socorro · 1998–2020</p><h3>Chegam em coma, acordam em horas — com suporte médico</h3><p>Escolha o indicador. Mesmo quem chega sem responder costuma recuperar a consciência em 1 a 2,5 horas, porque está sendo monitorado, com oxigênio e via aérea protegida. Em casa, sem isso, vômito e pausa respiratória podem ser fatais.</p></div>
+            <div class="chips-row" role="group" aria-label="Indicador">
+              <button type="button" class="chip-btn" data-ed="coma" aria-pressed="true">Coma na chegada</button>
+              <button type="button" class="chip-btn" data-ed="tube" aria-pressed="false">Intubação/ventilação</button>
+              <button type="button" class="chip-btn" data-ed="time" aria-pressed="false">Tempo até acordar</button>
+            </div>
+          </div>
+          <div id="edBars"></div>
+          <p class="gv-foot" id="edNote"></p>
+          <p class="gv-foot">Chin et al., <i>Ann Emerg Med</i> 1998 · Liechti et al., <i>Drug Alcohol Depend</i> 2006 · Munir et al., <i>Emerg Med Australas</i> 2008 · Liakoni et al., <i>Scand J Trauma Resusc Emerg Med</i> 2016 · Miró et al., <i>Toxicol Lett</i> 2017 · van Helmond &amp; Gresnigt, <i>Eur J Emerg Med</i> 2020. Nenhuma morte ocorreu nessas séries hospitalares.</p>
+        </figure>
+
+        <div class="gv-grid reveal">
+          <figure class="gv" id="critFig">
+            <div class="gv-head"><div><p class="kicker">Euro-DEN Plus · 5.320 atendimentos em 2024</p><h3>Quem mais vai para cuidados críticos</h3><p>Proporção dos atendimentos com cada droga que terminou em unidade de cuidados críticos.</p></div></div>
+            <div id="critBars"></div>
+            <p class="gv-foot">EUDA, <i>Euro-DEN Plus: data and analysis</i> (atualizado em dez/2025): 29 hospitais em 19 países da UE e Noruega. Entre casos com uma única substância, 27,7% dos atendimentos por GHB/GBL foram para cuidados críticos.</p>
+          </figure>
+          <figure class="gv" id="onsFig">
+            <div class="gv-head"><div><p class="kicker">Inglaterra e País de Gales · ONS</p><h3>Óbitos com menção a GHB/GBL</h3><p>Mortes por intoxicação com GHB citado na certidão, por ano de registro. Em 2024, 11 dos 30 óbitos não envolveram nenhuma outra droga (o álcool pode ter sido mencionado).</p></div></div>
+            <div class="lc" id="onsChart" data-label="Linha de óbitos com GHB na Inglaterra e no País de Gales, de 1 em 2004 a 30 em 2024"></div>
+            <p class="gv-foot">Office for National Statistics, <i>Deaths related to drug poisoning by selected substances</i>, registros de 2024 (publicado em out/2025). No Reino Unido, GHB, GBL e 1,4-BD passaram da Classe C para a B em abril de 2022.</p>
+          </figure>
+        </div>
+
+        <div class="gv-grid reveal">
+          <figure class="gv" id="edenFig">
+            <div class="gv-head"><div><p class="kicker">Euro-DEN Plus · hospitais-sentinela</p><h3>Parte dos atendimentos com GHB/GBL, por hospital</h3><p>Percentual dos atendimentos por drogas em que o GHB/GBL apareceu, nos anos com dado publicado.</p></div></div>
+            <div class="gv-legend" id="edenLegend"></div>
+            <div class="lc" id="edenChart" data-label="Participação do GHB/GBL nos atendimentos de quatro hospitais europeus entre 2014 e 2024"></div>
+            <p class="gv-foot">EUDA, explorador de dados Euro-DEN Plus. O hospital universitário de Oslo recebe as intoxicações mais graves da região; hospitais-sentinela não representam o país inteiro, e os dados são majoritariamente autorrelatados.</p>
+          </figure>
+          <figure class="gv" id="nlFig">
+            <div class="gv-head"><div><p class="kicker">Holanda · tratamento</p><h3>Pessoas em tratamento com o GHB como problema principal</h3><p>O número cresceu mais de dez vezes entre 2007 e 2015 e depois se estabilizou em torno de 800 a 900 por ano.</p></div></div>
+            <div class="gv-legend" id="nlLegend"></div>
+            <div class="lc" id="nlChart" data-label="Pessoas em tratamento por GHB na Holanda, de 60 em 2007 a 831 em 2024"></div>
+            <p class="gv-foot">Nationale Drug Monitor / LADIS. Há quebra de série em 2015 (837 na série antiga, 866 na nova). Casos em que o GHB é problema secundário subiram de 298 para 639 no mesmo período.</p>
+          </figure>
+        </div>
+
+        <div class="gv-grid reveal">
+          <figure class="gv" id="nswFig">
+            <div class="gv-head"><div><p class="kicker">Austrália · Nova Gales do Sul</p><h3>Atendimentos de emergência por GHB</h3><p>Por 100 mil atendimentos não planejados. Entre as internações, quase 1 em cada 5 precisou de intubação, e proporção semelhante, de UTI.</p></div></div>
+            <div id="nswBars"></div>
+            <p class="gv-foot">Siefried et al., <i>Addiction</i> 2026 (publicado online em out/2025). No país, a taxa de óbitos por GHB cresceu 44,4% ao ano entre 2016 e 2021, contra 3,7% ao ano entre 2001 e 2015 (Darke et al., <i>Drug Alcohol Rev</i> 2025; 217 óbitos).</p>
+          </figure>
+          <figure class="gv" id="brFig">
+            <div class="gv-head"><div><p class="kicker" style="color:var(--series-4)">Brasil</p><h3>Poucos dados, sinais claros</h3><p>Não há série de CIATox que separe o GHB/GBL. Os melhores indícios vêm da perícia da Polícia Federal e de uma pesquisa com homens que fazem sexo com homens.</p></div></div>
+            <p class="kicker">Laudos da Polícia Federal com GBL identificada</p>
+            <div id="brBars" style="margin-top:.6rem"></div>
+            <div class="br-box">
+              <div><div class="stat-big">3,5%</div><p class="stat-cap">dos homens que fazem sexo com homens no Brasil relataram uso de GHB/GBL em 12 meses (626 de 18.139), contra 1,8% na América Latina.</p></div>
+              <div><div class="stat-big" style="font-size:clamp(1.8rem,1.5rem + 1.4vw,2.4rem)">247 L</div><p class="stat-cap">de GBL em laudos da PF em 2023 (mais de 238 L em 2022).</p></div>
+            </div>
+            <p class="gv-foot">Polícia Federal, relatórios “Drogas Sintéticas” da perícia (2021–2025); no relatório de 2025 a GBL não aparece entre as substâncias detectadas. O GHB propriamente dito apareceu em 1 laudo em 2023. LAMIS-2018, <i>PLOS One</i> 2023 (amostra online por conveniência).</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §11 REGULAÇÃO E MEDICINA (2026-09) ===================== -->
+    <section class="section" id="regulacao">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="kicker">§11 — Contexto</p>
+          <h2>Remédio controlado, droga controlada: <em>a mesma molécula</em></h2>
+          <p class="section-intro">O oxibato de sódio é um medicamento para narcolepsia; o GHB fora do uso médico é controlado em quase todo o mundo. A linha do tempo mostra as decisões que moldaram esse cenário, com a situação atual no Brasil.</p>
+        </div>
+
+        <div class="grid-2 reveal">
+          <article class="card is-info"><span class="card-eyebrow">Brasil · Anvisa</span><div class="card-title-row"><h3>GHB e GBL na Lista B1</h3><span class="tag tag-info">psicotrópicas</span></div><p>Os dois estão na Lista B1 da Portaria SVS/MS nº 344/1998: psicotrópicas sujeitas a notificação de receita “B”. O GHB entrou em 2001; a GBL, nominalmente, em 2023. A atualização mais recente das listas (RDC nº 1.036, julho de 2026) mantém os dois.</p></article>
+          <article class="card"><span class="card-eyebrow">Brasil · lacunas</span><div class="card-title-row"><h3>1,4-BD e oxibato</h3><span class="tag tag-warn">atenção</span></div><p>O 1,4-butanodiol não aparece nominalmente nas listas da Anvisa nem na da Polícia Federal. O oxibato de sódio não tem registro na Anvisa; o acesso, quando ocorre, é por importação (parecer técnico NatJus/TRF2 nº 1.563/2025).</p></article>
+        </div>
+
+        <figure class="gv reveal mt-5" id="tlFig">
+          <div class="gv-head">
+            <div><p class="kicker">Linha do tempo · 2000–2026</p><h3>Decisões que moldaram o controle e o uso médico</h3></div>
+            <div class="chips-row" role="group" aria-label="Filtrar linha do tempo">
+              <button type="button" class="chip-btn" data-tl="all" aria-pressed="true">Tudo</button>
+              <button type="button" class="chip-btn" data-tl="br" aria-pressed="false">Brasil</button>
+              <button type="button" class="chip-btn" data-tl="int" aria-pressed="false">Internacional</button>
+              <button type="button" class="chip-btn" data-tl="med" aria-pressed="false">Medicina</button>
+            </div>
+          </div>
+          <ol class="tl2" id="tl2">
+            <li data-k="int"><span class="y">2000</span><div class="c"><span class="k">EUA</span><b>GHB na Lista I e GBL como química controlada</b><p>Lei “Hillory J. Farias and Samantha Reid” (fev/2000); o DEA coloca o GHB na Lista I em março e designa a GBL como química da Lista I em abril.</p></div></li>
+            <li data-k="br"><span class="y">2001</span><div class="c"><span class="k">Brasil</span><b>GHB entra na Lista B1</b><p>RDC nº 22/2001 inclui o ácido gama-hidroxibutírico entre as substâncias psicotrópicas da Portaria 344/98.</p></div></li>
+            <li data-k="int"><span class="y">2001</span><div class="c"><span class="k">ONU</span><b>Controle internacional</b><p>A Comissão de Entorpecentes (decisão 44/3) inclui o GHB na Tabela IV da Convenção de 1971.</p></div></li>
+            <li data-k="med"><span class="y">2002</span><div class="c"><span class="k">EUA · FDA</span><b>Oxibato de sódio aprovado</b><p>Xyrem é aprovado para cataplexia na narcolepsia (jul/2002), com distribuição restrita; em 2005 vem a indicação para sonolência diurna excessiva.</p></div></li>
+            <li data-k="med"><span class="y">2005</span><div class="c"><span class="k">União Europeia</span><b>Autorização europeia</b><p>O Xyrem recebe autorização válida em toda a UE (out/2005) para narcolepsia com cataplexia.</p></div></li>
+            <li data-k="int"><span class="y">2012</span><div class="c"><span class="k">Holanda</span><b>GHB na Lista I da Lei do Ópio</b><p>Em vigor em 9 de maio de 2012. A GBL não é listada pelo nome.</p></div></li>
+            <li data-k="int"><span class="y">2013</span><div class="c"><span class="k">ONU</span><b>GHB sobe para a Tabela II</b><p>Decisão 56/1 da Comissão de Entorpecentes, após revisão da OMS.</p></div></li>
+            <li data-k="int"><span class="y">2015</span><div class="c"><span class="k">ONU</span><b>GBL e 1,4-BD ficam fora</b><p>A OMS recomendou controle, mas a Comissão decidiu por consenso não incluir GBL nem 1,4-BD (decisões 58/4 e 58/5).</p></div></li>
+            <li data-k="med"><span class="y">2020</span><div class="c"><span class="k">EUA · FDA</span><b>Oxibatos com baixo sódio</b><p>Xywav aprovado para narcolepsia (jul/2020) e, em 2021, para hipersonia idiopática em adultos.</p></div></li>
+            <li data-k="int"><span class="y">2022</span><div class="c"><span class="k">Reino Unido</span><b>Classe C → Classe B</b><p>GHB, GBL e 1,4-BD reclassificados a partir de 13 de abril de 2022.</p></div></li>
+            <li data-k="br"><span class="y">2023</span><div class="c"><span class="k">Brasil</span><b>GBL incluída nominalmente na B1</b><p>RDC nº 784/2023, em vigor desde 6 de abril de 2023. A GBL também consta da lista de produtos químicos controlados pela Polícia Federal.</p></div></li>
+            <li data-k="med"><span class="y">2023</span><div class="c"><span class="k">EUA · FDA</span><b>Liberação prolongada</b><p>Lumryz, oxibato de liberação prolongada para uso uma vez à noite, aprovado para adultos (mai/2023) e, em out/2024, a partir dos 7 anos.</p></div></li>
+            <li data-k="br"><span class="y">2026</span><div class="c"><span class="k">Brasil</span><b>Listas atualizadas</b><p>RDC nº 1.036/2026 (atualização 101 do Anexo I) mantém GBL e GHB na Lista B1.</p></div></li>
+          </ol>
+          <p class="gv-foot">Fontes: UNODC (CND 44/3 e 58/4–5), Congresso dos EUA, FDA e EMA, <i>Staatsblad</i> 2012/201, legislation.gov.uk (SI 2022/322), Anvisa (RDC 22/2001, 784/2023 e 1.036/2026), Polícia Federal (Portaria MJSP 204/2022). Conteúdo informativo; não é orientação jurídica.</p>
+        </figure>
       </div>
     </section>
 
@@ -1678,7 +2286,7 @@
     <section class="section" id="fontes">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="kicker">§10 — Referências</p>
+          <p class="kicker">§12 — Referências</p>
           <h2>Fontes para <em>continuar lendo</em></h2>
           <p class="section-intro">Conteúdo resumido a partir de materiais de saúde pública e toxicologia. Este guia não substitui avaliação médica.</p>
         </div>
@@ -1696,6 +2304,48 @@
           <li><a href="https://www.nhs.uk/conditions/poisoning/" target="_blank" rel="noopener"><strong>NHS</strong>Conduta inicial diante de suspeita de intoxicação.</a></li>
           <li><a href="https://www.gov.br/anvisa/pt-br/assuntos/agrotoxicos/disque-intoxicacao" target="_blank" rel="noopener"><strong>Anvisa</strong>Disque-Intoxicação e Centros de Informação e Assistência Toxicológica.</a></li>
           <li><a href="https://ciatox.saude.sc.gov.br/index.php/servicos/primeiros-socorros" target="_blank" rel="noopener"><strong>CIATox Santa Catarina</strong>Primeiros socorros: não oferecer sucos cítricos, líquidos ou receitas caseiras sem orientação médica.</a></li>
+        </ul>
+
+        <div class="subhead reveal">
+          <p class="kicker">Revisão de setembro de 2026</p>
+          <h3>Fontes dos novos gráficos e dados</h3>
+          <p>Números conferidos no texto original de cada fonte (resumos do PubMed, bulas da FDA/EMA, bases da EUDA, ONS, Anvisa e Polícia Federal).</p>
+        </div>
+        <ul class="source-list reveal">
+          <li><a href="https://doi.org/10.1016/j.toxlet.2019.07.001" target="_blank" rel="noopener"><strong>Galicia et al. · Toxicology Letters 2019</strong>Euro-DEN: GHB/GBL sozinho × com álcool (609 atendimentos); cuidados críticos 22,4% × 55,3%.</a></li>
+          <li><a href="https://doi.org/10.1097/MEJ.0000000000000932" target="_blank" rel="noopener"><strong>Heier et al. · Eur J Emerg Med 2022</strong>7.644 atendimentos por depressores, com e sem etanol: Glasgow ≤ 8, UTI, vômito e internação.</a></li>
+          <li><a href="https://doi.org/10.3390/jcm12185970" target="_blank" rel="noopener"><strong>Noseda et al. · J Clin Med 2023</strong>Euro-DEN Plus 2014–2021: GHB/GBL associado a cuidados críticos (OR ajustado 3,08).</a></li>
+          <li><a href="https://doi.org/10.1016/j.toxlet.2017.05.030" target="_blank" rel="noopener"><strong>Miró et al. · Toxicology Letters 2017</strong>710 casos de GHB/GBL na Euro-DEN: UTI 14,6%, ventilação mecânica 6,9%.</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/9624311/" target="_blank" rel="noopener"><strong>Chin et al. · Ann Emerg Med 1998</strong>88 pacientes em São Francisco: 60% com Glasgow ≤ 8; 146 min, em média, até acordar.</a></li>
+          <li><a href="https://doi.org/10.1016/j.drugalcdep.2005.07.010" target="_blank" rel="noopener"><strong>Liechti et al. · Drug Alcohol Depend 2006</strong>65 casos em Zurique: 83% em coma; 111 ± 61 min até recuperar a consciência.</a></li>
+          <li><a href="https://doi.org/10.1111/j.1742-6723.2008.01140.x" target="_blank" rel="noopener"><strong>Munir et al. · Emerg Med Australas 2008</strong>170 casos em Melbourne: 54% com Glasgow 3–8; 8% intubados; mediana de 76 min.</a></li>
+          <li><a href="https://doi.org/10.1186/s13049-016-0299-z" target="_blank" rel="noopener"><strong>Liakoni et al. · Scand J Trauma Resusc Emerg Med 2016</strong>78 casos em Basileia; mediana de 90 min até recuperar a consciência.</a></li>
+          <li><a href="https://doi.org/10.1097/MEJ.0000000000000649" target="_blank" rel="noopener"><strong>van Helmond &amp; Gresnigt · Eur J Emerg Med 2020</strong>209 casos em Amsterdã: eventos graves em 2,4%; intubação + UTI em 1,4%.</a></li>
+          <li><a href="https://doi.org/10.1097/01.jcp.0000237944.57893.28" target="_blank" rel="noopener"><strong>Thai et al. · J Clin Psychopharmacol 2006</strong>GHB e etanol em 16 voluntários: vômitos e maior queda de saturação com a combinação.</a></li>
+          <li><a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=926eb076-a4a8-45e4-91ef-411f0aa4f3ca" target="_blank" rel="noopener"><strong>DailyMed · bula do Xyrem (rev. 2025)</strong>Cinética não linear (×3,7 ao dobrar), efeito do alimento e insuficiência hepática.</a></li>
+          <li><a href="https://doi.org/10.1007/BF00265954" target="_blank" rel="noopener"><strong>Palatini et al. · Eur J Clin Pharmacol 1993</strong>Absorção e eliminação do GHB são processos de capacidade limitada.</a></li>
+          <li><a href="https://doi.org/10.2174/1570159X13666141210215423" target="_blank" rel="noopener"><strong>Busardò &amp; Jones · Curr Neuropharmacol 2015</strong>Cinética de Michaelis–Menten, conversão de precursores e curso da abstinência.</a></li>
+          <li><a href="https://doi.org/10.1002/cpt.1306" target="_blank" rel="noopener"><strong>Liakoni et al. · Clin Pharmacol Ther 2019</strong>Fomepizol bloqueia a conversão do 1,4-BD em GHB em humanos.</a></li>
+          <li><a href="https://doi.org/10.1002/dta.1498" target="_blank" rel="noopener"><strong>Schröck et al. · Drug Test Anal 2014</strong>Autoexperimento controlado com GBL em 2 voluntários.</a></li>
+          <li><a href="https://doi.org/10.1067/mem.2001.112985" target="_blank" rel="noopener"><strong>Dyer et al. · Ann Emerg Med 2001</strong>Abstinência grave: início 1–6 h após o último uso; sintomas por 5–15 dias.</a></li>
+          <li><a href="https://doi.org/10.1016/j.drugalcdep.2004.01.012" target="_blank" rel="noopener"><strong>McDonough et al. · Drug Alcohol Depend 2004</strong>Revisão de 38 casos publicados de abstinência: delírio em 53%.</a></li>
+          <li><a href="https://doi.org/10.1017/s1481803500010034" target="_blank" rel="noopener"><strong>Wojtowicz et al. · CJEM 2008</strong>Revisão sistemática de 57 episódios: convulsões e rabdomiólise em 7%.</a></li>
+          <li><a href="https://doi.org/10.1016/j.drugalcdep.2016.11.014" target="_blank" rel="noopener"><strong>Dijkstra et al. · Drug Alcohol Depend 2017</strong>Monitor GHB holandês: desintoxicação concluída em 85%; recaída de 69% em 3 meses.</a></li>
+          <li><a href="https://doi.org/10.1007/s40263-018-0516-6" target="_blank" rel="noopener"><strong>Beurmanjer et al. · CNS Drugs 2018</strong>Baclofeno após a desintoxicação: recaída ou abandono de 24% × 50%.</a></li>
+          <li><a href="https://doi.org/10.1159/000333022" target="_blank" rel="noopener"><strong>de Jong et al. · Eur Addict Res 2012</strong>Piloto de retirada titulada com GHB farmacêutico: nenhum caso de delírio em 23 pacientes.</a></li>
+          <li><a href="https://doi.org/10.1186/s13722-023-00414-w" target="_blank" rel="noopener"><strong>Neu et al. · Addict Sci Clin Pract 2023</strong>39 pacientes internados por abstinência: delírio em 30,8%; UTI em 20,5%.</a></li>
+          <li><a href="https://doi.org/10.1007/s00213-022-06283-6" target="_blank" rel="noopener"><strong>Siefried et al. · Psychopharmacology 2023</strong>135 internações em Sydney: sinais de delírio em 16%.</a></li>
+          <li><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsrelatedtodrugpoisoningbyselectedsubstances" target="_blank" rel="noopener"><strong>ONS · Deaths related to drug poisoning by selected substances</strong>Óbitos com menção a GHB na Inglaterra e no País de Gales, 2004–2024.</a></li>
+          <li><a href="https://www.nationaledrugmonitor.nl/ghb-hulpvraag-en-incidenten/" target="_blank" rel="noopener"><strong>Nationale Drug Monitor (Holanda)</strong>Pessoas em tratamento por GHB e incidentes agudos registrados.</a></li>
+          <li><a href="https://doi.org/10.1111/add.70202" target="_blank" rel="noopener"><strong>Siefried et al. · Addiction 2026</strong>Aumento dos atendimentos de emergência por GHB em Nova Gales do Sul.</a></li>
+          <li><a href="https://doi.org/10.1111/dar.13940" target="_blank" rel="noopener"><strong>Darke et al. · Drug Alcohol Rev 2025</strong>Óbitos por GHB na Austrália: alta de 44,4% ao ano entre 2016 e 2021.</a></li>
+          <li><a href="https://www.gov.br/pf/pt-br/acesso-a-informacao/estatisticas/diretoria-tecnico-cientifica-ditec/relatorios-de-quimica-forense" target="_blank" rel="noopener"><strong>Polícia Federal · relatórios de química forense</strong>Laudos com GBL identificada, 2021–2024.</a></li>
+          <li><a href="https://doi.org/10.1371/journal.pone.0287683" target="_blank" rel="noopener"><strong>LAMIS-2018 · PLOS One 2023</strong>Uso de GHB/GBL entre homens que fazem sexo com homens no Brasil e na América Latina.</a></li>
+          <li><a href="https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/controlados/arquivos/RDC784.2023.pdf" target="_blank" rel="noopener"><strong>Anvisa · RDC nº 784/2023</strong>Inclusão nominal da GBL na Lista B1 da Portaria 344/98.</a></li>
+          <li><a href="https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/controlados/lista-substancias" target="_blank" rel="noopener"><strong>Anvisa · listas de substâncias controladas</strong>Atualização vigente do Anexo I da Portaria 344/98.</a></li>
+          <li><a href="https://www.unodc.org/unodc/en/Resolutions/resolution_2001-03-20_3.html" target="_blank" rel="noopener"><strong>UNODC · CND, decisão 44/3 (2001)</strong>Inclusão do GHB no controle internacional.</a></li>
+          <li><a href="https://www.legislation.gov.uk/uksi/2022/322/made" target="_blank" rel="noopener"><strong>Reino Unido · SI 2022/322</strong>Reclassificação de GHB, GBL e 1,4-BD para a Classe B.</a></li>
+          <li><a href="https://www.euda.europa.eu/publications/european-drug-report/2025/other-drugs_en" target="_blank" rel="noopener"><strong>EUDA · European Drug Report 2025</strong>GHB/GBL nas emergências hospitalares e apreensões na Europa.</a></li>
         </ul>
       </div>
     </section>
@@ -1720,7 +2370,7 @@
   <footer>
     <div class="wrap">
       <p><strong>Guia Técnico Educacional</strong> — conteúdo de saúde pública e redução de danos.</p>
-      <p>Não incentiva nem instrui o consumo. Revisão farmacocinética atualizada em agosto de 2026.</p>
+      <p>Não incentiva nem instrui o consumo. Revisão farmacocinética de agosto de 2026; dados de emergência, ferramentas de socorro e contexto regulatório ampliados em setembro de 2026.</p>
       <p>Outros guias: <a href="/">Guia de Redução de Danos (página principal)</a> · <a href="/metanfetamina/">Dossiê sobre metanfetamina</a></p>
     </div>
   </footer>
@@ -1916,10 +2566,12 @@
         const X = d => padL + (d / 100) * (W - padL - 14);
         const Y = e => padT + (1 - e / 100) * (H - padT - padB);
         ctx.clearRect(0, 0, W, H);
-        // danger zones background bands
-        const bands = [[75, 88, 'rgba(255,202,112,.08)'], [88, 100, 'rgba(255,128,128,.12)']];
-        bands.forEach(([a, b, col]) => {
-          ctx.fillStyle = col;
+        // zone bands on the dose axis, derived from the same effect thresholds used by zones()
+        const doseAt = e => 62 + 9 * Math.log(e / (100 - e));
+        const tint = (hex, a) => { const m = /^#?([0-9a-f]{6})$/i.exec(hex); if (!m) return hex; const n = parseInt(m[1], 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
+        const bands = [[doseAt(55), doseAt(75), c('--warn'), .10, 'sono profundo'], [doseAt(75), doseAt(88), c('--danger'), .10, 'coma'], [doseAt(88), 100, c('--danger'), .18, 'respiração ↓↓']];
+        bands.forEach(([a, b, col, al]) => {
+          ctx.fillStyle = tint(col, al);
           ctx.fillRect(X(a), padT, X(b) - X(a), H - padT - padB);
         });
         // axes
@@ -1929,10 +2581,13 @@
         ctx.fillText('dose relativa →', X(100) - 100, Y(0) + 22);
         ctx.save(); ctx.translate(14, padT + 60); ctx.rotate(-Math.PI / 2);
         ctx.fillText('efeito →', 0, 0); ctx.restore();
-        // zone labels
+        // zone labels: rotated inside each band so they never overflow on narrow screens
         ctx.font = '10px "DM Mono", monospace';
-        ctx.fillStyle = 'rgba(255,202,112,.8)'; ctx.fillText('coma', X(75) + 4, padT + 12);
-        ctx.fillStyle = 'rgba(255,128,128,.8)'; ctx.fillText('respiração ↓↓', X(88) + 4, padT + 12);
+        bands.forEach(([a, b, , , label]) => {
+          ctx.save(); ctx.fillStyle = c('--text-2');
+          ctx.translate(X(a) + (X(b) - X(a)) / 2 - 3.5, padT + 8); ctx.rotate(Math.PI / 2);
+          ctx.fillText(label, 0, 0); ctx.restore();
+        });
         // curve
         ctx.beginPath();
         for (let d = 0; d <= 100; d += 1) {
@@ -1955,6 +2610,8 @@
       addEventListener('resize', draw);
       new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { draw(); o.disconnect(); } }), { threshold: .2 }).observe(cv);
       matchMedia('(prefers-color-scheme: light)').addEventListener('change', draw);
+      // redraw when the in-page theme toggle flips (tokens change)
+      new MutationObserver(() => requestAnimationFrame(draw)).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     })();
 
     /* ---------- synapse animation (GHB on GABA-B, firing rate drops) ---------- */
@@ -1971,11 +2628,14 @@
         ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
         return { ctx, W: rect.width, H: 280 };
       };
-      let t = 0, running = true, raf = 0;
+      const REDUCED_S = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let t = REDUCED_S ? 12 : 0, running = true, raf = 0, sized = null;
       function frame() {
         if (!running) return;
-        const { ctx, W, H } = prepare(cv);
-        t += .016;
+        const rw = Math.round(cv.getBoundingClientRect().width);
+        if (!sized || sized.w !== rw) sized = { ...prepare(cv), w: rw };
+        const { ctx, W, H } = sized;
+        if (!REDUCED_S) t += .016;
         // effect ramps in over first 10s, then holds: binding level 0..1
         const bind = Math.min(1, t / 10);
         const rate = 1 - .72 * bind;                 // firing falls to 28%
@@ -2020,14 +2680,15 @@
         ctx.fillStyle = c('--text-3'); ctx.font = '10px "DM Mono", monospace';
         ctx.fillText('impulsos: ' + Math.round(rate * 100) + '%', axL, H - 8);
         ctx.fillText('GHB → GABA-B', W - 140, psY + 20);
-        raf = requestAnimationFrame(frame);
+        if (!REDUCED_S) raf = requestAnimationFrame(frame);
       }
       // pause when off-screen (performance)
       new IntersectionObserver(es => es.forEach(e => {
         running = e.isIntersecting;
         if (running) { cancelAnimationFrame(raf); frame(); }
       }), { threshold: .05 }).observe(cv);
-      matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {});
+      matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => { sized = null; frame(); });
+      new MutationObserver(() => { if (REDUCED_S) { sized = null; frame(); } }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     })();
 
     /* ---------- scroll chrome ---------- */
@@ -2330,6 +2991,547 @@
       }
     }, { rootMargin: '-22% 0px -60% 0px', threshold: [0, .2, .5] });
     targets.forEach(t => navObserver.observe(t));
+  })();
+  </script>
+  <script>
+  /* ============================================================
+     UPGRADE 2026-09 — gráficos de dados, ferramentas de socorro,
+     fórmula de Michaelis–Menten e linha do tempo.
+     Autocontido: não depende do script principal.
+     ============================================================ */
+  (() => {
+    'use strict';
+    const doc = document;
+    const $ = id => doc.getElementById(id);
+    const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const SVGNS = 'http://www.w3.org/2000/svg';
+    const S = n => `var(--series-${n})`;
+    const MUTED = 'var(--series-muted)';
+    const nf = (v, d = 1) => Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: d });
+    const el = (tag, cls, txt) => { const e = doc.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+    const sv = (tag, attrs = {}) => { const e = doc.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+    const safe = (name, fn) => { try { fn(); } catch (e) { console.warn('[ghb-upgrade]', name, e); } };
+
+    /* ---------- tooltip + tabela ---------- */
+    function tipFor(fig) {
+      let t = fig.querySelector(':scope > .gv-tip');
+      if (!t) { t = el('div', 'gv-tip'); t.setAttribute('aria-hidden', 'true'); fig.appendChild(t); }
+      return t;
+    }
+    function showTip(fig, cx, cy, title, rows) {
+      const t = tipFor(fig);
+      t.replaceChildren(el('b', null, title));
+      rows.forEach(r => {
+        const d = el('div'); const i = el('i'); i.style.setProperty('--c', r.c);
+        d.append(i, doc.createTextNode(r.name)); d.appendChild(el('strong', null, r.v)); t.appendChild(d);
+      });
+      const fr = fig.getBoundingClientRect();
+      t.classList.add('is-on');
+      const tw = t.offsetWidth, th = t.offsetHeight;
+      let left = cx - fr.left + 14, top = cy - fr.top + 14;
+      if (left + tw > fr.width - 6) left = cx - fr.left - tw - 14;
+      if (left < 4) left = 4;
+      if (top + th > fr.height - 4) top = cy - fr.top - th - 12;
+      if (top < 4) top = 4;
+      t.style.left = left + 'px'; t.style.top = top + 'px';
+    }
+    function hideTip(fig) { const t = fig && fig.querySelector(':scope > .gv-tip'); if (t) t.classList.remove('is-on'); }
+    function addTable(fig, caption, headers, rows) {
+      if (!fig || fig.querySelector(':scope > .gv-table')) return;
+      const d = el('details', 'gv-table');
+      d.appendChild(el('summary', null, 'Ver dados em tabela'));
+      const w = el('div', 'tbl-scroll'); const tb = el('table');
+      const cap = el('caption', null, caption); cap.style.cssText = 'position:absolute;left:-9999px'; tb.appendChild(cap);
+      const thead = el('thead'), tr = el('tr'); headers.forEach(h => tr.appendChild(el('th', null, h))); thead.appendChild(tr); tb.appendChild(thead);
+      const tbody = el('tbody'); rows.forEach(r => { const tr2 = el('tr'); r.forEach(c => tr2.appendChild(el('td', null, c))); tbody.appendChild(tr2); }); tb.appendChild(tbody);
+      w.appendChild(tb); d.appendChild(w); fig.appendChild(d);
+    }
+    function legend(host, items) {
+      if (!host) return;
+      host.replaceChildren();
+      items.forEach(it => { const s = el('span'); const i = el('i', it.kind === 'line' ? 'is-line' : it.kind === 'dash' ? 'is-dash' : ''); i.style.setProperty('--c', it.c); s.append(i, doc.createTextNode(it.name)); host.appendChild(s); });
+    }
+
+    /* ---------- barras horizontais (HTML, reflui em qualquer largura) ---------- */
+    function hbars(host, { series, rows, max, unit = '%', dec = 1, axis = true, fmtAxis, reserve = 4.6 }) {
+      if (!host) return;
+      const fig = host.closest('.gv') || host.parentElement;
+      host.replaceChildren(); host.classList.add('hb'); host.classList.toggle('is-grouped', series.length > 1);
+      const vals = rows.flatMap(r => r.values.filter(v => v != null));
+      const M = max || Math.max(...vals) * 1.05;
+      const grows = [];
+      rows.forEach(r => {
+        const row = el('div', 'hb-row');
+        const lab = el('div', 'hb-label', r.label); if (r.sub) lab.appendChild(el('small', null, r.sub));
+        row.appendChild(lab);
+        const track = el('div', 'hb-track');
+        r.values.forEach((v, i) => {
+          if (v == null) return;
+          const s = series[i]; const color = (r.colors && r.colors[i]) || s.color;
+          const b = el('div', 'hb-bar'); b.tabIndex = 0; b.style.setProperty('--c', color);
+          const txt = nf(v, dec) + unit;
+          b.setAttribute('role', 'img');
+          b.setAttribute('aria-label', `${r.label}${series.length > 1 ? ' — ' + s.name : ''}: ${txt}`);
+          const fill = el('i'); b.appendChild(fill); b.appendChild(el('em', null, txt)); track.appendChild(b);
+          grows.push([fill, Math.max(0, Math.min(1, v / M))]);
+          const show = e => {
+            const rr = b.getBoundingClientRect();
+            const px = e && e.clientX ? e.clientX : rr.left + 40, py = e && e.clientY ? e.clientY : rr.top;
+            showTip(fig, px, py, r.label, series.map((ss, j) => r.values[j] == null ? null : { name: ss.name, c: (r.colors && r.colors[j]) || ss.color, v: nf(r.values[j], dec) + unit }).filter(Boolean));
+          };
+          b.addEventListener('pointermove', show); b.addEventListener('focus', () => show());
+          b.addEventListener('pointerleave', () => hideTip(fig)); b.addEventListener('blur', () => hideTip(fig));
+        });
+        row.appendChild(track); host.appendChild(row);
+      });
+      if (axis) {
+        const f = fmtAxis || (v => nf(v, 0) + unit);
+        const ax = el('div', 'hb-axis'); ax.style.paddingRight = reserve + 'rem'; [0, M / 2, M].forEach(v => ax.appendChild(el('span', null, f(v))));
+        const rowAx = el('div', 'hb-row'); rowAx.appendChild(el('div')); rowAx.appendChild(ax); host.appendChild(rowAx);
+      }
+      const grow = () => grows.forEach(([f, w]) => { f.style.width = `calc((100% - ${reserve}rem) * ${w.toFixed(4)})`; });
+      if (REDUCED || !('IntersectionObserver' in window)) grow();
+      else {
+        const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { grow(); io.disconnect(); } }, { threshold: .15 });
+        io.observe(host); setTimeout(grow, 3000);
+      }
+    }
+
+    /* ---------- gráfico de linhas (SVG redesenhado na largura real) ---------- */
+    function lineChart(host, opt) {
+      if (!host) return null;
+      const fig = host.closest('.gv') || host.parentElement;
+      let cfg = opt;
+      const draw = () => {
+        const { series, x, y, height = 250, endLabels = true, markers = true, notes = [], extra } = cfg;
+        const W = Math.max(280, Math.round(host.clientWidth || 600));
+        const narrow = W < 480;
+        const H = narrow ? Math.round(height * .92) : height;
+        const m = { l: 46, r: endLabels ? (narrow ? 56 : 84) : 16, t: 16, b: x.title ? 40 : 28 };
+        const pw = W - m.l - m.r, ph = H - m.t - m.b;
+        const X = v => m.l + (v - x.min) / (x.max - x.min) * pw;
+        const Y = v => m.t + ph - (v - y.min) / (y.max - y.min) * ph;
+        const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img', 'aria-label': host.dataset.label || '' });
+        const g = sv('g', { class: 'grid' });
+        y.ticks.forEach(t => g.appendChild(sv('line', { x1: m.l, x2: m.l + pw, y1: Y(t), y2: Y(t) })));
+        svg.appendChild(g);
+        const ax = sv('g', { class: 'axis' });
+        y.ticks.forEach(t => { const tx = sv('text', { x: m.l - 8, y: Y(t) + 4, 'text-anchor': 'end' }); tx.textContent = y.fmt ? y.fmt(t) : t; ax.appendChild(tx); });
+        (narrow && x.ticksNarrow ? x.ticksNarrow : x.ticks).forEach(t => {
+          const tx = sv('text', { x: X(t), y: m.t + ph + 18, 'text-anchor': 'middle' }); tx.textContent = x.fmt ? x.fmt(t) : t; ax.appendChild(tx);
+        });
+        if (x.title) { const tt = sv('text', { x: m.l + pw, y: H - 4, 'text-anchor': 'end' }); tt.textContent = x.title; ax.appendChild(tt); }
+        if (y.title) { const tt = sv('text', { x: m.l, y: m.t - 5, 'text-anchor': 'start' }); tt.textContent = y.title; ax.appendChild(tt); }
+        svg.appendChild(ax);
+        notes.forEach(n => {
+          const nx = X(n.x);
+          svg.appendChild(sv('line', { x1: nx, x2: nx, y1: m.t, y2: m.t + ph, stroke: 'currentColor', 'stroke-width': 1, 'stroke-dasharray': '3 4', style: 'color:var(--text-3);opacity:.6' }));
+          const tx = sv('text', { class: 'note-lbl', x: nx + 5, y: m.t + 10 }); tx.textContent = n.label; svg.appendChild(tx);
+        });
+        const sg = sv('g', { class: 'series' });
+        series.forEach(s => {
+          const pts = s.data.filter(p => p[1] != null);
+          if (!pts.length) return;
+          const d = pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join(' ');
+          if (s.area) {
+            const a = sv('path', { class: 'area', d: `${d} L${X(pts[pts.length - 1][0]).toFixed(1)} ${Y(y.min)} L${X(pts[0][0]).toFixed(1)} ${Y(y.min)} Z` });
+            a.style.fill = s.color; sg.appendChild(a);
+          }
+          const p = sv('path', { d }); p.style.stroke = s.color;
+          if (s.dash) p.setAttribute('stroke-dasharray', '6 5');
+          if (s.width) p.style.strokeWidth = s.width;
+          sg.appendChild(p);
+          if (markers && s.markers !== false) pts.forEach(pt => { const c = sv('circle', { class: 'dot', cx: X(pt[0]), cy: Y(pt[1]), r: 4 }); c.style.fill = s.color; sg.appendChild(c); });
+          if (endLabels && s.endLabel !== false) {
+            const last = pts[pts.length - 1];
+            const tx = sv('text', { class: 'lbl', x: X(last[0]) + 8, y: Y(last[1]) + 4 + (s.labelDy || 0) }); tx.textContent = s.short || s.name; sg.appendChild(tx);
+          }
+        });
+        svg.appendChild(sg);
+        if (extra) extra(svg, { X, Y, m, pw, ph, W, H });
+        const xh = sv('line', { class: 'xhair', x1: 0, x2: 0, y1: m.t, y2: m.t + ph }); svg.appendChild(xh);
+        const hit = sv('rect', { x: m.l, y: m.t, width: pw, height: ph, fill: 'transparent' }); svg.appendChild(hit);
+        const xs = [...new Set(series.flatMap(s => s.data.filter(p => p[1] != null).map(p => p[0])))].sort((a, b) => a - b);
+        const onMove = e => {
+          const r = svg.getBoundingClientRect(); const sx = (e.clientX - r.left) * (W / r.width);
+          const xv = x.min + (sx - m.l) / pw * (x.max - x.min);
+          let best = xs[0]; xs.forEach(v => { if (Math.abs(v - xv) < Math.abs(best - xv)) best = v; });
+          xh.setAttribute('x1', X(best)); xh.setAttribute('x2', X(best)); host.classList.add('is-hover');
+          const rows = series.filter(s => s.tip !== false).map(s => { const pp = s.data.find(q => q[0] === best); return pp && pp[1] != null ? { name: s.name, c: s.color, v: (y.tip || y.fmt || String)(pp[1]) } : null; }).filter(Boolean);
+          if (rows.length) showTip(fig, e.clientX, e.clientY, (x.tip || x.fmt || String)(best), rows); else hideTip(fig);
+        };
+        hit.addEventListener('pointermove', onMove);
+        hit.addEventListener('pointerleave', () => { host.classList.remove('is-hover'); hideTip(fig); });
+        host.replaceChildren(svg);
+      };
+      draw();
+      let w0 = host.clientWidth;
+      if ('ResizeObserver' in window) new ResizeObserver(() => { if (Math.abs(host.clientWidth - w0) > 4) { w0 = host.clientWidth; draw(); } }).observe(host);
+      return { update(next) { cfg = { ...cfg, ...next }; draw(); } };
+    }
+
+    /* ---------- KPI count-up ---------- */
+    safe('kpi', () => {
+      const nums = [...doc.querySelectorAll('.kpi [data-count]')];
+      if (!nums.length || REDUCED || !('IntersectionObserver' in window)) return;
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return; io.unobserve(e.target);
+        const n = e.target, end = +n.dataset.count, t0 = performance.now(), dur = 900;
+        const tick = now => { const k = Math.min(1, (now - t0) / dur); n.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(tick); };
+        requestAnimationFrame(tick);
+      }), { threshold: .6 });
+      nums.forEach(n => io.observe(n));
+    });
+
+    /* ---------- decisão rápida ---------- */
+    safe('flow', () => {
+      const stage = $('flowStage'); if (!stage) return;
+      const bars = [...doc.querySelectorAll('#decisao .flow-steps i')];
+      const Q = {
+        start: { step: 0, q: 'A pessoa responde quando você chama em voz alta e toca o ombro dela?', hint: 'Chame pelo nome e toque com firmeza nos dois ombros.', opts: [['Responde normalmente', 'o_ok', 'btn-ghost'], ['Responde pouco ou está confusa', 'q3', 'btn-ghost'], ['Não responde', 'q2', 'btn-danger']] },
+        q2: { step: 1, q: 'Ela está respirando normalmente?', hint: 'Incline a cabeça para trás e levante o queixo; depois olhe o peito subir e descer por até 10 segundos. Suspiros isolados, ronco com pausas ou gorgolejo não são respiração normal.', opts: [['Sim, respira normalmente', 'o_side', 'btn-ghost'], ['Não, ou não tenho certeza', 'o_cpr', 'btn-danger']] },
+        q3: { step: 1, q: 'Há algum destes sinais?', hint: 'Difícil de manter acordada (adormece quando você para de chamar), vômito, convulsão, respiração lenta ou ruidosa, lábios azulados — ou mistura com álcool, calmantes ou opioides.', opts: [['Sim, pelo menos um', 'o_call', 'btn-danger'], ['Não', 'o_watch', 'btn-ghost']] }
+      };
+      const O = {
+        o_cpr: { cls: 'is-danger', t: 'Ligue 192 agora e comece a RCP', s: ['Ligue 192 no viva-voz e diga que a pessoa não responde e não respira normalmente.', 'Com a pessoa de costas sobre superfície firme, comprima o centro do peito cerca de 5 a 6 cm, 100 a 120 vezes por minuto, deixando o peito voltar.', 'Se souber, alterne 30 compressões e 2 ventilações; se não, mantenha só as compressões. Siga o atendente e não pare até a equipe chegar ou a pessoa voltar a respirar normalmente.'], call: true },
+        o_side: { cls: 'is-danger', t: 'Ligue 192 e coloque de lado', s: ['Ligue 192: inconsciência é emergência, mesmo com a pessoa respirando.', 'Coloque-a na posição lateral de segurança (passo a passo logo abaixo).', 'Fique junto e confira a respiração a cada minuto (use o contador). Se parar de respirar normalmente, vire de costas e comece a RCP.'], call: true },
+        o_call: { cls: 'is-danger', t: 'Ligue 192', s: ['Esses sinais indicam risco de piora rápida.', 'Se estiver sonolenta, deixe-a de lado. Não dê nada pela boca.', 'Fique junto até a equipe chegar e conte o que pode ter sido usado.'], call: true },
+        o_watch: { cls: 'is-warn', t: 'Não deixe a pessoa sozinha', s: ['O nível de consciência pode oscilar: fique junto, em um lugar seguro. Se ela se deitar ou adormecer, coloque-a de lado.', 'Não ofereça bebida, comida, café ou limão.', 'Se ficar difícil acordá-la, a respiração mudar ou aparecer vômito, ligue 192. Para orientação, Disque-Intoxicação 0800 722 6001.'], call: false },
+        o_ok: { cls: '', t: 'Continue por perto', s: ['Mesmo acordada, a pessoa pode piorar nas próximas horas, principalmente se houver álcool ou outra substância.', 'Evite que ela use qualquer outra substância e não a deixe dirigir.', 'Se ficar muito sonolenta, confusa ou com a respiração diferente, refaça as perguntas.'], call: false }
+      };
+      const setBars = step => bars.forEach((b, i) => { b.className = i < step ? 'is-done' : i === step ? 'is-now' : ''; });
+      const restartBtn = () => { const r = el('button', 'flow-restart', '↺ Recomeçar'); r.type = 'button'; r.addEventListener('click', () => go('start', true)); return r; };
+      function go(key, focus) {
+        stage.replaceChildren();
+        if (Q[key]) {
+          const n = Q[key]; setBars(n.step);
+          const h = el('p', 'flow-q', n.q); h.tabIndex = -1; stage.appendChild(h);
+          stage.appendChild(el('p', 'flow-hint', n.hint));
+          const acts = el('div', 'flow-actions');
+          n.opts.forEach(([label, next, cls]) => { const b = el('button', 'btn ' + cls, label); b.type = 'button'; b.addEventListener('click', () => go(next, true)); acts.appendChild(b); });
+          stage.appendChild(acts);
+          if (key !== 'start') stage.appendChild(restartBtn());
+          if (focus) h.focus({ preventScroll: true });
+        } else {
+          const o = O[key]; setBars(3);
+          const box = el('div', 'flow-out ' + o.cls);
+          const h = el('h4', null, o.t); h.tabIndex = -1; box.appendChild(h);
+          const ol = el('ol'); o.s.forEach(t => ol.appendChild(el('li', null, t))); box.appendChild(ol);
+          if (o.call) { const a = el('a', 'btn btn-danger', 'Ligar 192'); a.href = 'tel:192'; box.appendChild(a); }
+          stage.appendChild(box); stage.appendChild(restartBtn());
+          if (focus) h.focus({ preventScroll: true });
+        }
+      }
+      go('start', false);
+    });
+
+    /* ---------- contador de respiração ---------- */
+    safe('breath', () => {
+      const tap = $('brTap'); if (!tap) return;
+      const cnt = $('brCount'), tm = $('brTime'), ring = $('brRing'), res = $('brRes');
+      const C = 2 * Math.PI * 58, DUR = 30;
+      let state = 'idle', n = 0, t0 = 0, raf = 0;
+      ring.style.strokeDasharray = C; ring.style.strokeDashoffset = C;
+      const verdict = rate => {
+        if (rate === 0) return ['is-danger', '<strong>Nenhuma respiração contada em 30 segundos: não é respiração normal.</strong> Ligue 192 e comece a RCP agora, seguindo o atendente.'];
+        if (rate < 10) return ['is-danger', `<strong>${nf(rate, 0)} respirações por minuto: não é respiração normal.</strong> Ligue 192 e siga o atendente. Se a pessoa não responde, comece a RCP.`];
+        if (rate < 12) return ['is-danger', `<strong>${nf(rate, 0)} por minuto: abaixo da referência.</strong> Com sonolência ou dificuldade para acordar, ligue 192. Continue contando a cada minuto.`];
+        if (rate <= 20) return ['is-ok', `<strong>${nf(rate, 0)} por minuto: dentro da referência de repouso.</strong> Isso não descarta risco: o quadro pode mudar. Continue junto e conte de novo em alguns minutos.`];
+        return ['is-danger', `<strong>${nf(rate, 0)} por minuto: acelerada.</strong> Pode ser agitação ou problema respiratório. Com esforço para respirar, ruído ou lábios azulados, ligue 192.`];
+      };
+      const frame = now => {
+        const el2 = (now - t0) / 1000, left = Math.max(0, DUR - el2);
+        tm.textContent = Math.ceil(left) + ' s';
+        ring.style.strokeDashoffset = C * (1 - Math.min(1, el2 / DUR));
+        if (left <= 0) {
+          state = 'done'; const rate = n * 60 / DUR; const [cls, html] = verdict(rate);
+          res.className = 'breath-res ' + cls; res.innerHTML = html + `<span class="eqline" style="display:block">Cálculo: ${n} × (60 ÷ ${DUR}) = ${nf(rate, 0)} por minuto</span>`;
+          tap.textContent = 'Contar de novo'; tap.classList.remove('is-live'); tm.textContent = 'fim';
+          return;
+        }
+        raf = requestAnimationFrame(frame);
+      };
+      tap.addEventListener('click', () => {
+        if (state === 'running') {
+          n++; cnt.textContent = n;
+          if (!REDUCED) { tap.classList.remove('pulse'); void tap.offsetWidth; tap.classList.add('pulse'); }
+          return;
+        }
+        state = 'running'; n = 0; cnt.textContent = '0'; t0 = performance.now();
+        tap.textContent = 'Toque a cada respiração'; tap.classList.add('is-live');
+        res.className = 'breath-res'; res.textContent = 'Contando… toque uma vez a cada vez que o peito subir.';
+        cancelAnimationFrame(raf); raf = requestAnimationFrame(frame);
+      });
+    });
+
+    /* ---------- Michaelis–Menten: curva e leitor ---------- */
+    safe('mm-rate', () => {
+      const host = $('mmRateChart'); if (!host) return;
+      const inp = $('mmC'), out = $('mmCOut'), vEl = $('mmV'), tEl = $('mmT'), oEl = $('mmOrder');
+      const curve = []; for (let c = 0; c <= 10.001; c += .1) curve.push([+c.toFixed(1), c / (1 + c) * 100]);
+      const lin = []; for (let c = 0; c <= 1.1; c += .1) lin.push([+c.toFixed(1), c * 100]);
+      let chart = null;
+      const render = () => {
+        const c = +inp.value, v = c / (1 + c) * 100;
+        out.textContent = nf(c, 1); vEl.textContent = nf(v, 0) + '%'; tEl.textContent = '×' + nf(1 + c, 1);
+        oEl.textContent = c < .3 ? '1ª ordem' : c > 4 ? '≈ ordem zero' : 'transição';
+        const cfg = {
+          height: 230, endLabels: false, markers: false,
+          x: { min: 0, max: 10, ticks: [0, 2, 4, 6, 8, 10], fmt: t => t === 0 ? '0' : t + '×Km', ticksNarrow: [0, 5, 10], tip: t => 'C = ' + nf(t, 1) + ' × Km', title: 'concentração →' },
+          y: { min: 0, max: 100, ticks: [0, 50, 100], fmt: t => t + '%', tip: t => nf(t, 0) + '% de Vmax' },
+          series: [
+            { name: 'eliminação saturável (v/Vmax)', color: S(1), data: curve, area: true },
+            { name: 'se fosse proporcional', color: MUTED, data: lin, dash: true, tip: false }
+          ],
+          extra: (svg, { X, Y }) => {
+            const cx = X(c), cy = Y(v);
+            svg.appendChild(sv('line', { x1: cx, x2: cx, y1: Y(0), y2: cy, stroke: 'currentColor', 'stroke-dasharray': '3 4', style: 'color:var(--text-3)' }));
+            const dot = sv('circle', { cx, cy, r: 6, class: 'dot' }); dot.style.fill = 'var(--series-2)'; svg.appendChild(dot);
+            const half = sv('line', { x1: X(0), x2: X(10), y1: Y(50), y2: Y(50), stroke: 'currentColor', 'stroke-dasharray': '2 5', style: 'color:var(--text-3);opacity:.5' }); svg.appendChild(half);
+            const tt = sv('text', { class: 'note-lbl', x: X(10), y: Y(50) - 6, 'text-anchor': 'end' }); tt.textContent = 'v = Vmax/2 quando C = Km'; svg.appendChild(tt);
+          }
+        };
+        if (!chart) chart = lineChart(host, cfg); else chart.update(cfg);
+      };
+      inp.addEventListener('input', render); render();
+    });
+
+    safe('mm-sim', () => {
+      const host = $('mmCurveChart'); if (!host) return;
+      // oral de 1ª ordem + eliminação Michaelis–Menten (Km = 1, Vmax = 1,386, ka = 3),
+      // D1 = 8,2 Km reproduz a razão de ~3,7× da bula ao dobrar
+      const sim = D => { let A = D, C = 0, t = 0; const dt = .005, pts = [], out = []; let auc = 0;
+        while (t < 30) { const dA = -3 * A, dC = 3 * A - 1.386 * C / (1 + C); A += dA * dt; C += dC * dt; auc += C * dt; t += dt; pts.push([t, C]); if (t > 1 && C < .005 && A < 1e-4) break; }
+        return { pts, auc }; };
+      const a = sim(8.2), b = sim(16.4);
+      const peak = Math.max(...a.pts.map(p => p[1]));
+      const T = b.pts[b.pts.length - 1][0];
+      const step = Math.max(1, Math.round(b.pts.length / 160));
+      const pick = arr => arr.filter((_, i) => i % step === 0);
+      const norm = (arr, k = 1) => pick(arr).map(p => [+(p[0] / T * 100).toFixed(2), +(p[1] * k / peak * 100).toFixed(2)]);
+      const ref = norm(a.pts), dbl = norm(b.pts), prop = norm(a.pts, 2);
+      const ymax = Math.ceil(Math.max(...dbl.map(p => p[1])) / 50) * 50;
+      legend($('mmLegend'), [{ name: 'referência (×1)', c: S(1), kind: 'line' }, { name: '×2 se fosse proporcional', c: 'var(--text-3)', kind: 'dash' }, { name: '×2 com eliminação saturável', c: S(2), kind: 'line' }]);
+      lineChart(host, {
+        height: 240, endLabels: false, markers: false,
+        x: { min: 0, max: 100, ticks: [0, 25, 50, 75, 100], fmt: () => '', title: 'tempo (unidades relativas) →', tip: t => 'tempo relativo ' + nf(t, 0) },
+        y: { min: 0, max: ymax, ticks: [0, 50, 100, 150, 200, 250, 300].filter(v => v <= ymax), fmt: t => t + '%', tip: t => nf(t, 0) + '% do pico ×1' },
+        series: [
+          { name: 'referência (×1)', color: S(1), data: ref, area: true },
+          { name: '×2 proporcional', color: 'var(--text-3)', data: prop, dash: true },
+          { name: '×2 saturável', color: S(2), data: dbl }
+        ]
+      });
+      const ratio = b.auc / a.auc;
+      hbars($('mmAucBars'), {
+        series: [{ name: 'exposição', color: S(1) }], unit: '×', dec: 1, max: 4, fmtAxis: v => nf(v, 0) + '×',
+        rows: [
+          { label: 'Referência', values: [1] },
+          { label: 'Dobro, se fosse proporcional', values: [2], colors: ['var(--text-3)'] },
+          { label: 'Dobro, com saturação', sub: 'modelo calibrado pela bula', values: [+ratio.toFixed(1)], colors: [S(2)] }
+        ]
+      });
+    });
+
+    /* ---------- fígado, alimento, fomepizol ---------- */
+    safe('liver', () => {
+      hbars($('liverBars'), {
+        series: [{ name: 'meia-vida média', color: S(1) }], unit: ' min', dec: 0, max: 60, reserve: 5,
+        rows: [
+          { label: 'Fígado normal', sub: '8 controles', values: [22] },
+          { label: 'Cirrose Child A', sub: 'sem ascite · 8 pacientes', values: [32] },
+          { label: 'Cirrose Child C', sub: 'com ascite · 8 pacientes', values: [59], colors: [S(2)] }
+        ]
+      });
+      addTable($('liverFig'), 'Meia-vida do GHB por função hepática', ['Grupo', 'Meia-vida média (min)'], [['Normal', '22'], ['Cirrose Child A', '32'], ['Cirrose Child C', '59']]);
+      hbars($('foodBars'), {
+        series: [{ name: 'após refeição gordurosa', color: S(4) }], unit: '%', dec: 0, max: 100,
+        rows: [
+          { label: 'Pico no sangue (Cmax)', sub: '−59% vs. jejum', values: [41] },
+          { label: 'Exposição total (AUC)', sub: '−37% vs. jejum', values: [63] }
+        ]
+      });
+      legend($('fomepLegend'), [{ name: 'placebo', c: S(1) }, { name: 'com fomepizol', c: S(2) }]);
+      hbars($('fomepBars'), {
+        series: [{ name: 'placebo', color: S(1) }, { name: 'com fomepizol', color: S(2) }], unit: ' µg/mL', dec: 1, max: 60, reserve: 6.4,
+        rows: [
+          { label: 'GHB formado', sub: 'pico no sangue', values: [50.4, 10.9] },
+          { label: '1,4-BD não convertido', sub: 'pico no sangue', values: [3.6, 29.8] }
+        ]
+      });
+      addTable($('fomepFig'), 'Pico no sangue após 1,4-BD, placebo × fomepizol', ['Medida', 'Placebo', 'Fomepizol'], [['GHB (µg/mL)', '50,4', '10,9'], ['1,4-BD (µg/mL)', '3,6', '29,8'], ['Meia-vida do GHB (min)', '35', '85']]);
+    });
+
+    /* ---------- álcool ---------- */
+    safe('alcohol', () => {
+      const ser = [{ name: 'GHB/GBL sozinho', color: S(1) }, { name: 'GHB/GBL + álcool', color: S(2) }];
+      legend($('alcLegend'), ser.map(s => ({ name: s.name, c: s.color })));
+      hbars($('alcBars'), {
+        series: ser, unit: '%', dec: 1, max: 100,
+        rows: [
+          { label: 'Cuidados críticos', values: [22.4, 55.3] },
+          { label: 'Tratamento no pronto-socorro', values: [49.2, 60.4] },
+          { label: 'Permanência acima de 6 h', values: [16.9, 28.4] },
+          { label: 'Chegada de ambulância', values: [68.3, 86.6] }
+        ]
+      });
+      addTable($('alcFig'), 'GHB/GBL sozinho × com álcool (Galicia 2019)', ['Desfecho', 'Sozinho (n = 183)', 'Com álcool (n = 426)'], [['Cuidados críticos', '22,4%', '55,3%'], ['Tratamento no PS', '49,2%', '60,4%'], ['Permanência > 6 h', '16,9%', '28,4%'], ['Chegada de ambulância', '68,3%', '86,6%']]);
+      const ser2 = [{ name: 'sem etanol', color: S(1) }, { name: 'com etanol', color: S(2) }];
+      legend($('depLegend'), ser2.map(s => ({ name: s.name, c: s.color })));
+      hbars($('depBars'), {
+        series: ser2, unit: '%', dec: 1, max: 40,
+        rows: [
+          { label: 'Coma profundo', sub: 'Glasgow ≤ 8', values: [22.4, 34.1] },
+          { label: 'Internação hospitalar', values: [18.9, 27.7] },
+          { label: 'UTI', values: [4.0, 12.2] },
+          { label: 'Vômito', values: [4.6, 8.1] }
+        ]
+      });
+      addTable($('depFig'), 'Depressores com e sem etanol (Heier 2022)', ['Desfecho', 'Sem etanol', 'Com etanol'], [['Glasgow ≤ 8', '22,4%', '34,1%'], ['Internação', '18,9%', '27,7%'], ['UTI', '4,0%', '12,2%'], ['Vômito', '4,6%', '8,1%'], ['Convulsão', '2,4%', '3,8%'], ['Hipotensão', '4,6%', '7,5%']]);
+    });
+
+    /* ---------- abstinência ---------- */
+    safe('withdrawal', () => {
+      hbars($('delirBars'), {
+        series: [{ name: 'delírio', color: S(1) }], unit: '%', dec: 1, max: 60,
+        rows: [
+          { label: 'Casos publicados', sub: 'revisão · 38 casos', values: [53], colors: [S(2)] },
+          { label: 'Internação na Alemanha', sub: '39 pacientes', values: [30.8] },
+          { label: 'Internações em Sydney', sub: '135 internações', values: [15.6] },
+          { label: 'Retirada titulada supervisionada', sub: 'Holanda · piloto · 23 pacientes', values: [0], colors: [S(3)] }
+        ]
+      });
+      hbars($('detoxBars'), {
+        series: [{ name: 'proporção', color: S(1) }], unit: '%', dec: 0, max: 100,
+        rows: [
+          { label: 'Desintoxicação concluída', sub: 'Holanda · 274 internações', values: [85], colors: [S(3)] },
+          { label: 'Recaída em 3 meses', sub: 'mesmo grupo', values: [69], colors: [S(2)] },
+          { label: 'Recaída ou abandono · tratamento usual', sub: '70 pacientes', values: [50] },
+          { label: 'Recaída ou abandono · com baclofeno', sub: '37 pacientes', values: [24] }
+        ]
+      });
+    });
+
+    /* ---------- panorama ---------- */
+    safe('ed', () => {
+      const host = $('edBars'); if (!host) return;
+      const note = $('edNote');
+      const D = {
+        coma: { unit: '%', max: 100, dec: 0, note: 'Definições diferentes: Glasgow ≤ 8 (Chin), coma (Liechti, Liakoni), Glasgow 3–8 (Munir) e consciência reduzida (Euro-DEN).', rows: [
+          { label: 'Zurique', sub: 'Liechti 2006 · 65 casos', values: [83] },
+          { label: 'Basileia', sub: 'Liakoni 2016 · 78 casos', values: [64] },
+          { label: 'São Francisco', sub: 'Chin 1998 · 88 casos', values: [60] },
+          { label: 'Melbourne', sub: 'Munir 2008 · 170 casos', values: [54] },
+          { label: 'Rede Euro-DEN', sub: 'Miró 2017 · 710 casos', values: [34] }] },
+        tube: { unit: '%', max: 12, dec: 1, note: 'Intubação ou ventilação mecânica em relação ao total de casos de cada série.', rows: [
+          { label: 'Basileia', sub: 'Liakoni 2016 · 8 de 78', values: [10.3] },
+          { label: 'Melbourne', sub: 'Munir 2008', values: [8] },
+          { label: 'Rede Euro-DEN', sub: 'Miró 2017', values: [6.9] },
+          { label: 'Zurique', sub: 'Liechti 2006 · 4 de 65', values: [6.2] },
+          { label: 'Amsterdã', sub: 'van Helmond 2020 · 209 casos', values: [1.4] }] },
+        time: { unit: ' min', max: 160, dec: 0, note: 'Médias (Chin, Liechti) e medianas (Liakoni, Munir). Em Munir, contado da chegada até Glasgow 9–15; nos demais, até recuperar a consciência.', rows: [
+          { label: 'São Francisco', sub: 'Chin 1998 · média', values: [146] },
+          { label: 'Zurique', sub: 'Liechti 2006 · média', values: [111] },
+          { label: 'Basileia', sub: 'Liakoni 2016 · mediana', values: [90] },
+          { label: 'Melbourne', sub: 'Munir 2008 · mediana', values: [76] }] }
+      };
+      const btns = [...doc.querySelectorAll('[data-ed]')];
+      const show = k => {
+        const d = D[k];
+        hbars(host, { series: [{ name: k === 'time' ? 'tempo até acordar' : 'proporção', color: S(1) }], rows: d.rows, unit: d.unit, max: d.max, dec: d.dec, reserve: k === 'time' ? 5 : 4.6 });
+        note.textContent = d.note;
+        btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.ed === k)));
+      };
+      btns.forEach(b => b.addEventListener('click', () => show(b.dataset.ed)));
+      show('coma');
+      addTable($('edFig'), 'Séries de pronto-socorro', ['Série', 'Coma/rebaixamento', 'Intubação/ventilação', 'Tempo até acordar'], [
+        ['Chin 1998 · São Francisco (88)', '60%', '—', '146 min (média)'], ['Liechti 2006 · Zurique (65)', '83%', '6,2%', '111 min (média)'],
+        ['Munir 2008 · Melbourne (170)', '54%', '8%', '76 min (mediana)'], ['Liakoni 2016 · Basileia (78)', '64%', '10,3%', '90 min (mediana)'],
+        ['Miró 2017 · Euro-DEN (710)', '34%', '6,9%', '—'], ['van Helmond 2020 · Amsterdã (209)', '—', '1,4%', '—']]);
+    });
+
+    safe('crit', () => {
+      hbars($('critBars'), {
+        series: [{ name: 'cuidados críticos', color: S(1) }], unit: '%', dec: 0, max: 30,
+        rows: [
+          { label: 'GHB/GBL', values: [23], colors: [S(2)] },
+          { label: 'Heroína', values: [8] }, { label: 'Anfetamina', values: [6] }, { label: 'MDMA', values: [5] },
+          { label: 'Cetamina', values: [5] }, { label: 'Cocaína', values: [4] }, { label: 'Metanfetamina', values: [4] },
+          { label: 'Cannabis', values: [3] }
+        ]
+      });
+    });
+
+    safe('ons', () => {
+      const d = [[2004, 1], [2005, 4], [2006, 7], [2007, 9], [2008, 20], [2009, 16], [2010, 12], [2011, 20], [2012, 13], [2013, 18], [2014, 20], [2015, 26], [2016, 30], [2017, 17], [2018, 27], [2019, 27], [2020, 28], [2021, 14], [2022, 31], [2023, 25], [2024, 30]];
+      lineChart($('onsChart'), {
+        height: 240, endLabels: false,
+        x: { min: 2004, max: 2024, ticks: [2004, 2008, 2012, 2016, 2020, 2024], ticksNarrow: [2004, 2014, 2024] },
+        y: { min: 0, max: 35, ticks: [0, 10, 20, 30], tip: v => v + ' óbitos' },
+        notes: [{ x: 2022, label: 'Classe B' }],
+        series: [{ name: 'óbitos com GHB', color: S(1), data: d, area: true }]
+      });
+      addTable($('onsFig'), 'Óbitos com menção a GHB, Inglaterra e País de Gales', ['Ano', 'Óbitos'], d.map(([y, v]) => [String(y), String(v)]));
+    });
+
+    safe('eden', () => {
+      const ser = [
+        { name: 'Oslo (hospital univ.)', short: 'Oslo', color: S(1), data: [[2014, 45.8], [2018, 53.5], [2022, 50.9], [2023, 43.9], [2024, 49.5]] },
+        { name: 'Londres (St Thomas’)', short: 'Londres', color: S(2), data: [[2014, 32.1], [2018, 22.0], [2023, 15.9], [2024, 19.7]], endLabel: false },
+        { name: 'Barcelona', color: S(3), data: [[2016, 27.2], [2021, 26.8], [2023, 22.1], [2024, 17.0]], endLabel: false },
+        { name: 'Amsterdã', color: S(4), data: [[2018, 15.3], [2021, 30.3], [2023, 15.2], [2024, 17.9]], endLabel: false }
+      ];
+      legend($('edenLegend'), ser.map(s => ({ name: s.name, c: s.color, kind: 'line' })));
+      lineChart($('edenChart'), {
+        height: 250,
+        x: { min: 2014, max: 2024, ticks: [2014, 2016, 2018, 2020, 2022, 2024], ticksNarrow: [2014, 2019, 2024] },
+        y: { min: 0, max: 60, ticks: [0, 20, 40, 60], fmt: t => t + '%', tip: v => nf(v, 1) + '%' },
+        series: ser
+      });
+      const years = [2014, 2016, 2018, 2021, 2022, 2023, 2024];
+      addTable($('edenFig'), 'Participação do GHB/GBL nos atendimentos por hospital', ['Ano', ...ser.map(s => s.name)], years.map(y => [String(y), ...ser.map(s => { const p = s.data.find(q => q[0] === y); return p ? nf(p[1], 1) + '%' : '—'; })]));
+    });
+
+    safe('nl', () => {
+      const oldS = [[2007, 60], [2008, 182], [2009, 360], [2010, 553], [2011, 691], [2012, 775], [2013, 796], [2014, 805], [2015, 837]];
+      const newS = [[2015, 866], [2016, 816], [2017, 885], [2018, 926], [2019, 935], [2020, 915], [2021, 903], [2022, 781], [2023, 823], [2024, 831]];
+      legend($('nlLegend'), [{ name: 'série antiga (2007–2015)', c: 'var(--text-3)', kind: 'dash' }, { name: 'série atual (2015–2024)', c: S(1), kind: 'line' }]);
+      lineChart($('nlChart'), {
+        height: 240, endLabels: false,
+        x: { min: 2007, max: 2024, ticks: [2007, 2010, 2013, 2016, 2019, 2022], ticksNarrow: [2007, 2015, 2024] },
+        y: { min: 0, max: 1000, ticks: [0, 250, 500, 750, 1000], fmt: t => nf(t, 0), tip: v => nf(v, 0) + ' pessoas' },
+        series: [{ name: 'série antiga', color: 'var(--text-3)', data: oldS, dash: true }, { name: 'série atual', color: S(1), data: newS, area: true }]
+      });
+      addTable($('nlFig'), 'Pessoas em tratamento com GHB como problema principal, Holanda', ['Ano', 'Série antiga', 'Série atual'], [...new Set([...oldS, ...newS].map(p => p[0]))].map(y => [String(y), (oldS.find(p => p[0] === y) || [0, '—'])[1].toLocaleString('pt-BR'), (newS.find(p => p[0] === y) || [0, '—'])[1].toLocaleString('pt-BR')]));
+    });
+
+    safe('nsw', () => {
+      hbars($('nswBars'), {
+        series: [{ name: 'por 100 mil atendimentos', color: S(1) }], unit: '', dec: 1, max: 120, fmtAxis: v => nf(v, 0),
+        rows: [
+          { label: '2015–16', values: [24.9] },
+          { label: '2022–23', values: [73.7] },
+          { label: 'jul/2023 – jan/2024', values: [101], colors: [S(2)] }
+        ]
+      });
+    });
+
+    safe('br', () => {
+      hbars($('brBars'), {
+        series: [{ name: 'laudos com GBL', color: 'var(--series-4)' }], unit: '', dec: 0, max: 100, fmtAxis: v => nf(v, 0),
+        rows: [{ label: '2021', values: [29] }, { label: '2022', values: [70] }, { label: '2023', values: [89] }, { label: '2024', values: [31] }]
+      });
+    });
+
+    /* ---------- linha do tempo: filtro ---------- */
+    safe('timeline', () => {
+      const btns = [...doc.querySelectorAll('[data-tl]')], items = [...doc.querySelectorAll('#tl2 li')];
+      btns.forEach(b => b.addEventListener('click', () => {
+        const k = b.dataset.tl;
+        btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+        items.forEach(li => { li.hidden = !(k === 'all' || li.dataset.k === k); });
+      }));
+    });
   })();
   </script>
 </body>

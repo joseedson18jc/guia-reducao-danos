@@ -6,7 +6,9 @@ harm-reduction guides. Static site, no build step.
 ```
 site/            the whole site, deployed as-is
   index.html     homepage
-  ghb/index.html            GHB / GBL / 1,4-BD guide: inline CSS+JS, two <canvas> charts
+  ghb/index.html            GHB / GBL / 1,4-BD guide: inline CSS+JS, canvas + SVG/HTML charts,
+                            decision tool, breathing counter, recovery-position figures,
+                            Michaelis–Menten model, ED/ONS/Euro-DEN data, Brazil regulatory timeline
   metanfetamina/index.html  methamphetamine dossier: evidence-graded, 26 DOI refs,
                             3D molecule, circuit, PK simulator, addiction wheel,
                             2023–2026 update timeline, canvas charts
