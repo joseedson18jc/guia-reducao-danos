@@ -17,7 +17,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Guia Técnico Educacional">
 <meta property="og:title" content="Metanfetamina: dossiê científico da paranoia ao tratamento">
-<meta property="og:description" content="Farmacologia, psicose paranoide, curso, diagnóstico diferencial, manejo, internação e pipeline terapêutico — 26 referências com DOI, cada uma classificada por nível de evidência.">
+<meta property="og:description" content="Farmacologia, psicose paranoide, curso, diagnóstico diferencial, manejo, internação e pipeline terapêutico — 32 referências com DOI, cada uma classificada por nível de evidência.">
 <meta property="og:url" content="https://guia-reducaorisco.netlify.app/metanfetamina/">
 <meta property="og:image" content="https://guia-reducaorisco.netlify.app/metanfetamina/og-metanfetamina-v1.png">
 <meta property="og:image:type" content="image/png">
@@ -26,17 +26,17 @@
 <meta property="og:image:alt" content="Metanfetamina — dossiê científico: estrutura molecular, farmacologia, psicose paranoide e tratamento">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Metanfetamina: dossiê científico da paranoia ao tratamento">
-<meta name="twitter:description" content="Evidências classificadas, 26 referências com DOI, modelos interativos.">
+<meta name="twitter:description" content="Evidências classificadas, 32 referências com DOI, modelos interativos.">
 <meta name="twitter:image" content="https://guia-reducaorisco.netlify.app/metanfetamina/og-metanfetamina-v1.png">
 <meta property="article:published_time" content="2026-09-11">
-<meta property="article:modified_time" content="2026-09-28">
+<meta property="article:modified_time" content="2026-10-15">
 <meta name="author" content="Guia Técnico Educacional">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MedicalWebPage",
  "headline":"Metanfetamina — Dossiê Completo: do tráfico à paranoia e ao tratamento",
  "description":"Dossiê científico sobre metanfetamina: rota de tráfico, farmacologia, psicose paranoide, manejo clínico, internação e pipeline terapêutico — com evidências citadas e classificadas.",
  "url":"https://guia-reducaorisco.netlify.app/metanfetamina/",
- "inLanguage":"pt-BR","datePublished":"2026-09-11","dateModified":"2026-09-28",
+ "inLanguage":"pt-BR","datePublished":"2026-09-11","dateModified":"2026-10-15",
  "about":[{"@type":"MedicalCondition","name":"Transtorno psicótico induzido por metanfetamina"}],
  "audience":{"@type":"PeopleAudience","audienceType":"Profissionais de saúde, gestores, imprensa, famílias"}}
 </script>
@@ -356,7 +356,7 @@ a.chip:hover{border-color:var(--green);color:var(--ink)}
 .sym .t .ic{font-size:15px}
 button.sym{width:100%;text-align:left;color:inherit;font:inherit;cursor:pointer;transition:border-color .3s,transform .3s,background .3s}
 button.sym:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.24)}
-button.sym.on{border-color:var(--amber);background:rgba(240,176,76,.08);box-shadow:0 0 0 1px rgba(240,176,76,.4),0 0 22px rgba(240,176,76,.15)}
+button.sym.sel{border-color:var(--amber);background:rgba(240,176,76,.08);box-shadow:0 0 0 1px rgba(240,176,76,.4),0 0 22px rgba(240,176,76,.15)}
 .symdetail{margin-top:12px;padding:16px 20px;font-size:13.5px;color:var(--ink2);line-height:1.65;min-height:58px}
 .symdetail b{color:var(--ink)}
 .symdetail .act{display:block;margin-top:8px;padding-top:8px;border-top:1px dashed var(--stroke);color:var(--mut)}
@@ -760,6 +760,251 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
 @media(prefers-reduced-motion:reduce){.aexp.playing .aexp-btn::before,.aexp-btn.loading::after,.aexp-focus b{animation:none}.aexp-dock{transition:none}}
 @media print{.aexp-btn,.aexp-spd,.aexp-wave,.aexp-row,.aexp-cap,.aexp-dock,.aexp audio{display:none!important}.aexp-tr .tx{max-height:none}}
 
+
+/* ═══════════ §03 · REVISÃO 2026-10 — organização, figuras responsivas, dados ═══════════ */
+#s1{--se1:#3987e5;--se2:#d95926;--se3:#199e70}
+#s1 .aexp{margin-bottom:28px}
+/* guia da seção */
+.s3-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.s3-toc a{display:inline-flex;align-items:center;gap:8px;padding:7px 13px 7px 8px;border-radius:99px;border:1px solid var(--line);
+  background:var(--card);color:var(--ink2);font-size:13px;text-decoration:none;transition:border-color .2s,color .2s,background .2s}
+.s3-toc a b{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--ice);background:rgba(124,216,247,.1);border-radius:99px;padding:2px 7px;letter-spacing:.04em}
+.s3-toc a:hover,.s3-toc a.on{color:var(--ink);border-color:rgba(124,216,247,.5);background:rgba(124,216,247,.07)}
+/* números-chave */
+.s3-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.s3-kpi{position:relative;padding:20px 18px 16px;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015))}
+.s3-kpi::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--c)}
+.s3-kpi b{display:block;font-family:var(--serif);font-size:clamp(34px,3.6vw,44px);font-weight:600;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.s3-kpi b small{font-size:.48em;color:var(--mut);font-weight:500;margin-left:2px;letter-spacing:0}
+.s3-kpi p{font-size:13.5px;line-height:1.5;color:var(--ink2);margin-top:10px}
+.s3-kpi cite{display:block;margin-top:10px;font-style:normal;font-family:var(--mono);font-size:11px;color:var(--mut2);letter-spacing:.02em}
+@media(max-width:900px){.s3-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.s3-kpis{grid-template-columns:1fr}.s3-kpi{padding:16px 16px 14px}}
+/* em 30 segundos */
+.s3-tldr{margin-top:14px;padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:start}
+.s3-tldr ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 18px;counter-reset:t}
+.s3-tldr li{counter-increment:t;position:relative;padding-left:28px;font-size:14px;line-height:1.55;color:var(--ink2)}
+.s3-tldr li::before{content:counter(t);position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--mono);font-size:10.5px;color:#04121b;background:var(--ice)}
+.s3-tldr li b{color:var(--ink);font-weight:600}
+.s3-tk,.s3-fk{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ice2)}
+.s3-tk{padding-top:2px}
+@media(max-width:860px){.s3-tldr{grid-template-columns:1fr}.s3-tldr ol{grid-template-columns:1fr}}
+/* subtítulos numerados */
+.s3-sub{display:flex;gap:16px;align-items:flex-start;margin:64px 0 20px;padding-top:22px;border-top:1px solid var(--line);scroll-margin-top:72px}
+.s3-sub .n{flex:none;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ice);border:1px solid rgba(124,216,247,.4);
+  background:rgba(124,216,247,.07);border-radius:10px;padding:6px 9px;margin-top:3px}
+.s3-sub h3{font-family:var(--serif);font-size:clamp(23px,2.6vw,28px);font-weight:600;line-height:1.2;letter-spacing:-.01em;color:var(--ink)}
+.s3-sub p{font-size:15px;color:var(--ink2);line-height:1.6;margin-top:6px;max-width:72ch;text-wrap:pretty}
+#s1 .s3-sub + .duo{margin-top:0}
+/* sinais: dados + detalhe ao lado do cartão no celular */
+.symdetail .dat{display:block;margin-top:8px;padding-top:8px;border-top:1px dashed var(--stroke);color:var(--ink2)}
+.symdetail .dat b{color:var(--ice)}
+.symdetail.in-grid{grid-column:1/-1;margin-top:0}
+button.sym[aria-pressed="true"]{border-color:var(--amber)}
+/* vínculos acesos pela escalada */
+#s1 .s3-link{border-color:rgba(240,176,76,.7)!important;box-shadow:0 0 0 1px rgba(240,176,76,.35),0 12px 30px -16px rgba(240,176,76,.6)!important}
+/* Fig. 3.1 · escalada (HTML responsivo) */
+.s3-esc,.s3-read{margin:0 0 8px}
+.s3-esc-box,.s3-read-box{border:1px solid var(--line);border-radius:var(--r2);padding:20px 22px;
+  background:radial-gradient(ellipse at 50% 120%,#101825 0%,var(--bg2) 72%)}
+.s3-steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:16px;position:relative}
+.s3-steps::before{content:"";position:absolute;left:12.5%;right:12.5%;top:28px;height:2px;
+  background:linear-gradient(90deg,#98a2b6,#f0b04c 35%,#ff8a5c 65%,#ff5c67);opacity:.45}
+.s3-steps button{width:100%;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:4px 6px 12px;border-radius:12px;
+  border:1px solid transparent;background:none;color:inherit;font:inherit;cursor:pointer;transition:background .25s,border-color .25s}
+.s3-steps button i{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;position:relative;
+  background:color-mix(in srgb,var(--c) 14%,transparent)}
+.s3-steps button i::after{content:"";width:var(--sz);height:var(--sz);border-radius:50%;background:var(--c);box-shadow:0 0 18px color-mix(in srgb,var(--c) 45%,transparent)}
+.s3-steps button b{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3}
+.s3-steps button small{font-family:var(--mono);font-size:11px;color:var(--mut2)}
+.s3-steps button:hover{background:rgba(255,255,255,.035)}
+.s3-steps button[aria-pressed="true"]{border-color:color-mix(in srgb,var(--c) 60%,transparent);background:color-mix(in srgb,var(--c) 8%,transparent)}
+.s3-esc-detail{margin-top:12px;padding:12px 14px;border-radius:10px;border:1px dashed var(--stroke);font-size:14px;line-height:1.6;color:var(--ink2);min-height:48px}
+.s3-esc-detail b{color:var(--ink)}
+.s3-esc-detail .go{display:inline-block;margin-top:4px;font-family:var(--mono);font-size:11px;color:var(--amber)}
+@media(max-width:640px){
+  .s3-esc-box,.s3-read-box{padding:16px 14px}
+  .s3-steps{grid-template-columns:1fr;gap:4px}
+  .s3-steps::before{left:39px;right:auto;top:30px;bottom:30px;width:2px;height:auto;background:linear-gradient(180deg,#98a2b6,#f0b04c 35%,#ff8a5c 65%,#ff5c67)}
+  .s3-steps button{flex-direction:row;text-align:left;gap:12px;padding:6px 8px}
+  .s3-steps button i{width:48px;height:48px;flex:none}
+  .s3-steps button b{flex:1}
+}
+/* Fig. 3.2 · duas leituras */
+.s3-read-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.s3-seg{display:inline-flex;padding:3px;border:1px solid var(--line);border-radius:99px;background:rgba(0,0,0,.25)}
+.s3-seg button{font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:6px 12px;border-radius:99px;border:0;background:none;color:var(--mut);cursor:pointer;transition:all .2s}
+.s3-seg button:hover{color:var(--ink)}
+.s3-seg button[aria-pressed="true"]{background:var(--glass2);color:var(--ink);box-shadow:0 0 0 1px var(--stroke)}
+.s3-read-cols,.s3-read-list li{display:grid;grid-template-columns:34px minmax(0,1fr) 22px minmax(0,1fr);gap:10px;align-items:center}
+.s3-read-cols{margin-top:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.s3-read-cols .h-real{color:var(--ice)}.s3-read-cols .h-para{color:var(--red)}
+.s3-read-list{list-style:none;display:grid;gap:8px;margin-top:8px}
+.s3-read-list .ic{width:30px;height:30px;fill:none;stroke:var(--mut);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.s3-read-list .r-real,.s3-read-list .r-para{padding:10px 12px;border-radius:10px;font-size:14px;line-height:1.4;transition:opacity .35s,filter .35s,transform .35s}
+.s3-read-list .r-real{border:1px solid rgba(124,216,247,.3);background:rgba(124,216,247,.05);color:var(--ink2);font-family:var(--mono);font-size:12.5px}
+.s3-read-list .r-para{border:1px solid rgba(255,92,103,.4);background:rgba(255,92,103,.06);color:#ffb0b6;font-family:var(--serif);font-style:italic;font-size:16px}
+.s3-read-list .r-para em{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.08em;color:var(--mut2);margin-top:3px}
+.s3-read-list .r-ar{color:var(--mut2);text-align:center}
+.s3-read-box[data-v="real"] .r-para,.s3-read-box[data-v="para"] .r-real{opacity:.16;filter:blur(1.5px)}
+.s3-read-box[data-v="real"] .r-real{border-color:rgba(124,216,247,.6);color:var(--ink)}
+.s3-read-box[data-v="para"] .r-para{border-color:rgba(255,92,103,.7);color:#ffd0d3}
+@media(max-width:640px){
+  .s3-read-cols{display:none}
+  .s3-read-list li{grid-template-columns:30px minmax(0,1fr);gap:6px 10px}
+  .s3-read-list .ic{grid-row:span 2;align-self:start;margin-top:6px}
+  .s3-read-list .r-ar{display:none}
+  .s3-read-list .r-real::before{content:"o que há · ";color:var(--ice);font-size:10.5px;letter-spacing:.06em}
+  .s3-read-list .r-para::before{content:"o que ele vê · ";font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.06em;color:var(--red)}
+}
+/* figuras de dados */
+.s3-viz{padding:20px 22px;margin:0;min-width:0}
+.s3-viz-head h4{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.25;color:var(--ink);margin:6px 0 6px}
+.s3-viz-head p:not(.s3-fk){font-size:13.5px;color:var(--ink2);line-height:1.55;max-width:70ch}
+.s3-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0 6px;font-size:12.5px;color:var(--ink2)}
+.s3-legend span{display:inline-flex;align-items:center;gap:8px}
+.mk{display:inline-block;width:11px;height:11px;flex:none;box-shadow:0 0 0 2px var(--bg2)}
+.mk.c1{background:var(--se1);border-radius:50%}
+.mk.c2{background:var(--se2);border-radius:2px}
+.mk.c3{background:var(--se3);transform:rotate(45deg) scale(.86);border-radius:1px}
+.s3-foot{margin-top:14px;font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--mut2)}
+.s3-mini{margin-top:10px;font-family:var(--mono);font-size:11px;line-height:1.65;color:var(--mut2)}
+.s3-mini a{color:var(--ice)}
+/* dot plot */
+.s3-dots{display:grid;gap:4px;margin-top:8px}
+.s3-drow{display:grid;grid-template-columns:minmax(150px,200px) minmax(0,1fr) 88px;gap:12px;align-items:center;min-height:34px}
+.s3-drow .lb{font-size:13.5px;color:var(--ink);line-height:1.3}
+.s3-drow .rg{font-family:var(--mono);font-size:11.5px;color:var(--ink2);text-align:right;white-space:nowrap}
+.s3-track{position:relative;height:30px}
+.s3-track::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line)}
+.s3-track .span{position:absolute;top:50%;height:4px;margin-top:-2px;border-radius:2px;background:rgba(255,255,255,.14)}
+.s3-track .gl{position:absolute;top:4px;bottom:4px;width:1px;background:rgba(255,255,255,.05)}
+.s3-dot{position:absolute;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+.s3-dot .mk{width:12px;height:12px;transition:transform .15s}
+.s3-dot:hover .mk,.s3-dot:focus-visible .mk{transform:scale(1.35)}
+.s3-dot:hover .mk.c3,.s3-dot:focus-visible .mk.c3{transform:rotate(45deg) scale(1.2)}
+.s3-dot:focus-visible{outline:2px solid var(--ice);outline-offset:1px;border-radius:50%}
+.s3-axis{display:grid;grid-template-columns:minmax(150px,200px) minmax(0,1fr) 88px;gap:12px;margin-top:2px}
+.s3-axis .tk{position:relative;height:18px;font-family:var(--mono);font-size:10.5px;color:var(--mut2)}
+.s3-axis .tk i{position:absolute;transform:translateX(-50%);font-style:normal}
+.s3-axis .tk i:first-child{transform:none}.s3-axis .tk i:last-child{transform:translateX(-100%)}
+@media(max-width:640px){
+  .s3-drow{grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+  .s3-drow .s3-track{grid-column:1/-1;order:3}
+  .s3-axis{grid-template-columns:1fr}.s3-axis > span{display:none}
+}
+/* tooltip */
+.s3-tip{position:fixed;z-index:130;pointer-events:none;max-width:260px;padding:9px 12px;border-radius:10px;font-size:12.5px;line-height:1.45;color:var(--ink);
+  background:rgba(12,16,26,.96);border:1px solid var(--stroke);box-shadow:0 14px 30px -12px rgba(0,0,0,.8);opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s}
+.s3-tip.on{opacity:1;transform:none}
+.s3-tip b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--mut);font-weight:500;margin-bottom:2px}
+.s3-tip strong{font-size:15px}
+/* tabelas */
+.s3-table{margin-top:12px}
+.s3-table summary{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);cursor:pointer;list-style:none;padding:4px 0}
+.s3-table summary::-webkit-details-marker{display:none}
+.s3-table summary::before{content:"+";display:inline-block;width:14px;color:var(--ice2)}
+.s3-table[open] summary::before{content:"−"}
+.s3-tw{overflow-x:auto;margin-top:6px}
+.s3-tw table{border-collapse:collapse;width:100%;font-size:13px;min-width:420px}
+.s3-tw th,.s3-tw td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;color:var(--ink2)}
+.s3-tw th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:500}
+.s3-tw td.num{font-family:var(--mono);text-align:right}
+/* sono */
+#s1 .sleepdiag{margin-top:0}
+.s3-sleepread{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.s3-sleepread > div{padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.s3-sleepread .k{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.s3-sleepread .k i{width:14px;height:3px;border-radius:2px;background:var(--red)}
+.s3-sleepread .sr-sd .k i{height:10px;background:rgba(240,176,76,.55);border-radius:2px}
+.s3-sleepread b{display:block;margin-top:6px;font-weight:500;font-size:14px;line-height:1.5;color:var(--ink)}
+.s3-sleepfacts{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;margin-top:18px;padding-top:16px;border-top:1px dashed var(--stroke)}
+.s3-sleepnote p:not(.s3-fk){font-size:14px;line-height:1.6;color:var(--ink2);margin-top:8px}
+.s3-mbars{display:grid;gap:8px;margin-top:10px}
+.s3-mbars .mb{display:grid;grid-template-columns:96px minmax(0,1fr) 44px;gap:10px;align-items:center;font-size:13px;color:var(--ink2)}
+.s3-mbars .mb i{display:block;height:12px;border-radius:0 4px 4px 0;background:linear-gradient(90deg,rgba(240,176,76,.35),rgba(240,176,76,.85));width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.s3-mbars.on .mb i{width:var(--w)}
+.s3-mbars .mb em{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--ink)}
+#sleepSvg{touch-action:pan-y;cursor:ew-resize}
+#sleepSvg text{font-family:"JetBrains Mono",Menlo,monospace}
+@media(max-width:700px){.s3-sleepread,.s3-sleepfacts{grid-template-columns:1fr}.sleepdiag input[type=range]{width:min(260px,52vw)}}
+/* o que ajuda */
+.s3-help{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;align-items:start}
+.s3-quiz,.s3-dom{padding:20px 22px}
+.s3-quiz-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.s3-score{white-space:nowrap;font-family:var(--mono);font-size:11.5px;color:var(--green);border:1px solid rgba(72,214,149,.4);border-radius:99px;padding:3px 10px}
+.s3-q{margin-top:14px;padding-top:14px;border-top:1px dashed var(--stroke)}
+.s3-q:first-child{border-top:0;padding-top:0}
+.s3-q .sit{font-family:var(--serif);font-size:16.5px;line-height:1.45;color:var(--ink)}
+.s3-q .sit small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut2);margin-bottom:4px}
+.s3-q .opts{display:grid;gap:8px;margin-top:10px}
+.s3-q .opts button{text-align:left;font:inherit;font-size:14px;line-height:1.45;color:var(--ink2);padding:10px 12px 10px 38px;border-radius:10px;position:relative;
+  border:1px solid var(--line);background:rgba(255,255,255,.025);cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.s3-q .opts button::before{content:attr(data-l);position:absolute;left:11px;top:10px;font-family:var(--mono);font-size:11px;color:var(--mut)}
+.s3-q .opts button:hover:not([disabled]){border-color:var(--stroke);color:var(--ink)}
+.s3-q .opts button[disabled]{cursor:default}
+.s3-q .opts button.ok{border-color:rgba(72,214,149,.6);background:rgba(72,214,149,.08);color:var(--ink)}
+.s3-q .opts button.ok::before{content:"✓";color:var(--green)}
+.s3-q .opts button.no{border-color:rgba(255,92,103,.5);background:rgba(255,92,103,.06);text-decoration:line-through;text-decoration-color:rgba(255,92,103,.6)}
+.s3-q .opts button.no::before{content:"✕";color:var(--red)}
+.s3-q .fb{margin-top:8px;font-size:13.5px;line-height:1.55;color:var(--ink2)}
+.s3-q .fb b{color:var(--green)}.s3-q .fb.bad b{color:var(--amber)}
+.s3-q .fb:empty{display:none}
+.s3-reset{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mut);background:none;border:1px solid var(--line);border-radius:99px;padding:6px 12px;cursor:pointer}
+.s3-reset:hover{color:var(--ink);border-color:var(--stroke)}
+.s3-dlist{list-style:none;counter-reset:d;display:grid;gap:2px;margin-top:12px}
+.s3-dlist li{counter-increment:d;display:grid;grid-template-columns:34px 1fr;gap:2px 10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.s3-dlist li::before{content:counter(d,upper-roman);grid-row:span 2;font-family:var(--mono);font-size:11px;color:var(--ice);text-align:center;
+  border:1px solid rgba(124,216,247,.35);border-radius:8px;padding:3px 0;height:max-content;margin-top:1px}
+.s3-dlist b{font-size:14px;font-weight:600;color:var(--ink)}
+.s3-dlist span{font-size:13.5px;color:var(--ink2);line-height:1.5}
+.s3-grid2{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;margin-top:14px;align-items:start}
+.s3-alarm{padding:20px 22px;border-radius:var(--r);border:1px solid rgba(255,92,103,.45);
+  background:linear-gradient(160deg,rgba(255,92,103,.12),rgba(255,255,255,.03) 70%)}
+.s3-alarm .s3-fk{color:var(--red)}
+.s3-alarm ul{list-style:none;display:grid;gap:10px;margin-top:12px}
+.s3-alarm li{position:relative;padding-left:22px;font-size:14px;line-height:1.5;color:var(--ink)}
+.s3-alarm li::before{content:"";position:absolute;left:3px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red)}
+.s3-alarm-foot{display:grid;gap:8px;margin-top:14px;padding-top:12px;border-top:1px dashed rgba(255,92,103,.35)}
+.s3-alarm-foot span{font-size:13px;color:var(--ink2);line-height:1.45}
+.s3-alarm-foot b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--green);font-weight:500}
+/* forest plot */
+.s3-forest{margin-top:12px}
+.s3-frow{display:grid;grid-template-columns:minmax(140px,190px) minmax(0,1fr) 64px;gap:12px;align-items:center;min-height:40px}
+.s3-frow .lb{font-size:13.5px;color:var(--ink);line-height:1.3}
+.s3-frow .lb small{display:block;font-family:var(--mono);font-size:10.5px;color:var(--mut2)}
+.s3-frow .vl{font-family:var(--mono);font-size:12.5px;color:var(--ink);text-align:right}
+.s3-ftrack{position:relative;height:30px;cursor:default}
+.s3-ftrack .ci{position:absolute;top:50%;height:2px;margin-top:-1px;background:var(--se1);opacity:.75}
+.s3-ftrack .ci::before,.s3-ftrack .ci::after{content:"";position:absolute;top:-5px;width:2px;height:12px;background:var(--se1)}
+.s3-ftrack .ci::before{left:0}.s3-ftrack .ci::after{right:0}
+.s3-ftrack .pt{position:absolute;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;background:var(--se1);border-radius:3px;box-shadow:0 0 0 2px var(--bg2)}
+.s3-ftrack .ref{position:absolute;top:-6px;bottom:-6px;width:0;border-left:1px dashed rgba(255,255,255,.35)}
+.s3-ftrack:focus-visible{outline:2px solid var(--ice);outline-offset:2px;border-radius:6px}
+.s3-faxis{display:grid;grid-template-columns:minmax(140px,190px) minmax(0,1fr) 64px;gap:12px}
+.s3-faxis .tk{position:relative;height:18px;font-family:var(--mono);font-size:10.5px;color:var(--mut2)}
+.s3-faxis .tk i{position:absolute;transform:translateX(-50%);font-style:normal}
+@media(max-width:980px){.s3-help,.s3-grid2{grid-template-columns:1fr}}
+@media(max-width:640px){
+  .s3-sub{flex-direction:column;gap:10px;margin-top:52px}
+  .s3-sub .n{margin-top:0}
+  .s3-sub p{font-size:14.5px}
+  .s3-viz,.s3-quiz,.s3-dom,.s3-alarm{padding:16px}
+  .s3-frow{grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:4px 0}
+  .s3-frow .s3-ftrack{grid-column:1/-1;order:3}
+  .s3-faxis{grid-template-columns:1fr}.s3-faxis > span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .s3-read-list .r-real,.s3-read-list .r-para,.s3-mbars .mb i{transition:none}
+}
+@media print{
+  .s3-toc,.s3-seg,.s3-reset,.s3-tip{display:none!important}
+  .s3-read-box[data-v] .r-real,.s3-read-box[data-v] .r-para{opacity:1;filter:none}
+  .s3-mbars .mb i{width:var(--w)!important}
+}
+.vig[data-st]{cursor:pointer}
 </style>
 </head>
 <body>
@@ -1064,7 +1309,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
     <div class="kicker rv">03 · O sintoma <span class="ev C">Nível C · Clínico</span></div>
     <h2 class="rv">“Estão me seguindo.”<br>A anatomia de um delírio</h2>
     <p class="lede rv d1">A paranoia metanfetamínica começa como suspeita vaga e se consolida num sistema de crenças. O conteúdo é tipicamente <b>persecutório e de referência</b>, sincronizado com o binge e a privação de sono; alucinações táteis (formicação) e auditivas são frequentes. Nos casos prolongados, a fronteira com a psicose primária se apaga<sup class="cite"><a href="#r9">9</a>,<a href="#r10">10</a></sup>.</p>
-    <figure class="aexp glass rv d1" id="aexp-s1" data-dur="67.89" data-targets="#s1 .quotebox, #s1 .sym, #s1 .vig, #s1 .fig, #s1 .sleepdiag" data-peaks="99,60,68,16,48,53,39,79,59,50,54,52,52,16,73,83,79,59,31,51,77,31,83,29,47,93,77,36,88,72,54,51,46,96,25,65,56,77,59,64,47,63,33,45,99,69,74,19,52,73,79,81,43,16,99,99,34,85,81,71,51,50,76,19,72,66,76,53,31,70,76,63,58,61,59,59,37,97,78,65,84,82,53,16,76,52,79,36,75,16,70,52,71,72,53,56">
+    <figure class="aexp glass rv d1" id="aexp-s1" data-dur="67.89" data-targets="#s1 [data-aexp-k]" data-peaks="99,60,68,16,48,53,39,79,59,50,54,52,52,16,73,83,79,59,31,51,77,31,83,29,47,93,77,36,88,72,54,51,46,96,25,65,56,77,59,64,47,63,33,45,99,69,74,19,52,73,79,81,43,16,99,99,34,85,81,71,51,50,76,19,72,66,76,53,31,70,76,63,58,61,59,59,37,97,78,65,84,82,53,16,76,52,79,36,75,16,70,52,71,72,53,56">
       <div class="aexp-head">
         <button class="aexp-btn" type="button" aria-pressed="false" aria-label="Ouvir: A anatomia de um delírio, explicada"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h4v14h-4zM13.5 5h4v14h-4z" fill="currentColor"/></svg></button>
         <div class="aexp-meta">
@@ -1079,82 +1324,201 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
       <audio preload="none" controls src="audio/s1.mp3"></audio>
       <details class="aexp-tr">
         <summary>Transcrição · toque numa frase para ir até ela</summary>
-        <div class="tx"><span data-t="0.00" data-n="8">O delírio de perseguição se forma em etapas: começa como suspeita vaga e, com o uso em sequência e a falta de sono, vira um sistema de crenças.</span> <span data-t="10.06" data-n="1,5">O primeiro sinal costuma ser a hipervigilância: checar cortinas, portas e o celular o tempo todo.</span> <span data-t="17.40" data-n="3,6">Depois vêm as ideias de referência: a televisão e as redes sociais parecem mandar recados.</span> <span data-t="23.00" data-n="2,7">São comuns as alucinações, inclusive a sensação de insetos sob a pele, a formicação, com risco de autolesão.</span> <span data-t="30.64" data-n="4">O mais perigoso é a reatividade defensiva: atacar primeiro para se proteger de uma ameaça imaginada.</span> <span data-t="38.16" data-n="9">O delírio não inventa o mundo, ele reinterpreta objetos comuns como prova; por isso discutir raramente funciona.</span> <span data-t="45.44" data-n="1,2,3,4">Ajuda reduzir estímulos, falar um de cada vez, reconhecer o medo sem confirmar a crença e manter distância, com uma saída livre.</span> <span data-t="53.70" data-n="8,10">Dormir interrompe a escalada; mais de quarenta e oito horas acordado a acelera.</span> <span data-t="59.46">Se houver risco, ligue para o SAMU, no cento e noventa e dois.</span> <span data-t="63.62" data-n="0,5,6,7">Os relatos desta seção são compostos, não falas de pacientes reais.</span></div>
+        <div class="tx"><span data-t="0.00" data-k="escalada">O delírio de perseguição se forma em etapas: começa como suspeita vaga e, com o uso em sequência e a falta de sono, vira um sistema de crenças.</span> <span data-t="10.06" data-k="hiper,vig1">O primeiro sinal costuma ser a hipervigilância: checar cortinas, portas e o celular o tempo todo.</span> <span data-t="17.40" data-k="ref,vig4">Depois vêm as ideias de referência: a televisão e as redes sociais parecem mandar recados.</span> <span data-t="23.00" data-k="aluc,vig8,freq">São comuns as alucinações, inclusive a sensação de insetos sob a pele, a formicação, com risco de autolesão.</span> <span data-t="30.64" data-k="reat">O mais perigoso é a reatividade defensiva: atacar primeiro para se proteger de uma ameaça imaginada.</span> <span data-t="38.16" data-k="leituras">O delírio não inventa o mundo, ele reinterpreta objetos comuns como prova; por isso discutir raramente funciona.</span> <span data-t="45.44" data-k="conduta,frases">Ajuda reduzir estímulos, falar um de cada vez, reconhecer o medo sem confirmar a crença e manter distância, com uma saída livre.</span> <span data-t="53.70" data-k="escalada,sono">Dormir interrompe a escalada; mais de quarenta e oito horas acordado a acelera.</span> <span data-t="59.46" data-k="samu">Se houver risco, ligue para o SAMU, no cento e noventa e dois.</span> <span data-t="63.62" data-k="quote,vig1,vig4,vig8">Os relatos desta seção são compostos, não falas de pacientes reais.</span></div>
         <p class="aexp-note">Narração com voz sintética (ElevenLabs · “Beatriz”), roteiro escrito a partir das fontes citadas nesta seção. Conteúdo educativo; não substitui avaliação profissional.</p>
       </details>
     </figure>
+
+    <!-- ═════ guia da seção (2026-10) ═════ -->
+    <nav class="s3-toc rv" aria-label="Partes desta seção">
+      <a href="#s3-sinais"><b>3.1</b>Os quatro sinais</a>
+      <a href="#s3-escalada"><b>3.2</b>Como escala</a>
+      <a href="#s3-leituras"><b>3.3</b>Duas leituras</a>
+      <a href="#s3-freq"><b>3.4</b>Quão comuns</a>
+      <a href="#s3-sono"><b>3.5</b>O papel do sono</a>
+      <a href="#s3-ajuda"><b>3.6</b>O que ajuda</a>
+    </nav>
+
+    <div class="s3-kpis" role="list" aria-label="Números-chave desta seção">
+      <div class="s3-kpi rv" role="listitem" style="--c:var(--red)"><b>77<small>%</small></b><p>tiveram delírio persecutório ao longo da vida, entre 168 internados por psicose da metanfetamina em quatro países</p><cite>Srisurapanont et al. 2003<sup class="cite"><a href="#r27">27</a></sup></cite></div>
+      <div class="s3-kpi rv d1" role="listitem" style="--c:var(--amber)"><b>85<small>%</small></b><p>ouviam vozes (alucinação auditiva), entre usuários com psicose avaliados em Taipé</p><cite>Chen et al. 2003<sup class="cite"><a href="#r28">28</a></sup></cite></div>
+      <div class="s3-kpi rv d2" role="listitem" style="--c:var(--ice)"><b>17<small> dias</small></b><p>foi a duração média do episódio psicótico em 111 internados em Teerã; em 7 casos, os sintomas passaram de um mês</p><cite>Fasihpour et al. 2013<sup class="cite"><a href="#r29">29</a></sup></cite></div>
+      <div class="s3-kpi rv d3" role="listitem" style="--c:var(--violet)"><b>22–30<small>%</small></b><p>da violência ligada ao uso foi explicada pelos sintomas psicóticos; a maior parte acompanhou o próprio uso, independentemente do delírio</p><cite>McKetin et al. 2014<sup class="cite"><a href="#r30">30</a></sup></cite></div>
+    </div>
+
+    <div class="glass s3-tldr rv">
+      <p class="s3-tk">Em 30 segundos</p>
+      <ol>
+        <li><b>A crença se forma em etapas</b> e acompanha o binge e a falta de sono.</li>
+        <li><b>Discutir as “provas” não funciona;</b> reduzir estímulos e reconhecer o medo, sim.</li>
+        <li><b>Segurança primeiro:</b> distância, saída livre e SAMU 192 se houver risco.</li>
+      </ol>
+    </div>
+
+    <!-- ═════ 3.1 · os quatro sinais ═════ -->
+    <header class="s3-sub rv" id="s3-sinais"><span class="n">3.1</span><div><h3>Os quatro sinais</h3><p>Um relato composto e os quatro sinais mais típicos. Toque em cada sinal para ver o que ele significa, o que dizem os dados e a conduta imediata.</p></div></header>
     <div class="duo">
-      <div class="glass quotebox glass-hover rv" data-aexp-label="Relato composto">
+      <div class="glass quotebox glass-hover rv" data-aexp-k="quote" data-aexp-label="Relato composto">
         <p>Toda noite alguém mexe no meu dinheiro, nas minhas coisas. Eu sei que parece loucura, mas é real: eles trocam o cheiro, mudam a posição. Minha mãe faz parte, o vizinho grava tudo.</p>
         <div class="who">— Relato composto, construído a partir de descrições clínicas típicas de emergência psiquiátrica. Não é citação de paciente real.</div>
       </div>
       <div class="symgrid">
-        <button type="button" class="glass sym glass-hover rv" data-d="<b>Hipervigilância.</b> Checagem incessante de cortinas, portas e celular; rotas 'seguras'; dormir de luz acesa. Costuma ser o primeiro sinal — e o mais visível para a família.<span class='act'><b>Conduta imediata:</b> reduza estímulos (luz baixa, um interlocutor por vez) e não confronte a suspeita — ofereça segurança, não debate.</span>"><div class="t"><span class="ic">👁</span>Hipervigilância</div><div class="d">Checar cortinas, portas, celular; rotas "seguras"; dormir com a luz acesa. Frequentemente o primeiro sinal.</div></button>
-        <button type="button" class="glass sym glass-hover rv d1" data-d="<b>Alucinações.</b> Vozes ameaçadoras, passos, sussurros; táteis como insetos ou agulhas sob a pele (formicação) — muito sugestivas de estimulante.<span class='act'><b>Conduta imediata:</b> não afirme nem ridicularize o que ele percebe; valide o sofrimento ('isso deve ser assustador'). Na formicação, retire objetos cortantes do alcance.</span>"><div class="t"><span class="ic">🔊</span>Alucinações</div><div class="d">Vozes ameaçadoras, passos, sussurros. Táteis: insetos ou agulhas sob a pele (formicação) — muito sugestivas de estimulante.</div></button>
-        <button type="button" class="glass sym glass-hover rv d2" data-d="<b>Ideias de referência.</b> TV, rádio e redes 'falam com o paciente'; placas e números viram mensagens codificadas. O mundo vira um sistema de recados.<span class='act'><b>Conduta imediata:</b> desligue os gatilhos (TV alta, redes sociais) e mantenha o ambiente calmo e previsível — cada estímulo novo vira 'mensagem'.</span>"><div class="t"><span class="ic">🔗</span>Ideias de referência</div><div class="d">TV, rádio e redes sociais "falam com o paciente"; placas e números viram mensagens codificadas.</div></button>
-        <button type="button" class="glass sym glass-hover rv d3" data-d="<b>Reatividade defensiva.</b> Agressão 'preemptiva' contra a ameaça imaginada — o principal vetor de violência associada ao cristal.<span class='act'><b>Conduta imediata:</b> segurança primeiro: mantenha distância, garanta saída livre e nunca use contenção física como primeira medida. Se houver risco, SAMU 192.</span>"><div class="t"><span class="ic">⚔️</span>Reatividade defensiva</div><div class="d">Agressão "preemptiva" contra a ameaça imaginada — o principal vetor de violência associada ao cristal.</div></button>
+        <button type="button" class="glass sym glass-hover rv" aria-pressed="false" aria-controls="symDetail" data-aexp-k="hiper" data-d="<b>Hipervigilância.</b> Checagem incessante de cortinas, portas e celular; rotas 'seguras'; dormir de luz acesa. Costuma ser o primeiro sinal — e o mais visível para a família.<span class='dat'><b>Nos dados:</b> a desconfiança persecutória que costuma acompanhá-la aparece em 71–82% das psicoses pela metanfetamina (Fig. 3.3).</span><span class='act'><b>Conduta imediata:</b> reduza estímulos (luz baixa, um interlocutor por vez) e não confronte a suspeita — ofereça segurança, não debate.</span>"><div class="t"><span class="ic">👁</span>Hipervigilância</div><div class="d">Checar cortinas, portas, celular; rotas "seguras"; dormir com a luz acesa. Frequentemente o primeiro sinal.</div></button>
+        <button type="button" class="glass sym glass-hover rv d1" aria-pressed="false" aria-controls="symDetail" data-aexp-k="aluc" data-d="<b>Alucinações.</b> Vozes ameaçadoras, passos, sussurros; táteis como insetos ou agulhas sob a pele (formicação) — muito sugestivas de estimulante.<span class='dat'><b>Nos dados:</b> vozes em 70–85% dos casos; alucinações visuais em 44–47%; táteis em cerca de 21% (Fig. 3.3).</span><span class='act'><b>Conduta imediata:</b> não afirme nem ridicularize o que ele percebe; valide o sofrimento ('isso deve ser assustador'). Na formicação, retire objetos cortantes do alcance.</span>"><div class="t"><span class="ic">🔊</span>Alucinações</div><div class="d">Vozes ameaçadoras, passos, sussurros. Táteis: insetos ou agulhas sob a pele (formicação) — muito sugestivas de estimulante.</div></button>
+        <button type="button" class="glass sym glass-hover rv d2" aria-pressed="false" aria-controls="symDetail" data-aexp-k="ref" data-d="<b>Ideias de referência.</b> TV, rádio e redes 'falam com o paciente'; placas e números viram mensagens codificadas. O mundo vira um sistema de recados.<span class='dat'><b>Nos dados:</b> delírio de referência em 58–63% dos casos de psicose pela metanfetamina (Fig. 3.3).</span><span class='act'><b>Conduta imediata:</b> desligue os gatilhos (TV alta, redes sociais) e mantenha o ambiente calmo e previsível — cada estímulo novo vira 'mensagem'.</span>"><div class="t"><span class="ic">🔗</span>Ideias de referência</div><div class="d">TV, rádio e redes sociais "falam com o paciente"; placas e números viram mensagens codificadas.</div></button>
+        <button type="button" class="glass sym glass-hover rv d3" aria-pressed="false" aria-controls="symDetail" data-aexp-k="reat" data-d="<b>Reatividade defensiva.</b> Agressão 'preemptiva' contra a ameaça imaginada — um vetor importante, mas não o único, da violência associada ao cristal.<span class='dat'><b>Nos dados:</b> com uso em 16 dias ou mais no mês, a chance de comportamento violento foi 9,5 vezes maior; os sintomas psicóticos explicaram 22–30% desse risco (Fig. 3.4).</span><span class='act'><b>Conduta imediata:</b> segurança primeiro: mantenha distância, garanta saída livre e nunca use contenção física como primeira medida. Se houver risco, SAMU 192.</span>"><div class="t"><span class="ic">⚔️</span>Reatividade defensiva</div><div class="d">Agressão "preemptiva" contra a ameaça imaginada — um vetor importante, mas não o único, da violência associada ao cristal.</div></button>
       </div>
     </div>
     <div class="glass symdetail rv" id="symDetail" aria-live="polite">Selecione um dos quatro sinais para ver o que ele significa — e a conduta imediata.</div>
-    <div class="vigtrio">
-      <div class="glass vig glass-hover rv"><div class="day">DIA 1 · SEM DORMIR</div><p>"Passei a noite na fresta da cortina. Todo farol que passava, eu tinha certeza de que reduzia aqui na frente."</p><div class="tag">vinheta composta · hipervigilância</div></div>
-      <div class="glass vig glass-hover rv d1"><div class="day">DIA 4 · O SISTEMA SE FECHA</div><p>"O vizinho tossiu e eu soube que era sinal. Desliguei a TV porque o apresentador estava falando de mim."</p><div class="tag">vinheta composta · ideias de referência</div></div>
-      <div class="glass vig glass-hover rv d2"><div class="day">DIA 8 · O CORPO ENTRA</div><p>"Sinto os furos no braço, por onde eles entram. Tentei tirar com a pinça."</p><div class="tag">vinheta composta · formicação + risco de autolesão</div></div>
-    </div>
-    <p class="small rv" style="margin-top:10px">Relatos compostos a partir de descrições clínicas típicas de emergência psiquiátrica — <b>não são citações de pacientes reais</b>. O arco segue a escalada da Figura 3.1.</p>
-    <figure class="fig rv" style="margin-top:30px" data-aexp-label="Fig. 3.1 · escalada">
-      <svg viewBox="0 0 720 190" role="img" aria-label="Escalada típica do delírio: suspeita vaga, hipervigilância, ideias de referência e delírio estruturado">
-        <text x="36" y="28" font-family="JetBrains Mono,Menlo,monospace" font-size="11" letter-spacing="2" fill="#38a8d8">ESCALADA TÍPICA · BINGE + PRIVAÇÃO DE SONO</text>
-        <path d="M60,92 H660" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
-        <circle cx="110" cy="92" r="22" fill="rgba(152,162,182,.12)"/><circle cx="110" cy="92" r="9" fill="#98a2b6"/>
-        <circle cx="290" cy="92" r="28" fill="rgba(240,176,76,.12)"/><circle cx="290" cy="92" r="14" fill="#f0b04c"/>
-        <circle cx="470" cy="92" r="34" fill="rgba(255,138,92,.12)"/><circle cx="470" cy="92" r="19" fill="#ff8a5c"/>
-        <circle cx="630" cy="92" r="40" fill="rgba(255,92,103,.14)"/><circle cx="630" cy="92" r="24" fill="#ff5c67"/>
-        <text x="110" y="142" text-anchor="middle" font-family="Sora,sans-serif" font-size="13" font-weight="600" fill="#eef2f8">Suspeita vaga</text>
-        <text x="110" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#7f899e">horas</text>
-        <text x="290" y="142" text-anchor="middle" font-family="Sora,sans-serif" font-size="13" font-weight="600" fill="#eef2f8">Hipervigilância</text>
-        <text x="290" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#7f899e">primeiro sinal</text>
-        <text x="470" y="142" text-anchor="middle" font-family="Sora,sans-serif" font-size="13" font-weight="600" fill="#eef2f8">Ideias de referência</text>
-        <text x="470" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#7f899e">TV · redes · placas</text>
-        <text x="630" y="142" text-anchor="middle" font-family="Sora,sans-serif" font-size="13" font-weight="600" fill="#eef2f8">Delírio estruturado</text>
-        <text x="630" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#7f899e">dias 2–10</text>
-      </svg>
+
+    <!-- ═════ 3.2 · como escala ═════ -->
+    <header class="s3-sub rv" id="s3-escalada"><span class="n">3.2</span><div><h3>Como a crença se fecha</h3><p>A paranoia avança em etapas, acompanhando o binge e a privação de sono. Toque numa etapa para ver o que muda; a vinheta e o sinal correspondentes acendem.</p></div></header>
+    <figure class="fig s3-esc rv" data-aexp-k="escalada" data-aexp-label="Fig. 3.1 · escalada">
+      <div class="s3-esc-box">
+        <p class="s3-fk">Escalada típica · binge + privação de sono</p>
+        <ol class="s3-steps" aria-label="Escalada típica do delírio: suspeita vaga, hipervigilância, ideias de referência e delírio estruturado">
+          <li><button type="button" aria-pressed="false" data-st="0" style="--c:#98a2b6;--sz:18px"><i aria-hidden="true"></i><b>Suspeita vaga</b><small>horas</small></button></li>
+          <li><button type="button" aria-pressed="false" data-st="1" style="--c:#f0b04c;--sz:26px"><i aria-hidden="true"></i><b>Hipervigilância</b><small>primeiro sinal</small></button></li>
+          <li><button type="button" aria-pressed="false" data-st="2" style="--c:#ff8a5c;--sz:34px"><i aria-hidden="true"></i><b>Ideias de referência</b><small>TV · redes · placas</small></button></li>
+          <li><button type="button" aria-pressed="false" data-st="3" style="--c:#ff5c67;--sz:42px"><i aria-hidden="true"></i><b>Delírio estruturado</b><small>dias 2–10</small></button></li>
+        </ol>
+        <div class="s3-esc-detail" id="s3EscDetail" aria-live="polite">Toque numa etapa para ver o que muda — e qual vinheta e sinal correspondem a ela.</div>
+      </div>
       <figcaption><b>Figura 3.1 —</b> a paranoia se consolida em etapas; dormir interrompe a escalada, e a privação de sono &gt;48 h a acelera. Diagrama didático, sem escala temporal real.</figcaption>
     </figure>
-    <figure class="fig rv" data-aexp-label="Fig. 3.2 · duas leituras">
-      <svg viewBox="0 0 720 250" role="img" aria-label="A mesma cena lida de dois jeitos: o que há de fato e o que a paranoia enxerga">
-        <text x="36" y="28" font-family="JetBrains Mono,Menlo,monospace" font-size="11" letter-spacing="2" fill="#38a8d8">A MESMA CENA, DUAS LEITURAS</text>
-        <rect x="36" y="44" width="318" height="172" rx="12" fill="rgba(124,216,247,.06)" stroke="rgba(124,216,247,.35)"/>
-        <text x="54" y="70" font-family="JetBrains Mono,monospace" font-size="11" letter-spacing="2" fill="#7cd8f7">O QUE HÁ</text>
-        <rect x="60" y="84" width="110" height="80" rx="6" fill="none" stroke="#98a2b6" stroke-width="2"/>
-        <path d="M60,104 H170 M60,124 H170 M60,144 H170" stroke="#98a2b6" stroke-width="1.5"/>
-        <text x="60" y="182" font-family="JetBrains Mono,monospace" font-size="10" fill="#7f899e">janela · persiana</text>
-        <rect x="196" y="84" width="90" height="58" rx="6" fill="none" stroke="#98a2b6" stroke-width="2"/>
-        <text x="196" y="160" font-family="JetBrains Mono,monospace" font-size="10" fill="#7f899e">TV ligada</text>
-        <rect x="196" y="172" width="60" height="30" rx="4" fill="none" stroke="#98a2b6" stroke-width="2"/>
-        <text x="264" y="192" font-family="JetBrains Mono,monospace" font-size="10" fill="#7f899e">porta</text>
-        <rect x="366" y="44" width="318" height="172" rx="12" fill="rgba(255,92,103,.06)" stroke="rgba(255,92,103,.45)"/>
-        <text x="384" y="70" font-family="JetBrains Mono,monospace" font-size="11" letter-spacing="2" fill="#ff5c67">O QUE ELE VÊ</text>
-        <rect x="390" y="84" width="110" height="80" rx="6" fill="none" stroke="#ff5c67" stroke-width="2"/>
-        <path d="M390,104 H500 M390,124 H500 M390,144 H500" stroke="#ff5c67" stroke-width="1.5"/>
-        <text x="390" y="182" font-family="JetBrains Mono,monospace" font-size="10" fill="#ff8a7a">“me vigiam pela fresta”</text>
-        <rect x="526" y="84" width="90" height="58" rx="6" fill="none" stroke="#ff5c67" stroke-width="2"/>
-        <text x="526" y="160" font-family="JetBrains Mono,monospace" font-size="10" fill="#ff8a7a">“falam de mim”</text>
-        <rect x="526" y="172" width="60" height="30" rx="4" fill="none" stroke="#ff5c67" stroke-width="2"/>
-        <text x="594" y="192" font-family="JetBrains Mono,monospace" font-size="10" fill="#ff8a7a">“gravam tudo”</text>
-      </svg>
+    <div class="vigtrio">
+      <div class="glass vig glass-hover rv" data-aexp-k="vig1" data-st="1"><div class="day">DIA 1 · SEM DORMIR</div><p>"Passei a noite na fresta da cortina. Todo farol que passava, eu tinha certeza de que reduzia aqui na frente."</p><div class="tag">vinheta composta · hipervigilância</div></div>
+      <div class="glass vig glass-hover rv d1" data-aexp-k="vig4" data-st="2"><div class="day">DIA 4 · O SISTEMA SE FECHA</div><p>"O vizinho tossiu e eu soube que era sinal. Desliguei a TV porque o apresentador estava falando de mim."</p><div class="tag">vinheta composta · ideias de referência</div></div>
+      <div class="glass vig glass-hover rv d2" data-aexp-k="vig8" data-st="3"><div class="day">DIA 8 · O CORPO ENTRA</div><p>"Sinto os furos no braço, por onde eles entram. Tentei tirar com a pinça."</p><div class="tag">vinheta composta · formicação + risco de autolesão</div></div>
+    </div>
+    <p class="small rv" style="margin-top:10px">Relatos compostos a partir de descrições clínicas típicas de emergência psiquiátrica — <b>não são citações de pacientes reais</b>. O arco segue a escalada da Figura 3.1.</p>
+
+    <!-- ═════ 3.3 · duas leituras ═════ -->
+    <header class="s3-sub rv" id="s3-leituras"><span class="n">3.3</span><div><h3>Por que discutir não funciona</h3><p>O delírio usa objetos e ruídos reais como “prova”. Alterne entre as leituras para ver como a mesma cena muda de sentido.</p></div></header>
+    <figure class="fig s3-read rv" data-aexp-k="leituras" data-aexp-label="Fig. 3.2 · duas leituras">
+      <div class="s3-read-box" data-v="both">
+        <div class="s3-read-top">
+          <p class="s3-fk">A mesma cena, duas leituras</p>
+          <div class="s3-seg" role="group" aria-label="Escolher a leitura">
+            <button type="button" data-v="both" aria-pressed="true">As duas</button>
+            <button type="button" data-v="real" aria-pressed="false">O que há</button>
+            <button type="button" data-v="para" aria-pressed="false">O que ele vê</button>
+          </div>
+        </div>
+        <div class="s3-read-cols" aria-hidden="true"><span></span><span class="h-real">O que há</span><span></span><span class="h-para">O que ele vê</span></div>
+        <ul class="s3-read-list">
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="1.5"/><path d="M4 8h16M4 12h16M4 16h16"/></svg><span class="r-real">janela · persiana</span><span class="r-ar" aria-hidden="true">→</span><span class="r-para">“me vigiam pela fresta”</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 16.5V20"/></svg><span class="r-real">TV ligada</span><span class="r-ar" aria-hidden="true">→</span><span class="r-para">“falam de mim”</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="15" cy="12.5" r="1" fill="currentColor"/></svg><span class="r-real">porta</span><span class="r-ar" aria-hidden="true">→</span><span class="r-para">“gravam tudo”</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 16.5v-3l2-4.5h13l2 4.5v3z"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/><path d="M3.5 13.5h17"/></svg><span class="r-real">um carro reduz na rua</span><span class="r-ar" aria-hidden="true">→</span><span class="r-para">“estão me seguindo” <em>vinheta · dia 1</em></span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10h-8l-4 4v-4H4z"/><path d="M8.5 10h7"/></svg><span class="r-real">o vizinho tosse</span><span class="r-ar" aria-hidden="true">→</span><span class="r-para">“é um sinal” <em>vinheta · dia 4</em></span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15c4-4.5 13-4.5 18 0"/><path d="M3 19c4-4.5 13-4.5 18 0"/><circle cx="9" cy="13.4" r=".9" fill="currentColor"/><circle cx="13" cy="12.6" r=".9" fill="currentColor"/><circle cx="16.5" cy="13.6" r=".9" fill="currentColor"/></svg><span class="r-real">coceira na pele</span><span class="r-ar" aria-hidden="true">→</span><span class="r-para">“insetos entrando” <em>vinheta · dia 8</em></span></li>
+        </ul>
+      </div>
       <figcaption><b>Figura 3.2 —</b> o delírio não inventa o mundo: ele <b>reinterpreta</b> objetos comuns como prova. Por isso confrontar ("não tem ninguém aí") raramente funciona — e reduzir estímulos, sim. Ilustração didática.</figcaption>
     </figure>
-    <div class="glass sleepdiag rv" data-aexp-label="Simulador de sono">
+
+    <!-- ═════ 3.4 · frequência ═════ -->
+    <header class="s3-sub rv" id="s3-freq"><span class="n">3.4</span><div><h3>Quão comum é cada sinal</h3><p>Entre pessoas que já estão em psicose pela metanfetamina, desconfiança persecutória e vozes são a regra; alucinações visuais e táteis aparecem em parte dos casos.</p></div></header>
+    <figure class="glass s3-viz rv" id="s3FreqFig" data-aexp-k="freq" data-aexp-label="Fig. 3.3 · frequência">
+      <div class="s3-viz-head">
+        <p class="s3-fk">Fig. 3.3 · sintomas em três estudos</p>
+        <h4>Delírio persecutório e vozes aparecem na maioria</h4>
+        <p>Porcentagem de pacientes com cada sintoma. Cada forma é um estudo; passe o mouse, toque ou use Tab nos pontos.</p>
+      </div>
+      <div class="s3-legend" aria-hidden="true">
+        <span><i class="mk c1"></i>Chen et al. 2003 · Taipé</span>
+        <span><i class="mk c2"></i>Fasihpour et al. 2013 · Teerã, 111 internados</span>
+        <span><i class="mk c3"></i>Srisurapanont et al. 2003 · 4 países, 168 internados</span>
+      </div>
+      <div class="s3-dots" id="s3Dots"></div>
+      <details class="s3-table"><summary>Ver como tabela</summary><div class="s3-tw"></div></details>
+      <p class="s3-foot">Chen et al., <i>Psychol Med</i> 2003 (usuários com psicose ao longo da vida; visuais e táteis citados por Wearne &amp; Cornish 2018)<sup class="cite"><a href="#r28">28</a>,<a href="#r10">10</a></sup> · Fasihpour et al., <i>J Ment Health</i> 2013 (prontuários de internação)<sup class="cite"><a href="#r29">29</a></sup> · Srisurapanont et al., <i>Int J Neuropsychopharmacol</i> 2003 (delírio persecutório na vida; no momento da avaliação, as vozes eram o sintoma mais comum, em 44,6%)<sup class="cite"><a href="#r27">27</a></sup>. Os percentuais valem para quem já tem psicose, não para todos os usuários; a prevalência de psicose entre usuários está na abertura do dossiê.</p>
+    </figure>
+
+    <!-- ═════ 3.5 · sono ═════ -->
+    <header class="s3-sub rv" id="s3-sono"><span class="n">3.5</span><div><h3>O papel do sono</h3><p>Arraste o marcador. A curva vermelha é ilustrativa; a faixa de cima resume o que acontece com pessoas saudáveis, sem droga, só por ficarem acordadas.</p></div></header>
+    <div class="glass sleepdiag rv" data-aexp-k="sono" data-aexp-label="Simulador de sono">
       <div class="head">
         <div class="kicker" style="margin-bottom:0">SIMULADOR · HORAS SEM DORMIR × INTENSIDADE</div>
-        <label>sono <input type="range" id="sleepH" min="0" max="72" step="1" value="30" aria-label="Horas sem dormir"> <output id="sleepOut">30 h</output></label>
+        <label>sono <input type="range" id="sleepH" min="0" max="96" step="1" value="30" aria-label="Horas sem dormir" aria-describedby="sleepStage"> <output id="sleepOut" for="sleepH">30 h</output></label>
       </div>
-      <svg id="sleepSvg" viewBox="0 0 720 210" role="img" aria-label="Curva ilustrativa da intensidade dos sintomas conforme as horas sem dormir"></svg>
+      <svg id="sleepSvg" viewBox="0 0 720 230" role="img" aria-label="Curva ilustrativa da intensidade dos sintomas conforme as horas sem dormir, com as fases da privação de sono descritas em pessoas saudáveis"></svg>
       <div class="sleepstage" id="sleepStage" aria-live="polite"></div>
-      <p class="small" style="margin-top:8px">Curva <b>ilustrativa</b> — a privação de sono potencializa o efeito psicotogênico, mas não há fórmula que preveja o quadro individual<sup class="cite"><a href="#r6">6</a></sup>. Dica: <kbd>←</kbd> <kbd>→</kbd> movem o marcador.</p>
+      <div class="s3-sleepread">
+        <div class="sr-meth"><span class="k"><i></i>Com cristal · curva ilustrativa</span><b id="sleepMeth"></b></div>
+        <div class="sr-sd"><span class="k"><i></i>Só sem dormir, sem droga · Waters et al. 2018</span><b id="sleepSD"></b></div>
+      </div>
+      <div class="s3-sleepfacts">
+        <div>
+          <p class="s3-fk">Em que sentido as alterações aparecem</p>
+          <div class="s3-mbars" role="list" aria-label="Porcentagem dos 21 estudos de privação de sono que relataram alterações em cada sentido">
+            <div class="mb" role="listitem"><span>Visão</span><i style="--w:90%"></i><em>90%</em></div>
+            <div class="mb" role="listitem"><span>Tato e corpo</span><i style="--w:52%"></i><em>52%</em></div>
+            <div class="mb" role="listitem"><span>Audição</span><i style="--w:33%"></i><em>33%</em></div>
+          </div>
+          <p class="s3-mini">% dos 21 estudos com pessoas saudáveis (760 participantes) que relataram cada tipo de alteração.</p>
+        </div>
+        <div class="s3-sleepnote">
+          <p class="s3-fk">Dormir desfaz — quase sempre</p>
+          <p>Em 7 estudos, com 169 participantes, a recuperação foi completa depois de dormir. Em outros, parte dos sintomas persistiu por mais tempo. Com metanfetamina, o sono ainda é o primeiro freio da escalada.</p>
+        </div>
+      </div>
+      <p class="small" style="margin-top:8px">Curva <b>ilustrativa</b> — a privação de sono potencializa o efeito psicotogênico, mas não há fórmula que preveja o quadro individual<sup class="cite"><a href="#r6">6</a></sup>. Faixa de fases: revisão sistemática de privação de sono em pessoas saudáveis<sup class="cite"><a href="#r31">31</a></sup>. Dica: <kbd>←</kbd> <kbd>→</kbd> movem o marcador; também dá para arrastar sobre o gráfico.</p>
     </div>
-    <p class="src rv"><b>Fontes:</b> Glasner-Edwards &amp; Mooney, <i>CNS Drugs</i> 2014 (epidemiologia e manejo)<sup class="cite"><a href="#r9">9</a></sup> · Wearne &amp; Cornish, <i>Front Psychiatry</i> 2018 (sintomas positivos, negativos e cognitivos)<sup class="cite"><a href="#r10">10</a></sup>.</p>
+
+    <!-- ═════ 3.6 · o que ajuda ═════ -->
+    <header class="s3-sub rv" id="s3-ajuda"><span class="n">3.6</span><div><h3>O que ajuda na hora</h3><p>Desescalada verbal, em linguagem de casa. O consenso foi escrito para equipes de emergência; os exemplos abaixo adaptam as mesmas regras para familiares e amigos.</p></div></header>
+    <div class="s3-help">
+      <div class="glass s3-quiz rv" data-aexp-k="frases" data-aexp-label="Treino de frases">
+        <div class="s3-quiz-head"><p class="s3-fk">Treino rápido · qual resposta ajuda?</p><span class="s3-score" id="s3Score" aria-live="polite">0 de 4</span></div>
+        <div id="s3Quiz"></div>
+      </div>
+      <div class="glass s3-dom rv d1" data-aexp-k="conduta" data-aexp-label="10 domínios">
+        <p class="s3-fk">Os 10 domínios da desescalada verbal</p>
+        <ol class="s3-dlist">
+          <li><b>Respeite o espaço</b><span>Pelo menos dois braços de distância; ninguém deve sentir a saída bloqueada.</span></li>
+          <li><b>Não provoque</b><span>Mãos à vista, corpo de lado, voz calma, sem encarar fixo.</span></li>
+          <li><b>Uma voz só</b><span>Só uma pessoa fala; diga quem é e que está ali para que ninguém se machuque.</span></li>
+          <li><b>Seja breve</b><span>Frases curtas e simples. Repetir faz parte da técnica.</span></li>
+          <li><b>Pergunte o que ele quer e sente</b><span>“O que te ajudaria agora?”</span></li>
+          <li><b>Ouça de verdade</b><span>Imagine em que sentido aquilo pode ser verdade para ele — sem confirmar o delírio.</span></li>
+          <li><b>Concorde ou concorde em discordar</b><span>Com o fato, com o princípio ou com o medo; não com a perseguição.</span></li>
+          <li><b>Limites claros e respeitosos</b><span>Machucar alguém não é aceitável — dito com calma, sem ameaça.</span></li>
+          <li><b>Ofereça escolhas e esperança</b><span>Água, sentar, outro cômodo, luz mais baixa: opções reais.</span></li>
+          <li><b>Converse depois</b><span>Quando a crise passar, retome o vínculo e combine um plano.</span></li>
+        </ol>
+        <p class="s3-mini">Richmond et al., <i>West J Emerg Med</i> 2012 — Projeto BETA, Associação Americana de Psiquiatria de Emergência<sup class="cite"><a href="#r32">32</a></sup>. Conduta clínica e medicação: <a href="#s5">§08</a>; internação: <a href="#s5b">§09</a>.</p>
+      </div>
+    </div>
+    <div class="s3-grid2">
+      <figure class="glass s3-viz rv" id="s3ViolFig" data-aexp-label="Fig. 3.4 · violência">
+        <div class="s3-viz-head">
+          <p class="s3-fk">Fig. 3.4 · de onde vem a violência</p>
+          <h4>O risco cresce com o uso, não só com o delírio</h4>
+          <p>Chance de comportamento violento no mês, na mesma pessoa, comparada aos meses sem uso (razão de chances, escala logarítmica; a barra é o intervalo de confiança de 95%).</p>
+        </div>
+        <div class="s3-forest" id="s3Forest"></div>
+        <details class="s3-table"><summary>Ver como tabela</summary><div class="s3-tw"></div></details>
+        <p class="s3-foot">McKetin et al., <i>Addiction</i> 2014 — 278 pessoas com dependência de metanfetamina, sem esquizofrenia, acompanhadas em Sydney e Brisbane<sup class="cite"><a href="#r30">30</a></sup>. Os sintomas psicóticos explicaram 22–30% da violência ligada ao uso; o álcool pesado, 12–18%.</p>
+      </figure>
+      <aside class="s3-alarm rv d1" data-aexp-k="samu" data-aexp-label="Quando ligar 192" aria-labelledby="s3AlarmT">
+        <p class="s3-fk" id="s3AlarmT">Quando ligar 192 (SAMU)</p>
+        <ul>
+          <li>Ameaça ou agressão em curso: afaste-se e ligue 192 — ou 190, se houver arma.</li>
+          <li>Fala em se machucar, ou tenta “tirar insetos” da pele com pinça, faca ou agulha.</li>
+          <li>Muito calor ou febre, confusão intensa, convulsão, dor no peito ou falta de ar: pode ser intoxicação grave, não só psicose.</li>
+          <li>Dias sem dormir, sem comer ou beber, com o delírio crescendo.</li>
+        </ul>
+        <div class="s3-alarm-foot">
+          <span><b>Sem risco imediato</b> CAPS AD ou UBS da sua cidade</span>
+          <span><b>CVV 188</b> 24 h, gratuito, para quem pensa em se matar</span>
+        </div>
+        <p class="s3-mini">Sinais de toxicidade: Cruickshank &amp; Dyer 2009<sup class="cite"><a href="#r6">6</a></sup> · manejo da psicose: Glasner-Edwards &amp; Mooney 2014<sup class="cite"><a href="#r9">9</a></sup>.</p>
+      </aside>
+    </div>
+
+    <p class="src rv"><b>Fontes:</b> Glasner-Edwards &amp; Mooney, <i>CNS Drugs</i> 2014 (epidemiologia e manejo)<sup class="cite"><a href="#r9">9</a></sup> · Wearne &amp; Cornish, <i>Front Psychiatry</i> 2018 (sintomas positivos, negativos e cognitivos)<sup class="cite"><a href="#r10">10</a></sup> · Srisurapanont et al. 2003<sup class="cite"><a href="#r27">27</a></sup> · Chen et al. 2003<sup class="cite"><a href="#r28">28</a></sup> · Fasihpour et al. 2013<sup class="cite"><a href="#r29">29</a></sup> (frequência dos sintomas) · McKetin et al., <i>Addiction</i> 2014 (violência)<sup class="cite"><a href="#r30">30</a></sup> · Waters et al., <i>Front Psychiatry</i> 2018 (privação de sono)<sup class="cite"><a href="#r31">31</a></sup> · Richmond et al., <i>West J Emerg Med</i> 2012 (desescalada verbal)<sup class="cite"><a href="#r32">32</a></sup>.</p>
   </div>
 </section>
 
@@ -1692,6 +2056,12 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
       <li id="r24"><b>U.S. Food and Drug Administration.</b> Stimulant Use Disorders: Developing Drugs for Treatment — draft guidance for industry. Oct 2023. <a href="https://www.fda.gov/news-events/press-announcements/fda-takes-steps-advance-development-novel-therapies-stimulant-use-disorders" target="_blank" rel="noopener">fda.gov</a><span class="ev D">Regulatório</span></li>
       <li id="r25"><b>Callaghan RC, Cunningham JK, Sykes J, Kish SJ.</b> Increased risk of Parkinson's disease in individuals hospitalized with conditions related to the use of methamphetamine or other amphetamine-type drugs. <i>Drug Alcohol Depend</i>. 2012;120(1-3):35-40. <a href="https://doi.org/10.1016/j.drugalcdep.2011.06.013" target="_blank" rel="noopener">doi:10.1016/j.drugalcdep.2011.06.013</a><span class="ev B">Coorte</span></li>
       <li id="r26"><b>Curtin K, Fleckenstein AE, Robison RJ, Crookston MJ, Smith KR, Hanson GR.</b> Methamphetamine/amphetamine abuse and risk of Parkinson's disease in Utah: a population-based assessment. <i>Drug Alcohol Depend</i>. 2015;146:30-38. <a href="https://doi.org/10.1016/j.drugalcdep.2014.10.027" target="_blank" rel="noopener">doi:10.1016/j.drugalcdep.2014.10.027</a><span class="ev B">Coorte</span></li>
+      <li id="r27"><b>Srisurapanont M, Ali R, Marsden J, Sunga A, Wada K, Monteiro M.</b> Psychotic symptoms in methamphetamine psychotic in-patients. <i>Int J Neuropsychopharmacol</i>. 2003;6(4):347-352. <a href="https://doi.org/10.1017/S1461145703003675" target="_blank" rel="noopener">doi:10.1017/S1461145703003675</a><span class="ev B">Transversal</span></li>
+      <li id="r28"><b>Chen CK, Lin SK, Sham PC, et al.</b> Pre-morbid characteristics and co-morbidity of methamphetamine users with and without psychosis. <i>Psychol Med</i>. 2003;33(8):1407-1414. <a href="https://doi.org/10.1017/S0033291703008353" target="_blank" rel="noopener">doi:10.1017/S0033291703008353</a><span class="ev B">Transversal</span></li>
+      <li id="r29"><b>Fasihpour B, Molavi S, Shariat SV.</b> Clinical features of inpatients with methamphetamine-induced psychosis. <i>J Ment Health</i>. 2013;22(4):341-349. <a href="https://doi.org/10.3109/09638237.2012.745184" target="_blank" rel="noopener">doi:10.3109/09638237.2012.745184</a><span class="ev C">Série clínica</span></li>
+      <li id="r30"><b>McKetin R, Lubman DI, Najman JM, Dawe S, Butterworth P, Baker AL.</b> Does methamphetamine use increase violent behaviour? Evidence from a prospective longitudinal study. <i>Addiction</i>. 2014;109(5):798-806. <a href="https://doi.org/10.1111/add.12474" target="_blank" rel="noopener">doi:10.1111/add.12474</a><span class="ev B">Coorte</span></li>
+      <li id="r31"><b>Waters F, Chiu V, Atkinson A, Blom JD.</b> Severe sleep deprivation causes hallucinations and a gradual progression toward psychosis with increasing time awake. <i>Front Psychiatry</i>. 2018;9:303. <a href="https://doi.org/10.3389/fpsyt.2018.00303" target="_blank" rel="noopener">doi:10.3389/fpsyt.2018.00303</a><span class="ev C">Revisão sistemática</span></li>
+      <li id="r32"><b>Richmond JS, Berlin JS, Fishkind AB, et al.</b> Verbal de-escalation of the agitated patient: consensus statement of the American Association for Emergency Psychiatry Project BETA De-escalation Workgroup. <i>West J Emerg Med</i>. 2012;13(1):17-25. <a href="https://doi.org/10.5811/westjem.2011.9.6864" target="_blank" rel="noopener">doi:10.5811/westjem.2011.9.6864</a><span class="ev C">Consenso</span></li>
     </ol>
   </div>
 </section>
@@ -1705,7 +2075,7 @@ html:not(.js) .aexp-btn,html:not(.js) .aexp-spd,html:not(.js) .aexp-wave,html:no
       <div class="glass h rv d2"><b>192 / SAMU</b>Emergência com risco imediato (agitação grave, autolesão, hipertermia)</div>
     </div>
     <p class="sitelinks"><span>Outros guias deste site:</span><a href="/">Guia de Redução de Danos (página principal)</a><a href="/ghb/">GHB · GBL · 1,4-butanodiol</a></p>
-    <p class="colophon"><time datetime="2026-09-28">Revisado em 28 set 2026</time> · Referências verificadas em PubMed/DOI · Modelos 3D e simulador farmacocinético são didáticos · Tipografia: Newsreader, Sora, JetBrains Mono.</p>
+    <p class="colophon"><time datetime="2026-10-15">Revisado em 15 out 2026</time> · Referências verificadas em PubMed/DOI · Modelos 3D e simulador farmacocinético são didáticos · Tipografia: Newsreader, Sora, JetBrains Mono.</p>
   </div>
 </footer>
 
@@ -1823,67 +2193,298 @@ $('#tTop').addEventListener('click', () => scrollTo({top:0, behavior: REDUCED ? 
   }
   steps.forEach(s => s.addEventListener('click', () => apply(s.classList.contains('on') ? null : s)));
 })();
-/* §03 · sinais clicáveis: cada sintoma abre o significado + conduta */
+/* §03 · sinais clicáveis: cada sintoma abre o significado + dados + conduta.
+   No celular (sinais empilhados), o detalhe aparece logo abaixo do cartão tocado. */
 (() => {
   const detail = $('#symDetail');
   const btns = Array.from(document.querySelectorAll('button.sym'));
+  const grid = document.querySelector('#s1 .symgrid');
   if (!detail || !btns.length) return;
   const idle = detail.innerHTML;
+  const anchor = document.createComment('symDetail');
+  detail.before(anchor);
+  const narrow = matchMedia('(max-width: 860px)');
+  function place(b) {
+    if (!b || !narrow.matches || !grid) { if (detail.previousSibling !== anchor) anchor.after(detail); detail.classList.remove('in-grid'); return; }
+    const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+    const i = btns.indexOf(b), last = Math.min(btns.length - 1, Math.floor(i / cols) * cols + cols - 1);
+    btns[last].after(detail); detail.classList.add('in-grid', 'on');
+  }
   btns.forEach(b => b.addEventListener('click', () => {
-    const was = b.classList.contains('on');
-    btns.forEach(x => x.classList.remove('on'));
-    if (was) { detail.innerHTML = idle; return; }
-    b.classList.add('on'); detail.innerHTML = b.dataset.d;
+    const was = b.classList.contains('sel');
+    btns.forEach(x => { x.classList.remove('sel'); x.setAttribute('aria-pressed', 'false'); });
+    if (was) { detail.innerHTML = idle; place(null); return; }
+    b.classList.add('sel'); b.setAttribute('aria-pressed', 'true'); detail.innerHTML = b.dataset.d; place(b);
   }));
+  narrow.addEventListener('change', () => place(btns.find(b => b.classList.contains('sel')) || null));
 })();
-/* §03 · simulador sono × intensidade (curva ilustrativa, sem valor preditivo) */
+/* §03 · simulador sono × intensidade (curva ilustrativa, sem valor preditivo)
+   + faixa de fases da privação de sono em pessoas saudáveis (Waters et al. 2018).
+   Desenho no tamanho real do contêiner: o texto não encolhe no celular. */
 (() => {
-  const svg = $('#sleepSvg'), slider = $('#sleepH'), out = $('#sleepOut'), stage = $('#sleepStage');
+  const svg = $('#sleepSvg'), slider = $('#sleepH'), out = $('#sleepOut'), stage = $('#sleepStage'),
+        rMeth = $('#sleepMeth'), rSD = $('#sleepSD');
   if (!svg || !slider) return;
-  const NS = 'http://www.w3.org/2000/svg', W = 720, H = 210, PL = 46, PR = 20, PT = 16, PB = 34;
-  const mk = el => document.createElementNS(NS, el);
-  const X = h => PL + (h/72)*(W-PL-PR), Y = v => PT + (1-v)*(H-PT-PB);
-  // curva ilustrativa: sobe devagar até 24 h, dispara depois de 48 h
-  const curve = h => Math.min(1, .12 + (h/72)*.25 + Math.pow(Math.max(0, h-20)/52, 1.8)*.75);
-  const bg = mk('rect');
-  bg.setAttribute('x', PL); bg.setAttribute('y', PT);
-  bg.setAttribute('width', W-PL-PR); bg.setAttribute('height', H-PT-PB);
-  bg.setAttribute('fill', 'rgba(255,255,255,.03)'); bg.setAttribute('rx', 10); svg.appendChild(bg);
-  [0, 24, 48, 72].forEach(h => {
-    const t = mk('text');
-    t.setAttribute('x', X(h)); t.setAttribute('y', H-12); t.setAttribute('text-anchor', 'middle');
-    t.setAttribute('style', 'font:10px JetBrains Mono,monospace;fill:#7f899e'); t.textContent = h + ' h';
-    svg.appendChild(t);
-  });
-  let d = '';
-  for (let h = 0; h <= 72; h += 1) d += (h ? ' L' : 'M') + X(h).toFixed(1) + ',' + Y(curve(h)).toFixed(1);
-  const line = mk('path');
-  line.setAttribute('d', d); line.setAttribute('fill', 'none');
-  line.setAttribute('stroke', '#ff5c67'); line.setAttribute('stroke-width', 2.5); svg.appendChild(line);
-  const vl = mk('line');
-  vl.setAttribute('y1', PT); vl.setAttribute('y2', H-PB);
-  vl.setAttribute('stroke', 'rgba(124,216,247,.5)'); vl.setAttribute('stroke-dasharray', '4 4'); svg.appendChild(vl);
-  const dot = mk('circle');
-  dot.setAttribute('r', 7); dot.setAttribute('fill', '#7cd8f7');
-  dot.setAttribute('stroke', '#04121a'); dot.setAttribute('stroke-width', 2); svg.appendChild(dot);
-  const tag48 = mk('text');
-  tag48.setAttribute('x', X(48)); tag48.setAttribute('y', PT + 2); tag48.setAttribute('text-anchor', 'middle');
-  tag48.setAttribute('style', 'font:10px JetBrains Mono,monospace;fill:#f0b04c'); tag48.textContent = '>48 h · RISCO MÁXIMO';
-  svg.appendChild(tag48);
+  const NS = 'http://www.w3.org/2000/svg', MAXH = +slider.max || 96;
+  const mk = (el, at, txt) => { const n = document.createElementNS(NS, el); for (const k in at) n.setAttribute(k, at[k]); if (txt != null) n.textContent = txt; return n; };
+  // curva ilustrativa: sobe devagar até 24 h, acelera entre 36 e 60 h, satura depois de 72 h
+  const curve = h => .1 + .88 / (1 + Math.exp(-(h - 46) / 9));
+  const SD = [ // Waters et al., Front Psychiatry 2018 — revisão sistemática, 21 estudos, pessoas saudáveis
+    { a: 0,  b: 24, t: 'ansiedade', long: 'ansiedade e irritabilidade', txt: 'Até 24 h: ansiedade e irritabilidade podem começar.' },
+    { a: 24, b: 48, t: 'distorções', long: 'distorções e despersonalização', txt: '24–48 h: distorções visuais, despersonalização e desorientação no tempo.' },
+    { a: 48, b: 72, t: 'alucinações', long: 'alucinações complexas', txt: '48–72 h: alucinações complexas e pensamento desorganizado.' },
+    { a: 72, b: 96, t: 'delírios', long: 'delírios · quadro de psicose', txt: 'Após 72 h: delírios; o quadro lembra psicose aguda ou delirium tóxico.' }
+  ];
   function phase(h){
     if (h < 12) return 'VIGILÂNCIA · ainda sem psicose na maioria';
     if (h < 24) return 'SUSPEITA VAGA · hipervigilância, checagens';
     if (h < 48) return 'REFERÊNCIA + ALUCINAÇÕES · o sistema se fecha';
     return 'DELÍRIO ESTRUTURADO · pico de risco — ver manejo (§08)';
   }
-  function update(){
-    const h = +slider.value;
-    out.value = h + ' h';
-    vl.setAttribute('x1', X(h)); vl.setAttribute('x2', X(h));
-    dot.setAttribute('cx', X(h)); dot.setAttribute('cy', Y(curve(h)));
-    stage.textContent = h + ' h sem dormir → ' + phase(h);
+  const sdAt = h => SD.find(s => h < s.b) || SD[SD.length - 1];
+  let W = 0, H = 0, X, Y, vl, dot, PL, PR, PT, PB;
+  function build() {
+    const w = Math.round(svg.getBoundingClientRect().width);
+    if (!w || w === W) return;
+    W = w; const narrow = W < 520;
+    H = narrow ? 250 : 240; PL = narrow ? 30 : 46; PR = narrow ? 10 : 20; PT = 44; PB = 30;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.style.height = H + 'px';
+    svg.replaceChildren();
+    X = h => PL + (h / MAXH) * (W - PL - PR); Y = v => PT + (1 - v) * (H - PT - PB);
+    // faixa de fases (Waters 2018)
+    SD.forEach((s, i) => {
+      svg.appendChild(mk('rect', { x: X(s.a) + 1, y: 4, width: X(s.b) - X(s.a) - 2, height: 24, rx: 5, fill: `rgba(240,176,76,${.1 + i * .13})` }));
+      const segW = X(s.b) - X(s.a) - 6, fs = narrow ? 9.5 : 10.5, fit = t => t.length * fs * .62 <= segW;
+      const lbl = fit(s.long) ? s.long : fit(s.t) ? s.t : fit(s.t.slice(0, 6) + '.') ? s.t.slice(0, 6) + '.' : '';
+      if (lbl) svg.appendChild(mk('text', { x: (X(s.a) + X(s.b)) / 2, y: 20, 'text-anchor': 'middle', 'font-size': fs, fill: '#eef2f8' }, lbl));
+    });
+    svg.appendChild(mk('rect', { x: PL, y: PT, width: W - PL - PR, height: H - PT - PB, rx: 10, fill: 'rgba(255,255,255,.03)' }));
+    [.25, .5, .75].forEach(v => svg.appendChild(mk('line', { x1: PL, x2: W - PR, y1: Y(v), y2: Y(v), stroke: 'rgba(255,255,255,.05)' })));
+    for (let h = 0; h <= MAXH; h += 24) {
+      svg.appendChild(mk('line', { x1: X(h), x2: X(h), y1: PT, y2: H - PB, stroke: 'rgba(255,255,255,.06)' }));
+      svg.appendChild(mk('text', { x: X(h), y: H - 10, 'text-anchor': h === 0 ? 'start' : h === MAXH ? 'end' : 'middle', 'font-size': 10.5, fill: '#7f899e' }, h + ' h'));
+    }
+    if (!narrow) svg.appendChild(mk('text', { x: PL + 8, y: PT + 16, 'font-size': 10, fill: '#7f899e' }, 'intensidade (ilustrativa)'));
+    let d = '', area = '';
+    for (let h = 0; h <= MAXH; h += 1) { const p = X(h).toFixed(1) + ',' + Y(curve(h)).toFixed(1); d += (h ? ' L' : 'M') + p; }
+    area = d + ` L${X(MAXH).toFixed(1)},${Y(0)} L${X(0).toFixed(1)},${Y(0)} Z`;
+    svg.appendChild(mk('path', { d: area, fill: 'rgba(255,92,103,.08)' }));
+    svg.appendChild(mk('path', { d, fill: 'none', stroke: '#ff5c67', 'stroke-width': 2.5, 'stroke-linecap': 'round' }));
+    svg.appendChild(mk('text', { x: X(48) + 6, y: PT + 16, 'font-size': 10, fill: '#f0b04c' }, narrow ? '>48 h · RISCO' : '>48 h · RISCO MÁXIMO'));
+    svg.appendChild(mk('line', { x1: X(48), x2: X(48), y1: PT, y2: H - PB, stroke: 'rgba(240,176,76,.4)', 'stroke-dasharray': '2 4' }));
+    vl = mk('line', { y1: 4, y2: H - PB, stroke: 'rgba(124,216,247,.6)', 'stroke-dasharray': '4 4' }); svg.appendChild(vl);
+    dot = mk('circle', { r: 7, fill: '#7cd8f7', stroke: '#04121a', 'stroke-width': 2 }); svg.appendChild(dot);
+    update();
   }
-  slider.addEventListener('input', update); update();
+  function update(){
+    const h = +slider.value, s = sdAt(h);
+    out.value = h + ' h';
+    slider.setAttribute('aria-valuetext', h + ' horas sem dormir');
+    if (vl) { vl.setAttribute('x1', X(h)); vl.setAttribute('x2', X(h)); dot.setAttribute('cx', X(h)); dot.setAttribute('cy', Y(curve(h))); }
+    stage.textContent = h + ' h sem dormir → ' + phase(h);
+    if (rMeth) rMeth.textContent = phase(h);
+    if (rSD) rSD.textContent = s.txt;
+  }
+  slider.addEventListener('input', update);
+  // arrastar sobre o gráfico também move o marcador
+  let drag = false;
+  const fromX = e => { const r = svg.getBoundingClientRect(), x = e.clientX - r.left; return Math.round(Math.max(0, Math.min(MAXH, (x - PL) / (W - PL - PR) * MAXH))); };
+  svg.addEventListener('pointerdown', e => { drag = true; svg.setPointerCapture(e.pointerId); slider.value = fromX(e); update(); });
+  svg.addEventListener('pointermove', e => { if (drag) { slider.value = fromX(e); update(); } });
+  svg.addEventListener('pointerup', () => { drag = false; });
+  svg.addEventListener('pointercancel', () => { drag = false; });
+  if ('ResizeObserver' in window) new ResizeObserver(() => build()).observe(svg); else addEventListener('resize', build);
+  build();
+})();
+/* ═══════════ §03 · revisão 2026-10: guia, escalada, duas leituras, dados, treino ═══════════ */
+(() => {
+  const S = document.getElementById('s1'); if (!S) return;
+  const q = (sel, root = S) => root.querySelector(sel), qa = (sel, root = S) => Array.from(root.querySelectorAll(sel));
+  const fmt = (v, d = 1) => (Math.round(v * 10 ** d) / 10 ** d).toLocaleString('pt-BR', { maximumFractionDigits: d });
+
+  /* guia da seção: marca a parte visível */
+  const toc = qa('.s3-toc a');
+  if (toc.length && 'IntersectionObserver' in window) {
+    const byId = new Map(toc.map(a => [a.getAttribute('href').slice(1), a]));
+    const spy = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return; toc.forEach(a => a.classList.remove('on'));
+      const a = byId.get(e.target.id); if (a) a.classList.add('on');
+    }), { rootMargin: '-30% 0px -60% 0px' });
+    byId.forEach((_, id) => { const el = document.getElementById(id); if (el) spy.observe(el); });
+  }
+
+  /* tooltip compartilhado */
+  const tip = document.createElement('div'); tip.className = 's3-tip'; tip.setAttribute('role', 'tooltip'); document.body.appendChild(tip);
+  let owner = null, ownerHtml = '';
+  function showTip(html, el) {
+    owner = el; ownerHtml = html;
+    tip.innerHTML = html; tip.classList.add('on');
+    const r = el.getBoundingClientRect(), t = tip.getBoundingClientRect();
+    let x = r.left + r.width / 2 - t.width / 2, y = r.top - t.height - 10;
+    x = Math.max(8, Math.min(innerWidth - t.width - 8, x)); if (y < 8) y = r.bottom + 10;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  const hideTip = () => { tip.classList.remove('on'); owner = null; };
+  addEventListener('scroll', () => { if (owner && owner === document.activeElement) showTip(ownerHtml, owner); else hideTip(); }, { passive: true });
+  function bindTip(el, html) {
+    el.addEventListener('pointerenter', () => showTip(html, el));
+    el.addEventListener('pointerleave', hideTip);
+    el.addEventListener('focus', () => showTip(html, el));
+    el.addEventListener('blur', hideTip);
+    el.addEventListener('click', () => showTip(html, el));
+  }
+  function table(host, head, rows) {
+    const t = document.createElement('table');
+    t.innerHTML = '<thead><tr>' + head.map((h, i) => `<th${i ? ' style="text-align:right"' : ''}>${h}</th>`).join('') + '</tr></thead><tbody>' +
+      rows.map(r => '<tr>' + r.map((c, i) => `<td${i ? ' class="num"' : ''}>${c}</td>`).join('') + '</tr>').join('') + '</tbody>';
+    host.appendChild(t);
+  }
+
+  /* Fig. 3.1 · escalada interativa: cada etapa acende a vinheta e o sinal correspondentes */
+  const steps = qa('.s3-steps button'), escD = q('#s3EscDetail');
+  if (steps.length && escD) {
+    const idle = escD.innerHTML;
+    const INFO = [
+      { t: 'Suspeita vaga', d: 'Inquietação e a sensação de estar sendo observado. Ainda dá para conversar sobre outras coisas — é o melhor momento para reduzir estímulos e priorizar o sono.', k: [] },
+      { t: 'Hipervigilância', d: 'Checagens repetidas de portas, janelas e celular; dormir de luz acesa. Costuma ser o primeiro sinal visível para a família.', k: ['hiper', 'vig1'] },
+      { t: 'Ideias de referência', d: 'Coincidências viram recados: a TV, um número, a tosse do vizinho. Cada estímulo novo passa a confirmar a crença.', k: ['ref', 'vig4'] },
+      { t: 'Delírio estruturado', d: 'A crença se fecha num sistema. Alucinações, inclusive táteis, e o risco de reação defensiva ou de autolesão.', k: ['aluc', 'reat', 'vig8'] }
+    ];
+    const label = { hiper: 'sinal: hipervigilância', ref: 'sinal: ideias de referência', aluc: 'sinal: alucinações', reat: 'sinal: reatividade defensiva', vig1: 'vinheta · dia 1', vig4: 'vinheta · dia 4', vig8: 'vinheta · dia 8' };
+    function setStep(i) {
+      steps.forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
+      qa('.s3-link').forEach(el => el.classList.remove('s3-link'));
+      if (i < 0) { escD.innerHTML = idle; return; }
+      const it = INFO[i];
+      it.k.forEach(k => { const el = q(`[data-aexp-k="${k}"]`); if (el) el.classList.add('s3-link'); });
+      escD.innerHTML = `<b>${it.t}.</b> ${it.d}` + (it.k.length ? `<br><span class="go">acende: ${it.k.map(k => label[k]).join(' · ')}</span>` : '');
+    }
+    steps.forEach((b, i) => b.addEventListener('click', () => setStep(b.getAttribute('aria-pressed') === 'true' ? -1 : i)));
+    // tocar numa vinheta seleciona a etapa dela
+    qa('.vig[data-st]').forEach(v => v.addEventListener('click', () => setStep(+v.dataset.st)));
+  }
+
+  /* Fig. 3.2 · alternar as leituras */
+  const rbox = q('.s3-read-box');
+  if (rbox) qa('.s3-seg button', rbox).forEach(b => b.addEventListener('click', () => {
+    rbox.dataset.v = b.dataset.v;
+    qa('.s3-seg button', rbox).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  }));
+
+  /* Fig. 3.3 · frequência dos sintomas (dot plot) */
+  const dots = q('#s3Dots');
+  if (dots) {
+    const ST = [
+      { c: 'c1', n: 'Chen et al. 2003 · Taipé' },
+      { c: 'c2', n: 'Fasihpour et al. 2013 · Teerã (111 internados)' },
+      { c: 'c3', n: 'Srisurapanont et al. 2003 · 4 países (168 internados)' }
+    ];
+    const ROWS = [
+      ['Delírio persecutório', [71, 82, 77.4]],
+      ['Alucinação auditiva (vozes)', [85, 70.3, null]],
+      ['Delírio de referência', [63, 57.7, null]],
+      ['Alucinação visual', [46.5, 44.1, null]],
+      ['Delírio de grandeza', [null, 39.6, null]],
+      ['Delírio de ciúme', [null, 26.1, null]],
+      ['Alucinação tátil', [21.3, null, null]]
+    ];
+    ROWS.forEach(([lb, vals]) => {
+      const row = document.createElement('div'); row.className = 's3-drow';
+      const got = vals.filter(v => v != null), lo = Math.min(...got), hi = Math.max(...got);
+      row.innerHTML = `<span class="lb">${lb}</span><div class="s3-track">${[25, 50, 75].map(g => `<i class="gl" style="left:${g}%"></i>`).join('')}${got.length > 1 ? `<i class="span" style="left:${lo}%;width:${hi - lo}%"></i>` : ''}</div><span class="rg">${got.length > 1 ? fmt(lo) + '–' + fmt(hi) + '%' : fmt(lo) + '%'}</span>`;
+      const tr = row.querySelector('.s3-track');
+      vals.forEach((v, i) => {
+        if (v == null) return;
+        const b = document.createElement('button'); b.type = 'button'; b.className = 's3-dot'; b.style.left = v + '%';
+        b.setAttribute('aria-label', `${lb}: ${fmt(v)}% — ${ST[i].n}`);
+        b.innerHTML = `<i class="mk ${ST[i].c}"></i>`;
+        bindTip(b, `<b>${ST[i].n}</b>${lb}: <strong>${fmt(v)}%</strong>`);
+        tr.appendChild(b);
+      });
+      dots.appendChild(row);
+    });
+    const ax = document.createElement('div'); ax.className = 's3-axis';
+    ax.innerHTML = `<span></span><div class="tk">${[0, 25, 50, 75, 100].map(v => `<i style="left:${v}%">${v}%</i>`).join('')}</div><span></span>`;
+    dots.appendChild(ax);
+    table(q('#s3FreqFig .s3-tw'), ['Sintoma', 'Chen 2003', 'Fasihpour 2013', 'Srisurapanont 2003'],
+      ROWS.map(([lb, v]) => [lb, ...v.map(x => x == null ? '—' : fmt(x) + '%')]));
+  }
+
+  /* Fig. 3.4 · violência (forest plot, escala log) */
+  const forest = q('#s3Forest');
+  if (forest) {
+    const FR = [
+      ['Uso em 1–15 dias no mês', 'vs. meses sem uso', 2.8, 1.6, 4.9],
+      ['Uso em 16 dias ou mais', 'vs. meses sem uso', 9.5, 4.8, 19.1],
+      ['Sintomas psicóticos', 'efeito adicional', 2.0, 1.1, 3.6],
+      ['Álcool em grande quantidade', 'efeito adicional', 3.1, 1.4, 7.0]
+    ];
+    const LO = .8, HI = 25, P = v => (Math.log(v) - Math.log(LO)) / (Math.log(HI) - Math.log(LO)) * 100;
+    FR.forEach(([lb, sub, or, a, b]) => {
+      const row = document.createElement('div'); row.className = 's3-frow';
+      row.innerHTML = `<span class="lb">${lb}<small>${sub}</small></span><div class="s3-ftrack" tabindex="0" role="img" aria-label="${lb}: razão de chances ${fmt(or)} (IC 95% ${fmt(a)} a ${fmt(b)})"><i class="ref" style="left:${P(1)}%"></i><i class="ci" style="left:${P(a)}%;width:${P(b) - P(a)}%"></i><i class="pt" style="left:${P(or)}%"></i></div><span class="vl">×${fmt(or)}</span>`;
+      bindTip(row.querySelector('.s3-ftrack'), `<b>${lb} · ${sub}</b>Razão de chances <strong>${fmt(or)}</strong><br>IC 95%: ${fmt(a)} a ${fmt(b)}`);
+      forest.appendChild(row);
+    });
+    const ax = document.createElement('div'); ax.className = 's3-faxis';
+    ax.innerHTML = `<span></span><div class="tk">${[1, 2, 5, 10, 20].map(v => `<i style="left:${P(v)}%">${v}</i>`).join('')}</div><span></span>`;
+    forest.appendChild(ax);
+    table(q('#s3ViolFig .s3-tw'), ['Exposição', 'Razão de chances', 'IC 95%'], FR.map(([lb, sub, or, a, b]) => [`${lb} (${sub})`, fmt(or), `${fmt(a)}–${fmt(b)}`]));
+  }
+
+  /* barras dos sentidos (privação de sono) animam ao entrar na tela */
+  const mb = q('.s3-mbars');
+  if (mb) {
+    if (REDUCED || !('IntersectionObserver' in window)) mb.classList.add('on');
+    else { const o = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { mb.classList.add('on'); o.disconnect(); } }), { threshold: .4 }); o.observe(mb); }
+    setTimeout(() => mb.classList.add('on'), 4000);
+  }
+
+  /* treino rápido: qual resposta ajuda? */
+  const quiz = q('#s3Quiz'), score = q('#s3Score');
+  if (quiz) {
+    const QS = [
+      { s: 'Ele aponta para a janela: “Tem alguém ali me filmando.”',
+        o: ['“Não tem ninguém aí. Você está imaginando coisas.”', '“Eu não estou vendo ninguém, mas dá para ver que você está com muito medo. Quer sair de perto da janela?”'], c: 1,
+        f: 'Reconhece o medo sem confirmar a perseguição e oferece uma escolha real (domínios V, VII e IX). Negar a “prova” costuma reforçar o delírio (Fig. 3.2).' },
+      { s: 'Três parentes falam ao mesmo tempo e a TV está alta.',
+        o: ['Uma pessoa fala, com frases curtas; os outros desligam a TV e saem do cômodo.', 'Todos explicam juntos, para convencer mais rápido.'], c: 0,
+        f: 'Uma voz só e frases curtas (domínios III e IV). Cada estímulo a mais vira “mensagem” para quem está em ideias de referência.' },
+      { s: 'Ele está de pé, agitado, entre você e a porta.',
+        o: ['Chegar perto e segurar o braço dele para acalmar.', 'Ficar a dois braços de distância, de lado, mãos à vista, sem bloquear a saída de ninguém.'], c: 1,
+        f: 'Espaço e postura não provocativa (domínios I e II). Contenção física como primeira medida aumenta o risco para todos.' },
+      { s: 'Ele grita que vai “dar um jeito” no vizinho.',
+        o: ['“Para com isso, senão eu chamo a polícia!”', '“Machucar alguém não é uma opção. Eu quero que você fique seguro.” — e, se o risco aumentar, afastar-se e ligar 192.'], c: 1,
+        f: 'Limite claro, dito com respeito (domínio VIII). Ameaças escalam; se a agressão parecer iminente, a prioridade é se afastar e chamar ajuda.' }
+    ];
+    let right = 0, done = 0;
+    function render() {
+      quiz.replaceChildren(); right = 0; done = 0; score.textContent = '0 de ' + QS.length;
+      QS.forEach((it, qi) => {
+        const box = document.createElement('div'); box.className = 's3-q';
+        box.innerHTML = `<p class="sit"><small>Situação ${qi + 1}</small>${it.s}</p><div class="opts" role="group" aria-label="Escolha uma resposta"></div><p class="fb" aria-live="polite"></p>`;
+        const opts = box.querySelector('.opts'), fb = box.querySelector('.fb');
+        it.o.forEach((txt, oi) => {
+          const b = document.createElement('button'); b.type = 'button'; b.dataset.l = 'AB'[oi]; b.textContent = txt;
+          b.addEventListener('click', () => {
+            const btns = qa('button', opts); btns.forEach(x => { x.disabled = true; });
+            btns[it.c].classList.add('ok'); if (oi !== it.c) b.classList.add('no');
+            const ok = oi === it.c; if (ok) right++; done++;
+            fb.className = 'fb' + (ok ? '' : ' bad');
+            fb.innerHTML = `<b>${ok ? 'Isso ajuda.' : 'Melhor a outra.'}</b> ${it.f}`;
+            score.textContent = right + ' de ' + QS.length + (done === QS.length ? ' · concluído' : '');
+            if (done === QS.length && !q('.s3-reset', quiz)) {
+              const r = document.createElement('button'); r.type = 'button'; r.className = 's3-reset'; r.textContent = '↺ refazer o treino';
+              r.addEventListener('click', render); quiz.appendChild(r);
+            }
+          });
+          opts.appendChild(b);
+        });
+        quiz.appendChild(box);
+      });
+    }
+    render();
+  }
 })();
 
 /* pause a rAF loop when its canvas is off-screen */
@@ -2409,7 +3010,9 @@ function visible(el, cb){ new IntersectionObserver(es => es.forEach(e => cb(e.is
       cur = i;
       if (i < 0) { setFocus([]); return; }
       const s = spans[i]; s.classList.add('cur'); cap.textContent = s.textContent;
-      setFocus((s.dataset.n || '').split(',').filter(Boolean).map(Number));
+      const keys = (s.dataset.k || '').split(',').map(x => x.trim()).filter(Boolean);
+      setFocus(keys.length ? targets.map((el, k) => keys.includes(el.dataset.aexpK) ? k : -1).filter(k => k >= 0)
+                           : (s.dataset.n || '').split(',').filter(Boolean).map(Number));
       if (det.open) { const top = s.offsetTop; if (top < tx.scrollTop + 8 || top > tx.scrollTop + tx.clientHeight - 48) tx.scrollTo({ top: Math.max(0, top - 24), behavior: REDUCED ? 'auto' : 'smooth' }); }
     }
     function sync() {
