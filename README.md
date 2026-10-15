@@ -9,9 +9,12 @@ site/            the whole site, deployed as-is
   ghb/index.html            GHB / GBL / 1,4-BD guide: inline CSS+JS, canvas + SVG/HTML charts,
                             decision tool, breathing counter, recovery-position figures,
                             Michaelis–Menten model, ED/ONS/Euro-DEN data, Brazil regulatory timeline
-  metanfetamina/index.html  methamphetamine dossier: evidence-graded, 26 DOI refs,
+  metanfetamina/index.html  methamphetamine dossier: evidence-graded, 32 DOI refs,
                             3D molecule, circuit, PK simulator, addiction wheel,
-                            2023–2026 update timeline, canvas charts
+                            2023–2026 update timeline, canvas charts;
+                            §03 split into 3.1–3.6 with symptom-frequency dot plot,
+                            interactive escalation/two-readings figures, sleep simulator
+                            with Waters 2018 phases, de-escalation drill, violence forest plot
   metanfetamina/audio/*.mp3 narrated explanations (ElevenLabs, PT-BR, 64 kbps mono)
                             for §02, §03, §04, §05, §10; transcript + timing live in the HTML
   ghb/og-ghb-v2.png, og.png, favicons, robots.txt, sitemap.xml
